@@ -1,0 +1,96 @@
+{
+  "id": "435aa982-b3bd-4074-8b2a-f30781c17504",
+  "name": "Bifrost Shopify - Tests",
+  "publisher": "Origo",
+  "version": "28.0.0.0",
+  "brief": "Bifrost Shopify - Tests",
+  "description": "Tests for Bifrost Shopify.",
+  "privacyStatement": "https://www.origo.is/um-origo/stefnur/personuverndarstefna",
+  "EULA": "https://www.origo.is/skilmalar-og-oryggismal",
+  "help": "https://www.origo.is/",
+  "url": "https://www.origo.is/",
+  "logo": "assets/Logo250x250.png",
+  "dependencies": [
+    {
+      "id": "7505e808-6e52-4b96-a328-82573391297a",
+      "name": "Bifrost Foundation",
+      "publisher": "Origo",
+      "version": "28.0.5.590"
+    },
+    {
+      "id": "ec255f57-31d0-4ca2-b751-f2fa7c745abb",
+      "name": "Shopify Connector",
+      "publisher": "Microsoft",
+      "version": "28.5.0.0"
+    },
+    {
+      "id": "61a67425-c1e2-45e1-85b5-9e01488f6c1d",
+      "name": "Bifrost Shopify",
+      "publisher": "Origo",
+      "version": "28.0.0.0"
+    },
+    {
+      "id": "5d86850b-0d76-4eca-bd7b-951ad998e997",
+      "publisher": "Microsoft",
+      "name": "Tests-TestLibraries",
+      "version": "1.0.0.0"
+    },
+    {
+      "id": "dd0be2ea-f733-4d65-bb34-a28f4624fb14",
+      "publisher": "Microsoft",
+      "name": "Library Assert",
+      "version": "1.0.0.0"
+    },
+    {
+      "id": "23de40a6-dfe8-4f80-80db-d70f83ce8caf",
+      "publisher": "Microsoft",
+      "name": "Test Runner",
+      "version": "1.0.0.0"
+    },
+    {
+      "id": "e7320ebb-08b3-4406-b1ec-b4927d3e280b",
+      "publisher": "Microsoft",
+      "name": "Any",
+      "version": "1.0.0.0"
+    },
+    {
+      "id": "5095f467-0a01-4b99-99d1-9ff1237d286f",
+      "publisher": "Microsoft",
+      "name": "Library Variable Storage",
+      "version": "1.0.0.0"
+    },
+    {
+      "id": "40860557-a18d-42ad-aecb-22b7dd80dc80",
+      "publisher": "Microsoft",
+      "name": "Permissions Mock",
+      "version": "1.0.0.0"
+    }
+  ],
+  "screenshots": [],
+  "application": "28.5.0.0",
+  "platform": "28.0.0.0",
+  "target": "Cloud",
+  "idRanges": [
+    {
+      "from": 97400,
+      "to": 97599
+    }
+  ],
+  "resourceExposurePolicy": {
+    "allowDebugging": true,
+    "allowDownloadingSource": false,
+    "includeSourceInSymbolFile": false
+  },
+  "suppressWarnings": [
+    "AA0217",
+    "AA0175",
+    "AA0210",
+    "AS0092",
+    "AS0051",
+    "AS0084",
+    "AS0015",
+    "AS0054",
+    "AA0215"
+  ],
+  "runtime": "17.0"
+}
