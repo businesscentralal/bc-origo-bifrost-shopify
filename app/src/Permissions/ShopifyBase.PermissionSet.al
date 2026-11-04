@@ -4,6 +4,6 @@ namespace Origo.Bifrost.Shopify;
 permissionset 70013400 "SHOPIFY Base ori"
 {
     Assignable = false;
-    Caption = 'Bifrost Shopify Base', Comment = 'is-IS=Bifröst Shopify grunnur';
+    Caption = 'Bifrost Shopify Base', MaxLength = 30, Comment = 'is-IS=Bifröst Shopify grunnur';
     Permissions = codeunit "Shopify Registration ori" = X;
 }

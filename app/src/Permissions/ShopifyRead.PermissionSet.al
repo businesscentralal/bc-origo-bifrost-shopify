@@ -4,6 +4,6 @@ namespace Origo.Bifrost.Shopify;
 permissionset 70013401 "SHOPIFY Read ori"
 {
     Assignable = true;
-    Caption = 'Bifrost Shopify Read', Comment = 'is-IS=Bifröst Shopify lestur';
+    Caption = 'Bifrost Shopify Read', MaxLength = 30, Comment = 'is-IS=Bifröst Shopify lestur';
     IncludedPermissionSets = "SHOPIFY Base ori";
 }

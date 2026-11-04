@@ -3,19 +3,19 @@
   <file datatype="xml" source-language="en-US" target-language="is-IS" original="Bifrost Shopify">
     <body>
       <group id="body">
-        <trans-unit id="PermissionSet 1311670517 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="PermissionSet 1311670517 - Property 2879900210" maxwidth="30" size-unit="char" translate="yes" xml:space="preserve">
           <source>Bifrost Shopify Base</source>
           <target>Bifröst Shopify grunnur</target>
           <note from="Developer" annotates="general" priority="2">is-IS=Bifröst Shopify grunnur</note>
           <note from="Xliff Generator" annotates="general" priority="3">PermissionSet SHOPIFY Base ori - Property Caption</note>
         </trans-unit>
-        <trans-unit id="PermissionSet 2984143847 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="PermissionSet 2984143847 - Property 2879900210" maxwidth="30" size-unit="char" translate="yes" xml:space="preserve">
           <source>Bifrost Shopify Full</source>
-          <target>Bifröst Shopify fullur aðgangur</target>
-          <note from="Developer" annotates="general" priority="2">is-IS=Bifröst Shopify fullur aðgangur</note>
+          <target>Bifröst Shopify allur aðgangur</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Bifröst Shopify allur aðgangur</note>
           <note from="Xliff Generator" annotates="general" priority="3">PermissionSet SHOPIFY Full ori - Property Caption</note>
         </trans-unit>
-        <trans-unit id="PermissionSet 3252234552 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="PermissionSet 3252234552 - Property 2879900210" maxwidth="30" size-unit="char" translate="yes" xml:space="preserve">
           <source>Bifrost Shopify Read</source>
           <target>Bifröst Shopify lestur</target>
           <note from="Developer" annotates="general" priority="2">is-IS=Bifröst Shopify lestur</note>

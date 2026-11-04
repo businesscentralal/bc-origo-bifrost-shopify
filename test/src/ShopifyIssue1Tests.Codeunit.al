@@ -37,7 +37,6 @@ codeunit 97400 "Shopify Issue 1 Tests ori"
     begin
         AppId := '61a67425-c1e2-45e1-85b5-9e01488f6c1d';
         Registry.GetApps(TempApps);
-        TempApps.SetLoadFields("App Id");
         Assert.IsTrue(TempApps.Get(AppId), 'Bifrost Shopify must be registered.');
     end;
 
@@ -63,8 +62,36 @@ codeunit 97400 "Shopify Issue 1 Tests ori"
         Registry: Codeunit "App Registry ori";
     begin
         Registry.GetApps(TempApps);
-        TempApps.SetLoadFields("App Id");
         Assert.IsFalse(TempApps.Get(CreateGuid()), 'An unknown module must not be registered.');
+    end;
+
+    /// <summary>Checks registration under the Foundation read role without helper grants.</summary>
+    [Test]
+    procedure ReaderCanReadRegistry()
+    begin
+        AssertRoleRegistration('BIFROST Read ori');
+    end;
+
+    /// <summary>Checks registration under the Foundation full role without helper grants.</summary>
+    [Test]
+    procedure FullRoleCanReadRegistry()
+    begin
+        AssertRoleRegistration('BIFROST Full ori');
+    end;
+
+    local procedure AssertRoleRegistration(PermissionSetId: Code[20])
+    var
+        TempApps: Record "Registered App ori" temporary;
+        Registry: Codeunit "App Registry ori";
+        Registered: Boolean;
+    begin
+        LowerPermissions.StartLoggingNAVPermissions();
+        LowerPermissions.SetExactPermissionSet(PermissionSetId);
+        Registry.GetApps(TempApps);
+        Registered := TempApps.Get('61a67425-c1e2-45e1-85b5-9e01488f6c1d');
+        LowerPermissions.StopLoggingNAVPermissions();
+
+        Assert.IsTrue(Registered, 'Shopify must be registered under the exact Foundation role.');
     end;
 
     local procedure AssertLicenceAdminSetup(LanguageId: Integer)
@@ -94,7 +121,6 @@ codeunit 97400 "Shopify Issue 1 Tests ori"
         SyncVisible := SetupPage.RefreshLicense.Visible();
         SetupPage.Close();
         Registry.GetApps(TempApps);
-        TempApps.SetLoadFields("App Id");
         ShopifyRegistered := TempApps.Get(AppId);
         HasWriteAfter := BifrostSetup.WritePermission();
         LowerPermissions.StopLoggingNAVPermissions();

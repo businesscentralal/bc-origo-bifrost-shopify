@@ -19,7 +19,7 @@ Tests: 97400-97599
 | PermissionSet | 70013400 | SHOPIFY Base ori |
 | PermissionSet | 70013401 | SHOPIFY Read ori |
 | PermissionSet | 70013402 | SHOPIFY Full ori |
-| PermissionSetExtension | 70013400 | Shopify API ori |
+| PermissionSetExtension | 70013400 | Reserved (API extension removed; no action surface in scaffold) |
 | PermissionSetExtension | 70013401 | Shopify Read ori |
 | PermissionSetExtension | 70013402 | Shopify Full ori |
 | Test Codeunit | 97400 | Shopify Issue 1 Tests ori |
