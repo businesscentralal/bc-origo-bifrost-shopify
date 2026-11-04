@@ -13,10 +13,19 @@ Origo.Bifrost.Shopify (tests: Origo.Bifrost.Shopify.Test)
 App:   70013400-70013599
 Tests: 97400-97599
 
-No objects are allocated yet. Record every allocated id here as objects are created.
+| Type | ID | Object |
+| --- | --- | --- |
+| Codeunit | 70013400 | Shopify Registration ori |
+| PermissionSet | 70013400 | SHOPIFY Base ori |
+| PermissionSet | 70013401 | SHOPIFY Read ori |
+| PermissionSet | 70013402 | SHOPIFY Full ori |
+| PermissionSetExtension | 70013400 | Reserved (API extension removed; no action surface in scaffold) |
+| PermissionSetExtension | 70013401 | Shopify Read ori |
+| PermissionSetExtension | 70013402 | Shopify Full ori |
+| Test Codeunit | 97400 | Shopify Issue 1 Tests ori |
 
 ## Microsoft source
-Wrapped Microsoft app: Shopify Connector (`ec255f57-31d0-4ca2-b751-f2fa7c745abb`, 28.5.0.0). Source: https://github.com/microsoft/BCApps/tree/main/src/Apps/W1/Shopify
+Wrapped Microsoft app: Shopify Connector (`ec255f57-31d0-4ca2-b751-f2fa7c745abb`, minimum 28.0.0.0). Source: https://github.com/microsoft/BCApps/tree/main/src/Apps/W1/Shopify
 Read it there before designing message types.
 
 ## Setup Notifications
@@ -26,7 +35,8 @@ app's module id, its display name and its setup page id (`0` while the app has n
 `app/src/Common/SubRegistration.Codeunit.al` in Bifrost Subscription Billing.
 
 ## Target BC Version
-28.5 (application 28.5.0.0, platform 28.0.0.0, runtime 17.0)
+28.0 minimum (application 28.0.0.0, platform 28.0.0.0, runtime 17.0).
+Deploy and test through the bc28-kappi MCP server; leave its container version unchanged.
 
 ## Source Control
 Platform: GitHub
@@ -36,7 +46,7 @@ Default branch: main
 
 ## Dependencies
 - Bifrost Foundation (`7505e808-6e52-4b96-a328-82573391297a`, 28.0.5.590, same floor as Bifrost Subscription Billing)
-- Shopify Connector (Microsoft, 28.5.0.0; application floor 28.5.0.0)
+- Shopify Connector (Microsoft, 28.0.0.0; application floor 28.0.0.0)
 
 ## Naming Rules
 - Every object carries the `ori` suffix (AppSource mandatory affix), max 30 characters.
