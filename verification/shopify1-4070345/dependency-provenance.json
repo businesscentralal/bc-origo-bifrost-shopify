@@ -112,13 +112,6 @@
     "sha256": "050cb3b6f2c77ee74ab155831664a96b790781e27890c3632e32c29837452c08"
   },
   {
-    "file": "/workspace/evidence/shopify1-worker3/symbols/Origo_Bifrost Shopify_28.0.0.0.app",
-    "id": "61a67425-c1e2-45e1-85b5-9e01488f6c1d",
-    "name": "Bifrost Shopify",
-    "version": "28.0.0.0",
-    "sha256": "5c1a387f2e1ee6b2ccdbf06bcb024567de4362331e4ae0c6232b0a4a64709373"
-  },
-  {
     "file": "/workspace/evidence/shopify1-worker3/foundation/test-extension/Origo_Bifrost Foundation - Tests_28.0.11.669.app",
     "id": "9db1a0c9-c503-4793-a9e4-bcda3d3f3c94",
     "name": "Bifrost Foundation - Tests",
