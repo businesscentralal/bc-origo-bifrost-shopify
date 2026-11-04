@@ -1,0 +1,126 @@
+Fara í aðalefni
+CRONUS International Ltd.
+Finance
+Cash Management
+Sales
+Purchasing
+Shopify
+Allar skýrslur
+
+Permission Sets:
+Allt
+
+
+Nýtt
+Eyða
+Breyta lista
+Permissions
+Copy Permission Set...
+Import Permission Sets
+Export Permission Sets
+Fleiri valkostir
+
+
+
+
+
+Yfirlit
+
+*Allt
+
+
+Afmarka lista eftir:
+
+Permission Set
+
+Afmörkun...
+Endurstilla afmarkanir
+	
+Permission Set
+	
+	
+Name
+	
+Type
+	
+Extension Name
+	
+		
+				
+	SHOPIFY FULL ORI		Bifröst Shopify allur aðgangur	System	Bifrost Shopify	
+	SHOPIFY READ ORI	
+	Bifröst Shopify lestur	System	Bifrost Shopify	
+Upplýsingar
+Viðhengi (0)
+Permissions
+	
+Gerð hlutar
+	
+	
+Kenni hlutar
+	
+Heiti hlutar
+	
+Lesheimild
+	
+Heimild til að setja inn
+	
+Breyta heimild
+	
+Heimild til að eyða
+	
+Heimild til keyrslu
+	
+Öryggisafmörkun
+	
+		
+									
+	Codeunit	
+	70013400	Shopify Registration ori	 	 	 	 	Já		
+Included Permission Sets
+	
+Heimildasamstæða
+	
+	
+Heiti
+	
+		
+		
+	SHOPIFY BASE ORI	
+	Bifröst Shopify grunnur	
+Users
+	
+User Name
+	
+	
+Company
+	
+		
+		
+(Það eru engin atriði til að sýna í þessu yfirliti)
+
+About permissions
+
+You manage permissions by assigning permission sets to individual users and to security groups. You can only modify permission sets that you created, not the predefined ones.
+Sýna hjálp
+Fá kynningu
+
+Notaðu hægri og vinstri örvalyklana til að stilla stærðina. Notaðu Escape-lykilinn til að afturkalla eða Enter-lykilinn til að staðfesta.
+
+Listi með titilinn „Permission Sets“ hefur nú 2 atriði
+
+Permission Set, raðað í pöntunina Hækkandi
+
+Type, raðað í pöntunina Hækkandi
+
+Gerð hlutar, raðað í pöntunina Hækkandi
+
+Kenni hlutar, raðað í pöntunina Hækkandi
+
+Heimildasamstæða, raðað í pöntunina Hækkandi
+
+Company, raðað í pöntunina Hækkandi
+
+Listi með titilinn „Upplýsingakassi útvíkkaðra heimilda“ hefur nú eitt atriði
+
+Listi með titilinn „Upplýsingakassi fyrir heimildasamstæðu er innifalinn“ hefur nú eitt atriði

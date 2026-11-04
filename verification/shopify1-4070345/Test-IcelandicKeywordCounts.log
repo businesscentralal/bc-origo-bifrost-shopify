@@ -1,0 +1,6 @@
+Exception: /workspace/shopify1-worker3/tools/Test-IcelandicKeywordCounts.ps1:161
+Line |
+ 161 |  … ed -eq 0) { throw "No KeywordsLbl found under $AppFolder - the guard  …
+     |                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     | No KeywordsLbl found under /workspace/shopify1-worker3/tools/../app -
+     | the guard checked nothing.

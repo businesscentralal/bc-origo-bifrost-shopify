@@ -1,0 +1,9 @@
+{
+ "sha":"407034539531cfe8c47fb7e6b7ad36f2728040db",
+ "containerId":"f02cd729a3bd",
+ "classification":"Wider owned BC29 Web Client/platform console observations; not diagnosed as Shopify source defects",
+ "observed":["favicon.ico HTTP404","onprem.manifest.webmanifest parse error","Could not determine public path from script tag warning","app:DesignerRuleEngine dependency-resolution console error during initial navigation","deprecated apple-mobile-web-app-capable metadata warning"],
+ "acceptanceImpact":"Setup and permission-caption assertions ultimately passed in both1033/1039. No claim that the browser console was clean.",
+ "nextOwner":"Architect for any separately scoped client/platform follow-up",
+ "evidenceFile":"console-2026-11-04T10-33-46-690Z.log"
+}

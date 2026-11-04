@@ -1,0 +1,82 @@
+{
+  "issueUrl": "https://github.com/businesscentralal/bc-origo-bifrost-shopify/issues/1",
+  "prUrl": "https://github.com/businesscentralal/bc-origo-bifrost-shopify/pull/40",
+  "sha": "407034539531cfe8c47fb7e6b7ad36f2728040db",
+  "owner": "worker-3",
+  "AC01": {
+    "status": "VERIFIED",
+    "evidence": [
+      "native-shopify-counts.json",
+      "native-shopify.junit.xml"
+    ],
+    "summary": "Metadata-only inherent Execute/entitlements registration matches Subscription Billing; registration succeeds under exact LicAdm, Read and Full roles."
+  },
+  "AC02": {
+    "status": "VERIFIED",
+    "evidence": [
+      "Test-PermissionCoverage.log",
+      "native-shopify-counts.json"
+    ],
+    "summary": "Base/Read/Full and Foundation Read/Full extensions. API extension removed; no tabledata or Microsoft business permissions. Runtime role checks passed."
+  },
+  "AC03": {
+    "status": "BLOCKED",
+    "owner": "Architect / Claude Code documentation owner",
+    "evidence": [
+      "Test-HelpLinks.log",
+      "help-live-results.json"
+    ],
+    "summary": "Local syntax guard passes; live en-us/shopify and is-is/shopify return404. Separate documentation repository deployment required."
+  },
+  "AC04": {
+    "status": "VERIFIED",
+    "evidence": [
+      "xlf-sync.log",
+      "ui-1033-counts.json",
+      "ui-1039-counts.json"
+    ],
+    "summary": "All three captions MaxLength30, generated Icelandic XLF in sync, exact Full/Read/Base captions verified through Web Client in1033/1039; old overlong text absent."
+  },
+  "AC05": {
+    "status": "VERIFIED",
+    "evidence": [
+      "native-shopify-counts.json",
+      "native-foundation98677-counts.json",
+      "native-shopify.junit.xml",
+      "native-foundation98677.junit.xml"
+    ],
+    "summary": "Full Shopify suite7/7/0/0. Entire required Foundation98677 codeunit23/23/0/0 with Shopify installed, including LicAdm_Sync_PassesGateAndKeepsQuota. Foundation28.0.11.669 sourcea99232fb."
+  },
+  "AC06": {
+    "status": "BLOCKED",
+    "owner": "Gunnar / Architect CI owner",
+    "evidence": [
+      "candidate1/result.json",
+      "candidate1/shipping-result.json",
+      "ci-default.log",
+      "ci-keyword.log"
+    ],
+    "summary": "Local app/test/shipping all3cops0errors0warnings. Exact-tip pairedCI41813906800 fails empty-token GetDependencies before compile; Test not executed. Source Guards41813906513 no-KeywordsLbl failure under explicit tools hold. No current-tip green claim."
+  },
+  "AC07": {
+    "status": "VERIFIED",
+    "evidence": [
+      "Test-ObjectIdsUnique.log"
+    ],
+    "summary": "App objects70013400-70013402 inside allocated range70013400-70013599; test97400 inside97400-97599; .claude ID allocation updated, removed API extension id reserved."
+  },
+  "AC08": {
+    "status": "VERIFIED",
+    "evidence": [
+      "scope-and-verification-audit.json",
+      "mcp-applicability.json"
+    ],
+    "summary": "CHANGELOG under28.0.0.0 includes affected IDs. No message types, Microsoft source copying, new skips/suppressions or pipeline/credential changes."
+  },
+  "additionalHold": {
+    "owner": "Gunnar / Claude Code",
+    "source": "https://bifrst-group.slack.com/archives/C0C0XM70YF8/p1793625818236799",
+    "summary": "Existing28.5-to28.0 minimum support change requires Gunnar decision and floor proof. CurrentBC29 deployment and Shopify29 symbol do not verify28.0."
+  },
+  "delivery": "NOT DELIVERED; developer verification does not imply review handoff, clearance, merge, deployment or UAT"
+}

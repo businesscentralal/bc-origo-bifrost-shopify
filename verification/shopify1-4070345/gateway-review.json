@@ -1,0 +1,33 @@
+{
+  "repository": "businesscentralal/bc-origo-bifrost-shopify",
+  "standardsCommit": "52ba4754cfd614e4a7c50af87b30149b18b313e3",
+  "snapshotCapturedAt": "2026-11-02T10:35:08.581Z",
+  "tier": "Standard",
+  "reviewScope": "Existing issue1 scaffold diff plus local PR40 amendment repair; not independent clearance",
+  "permissions": "Only registration Execute, no tabledata, no extra Microsoft rights. API Full inheritance removed locally; Read/Full extend their corresponding Foundation role. LicAdm unchanged.",
+  "apiCompatibility": "Unreleased app; no public procedures/fields/message types removed. Removed permission extension70013400 recorded reserved; main scaffold baseline has no adapter objects.",
+  "tests": "Seven Shopify methods: original registry3, exact LicAdm setup2, added exact Read/Full registry2. Assertions run after lowering is stopped. Runtime pending, not passed.",
+  "objectRanges": "App70013400-70013599; test97400; uniqueness guard passed.",
+  "documentation": "CHANGELOG lists permission70013400-70013402 and test97400 changes. .claude ID allocation retains removed API extension id as reserved. is-IS text shortened to 30; generated-XLF sync pending compiler.",
+  "limitations": [
+    "Compiler currently needs Microsoft Shopify Connector symbol",
+    "Live bilingual help URLs404 despite passing syntax guard",
+    "No-keyword scaffold guard fails; Architect disposition required before tools repair",
+    "Paired CI retry pending published compiled candidate",
+    "28.0 minimum floor decision evidence requested in prior review remains to reconcile",
+    "Owned deployment/full suite/UI/MCP applicability/cleanup pending"
+  ],
+  "testGateway": {
+    "summary": {
+      "passed": 20,
+      "failed": 3,
+      "total": 23
+    },
+    "findings": {
+      "telemetry": "Test extension has no telemetry connection; existing test-app metadata",
+      "guid": "Expected Shopify app id golden value, not credential or customer fixture",
+      "xmlDocs": "All seven methods have XML summaries before [Test]; scanner does not cross attributes"
+    },
+    "evidence": "/workspace/evidence/shopify1-worker3/gateway-test-automated.log"
+  }
+}

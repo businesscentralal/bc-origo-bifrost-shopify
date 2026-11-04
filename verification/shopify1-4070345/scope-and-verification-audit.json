@@ -1,0 +1,23 @@
+{
+  "sha": "407034539531cfe8c47fb7e6b7ad36f2728040db",
+  "noNewSuppressions": true,
+  "noNewSkips": true,
+  "pipelineAndCredentialFilesUnchanged": true,
+  "existingManifestSuppressionsUnchanged": true,
+  "testInventory": {
+    "configuredTestFolder": "test",
+    "codeunits": [
+      97400
+    ],
+    "methods": 7,
+    "executedMethods": 7
+  },
+  "floorProof": {
+    "declaredMinimum": "28.0.0.0",
+    "actualShopifySymbolVersion": "29.0.54011.57417",
+    "microsoftBaseSymbolVersion": "28.5.54151.55686",
+    "runtimeVersion": "29.0.54011.57417",
+    "minimum28CompatibilityVerified": false
+  },
+  "at": "2026-11-04T10:42:18.559Z"
+}

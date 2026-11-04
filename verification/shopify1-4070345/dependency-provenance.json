@@ -1,0 +1,128 @@
+[
+  {
+    "file": "/workspace/evidence/shopify1-worker3/symbols/Microsoft.Any.28.0.0.0.app",
+    "id": "e7320ebb-08b3-4406-b1ec-b4927d3e280b",
+    "name": "Any",
+    "version": "28.5.54151.55686",
+    "sha256": "d81a8537e80cd900c5783ecf49e7b3c16baf0d7c90d731a4a85ee41372afb87a"
+  },
+  {
+    "file": "/workspace/evidence/shopify1-worker3/symbols/Microsoft.Application.28.0.0.0.app",
+    "id": "c1335042-3002-4257-bf8a-75c898ccb1b8",
+    "name": "Application",
+    "version": "28.5.54151.55686",
+    "sha256": "5535bfa2f8d285e2c5d0f415bc44672eeb5617bbf9c7900df5d2e330ba0ef958"
+  },
+  {
+    "file": "/workspace/evidence/shopify1-worker3/symbols/Microsoft.Application_Test_Library.28.5.0.0.app",
+    "id": "d852d5d2-a39d-4179-baeb-f99a19e32510",
+    "name": "Application Test Library",
+    "version": "28.5.54151.55686",
+    "sha256": "9f8d83e6215674e86e11ea6d702c4ec0e05fa2f849334f7f098a95735b1562d5"
+  },
+  {
+    "file": "/workspace/evidence/shopify1-worker3/symbols/Microsoft.Base_Application.28.0.0.0.app",
+    "id": "437dbf0e-84ff-417a-965d-ed2bb9650972",
+    "name": "Base Application",
+    "version": "28.5.54151.55686",
+    "sha256": "031dbe32742b6b2854ba101df6addb1f51bbb3be3f2e7465a0c783dd23e476e3"
+  },
+  {
+    "file": "/workspace/evidence/shopify1-worker3/symbols/Microsoft.Business_Foundation.28.0.0.0.app",
+    "id": "f3552374-a1f2-4356-848e-196002525837",
+    "name": "Business Foundation",
+    "version": "28.5.54151.55686",
+    "sha256": "21dd86843ee990d235ebd57489b55add3f9a0ee2d8188fbe69b611d9d6aced39"
+  },
+  {
+    "file": "/workspace/evidence/shopify1-worker3/symbols/Microsoft.Business_Foundation_Test_Libraries.28.5.0.0.app",
+    "id": "bee8cf2f-494a-42f4-aabd-650e87934d39",
+    "name": "Business Foundation Test Libraries",
+    "version": "28.5.54151.57488",
+    "sha256": "e76099322fcba309da8304bb0208b7a0e873868b8c2fd94a45c5149e358e340d"
+  },
+  {
+    "file": "/workspace/evidence/shopify1-worker3/symbols/Microsoft.Library_Assert.28.0.0.0.app",
+    "id": "dd0be2ea-f733-4d65-bb34-a28f4624fb14",
+    "name": "Library Assert",
+    "version": "28.5.54151.55686",
+    "sha256": "ecd1e127b46a4afe64683cc8c69e18f8426b141e51240f4a652ebfa26efc249a"
+  },
+  {
+    "file": "/workspace/evidence/shopify1-worker3/symbols/Microsoft.Library_Variable_Storage.28.0.0.0.app",
+    "id": "5095f467-0a01-4b99-99d1-9ff1237d286f",
+    "name": "Library Variable Storage",
+    "version": "28.5.54151.55686",
+    "sha256": "961b212205d4d249a61e1ee5f5aa7569b6f2194d55410b5df92724bc6257c0de"
+  },
+  {
+    "file": "/workspace/evidence/shopify1-worker3/symbols/Microsoft.Permissions_Mock.28.5.0.0.app",
+    "id": "40860557-a18d-42ad-aecb-22b7dd80dc80",
+    "name": "Permissions Mock",
+    "version": "28.5.54151.55686",
+    "sha256": "68c08cf38b9db99f3f3b2142dea5604c6c34a1c1b6cf1674af12189760ab0334"
+  },
+  {
+    "file": "/workspace/evidence/shopify1-worker3/symbols/Microsoft.Shopify_Connector.28.0.0.0.app",
+    "id": "ec255f57-31d0-4ca2-b751-f2fa7c745abb",
+    "name": "Shopify Connector",
+    "version": "29.0.54011.57417",
+    "sha256": "8c4d03e40087e0d0f4d0358f8d3d9d641b98dc7c82f120db6b136ec9feac06a9"
+  },
+  {
+    "file": "/workspace/evidence/shopify1-worker3/symbols/Microsoft.System.28.0.0.0.app",
+    "id": "8874ed3a-0643-4247-9ced-7a7002f7135d",
+    "name": "System",
+    "version": "28.0.54946.55473",
+    "sha256": "415becd5bc8ea6e0740c8b9302b6b5533499bc0defff54a6d13b5553b56169e0"
+  },
+  {
+    "file": "/workspace/evidence/shopify1-worker3/symbols/Microsoft.System_Application.28.0.0.0.app",
+    "id": "63ca2fa4-4f03-4f2b-a480-172fef340d3f",
+    "name": "System Application",
+    "version": "28.5.54151.55686",
+    "sha256": "0844253ef046c12ab9f8304b9d82f624568075aa29e02b74921dd3bb2f81e5e6"
+  },
+  {
+    "file": "/workspace/evidence/shopify1-worker3/symbols/Microsoft.System_Application_Test_Library.28.5.0.0.app",
+    "id": "9856ae4f-d1a7-46ef-89bb-6ef056398228",
+    "name": "System Application Test Library",
+    "version": "28.5.54151.55686",
+    "sha256": "7ad4c10f9382cfb9a826373cccc3a99e40d562b0c08a7207098e1641dbcc5f23"
+  },
+  {
+    "file": "/workspace/evidence/shopify1-worker3/symbols/Microsoft.Tests_TestLibraries.28.0.0.0.app",
+    "id": "5d86850b-0d76-4eca-bd7b-951ad998e997",
+    "name": "Tests-TestLibraries",
+    "version": "28.5.54151.55686",
+    "sha256": "cb1d5de4dd8a9421a05d45d6598d465f5ed3391bea4fef07da40a32dbbcad6bb"
+  },
+  {
+    "file": "/workspace/evidence/shopify1-worker3/symbols/Microsoft.Test_Runner.28.0.0.0.app",
+    "id": "23de40a6-dfe8-4f80-80db-d70f83ce8caf",
+    "name": "Test Runner",
+    "version": "28.5.54151.55686",
+    "sha256": "fff95c0a3867154df092d0188dba810ee55693b70883ec4a7208016c59d6c4d3"
+  },
+  {
+    "file": "/workspace/evidence/shopify1-worker3/symbols/Origo_Bifrost Foundation_28.0.11.669.app",
+    "id": "7505e808-6e52-4b96-a328-82573391297a",
+    "name": "Bifrost Foundation",
+    "version": "28.0.11.669",
+    "sha256": "050cb3b6f2c77ee74ab155831664a96b790781e27890c3632e32c29837452c08"
+  },
+  {
+    "file": "/workspace/evidence/shopify1-worker3/symbols/Origo_Bifrost Shopify_28.0.0.0.app",
+    "id": "61a67425-c1e2-45e1-85b5-9e01488f6c1d",
+    "name": "Bifrost Shopify",
+    "version": "28.0.0.0",
+    "sha256": "5c1a387f2e1ee6b2ccdbf06bcb024567de4362331e4ae0c6232b0a4a64709373"
+  },
+  {
+    "file": "/workspace/evidence/shopify1-worker3/foundation/test-extension/Origo_Bifrost Foundation - Tests_28.0.11.669.app",
+    "id": "9db1a0c9-c503-4793-a9e4-bcda3d3f3c94",
+    "name": "Bifrost Foundation - Tests",
+    "version": "28.0.11.669",
+    "sha256": "3bb520b9e497afa45b60087009404d08fd670d280a46013b09e2f2ed1eb5b9d6"
+  }
+]

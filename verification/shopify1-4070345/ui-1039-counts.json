@@ -1,0 +1,25 @@
+{
+  "sha": "407034539531cfe8c47fb7e6b7ad36f2728040db",
+  "containerId": "f02cd729a3bd",
+  "lcid": 1039,
+  "executed": 2,
+  "passed": 2,
+  "failed": 0,
+  "skipped": 0,
+  "scenarios": [
+    "Localized Setup opens and identifies Shopify registration without enabling HTTP",
+    "Exact Icelandic Full/Read/Base captions and registration Execute70013400; old overlong caption absent"
+  ],
+  "owner": "worker-3",
+  "evidenceFiles": [
+    "ui-verify-is-result2.json",
+    "ui-permissions-1039.png"
+  ],
+  "diagnosticRetries": [
+    {
+      "file": "ui-verify-is-result.json",
+      "reason": "Menu filter race selected background Copy command; no mutation. Exact localized Afmörkun... selector fixed harness."
+    }
+  ],
+  "at": "2026-11-04T10:46:13.142Z"
+}

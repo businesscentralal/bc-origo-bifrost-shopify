@@ -1,0 +1,126 @@
+Skip to main content
+CRONUS International Ltd.
+Finance
+Cash Management
+Sales
+Purchasing
+Shopify
+All Reports
+
+Permission Sets:
+All
+
+
+New
+Delete
+Edit List
+Permissions
+Copy Permission Set...
+Import Permission Sets
+Export Permission Sets
+More options
+
+
+
+
+
+Views
+
+*All
+
+
+Filter list by:
+
+Permission Set
+
+Filter...
+Reset filters
+	
+Permission Set
+	
+	
+Name
+	
+Type
+	
+Extension Name
+	
+		
+				
+	SHOPIFY FULL ORI		Bifrost Shopify Full	System	Bifrost Shopify	
+	SHOPIFY READ ORI	
+	Bifrost Shopify Read	System	Bifrost Shopify	
+Details
+Attachments (0)
+Permissions
+	
+Object Type
+	
+	
+Object ID
+	
+Object Name
+	
+Read Permission
+	
+Insert Permission
+	
+Modify Permission
+	
+Delete Permission
+	
+Execute Permission
+	
+Security Filter
+	
+		
+									
+	Codeunit	
+	70013400	Shopify Registration ori	 	 	 	 	Yes		
+Included Permission Sets
+	
+Permission Set
+	
+	
+Name
+	
+		
+		
+	SHOPIFY BASE ORI	
+	Bifrost Shopify Base	
+Users
+	
+User Name
+	
+	
+Company
+	
+		
+		
+(There is nothing to show in this view)
+
+About permissions
+
+You manage permissions by assigning permission sets to individual users and to security groups. You can only modify permission sets that you created, not the predefined ones.
+Show Help
+Take a tour
+
+Use the Left and Right arrow keys to adjust the size. Use the Escape key to undo or the Enter key to accept.
+
+List with title "Permission Sets" now has 2 items
+
+Permission Set, sorted in Ascending order
+
+Type, sorted in Ascending order
+
+Object Type, sorted in Ascending order
+
+Object ID, sorted in Ascending order
+
+Permission Set, sorted in Ascending order
+
+Company, sorted in Ascending order
+
+List with title "Expanded Permissions Factbox" now has one item
+
+List with title "Included PermissionSet FactBox" now has one item

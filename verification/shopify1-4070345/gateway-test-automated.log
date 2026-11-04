@@ -1,0 +1,156 @@
+{
+  "summary": {
+    "failed": 3,
+    "passed": 20,
+    "total": 23,
+    "ready": false
+  },
+  "project": "Bifrost Shopify - Tests",
+  "checks": {
+    "namespace": {
+      "pass": true,
+      "findings": []
+    },
+    "app_json": {
+      "pass": false,
+      "findings": [
+        "Warning: no applicationInsightsKey/connectionString"
+      ]
+    },
+    "changelog": {
+      "pass": true,
+      "findings": []
+    },
+    "global_variables": {
+      "pass": true,
+      "findings": []
+    },
+    "event_subscriber_placement": {
+      "pass": true,
+      "findings": []
+    },
+    "caption_translation": {
+      "pass": true,
+      "skipped": "single-locale project",
+      "findings": []
+    },
+    "reserved_var_names": {
+      "pass": true,
+      "findings": []
+    },
+    "object_naming": {
+      "pass": true,
+      "findings": []
+    },
+    "set_load_fields": {
+      "pass": true,
+      "findings": [],
+      "advisory": "Loops without SetLoadFields - consider it only for wide tables; not a gate failure"
+    },
+    "hardcoded_values": {
+      "pass": false,
+      "findings": [
+        {
+          "issue": "Hardcoded GUID",
+          "file": "ShopifyIssue1Tests.Codeunit.al",
+          "severity": "medium",
+          "text": "Registered := TempApps.Get('61a67425-c1e2-45e1-85b5-9e01488f6c1d');",
+          "line": 91
+        }
+      ]
+    },
+    "data_classification": {
+      "pass": true,
+      "findings": []
+    },
+    "format_evaluate_enum": {
+      "pass": true,
+      "findings": []
+    },
+    "format_guid": {
+      "pass": true,
+      "findings": []
+    },
+    "try_prefix_convention": {
+      "pass": true,
+      "findings": []
+    },
+    "confirm_in_page": {
+      "pass": true,
+      "findings": []
+    },
+    "modernization": {
+      "pass": true,
+      "findings": []
+    },
+    "page_code_minimal": {
+      "pass": true,
+      "findings": []
+    },
+    "xml_doc_comments": {
+      "pass": false,
+      "findings": [
+        {
+          "procedure": "LicenceAdminOpensSetupEnglish",
+          "file": "ShopifyIssue1Tests.Codeunit.al",
+          "line": 18
+        },
+        {
+          "procedure": "LicenceAdminOpensSetupIcelandic",
+          "file": "ShopifyIssue1Tests.Codeunit.al",
+          "line": 25
+        },
+        {
+          "procedure": "RegistryContainsShopify",
+          "file": "ShopifyIssue1Tests.Codeunit.al",
+          "line": 32
+        },
+        {
+          "procedure": "RegistryCanBeReadTwice",
+          "file": "ShopifyIssue1Tests.Codeunit.al",
+          "line": 45
+        },
+        {
+          "procedure": "RegistryDoesNotInventUnknownApp",
+          "file": "ShopifyIssue1Tests.Codeunit.al",
+          "line": 59
+        },
+        {
+          "procedure": "ReaderCanReadRegistry",
+          "file": "ShopifyIssue1Tests.Codeunit.al",
+          "line": 70
+        },
+        {
+          "procedure": "FullRoleCanReadRegistry",
+          "file": "ShopifyIssue1Tests.Codeunit.al",
+          "line": 77
+        }
+      ]
+    },
+    "read_isolation": {
+      "pass": true,
+      "findings": []
+    },
+    "today_vs_workdate": {
+      "pass": true,
+      "findings": []
+    },
+    "commit_in_loop": {
+      "pass": true,
+      "findings": []
+    },
+    "with_statements": {
+      "pass": true,
+      "findings": []
+    },
+    "one_statement_per_line": {
+      "pass": true,
+      "findings": []
+    }
+  },
+  "publisher": "Origo",
+  "total_al_files": 1,
+  "mode": "full",
+  "version": "28.0.0.0",
+  "files_scanned": 1
+}
