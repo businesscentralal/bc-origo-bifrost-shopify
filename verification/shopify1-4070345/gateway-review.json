@@ -1,0 +1,35 @@
+{
+  "repository": "businesscentralal/bc-origo-bifrost-shopify",
+  "standardsCommit": "52ba4754cfd614e4a7c50af87b30149b18b313e3",
+  "snapshotCapturedAt": "2026-11-02T10:35:08.581Z",
+  "tier": "Standard",
+  "reviewScope": "Existing issue1 scaffold diff plus local PR40 amendment repair; not independent clearance",
+  "permissions": "Only registration Execute, no tabledata, no extra Microsoft rights. API Full inheritance removed locally; Read/Full extend their corresponding Foundation role. LicAdm unchanged.",
+  "apiCompatibility": "Unreleased app; no public procedures/fields/message types removed. Removed permission extension70013400 recorded reserved; main scaffold baseline has no adapter objects.",
+  "tests": "Full configured7/7/0/0 and required Foundation98677 entire23/23/0/0 verified; complete JUnit hashes match owned remote files.",
+  "objectRanges": "App70013400-70013599; test97400; uniqueness guard passed.",
+  "documentation": "Generated XLF sync and exact captions verified in1033/1039; CHANGELOG IDs and allocation complete; live help URLs404 remain external dependency.",
+  "limitations": [
+    "Live bilingual help URLs404 despite passing syntax guard",
+    "Source keyword guard fails on no-message-type scaffold under explicit Architect tools hold",
+    "Fresh pairedCI41813906800 fails empty-token GetDependencies; no workflow workaround authorized",
+    "28.0 minimum floor decision/proof remains unresolved; current native runtime29 and Shopify29 symbol do not prove28.0",
+    "Independent review, merge/deploy/UAT remain after actual green authorized handoff"
+  ],
+  "testGateway": {
+    "summary": {
+      "passed": 20,
+      "failed": 3,
+      "total": 23
+    },
+    "findings": {
+      "telemetry": "Test extension has no telemetry connection; existing test-app metadata",
+      "guid": "Expected Shopify app id golden value, not credential or customer fixture",
+      "xmlDocs": "All seven methods have XML summaries before [Test]; scanner does not cross attributes"
+    },
+    "evidence": "/workspace/evidence/shopify1-worker3/gateway-test-automated.log"
+  },
+  "sha": "407034539531cfe8c47fb7e6b7ad36f2728040db",
+  "runtime": "OwnedBC29f02cd729a3bd: native7+23 and UI4passed; no touched MCP message types; English restored; deleted204/readback404.",
+  "updatedAt": "2026-11-04T10:49:38.545Z"
+}

@@ -1,0 +1,42 @@
+[
+  {
+    "path": "/workspace/evidence/shopify1-worker3/foundation/test/Origo_Bifrost Foundation_28.0.11.669.app",
+    "name": "Bifrost Foundation",
+    "id": "7505e808-6e52-4b96-a328-82573391297a",
+    "version": "28.0.11.669",
+    "source": {
+      "RepositoryUrl": "https://github.com/OrigoSoftwareSolutions/bc-origo-bifrost-core",
+      "Commit": "a99232fbbe8bba3d18d39a24b8cfa2a06ea3376e"
+    }
+  },
+  {
+    "path": "/workspace/evidence/shopify1-worker3/foundation/test-extension/Origo_Bifrost Foundation - Tests_28.0.11.669.app",
+    "name": "Bifrost Foundation - Tests",
+    "id": "9db1a0c9-c503-4793-a9e4-bcda3d3f3c94",
+    "version": "28.0.11.669",
+    "source": {
+      "RepositoryUrl": "https://github.com/OrigoSoftwareSolutions/bc-origo-bifrost-core",
+      "Commit": "a99232fbbe8bba3d18d39a24b8cfa2a06ea3376e"
+    }
+  },
+  {
+    "path": "/workspace/evidence/shopify1-worker3/candidate1/app.app",
+    "name": "Bifrost Shopify",
+    "id": "61a67425-c1e2-45e1-85b5-9e01488f6c1d",
+    "version": "28.0.0.0",
+    "source": {
+      "RepositoryUrl": "https://github.com/businesscentralal/bc-origo-bifrost-shopify",
+      "Commit": "407034539531cfe8c47fb7e6b7ad36f2728040db"
+    }
+  },
+  {
+    "path": "/workspace/evidence/shopify1-worker3/candidate1/test.app",
+    "name": "Bifrost Shopify - Tests",
+    "id": "435aa982-b3bd-4074-8b2a-f30781c17504",
+    "version": "28.0.0.0",
+    "source": {
+      "RepositoryUrl": "https://github.com/businesscentralal/bc-origo-bifrost-shopify",
+      "Commit": "407034539531cfe8c47fb7e6b7ad36f2728040db"
+    }
+  }
+]

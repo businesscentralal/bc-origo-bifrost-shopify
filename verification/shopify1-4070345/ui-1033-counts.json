@@ -1,0 +1,32 @@
+{
+  "sha": "407034539531cfe8c47fb7e6b7ad36f2728040db",
+  "containerId": "f02cd729a3bd",
+  "owner": "worker-3",
+  "lcid": 1033,
+  "executed": 2,
+  "passed": 2,
+  "failed": 0,
+  "skipped": 0,
+  "scenarios": [
+    "Foundation Setup opens and names Bifrost Shopify in registered-app HTTP notification, without enabling HTTP",
+    "Permission Sets shows exact English Full/Read captions, included Base caption and registration Execute70013400"
+  ],
+  "screenshots": [
+    "ui-permissions-1033.png"
+  ],
+  "evidenceFiles": [
+    "ui-inspect-result.json",
+    "ui-filter-and-settings-result2.json"
+  ],
+  "diagnosticRetries": [
+    {
+      "file": "ui-permissions-menu-result.json",
+      "result": "Locator ambiguity before assertions, scoped main grid"
+    },
+    {
+      "file": "ui-filter-and-settings-result.json",
+      "result": "Filter confirmation has Enter, not an OK button; harness corrected"
+    }
+  ],
+  "at": "2026-11-04T10:40:51.700Z"
+}

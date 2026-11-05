@@ -1,0 +1,25 @@
+{
+  "sha": "407034539531cfe8c47fb7e6b7ad36f2728040db",
+  "containerId": "f02cd729a3bd",
+  "owner": "worker-3",
+  "testAppVersion": "28.0.0.0",
+  "fullSuite": true,
+  "total": 7,
+  "executed": 7,
+  "passed": 7,
+  "failed": 0,
+  "skipped": 0,
+  "errors": 0,
+  "expectedSourceMethods": 7,
+  "methods": [
+    "LicenceAdminOpensSetupEnglish",
+    "LicenceAdminOpensSetupIcelandic",
+    "RegistryContainsShopify",
+    "RegistryCanBeReadTwice",
+    "RegistryDoesNotInventUnknownApp",
+    "ReaderCanReadRegistry",
+    "FullRoleCanReadRegistry"
+  ],
+  "evidencePath": "/workspace/evidence/shopify1-worker3/candidate1-shopify-test-result.json",
+  "at": "2026-11-04T10:31:34.526Z"
+}

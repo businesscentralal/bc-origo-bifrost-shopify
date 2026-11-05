@@ -1,0 +1,15 @@
+{
+  "containerId": "f02cd729a3bd",
+  "owner": "worker-3",
+  "sourceSha": "407034539531cfe8c47fb7e6b7ad36f2728040db",
+  "startedAt": "2026-11-04T10:48:16.812Z",
+  "scope": "Fresh singly owned Shopify1 environment and all test/UI setup fixtures; no foreign resources",
+  "reason": "Developer native/UI verification finished; external CI/tools/floor/docs holds remain. No idle container retention needed for independent review/UAT.",
+  "deleteStatus": 204,
+  "readbackStatus": 404,
+  "readbackAt": "2026-11-04T10:48:17.399Z",
+  "deleted": true,
+  "fixtureCleanupViaOwnedContainerDeletion": true,
+  "foreignResourcesChanged": false,
+  "previousConnectionRestored": true
+}

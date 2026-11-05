@@ -1,0 +1,153 @@
+2026-11-04T10:23:55.6133663Z Current runner version: '2.338.2'
+2026-11-04T10:23:55.6158395Z ##[group]Runner Image Provisioner
+2026-11-04T10:23:55.6159309Z Hosted Compute Agent
+2026-11-04T10:23:55.6159894Z Version: 20261021.618
+2026-11-04T10:23:55.6160605Z Commit: 21505ad2541d5be6135ed84fc33697146cf75b8e
+2026-11-04T10:23:55.6161364Z Build Date: 2026-10-21T00:45:21Z
+2026-11-04T10:23:55.6162098Z Worker ID: {5315a76a-b284-4832-8cd2-0ad3f9d2c9f1}
+2026-11-04T10:23:55.6162875Z Region: westus
+2026-11-04T10:23:55.6163450Z Cloud: Azure
+2026-11-04T10:23:55.6164067Z ##[endgroup]
+2026-11-04T10:23:55.6166054Z ##[group]Operating System
+2026-11-04T10:23:55.6166796Z Ubuntu
+2026-11-04T10:23:55.6167435Z 26.04.1
+2026-11-04T10:23:55.6167961Z LTS
+2026-11-04T10:23:55.6168530Z ##[endgroup]
+2026-11-04T10:23:55.6169093Z ##[group]Runner Image
+2026-11-04T10:23:55.6169812Z Image: ubuntu-26.04
+2026-11-04T10:23:55.6170491Z Version: 20261025.179.1
+2026-11-04T10:23:55.6171748Z Included Software: https://github.com/actions/runner-images/blob/ubuntu26/20261025.179/images/ubuntu/Ubuntu2604-Readme.md
+2026-11-04T10:23:55.6173363Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu26%2F20261025.179
+2026-11-04T10:23:55.6174319Z ##[endgroup]
+2026-11-04T10:23:55.6175929Z ##[group]GITHUB_TOKEN Permissions
+2026-11-04T10:23:55.6177934Z Contents: read
+2026-11-04T10:23:55.6178579Z Metadata: read
+2026-11-04T10:23:55.6179152Z ##[endgroup]
+2026-11-04T10:23:55.6181300Z Secret source: Actions
+2026-11-04T10:23:55.6182239Z Cache mode: write
+2026-11-04T10:23:55.6183290Z Prepare workflow directory
+2026-11-04T10:23:55.6520467Z Prepare all required actions
+2026-11-04T10:23:55.6569722Z Getting action download info
+2026-11-04T10:23:55.9982242Z Download action repository 'actions/checkout@v4' (SHA:11d5960a326750d5838078e36cf38b85af677262)
+2026-11-04T10:23:56.1870107Z Complete job name: IcelandicKeywordCounts
+2026-11-04T10:23:56.2731794Z ##[group]Run actions/checkout@v4
+2026-11-04T10:23:56.2732715Z with:
+2026-11-04T10:23:56.2733293Z   repository: businesscentralal/bc-origo-bifrost-shopify
+2026-11-04T10:23:56.2737704Z   token: ***
+2026-11-04T10:23:56.2738184Z   ssh-strict: true
+2026-11-04T10:23:56.2738651Z   ssh-user: git
+2026-11-04T10:23:56.2739127Z   persist-credentials: true
+2026-11-04T10:23:56.2739638Z   clean: true
+2026-11-04T10:23:56.2740126Z   sparse-checkout-cone-mode: true
+2026-11-04T10:23:56.2740679Z   fetch-depth: 1
+2026-11-04T10:23:56.2741159Z   fetch-tags: false
+2026-11-04T10:23:56.2741649Z   show-progress: true
+2026-11-04T10:23:56.2742131Z   lfs: false
+2026-11-04T10:23:56.2742574Z   submodules: false
+2026-11-04T10:23:56.2743055Z   set-safe-directory: true
+2026-11-04T10:23:56.2743592Z   allow-unsafe-pr-checkout: false
+2026-11-04T10:23:56.2744399Z ##[endgroup]
+2026-11-04T10:23:56.5429093Z Syncing repository: businesscentralal/bc-origo-bifrost-shopify
+2026-11-04T10:23:56.5431424Z ##[group]Getting Git version info
+2026-11-04T10:23:56.5432503Z Working directory is '/home/runner/work/bc-origo-bifrost-shopify/bc-origo-bifrost-shopify'
+2026-11-04T10:23:56.5434038Z [command]/usr/bin/git version
+2026-11-04T10:23:56.5467098Z git version 2.56.0
+2026-11-04T10:23:56.5492541Z ##[endgroup]
+2026-11-04T10:23:56.5508743Z Temporarily overriding HOME='/home/runner/work/_temp/f4763a35-693a-460d-8161-07afad834730' before making global git config changes
+2026-11-04T10:23:56.5511176Z Adding repository directory to the temporary git global config as a safe directory
+2026-11-04T10:23:56.5516744Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/bc-origo-bifrost-shopify/bc-origo-bifrost-shopify
+2026-11-04T10:23:56.5585571Z Deleting the contents of '/home/runner/work/bc-origo-bifrost-shopify/bc-origo-bifrost-shopify'
+2026-11-04T10:23:56.5588749Z ##[group]Initializing the repository
+2026-11-04T10:23:56.5593748Z [command]/usr/bin/git init /home/runner/work/bc-origo-bifrost-shopify/bc-origo-bifrost-shopify
+2026-11-04T10:23:56.5718878Z hint: Using 'master' as the name for the initial branch. This default branch name
+2026-11-04T10:23:56.5720642Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+2026-11-04T10:23:56.5722295Z hint: to use in all of your new repositories, which will suppress this warning,
+2026-11-04T10:23:56.5723354Z hint: call:
+2026-11-04T10:23:56.5723982Z hint:
+2026-11-04T10:23:56.5725031Z hint: 	git config --global init.defaultBranch <name>
+2026-11-04T10:23:56.5726058Z hint:
+2026-11-04T10:23:56.5726919Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2026-11-04T10:23:56.5728226Z hint: 'development'. The just-created branch can be renamed via this command:
+2026-11-04T10:23:56.5729299Z hint:
+2026-11-04T10:23:56.5730036Z hint: 	git branch -m <name>
+2026-11-04T10:23:56.5730776Z hint:
+2026-11-04T10:23:56.5731676Z hint: Disable this message with "git config set advice.defaultBranchName false"
+2026-11-04T10:23:56.5740382Z Initialized empty Git repository in /home/runner/work/bc-origo-bifrost-shopify/bc-origo-bifrost-shopify/.git/
+2026-11-04T10:23:56.5751565Z [command]/usr/bin/git remote add origin https://github.com/businesscentralal/bc-origo-bifrost-shopify
+2026-11-04T10:23:56.5825773Z ##[endgroup]
+2026-11-04T10:23:56.5828148Z ##[group]Disabling automatic garbage collection
+2026-11-04T10:23:56.5830188Z [command]/usr/bin/git config --local gc.auto 0
+2026-11-04T10:23:56.5870685Z ##[endgroup]
+2026-11-04T10:23:56.5872421Z ##[group]Setting up auth
+2026-11-04T10:23:56.5879950Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-11-04T10:23:56.5930927Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-11-04T10:23:56.6426793Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-11-04T10:23:56.6467551Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-11-04T10:23:56.6751197Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-11-04T10:23:56.6794304Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-11-04T10:23:56.7089172Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2026-11-04T10:23:56.7133620Z ##[endgroup]
+2026-11-04T10:23:56.7135644Z ##[group]Fetching the repository
+2026-11-04T10:23:56.7148052Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +e09886c2e31229aa5745be97f6370c913b125b7a:refs/remotes/pull/40/merge
+2026-11-04T10:23:57.1314110Z From https://github.com/businesscentralal/bc-origo-bifrost-shopify
+2026-11-04T10:23:57.1315962Z  * [new ref]         e09886c2e31229aa5745be97f6370c913b125b7a -> pull/40/merge
+2026-11-04T10:23:57.1319926Z ##[endgroup]
+2026-11-04T10:23:57.1321296Z ##[group]Determining the checkout info
+2026-11-04T10:23:57.1322858Z ##[endgroup]
+2026-11-04T10:23:57.1328847Z [command]/usr/bin/git sparse-checkout disable
+2026-11-04T10:23:57.1380357Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2026-11-04T10:23:57.1418017Z ##[group]Checking out the ref
+2026-11-04T10:23:57.1421597Z [command]/usr/bin/git checkout --progress --force refs/remotes/pull/40/merge
+2026-11-04T10:23:57.1622590Z Note: switching to 'refs/remotes/pull/40/merge'.
+2026-11-04T10:23:57.1624187Z 
+2026-11-04T10:23:57.1625183Z You are in 'detached HEAD' state. You can look around, make experimental
+2026-11-04T10:23:57.1626336Z changes and commit them, and you can discard any commits you make in this
+2026-11-04T10:23:57.1627385Z state without impacting any branches by switching back to a branch.
+2026-11-04T10:23:57.1628208Z 
+2026-11-04T10:23:57.1628741Z If you want to create a new branch to retain commits you create, you may
+2026-11-04T10:23:57.1629749Z do so (now or later) by using -c with the switch command. Example:
+2026-11-04T10:23:57.1630558Z 
+2026-11-04T10:23:57.1630858Z   git switch -c <new-branch-name>
+2026-11-04T10:23:57.1631238Z 
+2026-11-04T10:23:57.1631538Z Or undo this operation with:
+2026-11-04T10:23:57.1631895Z 
+2026-11-04T10:23:57.1632169Z   git switch -
+2026-11-04T10:23:57.1632445Z 
+2026-11-04T10:23:57.1632958Z Turn off this advice by setting config variable advice.detachedHead to false
+2026-11-04T10:23:57.1633584Z 
+2026-11-04T10:23:57.1634478Z HEAD is now at e09886c Merge 407034539531cfe8c47fb7e6b7ad36f2728040db into 13b1e3f3e2bede7157ba567a9683e746d5bf72f5
+2026-11-04T10:23:57.1637591Z ##[endgroup]
+2026-11-04T10:23:57.1639427Z [command]/usr/bin/git log -1 --format=%H
+2026-11-04T10:23:57.1640272Z e09886c2e31229aa5745be97f6370c913b125b7a
+2026-11-04T10:23:57.1879055Z ##[group]Run ./tools/Test-IcelandicKeywordCounts.ps1 -SelfTest
+2026-11-04T10:23:57.1880138Z [36;1m./tools/Test-IcelandicKeywordCounts.ps1 -SelfTest[0m
+2026-11-04T10:23:57.2014618Z shell: /usr/bin/pwsh -command ". '{0}'"
+2026-11-04T10:23:57.2015730Z ##[endgroup]
+2026-11-04T10:24:02.0950300Z Self-test passed: short lists, a missing is-IS= text, repeats and a short xlf target are reported; longer and equal lists are accepted.
+2026-11-04T10:24:02.2807828Z ##[group]Run ./tools/Test-IcelandicKeywordCounts.ps1
+2026-11-04T10:24:02.2808342Z [36;1m./tools/Test-IcelandicKeywordCounts.ps1[0m
+2026-11-04T10:24:02.2856273Z shell: /usr/bin/pwsh -command ". '{0}'"
+2026-11-04T10:24:02.2856665Z ##[endgroup]
+2026-11-04T10:24:03.3002409Z [31;1mException: [0m/home/runner/work/bc-origo-bifrost-shopify/bc-origo-bifrost-shopify/tools/Test-IcelandicKeywordCounts.ps1:161[0m
+2026-11-04T10:24:03.3003813Z [31;1m[0m[36;1mLine |[0m
+2026-11-04T10:24:03.3005188Z [31;1m[0m[36;1m[36;1m 161 | [0m … ed -eq 0) { [36;1mthrow "No KeywordsLbl found under $AppFolder - the guard [0m …[0m
+2026-11-04T10:24:03.3006675Z [31;1m[0m[36;1m[36;1m[0m[36;1m[0m[36;1m     | [31;1m               ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+2026-11-04T10:24:03.3007969Z [31;1m[0m[36;1m[36;1m[0m[36;1m[0m[36;1m[31;1m[31;1m[36;1m     | [31;1mNo KeywordsLbl found under[0m
+2026-11-04T10:24:03.3009153Z [31;1m[0m[36;1m[36;1m[0m[36;1m[0m[36;1m[31;1m[31;1m[36;1m[31;1m[36;1m     | [31;1m/home/runner/work/bc-origo-bifrost-shopify/bc-origo-bifrost-shopify/tools/../app - the guard checked nothing.[0m
+2026-11-04T10:24:03.3414452Z ##[error]Process completed with exit code 1.
+2026-11-04T10:24:03.3554656Z Post job cleanup.
+2026-11-04T10:24:03.4428668Z [command]/usr/bin/git version
+2026-11-04T10:24:03.4474532Z git version 2.56.0
+2026-11-04T10:24:03.4514095Z Temporarily overriding HOME='/home/runner/work/_temp/cd760fdb-b051-437e-bf23-f47e82879614' before making global git config changes
+2026-11-04T10:24:03.4516022Z Adding repository directory to the temporary git global config as a safe directory
+2026-11-04T10:24:03.4520515Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/bc-origo-bifrost-shopify/bc-origo-bifrost-shopify
+2026-11-04T10:24:03.4562011Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-11-04T10:24:03.4602492Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-11-04T10:24:03.4943440Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-11-04T10:24:03.4969913Z http.https://github.com/.extraheader
+2026-11-04T10:24:03.4996073Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2026-11-04T10:24:03.5032934Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-11-04T10:24:03.5375428Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-11-04T10:24:03.5413648Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-11-04T10:24:03.5852503Z Cleaning up orphan processes
+2026-11-04T10:24:03.6229698Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/

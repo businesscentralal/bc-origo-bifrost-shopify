@@ -1,0 +1,12 @@
+{
+  "sha": "407034539531cfe8c47fb7e6b7ad36f2728040db",
+  "containerId": "f02cd729a3bd",
+  "touchedMessageTypes": [],
+  "notApplicableReason": "Issue1 installs Foundation registration and permission roles only. No Message Type enum extensions, message implementation/discovery/contracts or dispatch code exist in this candidate. No message type has been introduced or changed; message scope remains separate issue2. Seven native registry/setup tests and bilingual Web Client checks provide scaffold acceptance; no MCP message-type pass is claimed.",
+  "typesExecuted": 0,
+  "passed": 0,
+  "failed": 0,
+  "skipped": 0,
+  "createsOwnData": "Not applicable: no message-type scenarios",
+  "customerOrSharedFixturesUsed": false
+}

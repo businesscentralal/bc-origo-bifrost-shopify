@@ -1,0 +1,42 @@
+[
+  {
+    "name": "Test-NoClientCallstack",
+    "exitCode": 0,
+    "at": "2026-11-04T10:17:37.898Z"
+  },
+  {
+    "name": "Test-ValidatedTableView",
+    "exitCode": 0,
+    "at": "2026-11-04T10:17:39.763Z"
+  },
+  {
+    "name": "Test-NoObsolete",
+    "exitCode": 0,
+    "at": "2026-11-04T10:17:41.618Z"
+  },
+  {
+    "name": "Test-PermissionCoverage",
+    "exitCode": 0,
+    "at": "2026-11-04T10:17:43.484Z"
+  },
+  {
+    "name": "Test-HelpLinks",
+    "exitCode": 0,
+    "at": "2026-11-04T10:17:45.278Z"
+  },
+  {
+    "name": "Test-ObjectIdsUnique",
+    "exitCode": 0,
+    "at": "2026-11-04T10:17:47.104Z"
+  },
+  {
+    "name": "Test-MixedLanguageLabels",
+    "exitCode": 0,
+    "at": "2026-11-04T10:17:48.999Z"
+  },
+  {
+    "name": "Test-IcelandicKeywordCounts",
+    "exitCode": 1,
+    "at": "2026-11-04T10:17:51.224Z"
+  }
+]

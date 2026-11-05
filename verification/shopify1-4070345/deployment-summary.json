@@ -1,0 +1,55 @@
+{
+  "sha": "407034539531cfe8c47fb7e6b7ad36f2728040db",
+  "owner": "worker-3",
+  "containerId": "f02cd729a3bd",
+  "deployedAt": "2026-11-04T10:27:46.314Z",
+  "artifacts": {
+    "app": {
+      "sha": "407034539531cfe8c47fb7e6b7ad36f2728040db",
+      "dirty": "",
+      "startedAt": "2026-11-04T10:21:36.036Z",
+      "finishedAt": "2026-11-04T10:21:45.224Z",
+      "exitCode": 0,
+      "errors": 0,
+      "warnings": 0,
+      "artifactSha256": "6c313f6c1611e01565cd94f3478427fb3a39004b274bcdfa99086ffbe09a1b91"
+    },
+    "test": {
+      "sha": "407034539531cfe8c47fb7e6b7ad36f2728040db",
+      "dirty": "",
+      "startedAt": "2026-11-04T10:21:45.344Z",
+      "finishedAt": "2026-11-04T10:21:54.696Z",
+      "exitCode": 0,
+      "errors": 0,
+      "warnings": 0,
+      "artifactSha256": "b0e8fb85812f925dbbd7c524651dba39c3f1f327bab2f8923b0950474b13c709"
+    }
+  },
+  "foundation": {
+    "version": "28.0.11.669",
+    "sourceSha": "a99232fbbe8bba3d18d39a24b8cfa2a06ea3376e",
+    "testArtifactId": 13308792170
+  },
+  "installed": [
+    {
+      "name": "Bifrost Shopify",
+      "version": "28.0.0.0",
+      "id": "61a67425-c1e2-45e1-85b5-9e01488f6c1d"
+    },
+    {
+      "name": "Bifrost Shopify - Tests",
+      "version": "28.0.0.0",
+      "id": "435aa982-b3bd-4074-8b2a-f30781c17504"
+    },
+    {
+      "name": "Bifrost Foundation",
+      "version": "28.0.11.669",
+      "id": "7505e808-6e52-4b96-a328-82573391297a"
+    },
+    {
+      "name": "Bifrost Foundation - Tests",
+      "version": "28.0.11.669",
+      "id": "9db1a0c9-c503-4793-a9e4-bcda3d3f3c94"
+    }
+  ]
+}

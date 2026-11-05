@@ -1,0 +1,16 @@
+{
+  "sha": "407034539531cfe8c47fb7e6b7ad36f2728040db",
+  "containerId": "f02cd729a3bd",
+  "foundationSourceSha": "a99232fbbe8bba3d18d39a24b8cfa2a06ea3376e",
+  "foundationVersion": "28.0.11.669",
+  "testCodeunit": 98677,
+  "scope": "Entire required Foundation98677 codeunit with Shopify installed; not full Foundation suite",
+  "executed": 23,
+  "passed": 23,
+  "failed": 0,
+  "skipped": 0,
+  "requiredSyncFunctionPassed": true,
+  "exactRoleEnglishAndIcelandicPassed": true,
+  "evidencePath": "/workspace/evidence/shopify1-worker3/candidate1-foundation98677-test-result.json",
+  "at": "2026-11-04T10:34:05.466Z"
+}
