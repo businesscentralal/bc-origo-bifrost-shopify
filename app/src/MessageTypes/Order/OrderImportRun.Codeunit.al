@@ -14,6 +14,19 @@ codeunit 70013411 "Order Import Run ori"
         ShopCode: Code[20];
 
     trigger OnRun()
+    begin
+        RunReport();
+    end;
+
+    /// <summary>Runs the Shopify report; a failure is reported as false with GetLastErrorText.</summary>
+    /// <returns>True when the report ran to the end.</returns>
+    [TryFunction]
+    procedure TryRunReport()
+    begin
+        RunReport();
+    end;
+
+    local procedure RunReport()
     var
         Shop: Record "Shpfy Shop";
         RequestPageXml: Text;

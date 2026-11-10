@@ -260,7 +260,7 @@ codeunit 70013410 "Order Import Impl ori" implements "Msg Interface ori", "Msg D
         // The Shopify report fetches, imports and maps the orders and commits along the way.
         OrderImportRun.SetShopCode(Shop.Code);
         ClearLastError();
-        if not OrderImportRun.Run() then begin
+        if not OrderImportRun.TryRunReport() then begin
             ErrorText := GetLastErrorText();
             Argument.RespondWithError("Bifrost Error Code ori"::BusinessCentralError, StrSubstNo(RefusedErr, Shop.Code, ErrorText), 'shopCode', Shop.Code, ImportedExpectedLbl, FixCauseLbl);
             exit;
