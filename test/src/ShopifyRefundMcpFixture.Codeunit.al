@@ -27,8 +27,8 @@ codeunit 97402 "Shopify Refund MCP Fixture ori"
     var
         Shop: Record "Shpfy Shop";
         Customer: Record Customer;
-        LibrarySales: Codeunit "Library - Sales";
         GLAccount: Record "G/L Account";
+        LibrarySales: Codeunit "Library - Sales";
     begin
         RemoveAll();
         LibrarySales.CreateCustomer(Customer);
