@@ -64,9 +64,9 @@
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit Order CreateSalesDoc Impl ori - Method ExecuteBifrostTask - NamedType ImportedExpectedLbl</note>
         </trans-unit>
         <trans-unit id="Codeunit 4087984018 - Method 3571782927 - NamedType 1220520351" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Import the order first with Shopify.Order.Import, or read table 30118 with Data.Records.Get.</source>
-          <target>Fluttu pöntunina fyrst inn með Shopify.Order.Import eða lestu töflu 30118 með Data.Records.Get.</target>
-          <note from="Developer" annotates="general" priority="2">is-IS=Fluttu pöntunina fyrst inn með Shopify.Order.Import eða lestu töflu 30118 með Data.Records.Get.</note>
+          <source>Import the order from Shopify first, or read table 30118 with Data.Records.Get.</source>
+          <target>Fluttu pöntunina fyrst inn frá Shopify eða lestu töflu 30118 með Data.Records.Get.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Fluttu pöntunina fyrst inn frá Shopify eða lestu töflu 30118 með Data.Records.Get.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit Order CreateSalesDoc Impl ori - Method ExecuteBifrostTask - NamedType ImportFirstLbl</note>
         </trans-unit>
         <trans-unit id="Codeunit 4087984018 - Method 3571782927 - NamedType 4268774073" size-unit="char" translate="yes" xml:space="preserve">

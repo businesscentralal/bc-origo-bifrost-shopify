@@ -115,7 +115,7 @@ codeunit 70013470 "Order CreateSalesDoc Impl ori" implements "Msg Interface ori"
     begin
         Errors.Add(ContractMgt.ErrorEntry("Bifrost Error Code ori"::MissingParameter, 'Parameter "shopifyOrderId" is required.', 'The request has no shopifyOrderId. Nothing was changed.', 'Send data.shopifyOrderId with the Shopify Order Id.'));
         Errors.Add(ContractMgt.ErrorEntry("Bifrost Error Code ori"::InvalidParameterFormat, 'Parameter "shopifyOrderId" must be a whole number greater than 0.', 'The value is not a positive integer. Nothing was changed.', 'Send the Shopify Order Id as a number.'));
-        Errors.Add(ContractMgt.ErrorEntry("Bifrost Error Code ori"::RecordNotFound, 'Shopify order {id} was not found.', 'No imported order has this Id. Nothing was changed.', 'Import the order first with Shopify.Order.Import, or read table 30118 with Data.Records.Get.'));
+        Errors.Add(ContractMgt.ErrorEntry("Bifrost Error Code ori"::RecordNotFound, 'Shopify order {id} was not found.', 'No imported order has this Id. Nothing was changed.', 'Import the order from Shopify first, or read table 30118 with Data.Records.Get.'));
         Errors.Add(ContractMgt.ErrorEntry("Bifrost Error Code ori"::PreconditionFailed, 'Shopify order {id} is already processed.', 'The order already has a sales document. Nothing was changed.', 'Nothing to do.'));
         Errors.Add(ContractMgt.ErrorEntry("Bifrost Error Code ori"::BusinessCentralError, 'Can not create a sales document for the Shopify order {id}.', 'Business Central refused: the customer or an item cannot be mapped or is blocked, or setup is missing. The order keeps the error text in Has Error and Error Message, and the partly created document is removed.', 'Fix the cause named in the text, then call again.'));
         exit(true);
@@ -154,7 +154,6 @@ codeunit 70013470 "Order CreateSalesDoc Impl ori" implements "Msg Interface ori"
     var
         ContractMgt: Codeunit "Msg Contract Mgt ori";
     begin
-        Related.Add(ContractMgt.RelatedEntry('Shopify.Order.Import', 'The order is not imported from Shopify yet.'));
         Related.Add(ContractMgt.RelatedEntry('Sales.Document.Post', 'You want to post the created sales document.'));
         Related.Add(ContractMgt.RelatedEntry('Data.Records.Get', 'You need to find the order, e.g. table 30118 Shpfy Order Header.'));
         exit(true);
@@ -227,7 +226,7 @@ codeunit 70013470 "Order CreateSalesDoc Impl ori" implements "Msg Interface ori"
         InvalidNextLbl: Label 'Send the Shopify Order Id as a number.', Comment = 'is-IS=Sendu auðkenni Shopify pöntunarinnar sem tölu.';
         NotFoundErr: Label 'Shopify order %1 was not found.', Comment = '%1 = Shopify Order Id||is-IS=Shopify pöntun %1 fannst ekki.';
         ImportedExpectedLbl: Label 'the Id of an imported Shopify order', Comment = 'is-IS=auðkenni innfluttrar Shopify pöntunar';
-        ImportFirstLbl: Label 'Import the order first with Shopify.Order.Import, or read table 30118 with Data.Records.Get.', Comment = 'is-IS=Fluttu pöntunina fyrst inn með Shopify.Order.Import eða lestu töflu 30118 með Data.Records.Get.';
+        ImportFirstLbl: Label 'Import the order from Shopify first, or read table 30118 with Data.Records.Get.', Comment = 'is-IS=Fluttu pöntunina fyrst inn frá Shopify eða lestu töflu 30118 með Data.Records.Get.';
         ProcessedErr: Label 'Shopify order %1 is already processed.', Comment = '%1 = Shopify Order Id||is-IS=Shopify pöntun %1 hefur þegar verið unnin.';
         UnprocessedExpectedLbl: Label 'an order that is not processed', Comment = 'is-IS=pöntun sem hefur ekki verið unnin';
         NothingToDoLbl: Label 'Nothing to do.', Comment = 'is-IS=Ekkert að gera.';
