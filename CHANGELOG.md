@@ -8,3 +8,4 @@
 
 - Bound permission-set captions to 30 characters (70013400–70013402), shortened the Icelandic Full caption, and removed API role extension 70013400 to keep the scaffold aligned with the Subscription Billing roles.
 - Added restricted Read/Full registration checks to test codeunit 97400; assertions run after restoring runner permissions.
+- Added message type `Shopify.Product.SyncPrices` (enum value 70013440, codeunit 70013440): sends the Business Central prices of one shop's mapped products to Shopify through the connector's own price sync (report Shpfy Sync Products with Only Sync Price); granted through `SHOPIFY Full ori` (#9). Tests in codeunit 97440.

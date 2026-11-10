@@ -3,6 +3,126 @@
   <file datatype="xml" source-language="en-US" target-language="is-IS" original="Bifrost Shopify">
     <body>
       <group id="body">
+        <trans-unit id="Codeunit 1060827874 - Method 3571782927 - NamedType 64258721" size-unit="char" translate="yes" xml:space="preserve">
+          <source>You do not have the permissions to send prices to Shopify.</source>
+          <target>Þú hefur ekki heimildir til að senda verð til Shopify.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Þú hefur ekki heimildir til að senda verð til Shopify.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Product SyncPrices Impl ori - Method ExecuteBifrostTask - NamedType NoPermissionErr</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 1060827874 - Method 3571782927 - NamedType 1780497417" size-unit="char" translate="yes" xml:space="preserve">
+          <source>a user with the permission set SHOPIFY Full ori and the Shopify Connector permissions</source>
+          <target>notandi með heimildasettið SHOPIFY Full ori og heimildir Shopify Connector</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=notandi með heimildasettið SHOPIFY Full ori og heimildir Shopify Connector</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Product SyncPrices Impl ori - Method ExecuteBifrostTask - NamedType PermissionExpectedLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 1060827874 - Method 3571782927 - NamedType 3674803952" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Ask an administrator to assign the permission set SHOPIFY Full ori.</source>
+          <target>Biddu kerfisstjóra um að úthluta heimildasettinu SHOPIFY Full ori.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Biddu kerfisstjóra um að úthluta heimildasettinu SHOPIFY Full ori.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Product SyncPrices Impl ori - Method ExecuteBifrostTask - NamedType AskAdminLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 1060827874 - Method 3571782927 - NamedType 1830439019" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Parameter "shopCode" is required.</source>
+          <target>Færibreytan "shopCode" er nauðsynleg.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Færibreytan "shopCode" er nauðsynleg.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Product SyncPrices Impl ori - Method ExecuteBifrostTask - NamedType MissingErr</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 1060827874 - Method 3571782927 - NamedType 3129818787" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Send data.shopCode with the Shopify shop code.</source>
+          <target>Sendu data.shopCode með kóða Shopify verslunarinnar.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Sendu data.shopCode með kóða Shopify verslunarinnar.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Product SyncPrices Impl ori - Method ExecuteBifrostTask - NamedType MissingNextLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 1060827874 - Method 3571782927 - NamedType 1879669363" size-unit="char" translate="yes" xml:space="preserve">
+          <source>a shop code of at most 20 characters</source>
+          <target>kóði verslunar, mest 20 stafir</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=kóði verslunar, mest 20 stafir</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Product SyncPrices Impl ori - Method ExecuteBifrostTask - NamedType TextExpectedLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 1060827874 - Method 3571782927 - NamedType 3177803720" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Parameter "shopCode" must be text of at most 20 characters.</source>
+          <target>Færibreytan "shopCode" verður að vera texti, mest 20 stafir.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Færibreytan "shopCode" verður að vera texti, mest 20 stafir.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Product SyncPrices Impl ori - Method ExecuteBifrostTask - NamedType InvalidErr</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 1060827874 - Method 3571782927 - NamedType 780995952" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Send the Shopify shop code as text.</source>
+          <target>Sendu kóða Shopify verslunarinnar sem texta.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Sendu kóða Shopify verslunarinnar sem texta.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Product SyncPrices Impl ori - Method ExecuteBifrostTask - NamedType InvalidNextLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 1060827874 - Method 3571782927 - NamedType 3351274" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Shopify shop %1 was not found.</source>
+          <target>Shopify verslun %1 fannst ekki.</target>
+          <note from="Developer" annotates="general" priority="2">%1 = Shop code||is-IS=Shopify verslun %1 fannst ekki.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Product SyncPrices Impl ori - Method ExecuteBifrostTask - NamedType NotFoundErr</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 1060827874 - Method 3571782927 - NamedType 1856496999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>the code of an existing Shopify shop</source>
+          <target>kóði Shopify verslunar sem er til</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=kóði Shopify verslunar sem er til</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Product SyncPrices Impl ori - Method ExecuteBifrostTask - NamedType ExistingShopLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 1060827874 - Method 3571782927 - NamedType 1787450605" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Read table 30102 with Data.Records.Get.</source>
+          <target>Lestu töflu 30102 með Data.Records.Get.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Lestu töflu 30102 með Data.Records.Get.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Product SyncPrices Impl ori - Method ExecuteBifrostTask - NamedType FindShopLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 1060827874 - Method 3571782927 - NamedType 2715195543" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Shopify shop %1 is not enabled.</source>
+          <target>Shopify verslun %1 er ekki virk.</target>
+          <note from="Developer" annotates="general" priority="2">%1 = Shop code||is-IS=Shopify verslun %1 er ekki virk.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Product SyncPrices Impl ori - Method ExecuteBifrostTask - NamedType NotEnabledErr</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 1060827874 - Method 3571782927 - NamedType 2430023549" size-unit="char" translate="yes" xml:space="preserve">
+          <source>an enabled Shopify shop</source>
+          <target>virk Shopify verslun</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=virk Shopify verslun</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Product SyncPrices Impl ori - Method ExecuteBifrostTask - NamedType EnabledShopLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 1060827874 - Method 3571782927 - NamedType 4027318585" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Enable the shop on the Shopify Shop Card.</source>
+          <target>Virkjaðu verslunina á Shopify verslunarspjaldinu.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Virkjaðu verslunina á Shopify verslunarspjaldinu.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Product SyncPrices Impl ori - Method ExecuteBifrostTask - NamedType EnableShopLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 1060827874 - Method 3571782927 - NamedType 1603624325" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Can not send the prices of shop %1 to Shopify. %2</source>
+          <target>Ekki er hægt að senda verð verslunar %1 til Shopify. %2</target>
+          <note from="Developer" annotates="general" priority="2">%1 = Shop code, %2 = detailed text||is-IS=Ekki er hægt að senda verð verslunar %1 til Shopify. %2</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Product SyncPrices Impl ori - Method ExecuteBifrostTask - NamedType RefusedErr</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 1060827874 - Method 3571782927 - NamedType 407852933" size-unit="char" translate="yes" xml:space="preserve">
+          <source>a shop Shopify can be reached for</source>
+          <target>verslun sem hægt er að ná sambandi við Shopify fyrir</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=verslun sem hægt er að ná sambandi við Shopify fyrir</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Product SyncPrices Impl ori - Method ExecuteBifrostTask - NamedType SyncExpectedLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 1060827874 - Method 3571782927 - NamedType 2319534536" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Fix the cause named in the text, then call again.</source>
+          <target>Lagaðu orsökina sem textinn nefnir og kallaðu aftur.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Lagaðu orsökina sem textinn nefnir og kallaðu aftur.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Product SyncPrices Impl ori - Method ExecuteBifrostTask - NamedType FixCauseLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 1060827874 - Method 4077369804 - NamedType 3569966352" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Sends the Business Central sales prices of a Shopify shop's products to Shopify.</source>
+          <target>Sendir söluverð Business Central fyrir vörur Shopify verslunar til Shopify.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Sendir söluverð Business Central fyrir vörur Shopify verslunar til Shopify.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Product SyncPrices Impl ori - Method GetDescription - NamedType DescriptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 1060827874 - Method 1027590672 - NamedType 1290244428" size-unit="char" translate="yes" xml:space="preserve">
+          <source>shopify prices, sync prices, send prices to shopify, update shopify prices, prices to shopify</source>
+          <target>shopify verð, samstilla verð, senda verð til shopify, uppfæra shopify verð, verð til shopify</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=shopify verð, samstilla verð, senda verð til shopify, uppfæra shopify verð, verð til shopify</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Product SyncPrices Impl ori - Method GetKeywords - NamedType KeywordsLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 1060827874 - Method 79446908 - NamedType 895773054" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Use to push current sales prices (and compare-at prices and unit costs) of already mapped products to Shopify for one shop. It does not create products or import anything.</source>
+          <target>Notað til að senda núverandi söluverð (og samanburðarverð og einingarkostnað) þegar tengdra vara til Shopify fyrir eina verslun. Býr ekki til vörur og flytur ekkert inn.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Notað til að senda núverandi söluverð (og samanburðarverð og einingarkostnað) þegar tengdra vara til Shopify fyrir eina verslun. Býr ekki til vörur og flytur ekkert inn.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Product SyncPrices Impl ori - Method GetSelectionDescription - NamedType SelectionLbl</note>
+        </trans-unit>
         <trans-unit id="PermissionSet 1311670517 - Property 2879900210" maxwidth="30" size-unit="char" translate="yes" xml:space="preserve">
           <source>Bifrost Shopify Base</source>
           <target>Bifröst Shopify grunnur</target>
