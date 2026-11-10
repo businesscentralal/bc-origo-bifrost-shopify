@@ -8,3 +8,4 @@
 
 - Bound permission-set captions to 30 characters (70013400–70013402), shortened the Icelandic Full caption, and removed API role extension 70013400 to keep the scaffold aligned with the Subscription Billing roles.
 - Added restricted Read/Full registration checks to test codeunit 97400; assertions run after restoring runner permissions.
+- Added message type `Shopify.Order.CreateSalesDocument` (enum value 70013470, codeunit 70013470): creates the sales order or invoice of an imported Shopify order by running Shopify's report Shpfy Create Sales Orders (30103) for that one order; granted through `SHOPIFY Full ori` (#24). Tests in codeunits 97470 and 97471.
