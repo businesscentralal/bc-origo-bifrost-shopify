@@ -132,7 +132,7 @@ codeunit 70013470 "Order CreateSalesDoc Impl ori" implements "Msg Interface ori"
         Preconditions.Add('The shop of the order is enabled.');
         Preconditions.Add('The customer and the items of the order can be mapped, and they are not blocked.');
         Effect.Add('effect', 'write');
-        Effect.Add('changes', 'Runs report 30103 Shpfy Create Sales Orders for this one order (codeunit 30167 Shpfy Process Orders, codeunit 30166 Shpfy Process Order): maps customer and items, inserts a sales order (or a sales invoice for a fulfilled order when the shop creates invoices) with its lines, releases it when the shop auto-releases sales orders, and marks the order Processed. When the shop has Order Attributes To Shopify, the process also writes the BC document number to the Shopify order as an attribute (a call to Shopify). The report also runs the shop''s refund process: when the shop''s Return and Refund Process is Auto Create Credit Memo, it creates credit memos for unprocessed imported refunds. On a refusal the order gets Has Error and Error Message and the partly created document is removed. The Shopify code commits (Commit()) before and after the creation, so the result is kept even if a later step of the message fails.');
+        Effect.Add('changes', 'Runs report 30103 Shpfy Create Sales Orders for this one order (codeunit 30167 Shpfy Process Orders, codeunit 30166 Shpfy Process Order): maps customer and items, inserts a sales order (or a sales invoice for a fulfilled order when the shop creates invoices) with its lines, releases it when the shop auto-releases sales orders, and marks the order Processed. When the shop has Order Attributes To Shopify, the process also writes the BC document number to the Shopify order as an attribute (a call to Shopify). The report also runs the shop''s refund process: when the shop''s Return and Refund Process is Auto Create Credit Memo, it creates credit memos for unprocessed imported refunds. On a refusal of the order the order gets Has Error and Error Message and the partly created document is removed; an error in the refund step after the order is created is not caught by the Shopify code and ends the message with an error, while the committed sales document is kept. The Shopify code commits (Commit()) before and after the creation, so the result is kept even if a later step of the message fails.');
         Effect.Add('idempotent', false);
         Effect.Add('permissionSet', 'SHOPIFY Full ori');
         Effect.Add('preconditions', Preconditions);
@@ -212,12 +212,10 @@ codeunit 70013470 "Order CreateSalesDoc Impl ori" implements "Msg Interface ori"
     var
         OrderHeader: Record "Shpfy Order Header";
         SalesHeader: Record "Sales Header";
-        CreateRun: Codeunit "Order CreateDoc Run ori";
         RequestJson: JsonObject;
         ResponseJson: JsonObject;
         Token: JsonToken;
         OrderIdText: Text;
-        ErrorText: Text;
         OrderId: BigInteger;
         NoPermissionErr: Label 'You do not have the permissions to create sales documents from Shopify orders.', Comment = 'is-IS=Þú hefur ekki heimildir til að búa til sölufylgiskjöl úr Shopify pöntunum.';
         PermissionExpectedLbl: Label 'a user with the permission set SHOPIFY Full ori and the Shopify Connector permissions', Comment = 'is-IS=notandi með heimildasettið SHOPIFY Full ori og heimildir Shopify Connector';
@@ -263,17 +261,11 @@ codeunit 70013470 "Order CreateSalesDoc Impl ori" implements "Msg Interface ori"
         end;
 
         // The standard report maps, checks, creates the document and commits; a refusal is stored on the order.
-        ClearLastError();
-        if CreateRun.Run(OrderHeader) then
-            ErrorText := ''
-        else
-            ErrorText := GetLastErrorText();
+        RunCreateSalesOrders(OrderHeader);
 
         OrderHeader.Get(OrderId);
         if not FindCreatedDocument(OrderHeader, SalesHeader) then begin
-            if OrderHeader."Has Error" then
-                ErrorText := OrderHeader."Error Message";
-            Argument.RespondWithError("Bifrost Error Code ori"::BusinessCentralError, StrSubstNo(RefusedErr, OrderId, ErrorText), 'shopifyOrderId', Format(OrderId, 0, 9), CreatedExpectedLbl, FixCauseLbl);
+            Argument.RespondWithError("Bifrost Error Code ori"::BusinessCentralError, StrSubstNo(RefusedErr, OrderId, OrderHeader."Error Message"), 'shopifyOrderId', Format(OrderId, 0, 9), CreatedExpectedLbl, FixCauseLbl);
             exit;
         end;
         ResponseJson.Add('status', 'Success');
@@ -283,6 +275,21 @@ codeunit 70013470 "Order CreateSalesDoc Impl ori" implements "Msg Interface ori"
         ResponseJson.Add('documentStatus', Format(SalesHeader.Status));
         Argument.SetResponseJson(ResponseJson);
         Argument."Content Type" := Argument.GetContentTypeJson();
+    end;
+
+    local procedure RunCreateSalesOrders(OrderHeader: Record "Shpfy Order Header")
+    var
+        Shop: Record "Shpfy Shop";
+        OrderFilter: Record "Shpfy Order Header";
+        CreateSalesOrders: Report "Shpfy Create Sales Orders";
+    begin
+        // Report 30103 runs codeunit 30167, which runs codeunit 30166 for the order in its own error handling.
+        Shop.SetRange(Code, OrderHeader."Shop Code");
+        OrderFilter.SetRange("Shopify Order Id", OrderHeader."Shopify Order Id");
+        CreateSalesOrders.SetTableView(Shop);
+        CreateSalesOrders.SetTableView(OrderFilter);
+        CreateSalesOrders.UseRequestPage(false);
+        CreateSalesOrders.RunModal();
     end;
 
     local procedure FindCreatedDocument(OrderHeader: Record "Shpfy Order Header"; var SalesHeader: Record "Sales Header"): Boolean
