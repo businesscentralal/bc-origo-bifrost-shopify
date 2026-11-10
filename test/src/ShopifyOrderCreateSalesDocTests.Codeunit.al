@@ -259,11 +259,9 @@ codeunit 97470 "Shpfy Order CreateDoc Test ori"
             if OrderHeader."Sales Invoice No." <> '' then
                 if SalesHeader.Get(SalesHeader."Document Type"::Invoice, OrderHeader."Sales Invoice No.") then
                     SalesHeader.Delete(true);
-            if Customer.Get(OrderHeader."Sell-to Customer No.") then begin
-                Customer.Blocked := Customer.Blocked::" ";
-                Customer.Modify();
-            end;
             OrderHeader.Delete(true);
+            if Customer.Get(OrderHeader."Sell-to Customer No.") then
+                Customer.Delete(true);
         end;
         if Shop.Get(ShopCodeTok) then
             Shop.Delete(true);
