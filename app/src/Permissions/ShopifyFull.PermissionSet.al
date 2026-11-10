@@ -6,4 +6,6 @@ permissionset 70013402 "SHOPIFY Full ori"
     Assignable = true;
     Caption = 'Bifrost Shopify Full', MaxLength = 30, Comment = 'is-IS=Bifröst Shopify allur aðgangur';
     IncludedPermissionSets = "SHOPIFY Read ori";
+    Permissions = codeunit "Product CreateItem Impl ori" = X,
+                  codeunit "Product CreateItem Run ori" = X;
 }
