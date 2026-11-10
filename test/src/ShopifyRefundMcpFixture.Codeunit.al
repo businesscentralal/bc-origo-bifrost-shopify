@@ -35,7 +35,6 @@ codeunit 97402 "Shopify Refund MCP Fixture ori"
         Shop.Init();
         Shop.Code := ShopCodeTok;
         Shop.Insert();
-        Shop."Process Returns As" := Shop."Process Returns As"::"Credit Memo";
         Shop."Return and Refund Process" := Shop."Return and Refund Process"::"Auto Create Credit Memo";
         // An existing posting account is reused: the fixture creates no G/L account, so none has to be deleted.
         GLAccount.SetRange("Account Type", GLAccount."Account Type"::Posting);

@@ -180,7 +180,6 @@ codeunit 97401 "Shopify Refund Tests ori"
         Shop.Init();
         Shop.Code := CopyStr(ShopCodeTok, 1, MaxStrLen(Shop.Code));
         Shop.Insert();
-        Shop."Process Returns As" := Shop."Process Returns As"::"Credit Memo";
         if AutoCreate then
             Shop."Return and Refund Process" := Shop."Return and Refund Process"::"Auto Create Credit Memo"
         else
