@@ -1,0 +1,44 @@
+[
+  {
+    "type": "codeunit",
+    "name": "Shopify Registration ori",
+    "old": 70013400,
+    "new": 73731950,
+    "path": "app/src/Common/ShopifyRegistration.Codeunit.al"
+  },
+  {
+    "type": "permissionset",
+    "name": "SHOPIFY Base ori",
+    "old": 70013400,
+    "new": 73731950,
+    "path": "app/src/Permissions/ShopifyBase.PermissionSet.al"
+  },
+  {
+    "type": "permissionset",
+    "name": "SHOPIFY Full ori",
+    "old": 70013402,
+    "new": 73731952,
+    "path": "app/src/Permissions/ShopifyFull.PermissionSet.al"
+  },
+  {
+    "type": "permissionsetextension",
+    "name": "Shopify Full ori",
+    "old": 70013402,
+    "new": 73731952,
+    "path": "app/src/Permissions/ShopifyFull.PermissionSetExt.al"
+  },
+  {
+    "type": "permissionset",
+    "name": "SHOPIFY Read ori",
+    "old": 70013401,
+    "new": 73731951,
+    "path": "app/src/Permissions/ShopifyRead.PermissionSet.al"
+  },
+  {
+    "type": "permissionsetextension",
+    "name": "Shopify Read ori",
+    "old": 70013401,
+    "new": 73731951,
+    "path": "app/src/Permissions/ShopifyRead.PermissionSetExt.al"
+  }
+]

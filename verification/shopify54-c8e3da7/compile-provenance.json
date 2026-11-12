@@ -1,0 +1,38 @@
+[
+  {
+    "sha": "c8e3da7a3877dd78f30a8107624f94f7532ce769",
+    "lane": "app",
+    "exitCode": 0,
+    "errors": 0,
+    "warnings": 0,
+    "command": [
+      "/opt/devtools/dotnet/dotnet",
+      "/opt/devtools/al-language/extension/bin/alc.dll",
+      "/project:/workspace/private/worker-5/shopify54-source/app",
+      "/packagecachepath:/workspace/private/worker-5/shopify54-evidence/symbols",
+      "/out:/workspace/private/worker-5/shopify54-evidence/app.app",
+      "/sourcerepositoryurl:https://github.com/businesscentralal/bc-origo-bifrost-shopify",
+      "/sourcecommit:c8e3da7a3877dd78f30a8107624f94f7532ce769",
+      "/analyzer:/opt/devtools/al-language/extension/bin/Microsoft.Dynamics.Nav.CodeCop.dll,/opt/devtools/al-language/extension/bin/Microsoft.Dynamics.Nav.UICop.dll,/opt/devtools/al-language/extension/bin/Microsoft.Dynamics.Nav.AppSourceCop.dll"
+    ],
+    "artifactSha256": "faaef826a7ebafbf6cf81aa6b50ef0112c2cc4972173cdcb2a01f2535d7f4d7e"
+  },
+  {
+    "sha": "c8e3da7a3877dd78f30a8107624f94f7532ce769",
+    "lane": "test",
+    "exitCode": 0,
+    "errors": 0,
+    "warnings": 0,
+    "command": [
+      "/opt/devtools/dotnet/dotnet",
+      "/opt/devtools/al-language/extension/bin/alc.dll",
+      "/project:/workspace/private/worker-5/shopify54-source/test",
+      "/packagecachepath:/workspace/private/worker-5/shopify54-evidence/symbols",
+      "/out:/workspace/private/worker-5/shopify54-evidence/test.app",
+      "/sourcerepositoryurl:https://github.com/businesscentralal/bc-origo-bifrost-shopify",
+      "/sourcecommit:c8e3da7a3877dd78f30a8107624f94f7532ce769",
+      "/analyzer:/opt/devtools/al-language/extension/bin/Microsoft.Dynamics.Nav.CodeCop.dll,/opt/devtools/al-language/extension/bin/Microsoft.Dynamics.Nav.UICop.dll,/opt/devtools/al-language/extension/bin/Microsoft.Dynamics.Nav.AppSourceCop.dll"
+    ],
+    "artifactSha256": "d756ff2976c2a48e12f53f8d607afcb1b5d42aac0ce7dbf4c59e403c925ec188"
+  }
+]

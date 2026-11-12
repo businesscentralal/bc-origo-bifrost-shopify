@@ -1,0 +1,135 @@
+{
+  "sha": "c8e3da7a3877dd78f30a8107624f94f7532ce769",
+  "issue": "https://github.com/businesscentralal/bc-origo-bifrost-shopify/issues/54",
+  "branch": "feat/shopify-1-scaffold",
+  "scope": "Scaffold phase only; stacked PR43\u201351 still pending after CI green",
+  "compile": [
+    {
+      "sha": "c8e3da7a3877dd78f30a8107624f94f7532ce769",
+      "lane": "app",
+      "exitCode": 0,
+      "errors": 0,
+      "warnings": 0,
+      "command": [
+        "/opt/devtools/dotnet/dotnet",
+        "/opt/devtools/al-language/extension/bin/alc.dll",
+        "/project:/workspace/private/worker-5/shopify54-source/app",
+        "/packagecachepath:/workspace/private/worker-5/shopify54-evidence/symbols",
+        "/out:/workspace/private/worker-5/shopify54-evidence/app.app",
+        "/sourcerepositoryurl:https://github.com/businesscentralal/bc-origo-bifrost-shopify",
+        "/sourcecommit:c8e3da7a3877dd78f30a8107624f94f7532ce769",
+        "/analyzer:/opt/devtools/al-language/extension/bin/Microsoft.Dynamics.Nav.CodeCop.dll,/opt/devtools/al-language/extension/bin/Microsoft.Dynamics.Nav.UICop.dll,/opt/devtools/al-language/extension/bin/Microsoft.Dynamics.Nav.AppSourceCop.dll"
+      ],
+      "artifactSha256": "faaef826a7ebafbf6cf81aa6b50ef0112c2cc4972173cdcb2a01f2535d7f4d7e"
+    },
+    {
+      "sha": "c8e3da7a3877dd78f30a8107624f94f7532ce769",
+      "lane": "test",
+      "exitCode": 0,
+      "errors": 0,
+      "warnings": 0,
+      "command": [
+        "/opt/devtools/dotnet/dotnet",
+        "/opt/devtools/al-language/extension/bin/alc.dll",
+        "/project:/workspace/private/worker-5/shopify54-source/test",
+        "/packagecachepath:/workspace/private/worker-5/shopify54-evidence/symbols",
+        "/out:/workspace/private/worker-5/shopify54-evidence/test.app",
+        "/sourcerepositoryurl:https://github.com/businesscentralal/bc-origo-bifrost-shopify",
+        "/sourcecommit:c8e3da7a3877dd78f30a8107624f94f7532ce769",
+        "/analyzer:/opt/devtools/al-language/extension/bin/Microsoft.Dynamics.Nav.CodeCop.dll,/opt/devtools/al-language/extension/bin/Microsoft.Dynamics.Nav.UICop.dll,/opt/devtools/al-language/extension/bin/Microsoft.Dynamics.Nav.AppSourceCop.dll"
+      ],
+      "artifactSha256": "d756ff2976c2a48e12f53f8d607afcb1b5d42aac0ce7dbf4c59e403c925ec188"
+    }
+  ],
+  "fullSuite": {
+    "ok": true,
+    "mode": "local",
+    "exitCode": 0,
+    "durationMs": 28465,
+    "passed": 7,
+    "failed": 0,
+    "skipped": 0,
+    "errors": 0,
+    "cosmoExecTestEndpoint": "none",
+    "local": {
+      "clientServicesUrl": "http://host.docker.internal:8080/BC290/",
+      "serviceUrl": "http://host.docker.internal:8080/BC290/cs?tenant=w129-15&company=CRONUS%20International%20Ltd.",
+      "testAssembliesPath": "/opt/origo-mcp/bc29-test-assemblies"
+    },
+    "stdoutPreview": "[MCP] bc_dev_run_tests local start (native BC, Client Services)\n[MCP] Client Services URL: http://host.docker.internal:8080/BC290/cs?tenant=w129-15&company=CRONUS%20International%20Ltd. (PowerShell 7.6.9)\n[MCP] New-ClientContext + Run-Tests testPage=130455\n[MCP] Walking InnerHandler from Microsoft.Dynamics.Framework.UI.Client.JsonHttpClient+BasicAuthHandler\n[MCP] SSL trust-any on System.Net.Http.HttpClientHandler (depth=2)\n[MCP] Page 130455 filters TestCodeunitRange='' TestCodeunit='' TestRunner='' RequiredTestIsolation=''\nSetting test codeunit range ''\n  Codeunit 97400 Shopify Issue 1 Tests ori Success (0.585 seconds)\n    Testfunction LicenceAdminOpensSetupEnglish Success (0.453 seconds)\n    Testfunction LicenceAdminOpensSetupIcelandic Success (0.097 seconds)\n    Testfunction RegistryContainsShopify Success (0.006 seconds)\n    Testfunction RegistryCanBeReadTwice Success (0.006 seconds)\n    Testfunction RegistryDoesNotInventUnknownApp Success (0.006 seconds)\n    Testfunction ReaderCanReadRegistry Success (0.01 seconds)\n    Testfunction FullRoleCanReadRegistry Success (0.007 seconds)\n[MCP] Tests finished (local Client Services)\n",
+    "stderrPreview": "",
+    "commandPreview": "/opt/origo-mcp/pwsh/pwsh -NoProfile -NonInteractive -File run-tests.ps1 # local Client Services http://host.docker.internal:8080/BC290/cs?tenant=w129-15&company=CRONUS%20International%20Ltd."
+  },
+  "ui": {
+    "sha": "c8e3da7a3877dd78f30a8107624f94f7532ce769",
+    "tenant": "w129-15",
+    "status": "PASSED",
+    "executed": 4,
+    "passed": 4,
+    "failed": 0,
+    "scenarios": [
+      {
+        "lcid": 1033,
+        "name": "Permission Sets lists Shopify Full and Read roles with English captions",
+        "passed": true,
+        "screenshot": "ui-1033-permissions.png"
+      },
+      {
+        "lcid": 1033,
+        "name": "Read includes Base; expanded permission executes new codeunit73731950; old70013400 absent",
+        "passed": true,
+        "screenshot": "ui-1033-read-new-id.png"
+      },
+      {
+        "lcid": 1039,
+        "name": "Permission Sets lists Bifr\u00f6st Shopify allur a\u00f0gangur and Bifr\u00f6st Shopify lestur",
+        "passed": true,
+        "screenshot": "ui-1039-permissions.png"
+      },
+      {
+        "lcid": 1039,
+        "name": "Read includes translated Base; expanded permission executes73731950; old70013400 absent",
+        "passed": true,
+        "screenshot": "ui-1039-read-new-id.png"
+      }
+    ],
+    "languageRestored": 1033,
+    "tool": "playwright MCP",
+    "providerCalls": 0
+  },
+  "mcp": {
+    "touchedMessageTypes": [],
+    "notApplicableReason": "Scaffold contains only app metadata, registration and permissions. No message-type enum/implementation exists in this phase. No live-provider calls or MCP passes claimed."
+  },
+  "deployedArtifactMatchesCompiledSha256": true,
+  "bcVersion": "29.0.54011.55407",
+  "foundation": {
+    "version": "28.0.13.0",
+    "sourceSha": "58efff0fe0b1682f3c8b024aafb1278bda640a74",
+    "alreadyInstalled": true,
+    "notRepublished": true
+  },
+  "gateway": {
+    "passed": 23,
+    "failed": 0
+  },
+  "testRangeUnchanged": "97400\u201397599",
+  "cleanup": {
+    "status": "VERIFIED",
+    "tenantRetained": "w129-15",
+    "testUninstallAndDeleteExtensionData": 204,
+    "testUnpublish": 204,
+    "appUninstallAndDeleteExtensionData": 204,
+    "appUnpublish": 204,
+    "shopifyExtensionsRemaining": 0,
+    "existingFoundationAndOtherAppsPreserved": true,
+    "businessFixturesCreated": 0,
+    "languageRestored": 1033
+  },
+  "remaining": [
+    "Scaffold CI guard blocked by separate tools applicability dependency PR53 and Architect HOLD",
+    "Current-tip BC28.0 floor proof before merge per Gunnar6762921025; worker5 bound to BC29 only",
+    "Stacked PR43\u201351 renumber after scaffold CI green; normal merge history, no rebase/force-push",
+    "Independent current-head verification and review; Architect merge/deployment and postmerge acceptance"
+  ]
+}

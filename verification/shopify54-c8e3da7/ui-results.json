@@ -1,0 +1,37 @@
+{
+  "sha": "c8e3da7a3877dd78f30a8107624f94f7532ce769",
+  "tenant": "w129-15",
+  "status": "PASSED",
+  "executed": 4,
+  "passed": 4,
+  "failed": 0,
+  "scenarios": [
+    {
+      "lcid": 1033,
+      "name": "Permission Sets lists Shopify Full and Read roles with English captions",
+      "passed": true,
+      "screenshot": "ui-1033-permissions.png"
+    },
+    {
+      "lcid": 1033,
+      "name": "Read includes Base; expanded permission executes new codeunit73731950; old70013400 absent",
+      "passed": true,
+      "screenshot": "ui-1033-read-new-id.png"
+    },
+    {
+      "lcid": 1039,
+      "name": "Permission Sets lists Bifr\u00f6st Shopify allur a\u00f0gangur and Bifr\u00f6st Shopify lestur",
+      "passed": true,
+      "screenshot": "ui-1039-permissions.png"
+    },
+    {
+      "lcid": 1039,
+      "name": "Read includes translated Base; expanded permission executes73731950; old70013400 absent",
+      "passed": true,
+      "screenshot": "ui-1039-read-new-id.png"
+    }
+  ],
+  "languageRestored": 1033,
+  "tool": "playwright MCP",
+  "providerCalls": 0
+}

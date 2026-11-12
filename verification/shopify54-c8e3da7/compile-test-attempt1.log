@@ -1,0 +1,10 @@
+Microsoft (R) AL Compiler version 30.0.42.60748
+Copyright (C) Microsoft Corporation. All rights reserved
+
+Compilation started for project 'Bifrost Shopify - Tests' containing '1' files at '19:27:29.360'.
+
+error AL1022: A package with publisher 'Microsoft', name 'Application Test Library', and a version compatible with '29.0.0.0' could not be found in the package cache folders: /workspace/private/worker-5/shopify54-evidence/symbols
+error AL1022: A package with publisher 'Microsoft', name 'System Application Test Library', and a version compatible with '29.0.0.0' could not be found in the package cache folders: /workspace/private/worker-5/shopify54-evidence/symbols
+
+Compilation ended at '19:27:38.710'.
+
