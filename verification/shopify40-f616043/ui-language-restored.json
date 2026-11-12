@@ -1,0 +1,8 @@
+{
+  "content": [
+    {
+      "type": "text",
+      "text": "### Result\n{\"languageRestored\":1033,\"value\":\"English (United States)\"}\n### Ran Playwright code\n```js\nawait (async (page) => { const f=page.frames().find(f=>f!==page.mainFrame()); const value=await f.getByRole('textbox',{name:'Tungumál',exact:true}).textContent(); if(value!=='English (United States)')throw Error('Original language not selected'); await f.getByRole('dialog').last().getByRole('button',{name:'Í lagi',exact:true}).click(); return {languageRestored:1033,value}; })(page);\n```\n### Page\n- Page URL: http://host.docker.internal:8080/BC290/?company=CRONUS%20International%20Ltd.&tenant=w129-17&page=9802&dc=0&bookmark=31_MSMAAACLAgAAAAJ7_1MASABPAFAASQBGAFkAIABGAFUATABMACAATwBSAEk\n- Page Title: Loading http://host.docker.internal:8080/BC290/?company=CRONUS%20International%20Ltd.&tenant=w129-17&page=9802&dc=0\n- Console: 0 errors, 2 warnings"
+    }
+  ]
+}

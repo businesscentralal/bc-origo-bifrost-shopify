@@ -1,0 +1,8 @@
+{
+  "content": [
+    {
+      "type": "text",
+      "text": "{\n  \"fileName\": \"shopify-test.app\",\n  \"bytes\": 10440,\n  \"statusCode\": 200,\n  \"durationMs\": 796,\n  \"developerBaseUrl\": \"http://host.docker.internal:7049/BC290\",\n  \"body\": null,\n  \"ok\": true\n}"
+    }
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "content": [
+    {
+      "type": "text",
+      "text": "### Result\n{\"lcid\":1039,\"captionCheck\":true,\"objectCheck\":true,\"roles\":[\"Bifröst Shopify allur aðgangur\",\"System\",\"Bifrost Shopify\",\"Bifröst Shopify lestur\",\"System\",\"Bifrost Shopify\",\"Shopify – kerfisstjóri\",\"System\",\"Shopify Connector\"],\"permissions\":\"\\t\\nGerð hlutar\\n\\t\\n\\t\\nKenni hlutar\\n\\t\\nHeiti hlutar\\n\\t\\nLesheimild\\n\\t\\nHeimild til að setja inn\\n\\t\\nBreyta heimild\\n\\t\\nHeimild til að eyða\\n\\t\\nHeimild til keyrslu\\n\\t\\nÖryggisafmörkun\\n\\t\\n\\t\\t\\n\\t\\t\\t\\t\\t\\t\\t\\t\\t\\n\\tCodeunit\\t\\n\\t73731950\\tShopify Registration ori\\t \\t \\t \\t \\tJá\\t\\t\",\"included\":\"\\t\\nHeimildasamstæða\\n\\t\\n\\t\\nHeiti\\n\\t\\n\\t\\t\\n\\t\\t\\n\\tSHOPIFY READ ORI\\t\\n\\tBifröst Shopify lestur\\t\"}\n### Ran Playwright code\n```js\nawait (async (page) => { const f=page.frames().find(f=>f!==page.mainFrame()); const roles=await f.getByRole('grid',{name:'Permission Sets',exact:true}).getByRole('textbox').evaluateAll(es=>es.map(e=>e.textContent)); const permissions=await f.getByRole('grid',{name:'Permissions',exact:true}).innerText(); const included=await f.getByRole('grid',{name:'Included Permission Sets',exact:true}).innerText(); if(!roles.includes('Bifröst Shopify allur aðgangur')||!roles.includes('Bifröst Shopify lestur'))throw Error('Icelandic role captions missing'); if(!permissions.includes('73731950')||permissions.includes('70013400'))throw Error('Permission object id mismatch'); await page.screenshot({path:'/workspace/private/worker-7/shopify40-20261112/ui-1039.png'}); return {lcid:1039,captionCheck:true,objectCheck:true,roles,permissions,included}; })(page);\n```"
+    }
+  ]
+}

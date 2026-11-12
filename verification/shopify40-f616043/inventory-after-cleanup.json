@@ -1,0 +1,63 @@
+{
+  "entity": "extensions",
+  "method": "GET",
+  "statusCode": 200,
+  "durationMs": 59,
+  "rowCount": 4,
+  "hasMore": false,
+  "rows": [
+    {
+      "@odata.etag": "W/\"JzIwOzE0NzY3MzM3MjAxMjY0MjM4OTM4MTswMDsn\"",
+      "packageId": "546981d9-850e-46b5-b8d7-11af577bf843",
+      "id": "672df32a-a0c5-4a22-b591-0efa38023e95",
+      "displayName": "Bifrost Attachments",
+      "publisher": "Origo",
+      "versionMajor": 28,
+      "versionMinor": 3,
+      "versionBuild": 3,
+      "versionRevision": 0,
+      "isInstalled": true,
+      "publishedAs": " Dev"
+    },
+    {
+      "@odata.etag": "W/\"JzE5OzMwOTIwMTEzMTY0MDMyMTk2OTMxOzAwOyc=\"",
+      "packageId": "a856ae21-8b1b-481f-be67-fa4aa5e79436",
+      "id": "7cdb530b-b74b-446b-9ece-80e2b911bfb3",
+      "displayName": "Bifrost Attachments - Tests",
+      "publisher": "Origo",
+      "versionMajor": 28,
+      "versionMinor": 3,
+      "versionBuild": 3,
+      "versionRevision": 0,
+      "isInstalled": true,
+      "publishedAs": " Dev"
+    },
+    {
+      "@odata.etag": "W/\"JzE5Ozc0NTcyMjI3NDAzMTczNjk2NjcxOzAwOyc=\"",
+      "packageId": "78df0d33-4642-4efa-94c0-4ea684dbcc45",
+      "id": "7505e808-6e52-4b96-a328-82573391297a",
+      "displayName": "Bifrost Foundation",
+      "publisher": "Origo",
+      "versionMajor": 28,
+      "versionMinor": 0,
+      "versionBuild": 13,
+      "versionRevision": 0,
+      "isInstalled": true,
+      "publishedAs": " Dev"
+    },
+    {
+      "@odata.etag": "W/\"JzIwOzE2NDU5MTg1OTkwNjk0OTQ4OTc4MTswMDsn\"",
+      "packageId": "03e2378d-0d0c-4acb-a954-507fef7836e4",
+      "id": "9db1a0c9-c503-4793-a9e4-bcda3d3f3c94",
+      "displayName": "Bifrost Foundation - Tests",
+      "publisher": "Origo",
+      "versionMajor": 28,
+      "versionMinor": 0,
+      "versionBuild": 13,
+      "versionRevision": 0,
+      "isInstalled": true,
+      "publishedAs": " Dev"
+    }
+  ],
+  "odataContext": "http://host.docker.internal:7048/BC290/api/microsoft/automation/v2.0/$metadata#companies(233157a0-f5bb-f111-85bd-6045bdfdea7c)/extensions"
+}

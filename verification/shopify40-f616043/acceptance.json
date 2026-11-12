@@ -1,0 +1,117 @@
+{
+  "sha": "f616043b883a51fe805f6a0ff9e22d7b4713aa4c",
+  "worker": "worker-7",
+  "displayName": "D\u00e1inn",
+  "scope": "PR40 metadata correction only: .claude object range/table matches existing AL. AL/manifests/tests unchanged fromc8e3da7.",
+  "compile": [
+    {
+      "lane": "app",
+      "sha": "f616043b883a51fe805f6a0ff9e22d7b4713aa4c",
+      "exitCode": 0,
+      "errors": 0,
+      "warnings": 0,
+      "command": [
+        "/opt/devtools/dotnet/dotnet",
+        "/opt/devtools/al-language/extension/bin/alc.dll",
+        "/project:/workspace/private/worker-7/shopify40-20261112/source/app",
+        "/packagecachepath:/workspace/private/worker-7/shopify40-20261112/symbols",
+        "/out:/workspace/private/worker-7/shopify40-20261112/symbols/shopify-app.app",
+        "/sourcerepositoryurl:https://github.com/businesscentralal/bc-origo-bifrost-shopify",
+        "/sourcecommit:f616043b883a51fe805f6a0ff9e22d7b4713aa4c",
+        "/analyzer:/opt/devtools/al-language/extension/bin/Microsoft.Dynamics.Nav.CodeCop.dll,/opt/devtools/al-language/extension/bin/Microsoft.Dynamics.Nav.UICop.dll,/opt/devtools/al-language/extension/bin/Microsoft.Dynamics.Nav.AppSourceCop.dll"
+      ],
+      "artifactSha256": "48cf5d300280db1df938b155191f5539524a5cc9b4e55f612faebce314d8f7a7"
+    },
+    {
+      "lane": "test",
+      "sha": "f616043b883a51fe805f6a0ff9e22d7b4713aa4c",
+      "exitCode": 0,
+      "errors": 0,
+      "warnings": 0,
+      "command": [
+        "/opt/devtools/dotnet/dotnet",
+        "/opt/devtools/al-language/extension/bin/alc.dll",
+        "/project:/workspace/private/worker-7/shopify40-20261112/source/test",
+        "/packagecachepath:/workspace/private/worker-7/shopify40-20261112/symbols",
+        "/out:/workspace/private/worker-7/shopify40-20261112/symbols/shopify-test.app",
+        "/sourcerepositoryurl:https://github.com/businesscentralal/bc-origo-bifrost-shopify",
+        "/sourcecommit:f616043b883a51fe805f6a0ff9e22d7b4713aa4c",
+        "/analyzer:/opt/devtools/al-language/extension/bin/Microsoft.Dynamics.Nav.CodeCop.dll,/opt/devtools/al-language/extension/bin/Microsoft.Dynamics.Nav.UICop.dll,/opt/devtools/al-language/extension/bin/Microsoft.Dynamics.Nav.AppSourceCop.dll"
+      ],
+      "artifactSha256": "df623f715573336b092181fa22674b19d119099df3f3af78611d42bd23c1d404"
+    }
+  ],
+  "tests": {
+    "fullSuite": true,
+    "total": 7,
+    "passed": 7,
+    "failed": 0,
+    "skipped": 0,
+    "tenant": "w129-17",
+    "bcVersion": "29.0.54011.55407"
+  },
+  "ui": {
+    "sha": "f616043b883a51fe805f6a0ff9e22d7b4713aa4c",
+    "status": "PASSED",
+    "executed": 4,
+    "passed": 4,
+    "failed": 0,
+    "lcids": [
+      1033,
+      1039
+    ],
+    "scenarios": [
+      "English Full/Read captions",
+      "English expanded Execute permission points to73731950; old70013400 absent",
+      "Icelandic Full/Read captions",
+      "Icelandic expanded Execute permission points to73731950; old70013400 absent"
+    ],
+    "languageRestored": 1033,
+    "tool": "Playwright MCP via private client",
+    "evidenceFiles": [
+      "ui-1033-result.json",
+      "ui-1039-result.json",
+      "ui-1033.png",
+      "ui-1039.png"
+    ]
+  },
+  "mcp": {
+    "touchedMessageTypes": [],
+    "notApplicableReason": "Scaffold registration/permissions only; this amendment changes object allocation documentation. No message implementation or type exists;0 MCP message passes claimed."
+  },
+  "cleanup": {
+    "status": "VERIFIED",
+    "shopifyExtensionsRemaining": 0,
+    "uninstallAndDeleteExtensionData": [
+      204,
+      204
+    ],
+    "unpublish": [
+      204,
+      204
+    ],
+    "businessFixturesCreated": 0,
+    "licensingStateWrites": 0,
+    "providerCalls": 0,
+    "foundationAndAttachmentsPreserved": true,
+    "tenantRetained": "w129-17"
+  },
+  "gateway": {
+    "passed": 23,
+    "failed": 0
+  },
+  "foundationAc05": {
+    "status": "NOT_RUN",
+    "passed": 0,
+    "reason": "Installed Foundation98677 LicAdm_Sync invokes licensing refresh after quota/environment-override writes; no provider/licensing-state mutation authorized for this amendment. Existing Shopify7 tests prove read-only setup paths, not LicAdm_Sync."
+  },
+  "remaining": [
+    "Architect resolve tools HOLD via separate PR53; do not patch tooling inPR40",
+    "BC28.0 exact-tip compile/fullsuite proof perGunnar6762921025;BC29 proof does not count",
+    "Safe authorized AC05 Foundation98677 sync proof/disposition",
+    "Fresh paired CI for this doc-only tip; old CI is historical",
+    "Independent current-head verification/review/approval and Architect merge/deployment remain"
+  ],
+  "notDelivery": true,
+  "recordedAt": "2026-11-12T23:34:17.011276+00:00"
+}

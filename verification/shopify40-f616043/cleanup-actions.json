@@ -1,0 +1,70 @@
+[
+  {
+    "id": "435aa982-b3bd-4074-8b2a-f30781c17504",
+    "packageId": "7d8e2976-ade2-40fa-8772-4e73e9154894",
+    "action": "uninstallAndDeleteExtensionData",
+    "result": {
+      "entity": "extensions(7d8e2976-ade2-40fa-8772-4e73e9154894)/Microsoft.NAV.uninstallAndDeleteExtensionData",
+      "method": "POST",
+      "statusCode": 204,
+      "durationMs": 280,
+      "boundAction": {
+        "entitySet": "extensions",
+        "key": "7d8e2976-ade2-40fa-8772-4e73e9154894",
+        "action": "Microsoft.NAV.uninstallAndDeleteExtensionData"
+      },
+      "ok": true
+    }
+  },
+  {
+    "id": "435aa982-b3bd-4074-8b2a-f30781c17504",
+    "packageId": "7d8e2976-ade2-40fa-8772-4e73e9154894",
+    "action": "unpublish",
+    "result": {
+      "entity": "extensions(7d8e2976-ade2-40fa-8772-4e73e9154894)/Microsoft.NAV.unpublish",
+      "method": "POST",
+      "statusCode": 204,
+      "durationMs": 269,
+      "boundAction": {
+        "entitySet": "extensions",
+        "key": "7d8e2976-ade2-40fa-8772-4e73e9154894",
+        "action": "Microsoft.NAV.unpublish"
+      },
+      "ok": true
+    }
+  },
+  {
+    "id": "61a67425-c1e2-45e1-85b5-9e01488f6c1d",
+    "packageId": "f01a2970-7886-49aa-8bcd-a0b238082a67",
+    "action": "uninstallAndDeleteExtensionData",
+    "result": {
+      "entity": "extensions(f01a2970-7886-49aa-8bcd-a0b238082a67)/Microsoft.NAV.uninstallAndDeleteExtensionData",
+      "method": "POST",
+      "statusCode": 204,
+      "durationMs": 239,
+      "boundAction": {
+        "entitySet": "extensions",
+        "key": "f01a2970-7886-49aa-8bcd-a0b238082a67",
+        "action": "Microsoft.NAV.uninstallAndDeleteExtensionData"
+      },
+      "ok": true
+    }
+  },
+  {
+    "id": "61a67425-c1e2-45e1-85b5-9e01488f6c1d",
+    "packageId": "f01a2970-7886-49aa-8bcd-a0b238082a67",
+    "action": "unpublish",
+    "result": {
+      "entity": "extensions(f01a2970-7886-49aa-8bcd-a0b238082a67)/Microsoft.NAV.unpublish",
+      "method": "POST",
+      "statusCode": 204,
+      "durationMs": 278,
+      "boundAction": {
+        "entitySet": "extensions",
+        "key": "f01a2970-7886-49aa-8bcd-a0b238082a67",
+        "action": "Microsoft.NAV.unpublish"
+      },
+      "ok": true
+    }
+  }
+]

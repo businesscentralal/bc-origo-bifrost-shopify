@@ -1,0 +1,134 @@
+[
+  {
+    "file": "Microsoft.Any.1.0.0.0.app",
+    "app": "Any",
+    "version": "29.0.54011.55407",
+    "source": {
+      "RepositoryUrl": "https://github.com/microsoft/BCApps",
+      "Commit": "78a0c5d5579df4bb80ed3a552b01e2695b857e30"
+    }
+  },
+  {
+    "file": "Microsoft.Application.28.0.0.0.app",
+    "app": "Application",
+    "version": "29.0.54011.55407",
+    "source": {}
+  },
+  {
+    "file": "Microsoft.Application_Test_Library.29.0.0.0.app",
+    "app": "Application Test Library",
+    "version": "29.0.54011.55407",
+    "source": {}
+  },
+  {
+    "file": "Microsoft.Base_Application.28.0.0.0.app",
+    "app": "Base Application",
+    "version": "29.0.54011.55407",
+    "source": {}
+  },
+  {
+    "file": "Microsoft.Business_Foundation.29.0.0.0.app",
+    "app": "Business Foundation",
+    "version": "29.0.54011.55407",
+    "source": {
+      "RepositoryUrl": "https://github.com/microsoft/BCApps",
+      "Commit": "78a0c5d5579df4bb80ed3a552b01e2695b857e30"
+    }
+  },
+  {
+    "file": "Microsoft.Library_Assert.1.0.0.0.app",
+    "app": "Library Assert",
+    "version": "29.0.54011.55407",
+    "source": {
+      "RepositoryUrl": "https://github.com/microsoft/BCApps",
+      "Commit": "78a0c5d5579df4bb80ed3a552b01e2695b857e30"
+    }
+  },
+  {
+    "file": "Microsoft.Library_Variable_Storage.1.0.0.0.app",
+    "app": "Library Variable Storage",
+    "version": "29.0.54011.55407",
+    "source": {
+      "RepositoryUrl": "https://github.com/microsoft/BCApps",
+      "Commit": "78a0c5d5579df4bb80ed3a552b01e2695b857e30"
+    }
+  },
+  {
+    "file": "Microsoft.Permissions_Mock.1.0.0.0.app",
+    "app": "Permissions Mock",
+    "version": "29.0.54011.55407",
+    "source": {
+      "RepositoryUrl": "https://github.com/microsoft/BCApps",
+      "Commit": "78a0c5d5579df4bb80ed3a552b01e2695b857e30"
+    }
+  },
+  {
+    "file": "Microsoft.Shopify_Connector.28.0.0.0.app",
+    "app": "Shopify Connector",
+    "version": "29.0.54011.55407",
+    "source": {}
+  },
+  {
+    "file": "Microsoft.System.28.0.0.0.app",
+    "app": "System",
+    "version": "29.0.55365.0",
+    "source": {}
+  },
+  {
+    "file": "Microsoft.System_Application.28.0.0.0.app",
+    "app": "System Application",
+    "version": "29.0.54011.55407",
+    "source": {
+      "RepositoryUrl": "https://github.com/microsoft/BCApps",
+      "Commit": "78a0c5d5579df4bb80ed3a552b01e2695b857e30"
+    }
+  },
+  {
+    "file": "Microsoft.System_Application_Test_Library.29.0.0.0.app",
+    "app": "System Application Test Library",
+    "version": "29.0.54011.55407",
+    "source": {
+      "RepositoryUrl": "https://github.com/microsoft/BCApps",
+      "Commit": "78a0c5d5579df4bb80ed3a552b01e2695b857e30"
+    }
+  },
+  {
+    "file": "Microsoft.Tests_TestLibraries.1.0.0.0.app",
+    "app": "Tests-TestLibraries",
+    "version": "29.0.54011.55407",
+    "source": {}
+  },
+  {
+    "file": "Microsoft.Test_Runner.1.0.0.0.app",
+    "app": "Test Runner",
+    "version": "29.0.54011.55407",
+    "source": {
+      "RepositoryUrl": "https://github.com/microsoft/BCApps",
+      "Commit": "78a0c5d5579df4bb80ed3a552b01e2695b857e30"
+    }
+  },
+  {
+    "file": "Origo.Bifrost_Foundation.28.0.5.590.app",
+    "app": "Bifrost Foundation",
+    "version": "28.0.13.0",
+    "source": {}
+  },
+  {
+    "file": "shopify-app.app",
+    "app": "Bifrost Shopify",
+    "version": "28.0.0.0",
+    "source": {
+      "RepositoryUrl": "https://github.com/businesscentralal/bc-origo-bifrost-shopify",
+      "Commit": "f616043b883a51fe805f6a0ff9e22d7b4713aa4c"
+    }
+  },
+  {
+    "file": "shopify-test.app",
+    "app": "Bifrost Shopify - Tests",
+    "version": "28.0.0.0",
+    "source": {
+      "RepositoryUrl": "https://github.com/businesscentralal/bc-origo-bifrost-shopify",
+      "Commit": "f616043b883a51fe805f6a0ff9e22d7b4713aa4c"
+    }
+  }
+]

@@ -1,0 +1,36 @@
+{
+  "passed": true,
+  "objects": [
+    {
+      "type": "codeunit",
+      "id": 73731950,
+      "name": "Shopify Registration ori"
+    },
+    {
+      "type": "permissionset",
+      "id": 73731950,
+      "name": "SHOPIFY Base ori"
+    },
+    {
+      "type": "permissionset",
+      "id": 73731952,
+      "name": "SHOPIFY Full ori"
+    },
+    {
+      "type": "permissionsetextension",
+      "id": 73731952,
+      "name": "Shopify Full ori"
+    },
+    {
+      "type": "permissionset",
+      "id": 73731951,
+      "name": "SHOPIFY Read ori"
+    },
+    {
+      "type": "permissionsetextension",
+      "id": 73731951,
+      "name": "Shopify Read ori"
+    }
+  ],
+  "testRangeUnchanged": true
+}
