@@ -3,7 +3,7 @@ namespace Origo.Bifrost.Shopify;
 using Origo.Bifrost;
 
 /// <summary>Registers Shopify metadata, including under the restricted licence administrator role.</summary>
-codeunit 70013400 "Shopify Registration ori"
+codeunit 73731950 "Shopify Registration ori"
 {
     Access = Internal;
     InherentPermissions = X;
