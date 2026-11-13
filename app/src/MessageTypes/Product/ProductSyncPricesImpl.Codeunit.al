@@ -9,7 +9,7 @@ using Origo.Bifrost;
 /// mapped products to Shopify through the connector's own price sync (report Shpfy Sync Products with Only Sync Price,
 /// which uses Shpfy Product Price Calc. and the bulk operation Shpfy Bulk UpdateProductPrice).
 /// </summary>
-codeunit 70013440 "Product SyncPrices Impl ori" implements "Msg Interface ori", "Msg Discovery ori", "Msg Contract ori"
+codeunit 73731990 "Product SyncPrices Impl ori" implements "Msg Interface ori", "Msg Discovery ori", "Msg Contract ori"
 {
     Access = Internal;
 
