@@ -3,6 +3,144 @@
   <file datatype="xml" source-language="en-US" target-language="is-IS" original="Bifrost Shopify">
     <body>
       <group id="body">
+        <trans-unit id="Codeunit 4087984018 - Method 3571782927 - NamedType 64258721" size-unit="char" translate="yes" xml:space="preserve">
+          <source>You do not have the permissions to create sales documents from Shopify orders.</source>
+          <target>Þú hefur ekki heimildir til að búa til sölufylgiskjöl úr Shopify pöntunum.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Þú hefur ekki heimildir til að búa til sölufylgiskjöl úr Shopify pöntunum.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Order CreateSalesDoc Impl ori - Method ExecuteBifrostTask - NamedType NoPermissionErr</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 4087984018 - Method 3571782927 - NamedType 1780497417" size-unit="char" translate="yes" xml:space="preserve">
+          <source>a user with the permission set SHOPIFY Full ori and the Shopify Connector permissions</source>
+          <target>notandi með heimildasettið SHOPIFY Full ori og heimildir Shopify Connector</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=notandi með heimildasettið SHOPIFY Full ori og heimildir Shopify Connector</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Order CreateSalesDoc Impl ori - Method ExecuteBifrostTask - NamedType PermissionExpectedLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 4087984018 - Method 3571782927 - NamedType 3674803952" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Ask an administrator to assign the permission set SHOPIFY Full ori.</source>
+          <target>Biddu kerfisstjóra um að úthluta heimildasettinu SHOPIFY Full ori.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Biddu kerfisstjóra um að úthluta heimildasettinu SHOPIFY Full ori.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Order CreateSalesDoc Impl ori - Method ExecuteBifrostTask - NamedType AskAdminLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 4087984018 - Method 3571782927 - NamedType 1830439019" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Parameter "shopifyOrderId" is required.</source>
+          <target>Færibreytan "shopifyOrderId" er nauðsynleg.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Færibreytan "shopifyOrderId" er nauðsynleg.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Order CreateSalesDoc Impl ori - Method ExecuteBifrostTask - NamedType MissingErr</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 4087984018 - Method 3571782927 - NamedType 3129818787" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Send data.shopifyOrderId with the Shopify Order Id.</source>
+          <target>Sendu data.shopifyOrderId með auðkenni Shopify pöntunarinnar.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Sendu data.shopifyOrderId með auðkenni Shopify pöntunarinnar.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Order CreateSalesDoc Impl ori - Method ExecuteBifrostTask - NamedType MissingNextLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 4087984018 - Method 3571782927 - NamedType 93319113" size-unit="char" translate="yes" xml:space="preserve">
+          <source>a whole number greater than 0</source>
+          <target>heiltala stærri en 0</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=heiltala stærri en 0</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Order CreateSalesDoc Impl ori - Method ExecuteBifrostTask - NamedType NumberExpectedLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 4087984018 - Method 3571782927 - NamedType 3177803720" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Parameter "shopifyOrderId" must be a whole number greater than 0.</source>
+          <target>Færibreytan "shopifyOrderId" verður að vera heiltala stærri en 0.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Færibreytan "shopifyOrderId" verður að vera heiltala stærri en 0.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Order CreateSalesDoc Impl ori - Method ExecuteBifrostTask - NamedType InvalidErr</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 4087984018 - Method 3571782927 - NamedType 780995952" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Send the Shopify Order Id as a number.</source>
+          <target>Sendu auðkenni Shopify pöntunarinnar sem tölu.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Sendu auðkenni Shopify pöntunarinnar sem tölu.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Order CreateSalesDoc Impl ori - Method ExecuteBifrostTask - NamedType InvalidNextLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 4087984018 - Method 3571782927 - NamedType 3351274" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Shopify order %1 was not found.</source>
+          <target>Shopify pöntun %1 fannst ekki.</target>
+          <note from="Developer" annotates="general" priority="2">%1 = Shopify Order Id||is-IS=Shopify pöntun %1 fannst ekki.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Order CreateSalesDoc Impl ori - Method ExecuteBifrostTask - NamedType NotFoundErr</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 4087984018 - Method 3571782927 - NamedType 2233163380" size-unit="char" translate="yes" xml:space="preserve">
+          <source>the Id of an imported Shopify order</source>
+          <target>auðkenni innfluttrar Shopify pöntunar</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=auðkenni innfluttrar Shopify pöntunar</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Order CreateSalesDoc Impl ori - Method ExecuteBifrostTask - NamedType ImportedExpectedLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 4087984018 - Method 3571782927 - NamedType 1220520351" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Import the order from Shopify first, or read table 30118 with Data.Records.Get.</source>
+          <target>Fluttu pöntunina fyrst inn frá Shopify eða lestu töflu 30118 með Data.Records.Get.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Fluttu pöntunina fyrst inn frá Shopify eða lestu töflu 30118 með Data.Records.Get.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Order CreateSalesDoc Impl ori - Method ExecuteBifrostTask - NamedType ImportFirstLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 4087984018 - Method 3571782927 - NamedType 4268774073" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Shopify order %1 is already processed.</source>
+          <target>Shopify pöntun %1 hefur þegar verið unnin.</target>
+          <note from="Developer" annotates="general" priority="2">%1 = Shopify Order Id||is-IS=Shopify pöntun %1 hefur þegar verið unnin.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Order CreateSalesDoc Impl ori - Method ExecuteBifrostTask - NamedType ProcessedErr</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 4087984018 - Method 3571782927 - NamedType 2681587447" size-unit="char" translate="yes" xml:space="preserve">
+          <source>an order that is not processed</source>
+          <target>pöntun sem hefur ekki verið unnin</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=pöntun sem hefur ekki verið unnin</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Order CreateSalesDoc Impl ori - Method ExecuteBifrostTask - NamedType UnprocessedExpectedLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 4087984018 - Method 3571782927 - NamedType 3431089313" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Nothing to do.</source>
+          <target>Ekkert að gera.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Ekkert að gera.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Order CreateSalesDoc Impl ori - Method ExecuteBifrostTask - NamedType NothingToDoLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 4087984018 - Method 3571782927 - NamedType 3005683376" size-unit="char" translate="yes" xml:space="preserve">
+          <source>an order that Business Central can create a sales document for</source>
+          <target>pöntun sem Business Central getur búið til sölufylgiskjal fyrir</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=pöntun sem Business Central getur búið til sölufylgiskjal fyrir</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Order CreateSalesDoc Impl ori - Method ExecuteBifrostTask - NamedType CreatedExpectedLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 4087984018 - Method 3571782927 - NamedType 2319534536" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Fix the cause named in the text, then call again.</source>
+          <target>Lagaðu orsökina sem textinn nefnir og kallaðu aftur.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Lagaðu orsökina sem textinn nefnir og kallaðu aftur.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Order CreateSalesDoc Impl ori - Method ExecuteBifrostTask - NamedType FixCauseLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 4087984018 - Method 3571782927 - NamedType 1603624325" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Can not create a sales document for the Shopify order %1. %2</source>
+          <target>Ekki er hægt að búa til sölufylgiskjal fyrir Shopify pöntunina %1. %2</target>
+          <note from="Developer" annotates="general" priority="2">%1 = Shopify Order Id, %2 = detailed text||is-IS=Ekki er hægt að búa til sölufylgiskjal fyrir Shopify pöntunina %1. %2</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Order CreateSalesDoc Impl ori - Method ExecuteBifrostTask - NamedType RefusedErr</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 4087984018 - Method 3571782927 - NamedType 583919035" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Shop %1 creates credit memos for refunds automatically.</source>
+          <target>Verslunin %1 býr sjálfkrafa til kreditreikninga fyrir endurgreiðslur.</target>
+          <note from="Developer" annotates="general" priority="2">%1 = Shop Code||is-IS=Verslunin %1 býr sjálfkrafa til kreditreikninga fyrir endurgreiðslur.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Order CreateSalesDoc Impl ori - Method ExecuteBifrostTask - NamedType AutoCreditMemoShopErr</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 4087984018 - Method 3571782927 - NamedType 497000287" size-unit="char" translate="yes" xml:space="preserve">
+          <source>a shop that does not create credit memos for refunds automatically</source>
+          <target>verslun sem býr ekki sjálfkrafa til kreditreikninga fyrir endurgreiðslur</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=verslun sem býr ekki sjálfkrafa til kreditreikninga fyrir endurgreiðslur</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Order CreateSalesDoc Impl ori - Method ExecuteBifrostTask - NamedType NoAutoCreditMemoExpectedLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 4087984018 - Method 3571782927 - NamedType 3201778888" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Create the documents of this shop with the standard Create Sales Orders action.</source>
+          <target>Búðu til fylgiskjöl þessarar verslunar með stöðluðu aðgerðinni Create Sales Orders.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Búðu til fylgiskjöl þessarar verslunar með stöðluðu aðgerðinni Create Sales Orders.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Order CreateSalesDoc Impl ori - Method ExecuteBifrostTask - NamedType UseStandardActionLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 4087984018 - Method 4077369804 - NamedType 3569966352" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Creates the Business Central sales order or invoice of an imported Shopify order.</source>
+          <target>Býr til sölupöntun eða reikning í Business Central fyrir innflutta Shopify pöntun.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Býr til sölupöntun eða reikning í Business Central fyrir innflutta Shopify pöntun.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Order CreateSalesDoc Impl ori - Method GetDescription - NamedType DescriptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 4087984018 - Method 1027590672 - NamedType 1290244428" size-unit="char" translate="yes" xml:space="preserve">
+          <source>shopify order, create sales order, create sales invoice, process shopify order, convert shopify order</source>
+          <target>shopify pöntun, búa til sölupöntun, búa til sölureikning, vinna shopify pöntun, umbreyta shopify pöntun</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=shopify pöntun, búa til sölupöntun, búa til sölureikning, vinna shopify pöntun, umbreyta shopify pöntun</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Order CreateSalesDoc Impl ori - Method GetKeywords - NamedType KeywordsLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 4087984018 - Method 79446908 - NamedType 895773054" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Use for an already imported Shopify order that has no sales document yet. It does not import orders from Shopify and does not post the sales document.</source>
+          <target>Notað fyrir innflutta Shopify pöntun sem hefur engan sölureikning eða sölupöntun. Flytur ekki inn pantanir frá Shopify og bókar ekki sölufylgiskjalið.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Notað fyrir innflutta Shopify pöntun sem hefur engan sölureikning eða sölupöntun. Flytur ekki inn pantanir frá Shopify og bókar ekki sölufylgiskjalið.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Order CreateSalesDoc Impl ori - Method GetSelectionDescription - NamedType SelectionLbl</note>
+        </trans-unit>
         <trans-unit id="PermissionSet 1311670517 - Property 2879900210" maxwidth="30" size-unit="char" translate="yes" xml:space="preserve">
           <source>Bifrost Shopify Base</source>
           <target>Bifröst Shopify grunnur</target>
