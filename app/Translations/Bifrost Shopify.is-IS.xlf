@@ -3,6 +3,126 @@
   <file datatype="xml" source-language="en-US" target-language="is-IS" original="Bifrost Shopify">
     <body>
       <group id="body">
+        <trans-unit id="Codeunit 3552637913 - Method 3571782927 - NamedType 64258721" size-unit="char" translate="yes" xml:space="preserve">
+          <source>You do not have the permissions to import orders from Shopify.</source>
+          <target>Þú hefur ekki heimildir til að flytja inn pantanir úr Shopify.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Þú hefur ekki heimildir til að flytja inn pantanir úr Shopify.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Order Import Impl ori - Method ExecuteBifrostTask - NamedType NoPermissionErr</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 3552637913 - Method 3571782927 - NamedType 1780497417" size-unit="char" translate="yes" xml:space="preserve">
+          <source>a user with the permission set SHOPIFY Full ori and the Shopify Connector permissions</source>
+          <target>notandi með heimildasettið SHOPIFY Full ori og heimildir Shopify Connector</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=notandi með heimildasettið SHOPIFY Full ori og heimildir Shopify Connector</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Order Import Impl ori - Method ExecuteBifrostTask - NamedType PermissionExpectedLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 3552637913 - Method 3571782927 - NamedType 3674803952" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Ask an administrator to assign the permission set SHOPIFY Full ori.</source>
+          <target>Biddu kerfisstjóra um að úthluta heimildasettinu SHOPIFY Full ori.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Biddu kerfisstjóra um að úthluta heimildasettinu SHOPIFY Full ori.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Order Import Impl ori - Method ExecuteBifrostTask - NamedType AskAdminLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 3552637913 - Method 3571782927 - NamedType 1830439019" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Parameter "shopCode" is required.</source>
+          <target>Færibreytan "shopCode" er nauðsynleg.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Færibreytan "shopCode" er nauðsynleg.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Order Import Impl ori - Method ExecuteBifrostTask - NamedType MissingErr</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 3552637913 - Method 3571782927 - NamedType 3129818787" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Send data.shopCode with the code of the Shopify shop.</source>
+          <target>Sendu data.shopCode með kóða Shopify verslunarinnar.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Sendu data.shopCode með kóða Shopify verslunarinnar.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Order Import Impl ori - Method ExecuteBifrostTask - NamedType MissingNextLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 3552637913 - Method 3571782927 - NamedType 2731863175" size-unit="char" translate="yes" xml:space="preserve">
+          <source>the code of a Shopify shop (1 to 20 characters)</source>
+          <target>kóði Shopify verslunar (1 til 20 stafir)</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=kóði Shopify verslunar (1 til 20 stafir)</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Order Import Impl ori - Method ExecuteBifrostTask - NamedType ShopCodeExpectedLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 3552637913 - Method 3571782927 - NamedType 3177803720" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Parameter "shopCode" must be a text of 1 to 20 characters.</source>
+          <target>Færibreytan "shopCode" verður að vera texti, 1 til 20 stafir.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Færibreytan "shopCode" verður að vera texti, 1 til 20 stafir.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Order Import Impl ori - Method ExecuteBifrostTask - NamedType InvalidErr</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 3552637913 - Method 3571782927 - NamedType 780995952" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Send the code of the Shopify shop.</source>
+          <target>Sendu kóða Shopify verslunarinnar.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Sendu kóða Shopify verslunarinnar.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Order Import Impl ori - Method ExecuteBifrostTask - NamedType InvalidNextLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 3552637913 - Method 3571782927 - NamedType 3351274" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Shopify shop %1 was not found.</source>
+          <target>Shopify verslun %1 fannst ekki.</target>
+          <note from="Developer" annotates="general" priority="2">%1 = Shop code||is-IS=Shopify verslun %1 fannst ekki.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Order Import Impl ori - Method ExecuteBifrostTask - NamedType NotFoundErr</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 3552637913 - Method 3571782927 - NamedType 526742461" size-unit="char" translate="yes" xml:space="preserve">
+          <source>the code of an existing Shopify shop</source>
+          <target>kóði Shopify verslunar sem er til</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=kóði Shopify verslunar sem er til</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Order Import Impl ori - Method ExecuteBifrostTask - NamedType ExistingShopExpectedLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 3552637913 - Method 3571782927 - NamedType 1787450605" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Read table 30102 with Data.Records.Get to find the shop code.</source>
+          <target>Lestu töflu 30102 með Data.Records.Get til að finna kóða verslunarinnar.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Lestu töflu 30102 með Data.Records.Get til að finna kóða verslunarinnar.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Order Import Impl ori - Method ExecuteBifrostTask - NamedType FindShopLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 3552637913 - Method 3571782927 - NamedType 2715195543" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Shop %1 is not enabled.</source>
+          <target>Verslun %1 er ekki virk.</target>
+          <note from="Developer" annotates="general" priority="2">%1 = Shop code||is-IS=Verslun %1 er ekki virk.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Order Import Impl ori - Method ExecuteBifrostTask - NamedType NotEnabledErr</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 3552637913 - Method 3571782927 - NamedType 2236668011" size-unit="char" translate="yes" xml:space="preserve">
+          <source>an enabled shop connected to Shopify</source>
+          <target>virk verslun tengd Shopify</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=virk verslun tengd Shopify</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Order Import Impl ori - Method ExecuteBifrostTask - NamedType EnabledExpectedLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 3552637913 - Method 3571782927 - NamedType 4027318585" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Enable the shop and connect it to Shopify on the Shopify Shop Card.</source>
+          <target>Virkjaðu verslunina og tengdu hana við Shopify á Shopify Shop Card.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Virkjaðu verslunina og tengdu hana við Shopify á Shopify Shop Card.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Order Import Impl ori - Method ExecuteBifrostTask - NamedType EnableShopLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 3552637913 - Method 3571782927 - NamedType 2233163380" size-unit="char" translate="yes" xml:space="preserve">
+          <source>a shop that Shopify and Business Central can import orders for</source>
+          <target>verslun sem Shopify og Business Central geta flutt inn pantanir fyrir</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=verslun sem Shopify og Business Central geta flutt inn pantanir fyrir</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Order Import Impl ori - Method ExecuteBifrostTask - NamedType ImportedExpectedLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 3552637913 - Method 3571782927 - NamedType 1603624325" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Can not import orders for shop %1. %2</source>
+          <target>Ekki er hægt að flytja inn pantanir fyrir verslun %1. %2</target>
+          <note from="Developer" annotates="general" priority="2">%1 = Shop code, %2 = detailed text||is-IS=Ekki er hægt að flytja inn pantanir fyrir verslun %1. %2</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Order Import Impl ori - Method ExecuteBifrostTask - NamedType RefusedErr</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 3552637913 - Method 3571782927 - NamedType 2319534536" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Fix the cause named in the text, then call again.</source>
+          <target>Lagaðu orsökina sem textinn nefnir og kallaðu aftur.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Lagaðu orsökina sem textinn nefnir og kallaðu aftur.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Order Import Impl ori - Method ExecuteBifrostTask - NamedType FixCauseLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 3552637913 - Method 4077369804 - NamedType 3569966352" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Fetches new and changed orders from a Shopify shop into Business Central and maps customers and items.</source>
+          <target>Sækir nýjar og breyttar pantanir úr Shopify verslun í Business Central og varpar viðskiptavinum og vörum.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Sækir nýjar og breyttar pantanir úr Shopify verslun í Business Central og varpar viðskiptavinum og vörum.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Order Import Impl ori - Method GetDescription - NamedType DescriptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 3552637913 - Method 1027590672 - NamedType 1290244428" size-unit="char" translate="yes" xml:space="preserve">
+          <source>shopify order import, sync orders from shopify, fetch shopify orders, import web shop orders, get new webshop orders</source>
+          <target>shopify pantanainnflutningur, samstilla pantanir frá shopify, sækja shopify pantanir, flytja inn vefverslunarpantanir, sækja nýjar vefverslunarpantanir</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=shopify pantanainnflutningur, samstilla pantanir frá shopify, sækja shopify pantanir, flytja inn vefverslunarpantanir, sækja nýjar vefverslunarpantanir</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Order Import Impl ori - Method GetKeywords - NamedType KeywordsLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 3552637913 - Method 79446908 - NamedType 895773054" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Use to pull new and changed orders of one shop from Shopify. It contacts Shopify. It does not create sales orders unless the shop has Auto Create Orders set, and it does not read orders already imported (use Data.Records.Get on table 30118).</source>
+          <target>Notað til að sækja nýjar og breyttar pantanir einnar verslunar úr Shopify. Hefur samband við Shopify. Býr ekki til sölupantanir nema verslunin sé með Auto Create Orders og les ekki pantanir sem þegar eru innfluttar (notaðu Data.Records.Get á töflu 30118).</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Notað til að sækja nýjar og breyttar pantanir einnar verslunar úr Shopify. Hefur samband við Shopify. Býr ekki til sölupantanir nema verslunin sé með Auto Create Orders og les ekki pantanir sem þegar eru innfluttar (notaðu Data.Records.Get á töflu 30118).</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Order Import Impl ori - Method GetSelectionDescription - NamedType SelectionLbl</note>
+        </trans-unit>
         <trans-unit id="PermissionSet 1311670517 - Property 2879900210" maxwidth="30" size-unit="char" translate="yes" xml:space="preserve">
           <source>Bifrost Shopify Base</source>
           <target>Bifröst Shopify grunnur</target>
