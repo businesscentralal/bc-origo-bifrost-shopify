@@ -45,6 +45,9 @@
     read-not-declared and no-reads-seen (Type|no-reads-seen|*). It may only shrink: an offender that is
     not listed fails, and so does a listed entry that no longer applies.
 
+    Applicability: only an absent app/src directory returns NOT_APPLICABLE. An existing
+    source directory always runs the original checks, including their failure paths.
+
 .PARAMETER AppFolder
     The AL app folder (default: ../app next to this script).
 
@@ -1369,6 +1372,12 @@ codeunit $id "Veto $name Impl ori"
 if ($SelfTest) {
     Invoke-SelfTest
     Invoke-SelfTestConditionalParameters
+    exit 0
+}
+
+# A scaffold without app/src has no source input; do not hide errors in an existing source tree.
+if (-not (Test-Path -LiteralPath (Join-Path $AppFolder 'src'))) {
+    Write-Host 'NOT_APPLICABLE: app/src is absent'
     exit 0
 }
 

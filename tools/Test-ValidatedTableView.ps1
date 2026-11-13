@@ -13,6 +13,9 @@
     argument the caller has already validated is allowed when the line above it carries the marker
     comment "// tableView validated by the caller".
 
+    Applicability: only an absent app/src directory returns NOT_APPLICABLE. An existing
+    source directory always runs the original checks, including their failure paths.
+
 .PARAMETER AppFolder
     The AL app folder (default: ../app next to this script).
 
@@ -24,6 +27,12 @@ param(
 )
 
 $ErrorActionPreference = 'Stop'
+# A scaffold without app/src has no source input; do not hide errors in an existing source tree.
+if (-not (Test-Path -LiteralPath (Join-Path $AppFolder 'src'))) {
+    Write-Host 'NOT_APPLICABLE: app/src is absent'
+    exit 0
+}
+
 $sourceFolder = Join-Path $AppFolder 'src'
 $procedureStart = [regex]::new('^\s*(\[[^\]]*\]\s*)*((local|internal|protected)\s+)?(procedure|trigger)\s', 'IgnoreCase')
 $setView = [regex]::new("\.SetView\(\s*(?!'[^']*'\s*\))", 'IgnoreCase')

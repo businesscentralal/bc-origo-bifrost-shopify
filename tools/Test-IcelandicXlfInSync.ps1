@@ -23,6 +23,9 @@
     The g.xlf is a build output (not committed), so the guard needs a compile first. It exits 1 with a message when
     there is no g.xlf in the folder. Compile the app with alc (it writes app/Translations/*.g.xlf) before running it.
 
+    Applicability: return NOT_APPLICABLE only when the sibling app/src is absent AND
+    the translation folder has no XLF files. Existing translation input is still checked.
+
 .PARAMETER TranslationsFolder
     The app's Translations folder with the g.xlf of the current build and the committed is-IS.xlf
     (default: ../app/Translations next to this script).
@@ -222,6 +225,15 @@ function Invoke-SelfTest {
 
 if ($SelfTest) {
     Invoke-SelfTest
+    exit 0
+}
+
+# No source and no translation artifacts means there is nothing to compare. A source tree
+# without a build, or translation artifacts without their matching build, must still fail.
+$sourceFolder = Join-Path (Split-Path -Parent $TranslationsFolder) 'src'
+$xlfFiles = @(Get-ChildItem -LiteralPath $TranslationsFolder -Filter '*.xlf' -ErrorAction SilentlyContinue)
+if (-not (Test-Path -LiteralPath $sourceFolder) -and $xlfFiles.Count -eq 0) {
+    Write-Host 'NOT_APPLICABLE: app/src is absent and there are no translation artifacts'
     exit 0
 }
 
