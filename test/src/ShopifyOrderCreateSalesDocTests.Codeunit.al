@@ -17,6 +17,9 @@ codeunit 97470 "Shpfy Order CreateDoc Test ori"
         LowerPermissions: Codeunit "Library - Lower Permissions";
         ShopCodeTok: Label 'BIFT24', Locked = true;
         OrderIdTok: Label '950000001', Locked = true;
+        OtherShopCodeTok: Label 'BIFT24X', Locked = true;
+        RefundIdTok: Label '950000901', Locked = true;
+        OtherOrderIdTok: Label '959999998', Locked = true;
 
     /// <summary>Happy path in English: the order gets a sales order and is marked processed.</summary>
     [Test]
@@ -156,6 +159,69 @@ codeunit 97470 "Shpfy Order CreateDoc Test ori"
         Cleanup();
     end;
 
+    /// <summary>A shop that creates credit memos automatically, with an unprocessed refund of another order in another shop, is refused before anything is changed.</summary>
+    [Test]
+    procedure PendingRefundWithAutoCreditMemoIsRefused()
+    var
+        SalesHeader: Record "Sales Header";
+        OrderHeader: Record "Shpfy Order Header";
+        RefundHeader: Record "Shpfy Refund Header";
+        Response: JsonObject;
+        Before: Integer;
+    begin
+        Initialize();
+        SeedOrderWithRefundProcess(false, "Shpfy ReturnRefund ProcessType"::"Auto Create Credit Memo");
+        SeedUnrelatedRefund();
+        Before := SalesHeader.Count();
+        Response := Execute();
+        Assert.AreEqual('Error', ReadText(Response, 'status'), 'Pending refund status.');
+        Assert.AreEqual('PreconditionFailed', ReadText(Response, 'code'), 'Pending refund code.');
+        Assert.AreEqual(Before, SalesHeader.Count(), 'No sales document and no credit memo is created.');
+        OrderHeader.Get(OrderId());
+        Assert.IsFalse(OrderHeader.Processed, 'The order stays unprocessed.');
+        Assert.IsFalse(OrderHeader."Has Error", 'The order gets no error: nothing ran.');
+        RefundHeader.Get(RefundId());
+        RefundHeader.CalcFields("Is Processed");
+        Assert.IsFalse(RefundHeader."Is Processed", 'The unrelated refund is not touched.');
+        Cleanup();
+    end;
+
+    /// <summary>A shop that only imports refunds creates the order and leaves an unrelated unprocessed refund untouched.</summary>
+    [Test]
+    procedure UnrelatedRefundIsNotTouched()
+    var
+        SalesHeader: Record "Sales Header";
+        RefundHeader: Record "Shpfy Refund Header";
+        Response: JsonObject;
+        Before: Integer;
+    begin
+        Initialize();
+        SeedOrderWithRefundProcess(false, "Shpfy ReturnRefund ProcessType"::"Import Only");
+        SeedUnrelatedRefund();
+        SalesHeader.SetRange("Document Type", SalesHeader."Document Type"::"Credit Memo");
+        Before := SalesHeader.Count();
+        Response := Execute();
+        Assert.AreEqual('Success', ReadText(Response, 'status'), 'Create must succeed: ' + ReadText(Response, 'error'));
+        Assert.AreEqual(Before, SalesHeader.Count(), 'No credit memo is created.');
+        RefundHeader.Get(RefundId());
+        RefundHeader.CalcFields("Is Processed");
+        Assert.IsFalse(RefundHeader."Is Processed", 'The unrelated refund is not touched.');
+        Cleanup();
+    end;
+
+    /// <summary>A shop that creates credit memos automatically, with no unprocessed refund, creates the order.</summary>
+    [Test]
+    procedure AutoCreditMemoWithoutPendingRefundsCreates()
+    var
+        Response: JsonObject;
+    begin
+        Initialize();
+        SeedOrderWithRefundProcess(false, "Shpfy ReturnRefund ProcessType"::"Auto Create Credit Memo");
+        Response := Execute();
+        Assert.AreEqual('Success', ReadText(Response, 'status'), 'Create must succeed: ' + ReadText(Response, 'error'));
+        Cleanup();
+    end;
+
     /// <summary>A caller without the app permissions is refused and nothing is created.</summary>
     [Test]
     procedure CallerWithoutPermissionIsRefused()
@@ -196,7 +262,8 @@ codeunit 97470 "Shpfy Order CreateDoc Test ori"
         Assert.AreNotEqual('', OrderHeader."Sales Order No.", 'The order names its sales order.');
         Assert.IsTrue(SalesHeader.Get(SalesHeader."Document Type"::Order, OrderHeader."Sales Order No."), 'The sales order exists.');
         Assert.AreEqual(ReadText(Response, 'documentNo'), SalesHeader."No.", 'Response names the sales order.');
-        Assert.AreEqual(Format(SalesHeader."Document Type"::Order), ReadText(Response, 'documentType'), 'Response names the document type.');
+        Assert.AreEqual('Order', ReadText(Response, 'documentType'), 'documentType is the invariant enum name in every language.');
+        Assert.AreEqual('Open', ReadText(Response, 'documentStatus'), 'documentStatus is the invariant enum name in every language.');
         Assert.AreEqual(CustomerNo, SalesHeader."Sell-to Customer No.", 'The sales order is for the order customer.');
         Cleanup();
     end;
@@ -211,7 +278,32 @@ codeunit 97470 "Shpfy Order CreateDoc Test ori"
         Evaluate(Id, OrderIdTok);
     end;
 
+    local procedure RefundId() Id: BigInteger
+    begin
+        Evaluate(Id, RefundIdTok);
+    end;
+
     local procedure SeedOrder(BlockCustomer: Boolean): Code[20]
+    begin
+        exit(SeedOrderWithRefundProcess(BlockCustomer, "Shpfy ReturnRefund ProcessType"::"Import Only"));
+    end;
+
+    local procedure SeedUnrelatedRefund()
+    var
+        RefundHeader: Record "Shpfy Refund Header";
+        OtherOrderId: BigInteger;
+    begin
+        // A refund of another order in another shop; no order or shop record exists for it.
+        Evaluate(OtherOrderId, OtherOrderIdTok);
+        RefundHeader.Init();
+        RefundHeader."Refund Id" := RefundId();
+        RefundHeader."Order Id" := OtherOrderId;
+        RefundHeader."Shop Code" := CopyStr(OtherShopCodeTok, 1, MaxStrLen(RefundHeader."Shop Code"));
+        RefundHeader.Insert();
+        Commit();
+    end;
+
+    local procedure SeedOrderWithRefundProcess(BlockCustomer: Boolean; RefundProcess: Enum "Shpfy ReturnRefund ProcessType"): Code[20]
     var
         Shop: Record "Shpfy Shop";
         OrderHeader: Record "Shpfy Order Header";
@@ -230,6 +322,8 @@ codeunit 97470 "Shpfy Order CreateDoc Test ori"
         Shop.Enabled := true;
         // The shop does not write the BC document number back to Shopify as an order attribute.
         Shop."Order Attributes To Shopify" := false;
+        // Assigned without validation, as the order and refund processes read it.
+        Shop."Return and Refund Process" := RefundProcess;
         Shop.Insert();
         SetShopUrl(Shop);
         OrderHeader.Init();
@@ -251,7 +345,10 @@ codeunit 97470 "Shpfy Order CreateDoc Test ori"
         OrderHeader: Record "Shpfy Order Header";
         SalesHeader: Record "Sales Header";
         Customer: Record Customer;
+        RefundHeader: Record "Shpfy Refund Header";
     begin
+        if RefundHeader.Get(RefundId()) then
+            RefundHeader.Delete(true);
         if OrderHeader.Get(OrderId()) then begin
             if OrderHeader."Sales Order No." <> '' then
                 if SalesHeader.Get(SalesHeader."Document Type"::Order, OrderHeader."Sales Order No.") then
