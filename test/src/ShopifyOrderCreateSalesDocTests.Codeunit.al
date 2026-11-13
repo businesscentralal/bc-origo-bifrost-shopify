@@ -209,17 +209,41 @@ codeunit 97470 "Shpfy Order CreateDoc Test ori"
         Cleanup();
     end;
 
-    /// <summary>A shop that creates credit memos automatically, with no unprocessed refund, creates the order.</summary>
+    /// <summary>A shop that creates credit memos automatically is refused even with no unprocessed refund, because a refund can be imported while the request runs.</summary>
     [Test]
-    procedure AutoCreditMemoWithoutPendingRefundsCreates()
+    procedure AutoCreditMemoShopWithoutRefundsIsRefused()
     var
+        SalesHeader: Record "Sales Header";
+        OrderHeader: Record "Shpfy Order Header";
+        RefundHeader: Record "Shpfy Refund Header";
+        RefundInjector: Codeunit "Shpfy Refund Injector ori";
         Response: JsonObject;
+        Before: Integer;
     begin
         Initialize();
         SeedOrderWithRefundProcess(false, "Shpfy ReturnRefund ProcessType"::"Auto Create Credit Memo");
+        Assert.IsFalse(RefundHeader.Get(RefundId()), 'The test refund does not exist before the call.');
+        Before := SalesHeader.Count();
+        RefundInjector.SetRefund(RefundId(), OtherOrderId(), CopyStr(OtherShopCodeTok, 1, 20));
+        BindSubscription(RefundInjector);
         Response := Execute();
-        Assert.AreEqual('Success', ReadText(Response, 'status'), 'Create must succeed: ' + ReadText(Response, 'error'));
+        UnbindSubscription(RefundInjector);
+        Assert.AreEqual('Error', ReadText(Response, 'status'), 'Auto credit memo shop status.');
+        Assert.AreEqual('PreconditionFailed', ReadText(Response, 'code'), 'Auto credit memo shop code.');
+        Assert.IsFalse(RefundInjector.WasInjected(), 'The report never ran: no sales header was inserted.');
+        Assert.AreEqual(Before, SalesHeader.Count(), 'No sales document and no credit memo is created.');
+        OrderHeader.Get(OrderId());
+        Assert.IsFalse(OrderHeader.Processed, 'The order stays unprocessed.');
+        Assert.IsFalse(OrderHeader."Has Error", 'The order gets no error: nothing ran.');
         Cleanup();
+    end;
+
+    /// <summary>A refund of another order in another shop that is imported while the order is created (after the guard, before the refund phase) is not touched.</summary>
+    [Test]
+    procedure RefundImportedDuringRunIsNotTouched()
+    begin
+        AssertRefundImportedDuringRunIsNotTouched("Shpfy ReturnRefund ProcessType"::"Import Only");
+        AssertRefundImportedDuringRunIsNotTouched("Shpfy ReturnRefund ProcessType"::" ");
     end;
 
     /// <summary>A caller without the app permissions is refused and nothing is created.</summary>
@@ -268,6 +292,32 @@ codeunit 97470 "Shpfy Order CreateDoc Test ori"
         Cleanup();
     end;
 
+    local procedure AssertRefundImportedDuringRunIsNotTouched(RefundProcess: Enum "Shpfy ReturnRefund ProcessType")
+    var
+        SalesHeader: Record "Sales Header";
+        RefundHeader: Record "Shpfy Refund Header";
+        RefundInjector: Codeunit "Shpfy Refund Injector ori";
+        Response: JsonObject;
+        Before: Integer;
+    begin
+        Initialize();
+        SeedOrderWithRefundProcess(false, RefundProcess);
+        Assert.IsFalse(RefundHeader.Get(RefundId()), 'The refund does not exist when the guard runs.');
+        SalesHeader.SetRange("Document Type", SalesHeader."Document Type"::"Credit Memo");
+        Before := SalesHeader.Count();
+        RefundInjector.SetRefund(RefundId(), OtherOrderId(), CopyStr(OtherShopCodeTok, 1, 20));
+        BindSubscription(RefundInjector);
+        Response := Execute();
+        UnbindSubscription(RefundInjector);
+        Assert.AreEqual('Success', ReadText(Response, 'status'), 'Create must succeed: ' + ReadText(Response, 'error'));
+        Assert.IsTrue(RefundInjector.WasInjected(), 'The refund was imported while the order was created.');
+        Assert.AreEqual(Before, SalesHeader.Count(), 'No credit memo is created.');
+        RefundHeader.Get(RefundId());
+        RefundHeader.CalcFields("Is Processed");
+        Assert.IsFalse(RefundHeader."Is Processed", 'The refund imported during the run is not touched.');
+        Cleanup();
+    end;
+
     local procedure Initialize()
     begin
         Cleanup();
@@ -283,6 +333,11 @@ codeunit 97470 "Shpfy Order CreateDoc Test ori"
         Evaluate(Id, RefundIdTok);
     end;
 
+    local procedure OtherOrderId() Id: BigInteger
+    begin
+        Evaluate(Id, OtherOrderIdTok);
+    end;
+
     local procedure SeedOrder(BlockCustomer: Boolean): Code[20]
     begin
         exit(SeedOrderWithRefundProcess(BlockCustomer, "Shpfy ReturnRefund ProcessType"::"Import Only"));
@@ -291,13 +346,11 @@ codeunit 97470 "Shpfy Order CreateDoc Test ori"
     local procedure SeedUnrelatedRefund()
     var
         RefundHeader: Record "Shpfy Refund Header";
-        OtherOrderId: BigInteger;
     begin
         // A refund of another order in another shop; no order or shop record exists for it.
-        Evaluate(OtherOrderId, OtherOrderIdTok);
         RefundHeader.Init();
         RefundHeader."Refund Id" := RefundId();
-        RefundHeader."Order Id" := OtherOrderId;
+        RefundHeader."Order Id" := OtherOrderId();
         RefundHeader."Shop Code" := CopyStr(OtherShopCodeTok, 1, MaxStrLen(RefundHeader."Shop Code"));
         RefundHeader.Insert();
         Commit();

@@ -105,23 +105,23 @@
           <note from="Developer" annotates="general" priority="2">%1 = Shopify Order Id, %2 = detailed text||is-IS=Ekki er hægt að búa til sölufylgiskjal fyrir Shopify pöntunina %1. %2</note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit Order CreateSalesDoc Impl ori - Method ExecuteBifrostTask - NamedType RefusedErr</note>
         </trans-unit>
-        <trans-unit id="Codeunit 4087984018 - Method 3571782927 - NamedType 1690586961" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Shop %1 creates credit memos for refunds automatically and there are unprocessed refunds.</source>
-          <target>Verslunin %1 býr sjálfkrafa til kreditreikninga fyrir endurgreiðslur og það eru óunnar endurgreiðslur.</target>
-          <note from="Developer" annotates="general" priority="2">%1 = Shop Code||is-IS=Verslunin %1 býr sjálfkrafa til kreditreikninga fyrir endurgreiðslur og það eru óunnar endurgreiðslur.</note>
-          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Order CreateSalesDoc Impl ori - Method ExecuteBifrostTask - NamedType RefundsPendingErr</note>
+        <trans-unit id="Codeunit 4087984018 - Method 3571782927 - NamedType 583919035" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Shop %1 creates credit memos for refunds automatically.</source>
+          <target>Verslunin %1 býr sjálfkrafa til kreditreikninga fyrir endurgreiðslur.</target>
+          <note from="Developer" annotates="general" priority="2">%1 = Shop Code||is-IS=Verslunin %1 býr sjálfkrafa til kreditreikninga fyrir endurgreiðslur.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Order CreateSalesDoc Impl ori - Method ExecuteBifrostTask - NamedType AutoCreditMemoShopErr</note>
         </trans-unit>
-        <trans-unit id="Codeunit 4087984018 - Method 3571782927 - NamedType 1997226249" size-unit="char" translate="yes" xml:space="preserve">
-          <source>no unprocessed refunds while the shop creates credit memos automatically</source>
-          <target>engar óunnar endurgreiðslur meðan verslunin býr sjálfkrafa til kreditreikninga</target>
-          <note from="Developer" annotates="general" priority="2">is-IS=engar óunnar endurgreiðslur meðan verslunin býr sjálfkrafa til kreditreikninga</note>
-          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Order CreateSalesDoc Impl ori - Method ExecuteBifrostTask - NamedType NoPendingRefundsExpectedLbl</note>
+        <trans-unit id="Codeunit 4087984018 - Method 3571782927 - NamedType 497000287" size-unit="char" translate="yes" xml:space="preserve">
+          <source>a shop that does not create credit memos for refunds automatically</source>
+          <target>verslun sem býr ekki sjálfkrafa til kreditreikninga fyrir endurgreiðslur</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=verslun sem býr ekki sjálfkrafa til kreditreikninga fyrir endurgreiðslur</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Order CreateSalesDoc Impl ori - Method ExecuteBifrostTask - NamedType NoAutoCreditMemoExpectedLbl</note>
         </trans-unit>
-        <trans-unit id="Codeunit 4087984018 - Method 3571782927 - NamedType 4224703058" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Process the refunds first, or create the documents with the standard Create Sales Orders action.</source>
-          <target>Vinndu endurgreiðslurnar fyrst eða búðu til fylgiskjölin með stöðluðu aðgerðinni Create Sales Orders.</target>
-          <note from="Developer" annotates="general" priority="2">is-IS=Vinndu endurgreiðslurnar fyrst eða búðu til fylgiskjölin með stöðluðu aðgerðinni Create Sales Orders.</note>
-          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Order CreateSalesDoc Impl ori - Method ExecuteBifrostTask - NamedType ProcessRefundsFirstLbl</note>
+        <trans-unit id="Codeunit 4087984018 - Method 3571782927 - NamedType 3201778888" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Create the documents of this shop with the standard Create Sales Orders action.</source>
+          <target>Búðu til fylgiskjöl þessarar verslunar með stöðluðu aðgerðinni Create Sales Orders.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Búðu til fylgiskjöl þessarar verslunar með stöðluðu aðgerðinni Create Sales Orders.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Order CreateSalesDoc Impl ori - Method ExecuteBifrostTask - NamedType UseStandardActionLbl</note>
         </trans-unit>
         <trans-unit id="Codeunit 4087984018 - Method 4077369804 - NamedType 3569966352" size-unit="char" translate="yes" xml:space="preserve">
           <source>Creates the Business Central sales order or invoice of an imported Shopify order.</source>
