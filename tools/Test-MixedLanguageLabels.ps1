@@ -51,6 +51,9 @@
     cannot resolve (a variable of another type, a call through a chain) is not followed. That makes the guard miss a case;
     it never reports a procedure whose answer is one language.
 
+    Applicability: only an absent app/src directory returns NOT_APPLICABLE. An existing
+    source directory always runs the original checks, including their failure paths.
+
 .PARAMETER AppFolder
     The AL app folder (default: ../app next to this script).
 
@@ -767,6 +770,12 @@ codeunit 3 "Clean ori"
 
 if ($SelfTest) {
     Invoke-SelfTest
+    exit 0
+}
+
+# A scaffold without app/src has no source input; do not hide errors in an existing source tree.
+if (-not (Test-Path -LiteralPath (Join-Path $AppFolder 'src'))) {
+    Write-Host 'NOT_APPLICABLE: app/src is absent'
     exit 0
 }
 

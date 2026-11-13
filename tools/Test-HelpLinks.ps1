@@ -44,10 +44,13 @@ $ErrorActionPreference = 'Stop'
 $siteRoot = 'https://docs.bifrost.origo.is/'
 $problems = [System.Collections.Generic.List[string]]::new()
 
-$pages = @(Get-ChildItem -LiteralPath (Join-Path $AppFolder 'src') -Recurse -Filter '*.al' | ForEach-Object {
-        $text = Get-Content -LiteralPath $_.FullName -Raw -Encoding UTF8
-        $header = [regex]::Match($text, '(?m)^\s*(page|pageextension)\s+(\d+)\s+"([^"]+)"')
-        if ($header.Success) { [pscustomobject]@{ Header = $header; Text = $text } }
+# Manifest links remain applicable without app/src; only the absent page scan has no input.
+$pages = @(if (Test-Path -LiteralPath (Join-Path $AppFolder 'src')) {
+        Get-ChildItem -LiteralPath (Join-Path $AppFolder 'src') -Recurse -Filter '*.al' | ForEach-Object {
+            $text = Get-Content -LiteralPath $_.FullName -Raw -Encoding UTF8
+            $header = [regex]::Match($text, '(?m)^\s*(page|pageextension)\s+(\d+)\s+"([^"]+)"')
+            if ($header.Success) { [pscustomobject]@{ Header = $header; Text = $text } }
+        }
     })
 
 $appJson = Get-Content -LiteralPath (Join-Path $AppFolder 'app.json') -Raw -Encoding UTF8 | ConvertFrom-Json

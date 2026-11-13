@@ -226,7 +226,13 @@ function Invoke-SelfTest {
     }
 }
 
-if ($SelfTest) { Invoke-SelfTest; exit 0 }
+if ($SelfTest) {
+    Invoke-SelfTest
+    # CI already invokes this self-test. Keep the tools-only absence/negative regression
+    # suite here so adding coverage does not require changing SourceGuards.yaml.
+    & (Join-Path $PSScriptRoot 'Test-SourceGuardApplicability.ps1')
+    exit 0
+}
 
 if (-not (Test-Path -LiteralPath $AppFolder)) { throw "App folder not found: $AppFolder" }
 $sourceResult = Find-ShortKeywordLists $AppFolder
