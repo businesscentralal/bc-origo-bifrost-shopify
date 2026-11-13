@@ -2,6 +2,8 @@
 
 ## [28.0.0.0] - Unreleased
 
+- Moved Shopify scaffold objects 70013400–70013402 to 73731950–73731952 and the app allocation to 73731950–73732149 (#54). Test objects remain in 97400–97599.
+
 - Repository scaffolded from Bifrost Subscription Billing setup.
 - Added Foundation app registration, adapter permission roles and registration smoke tests (#1).
 - Set application and Shopify Connector minimum versions to 28.0.0.0; validated deployment on bc28-kappi without upgrading the container.
