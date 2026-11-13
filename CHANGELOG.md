@@ -10,3 +10,4 @@
 
 - Bound permission-set captions to 30 characters (70013400–70013402), shortened the Icelandic Full caption, and removed API role extension 70013400 to keep the scaffold aligned with the Subscription Billing roles.
 - Added restricted Read/Full registration checks to test codeunit 97400; assertions run after restoring runner permissions.
+- Added message type `Shopify.Product.CreateItem` (enum value 70013420, codeunits 70013420/70013421): creates and maps Business Central items for the variants of one imported Shopify product through the connector codeunit Shpfy Create Item (30171); granted through `SHOPIFY Full ori` (#8). Tests in codeunit 97420.
