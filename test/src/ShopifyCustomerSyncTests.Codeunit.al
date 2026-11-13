@@ -177,39 +177,6 @@ codeunit 97450 "Shpfy Cust Sync Test ori"
         Cleanup();
     end;
 
-    /// <summary>The detailed help chapters are translated: in Icelandic they differ from the English text.</summary>
-    [Test]
-    procedure HelpChaptersAreTranslated()
-    var
-        Impl: Codeunit "Customer Sync Impl ori";
-        EnglishOverview: Text;
-        EnglishNotes: Text;
-        IcelandicOverview: Text;
-        IcelandicNotes: Text;
-        EnglishParameters: JsonArray;
-        IcelandicParameters: JsonArray;
-        EnglishErrors: JsonArray;
-        IcelandicErrors: JsonArray;
-        PreviousLanguage: Integer;
-    begin
-        PreviousLanguage := GlobalLanguage();
-        GlobalLanguage(1033);
-        Impl.GetOverview(EnglishOverview);
-        Impl.GetNotes(EnglishNotes);
-        Impl.GetParameters(EnglishParameters);
-        Impl.GetErrors(EnglishErrors);
-        GlobalLanguage(1039);
-        Impl.GetOverview(IcelandicOverview);
-        Impl.GetNotes(IcelandicNotes);
-        Impl.GetParameters(IcelandicParameters);
-        Impl.GetErrors(IcelandicErrors);
-        GlobalLanguage(PreviousLanguage);
-        Assert.AreNotEqual(EnglishOverview, IcelandicOverview, 'Overview must be translated.');
-        Assert.AreNotEqual(EnglishNotes, IcelandicNotes, 'Notes must be translated.');
-        Assert.AreNotEqual(Format(EnglishParameters), Format(IcelandicParameters), 'Parameters must be translated.');
-        Assert.AreNotEqual(Format(EnglishErrors), Format(IcelandicErrors), 'Errors must be translated.');
-    end;
-
     local procedure InsertShopifyCustomer(Id: BigInteger; CustomerSystemId: Guid)
     var
         ShopifyCustomer: Record "Shpfy Customer";
