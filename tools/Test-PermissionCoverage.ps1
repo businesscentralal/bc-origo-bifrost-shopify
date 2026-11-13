@@ -19,6 +19,9 @@
     A new page therefore needs a line in the permission set of the role that uses it in the same change.
     There is no allow-list: an object that really needs no grant does not exist in this app.
 
+    Applicability: only an absent app/src directory returns NOT_APPLICABLE. An existing
+    source directory always runs the original checks, including their failure paths.
+
 .PARAMETER AppFolder
     The AL app folder (default: ../app next to this script).
 
@@ -244,6 +247,12 @@ function Invoke-SelfTest {
 
 if ($SelfTest) {
     Invoke-SelfTest
+    exit 0
+}
+
+# A scaffold without app/src has no source input; do not hide errors in an existing source tree.
+if (-not (Test-Path -LiteralPath (Join-Path $AppFolder 'src'))) {
+    Write-Host 'NOT_APPLICABLE: app/src is absent'
     exit 0
 }
 
