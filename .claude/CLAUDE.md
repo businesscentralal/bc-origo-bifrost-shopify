@@ -10,18 +10,17 @@ Origo / AppSource
 Origo.Bifrost.Shopify (tests: Origo.Bifrost.Shopify.Test)
 
 ## Object ID Range
-App:   70013400-70013599
+App:   73731950-73732149
 Tests: 97400-97599
 
 | Type | ID | Object |
 | --- | --- | --- |
-| Codeunit | 70013400 | Shopify Registration ori |
-| PermissionSet | 70013400 | SHOPIFY Base ori |
-| PermissionSet | 70013401 | SHOPIFY Read ori |
-| PermissionSet | 70013402 | SHOPIFY Full ori |
-| PermissionSetExtension | 70013400 | Reserved (API extension removed; no action surface in scaffold) |
-| PermissionSetExtension | 70013401 | Shopify Read ori |
-| PermissionSetExtension | 70013402 | Shopify Full ori |
+| Codeunit | 73731950 | Shopify Registration ori |
+| PermissionSet | 73731950 | SHOPIFY Base ori |
+| PermissionSet | 73731951 | SHOPIFY Read ori |
+| PermissionSet | 73731952 | SHOPIFY Full ori |
+| PermissionSetExtension | 73731951 | Shopify Read ori |
+| PermissionSetExtension | 73731952 | Shopify Full ori |
 | Test Codeunit | 97400 | Shopify Issue 1 Tests ori |
 
 ## Microsoft source
