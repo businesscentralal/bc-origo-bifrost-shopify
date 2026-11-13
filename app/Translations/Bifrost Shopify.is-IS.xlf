@@ -3,24 +3,6 @@
   <file datatype="xml" source-language="en-US" target-language="is-IS" original="Bifrost Shopify">
     <body>
       <group id="body">
-        <trans-unit id="PermissionSet 1311670517 - Property 2879900210" maxwidth="30" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Bifrost Shopify Base</source>
-          <target>Bifröst Shopify grunnur</target>
-          <note from="Developer" annotates="general" priority="2">is-IS=Bifröst Shopify grunnur</note>
-          <note from="Xliff Generator" annotates="general" priority="3">PermissionSet SHOPIFY Base ori - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="PermissionSet 2984143847 - Property 2879900210" maxwidth="30" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Bifrost Shopify Full</source>
-          <target>Bifröst Shopify allur aðgangur</target>
-          <note from="Developer" annotates="general" priority="2">is-IS=Bifröst Shopify allur aðgangur</note>
-          <note from="Xliff Generator" annotates="general" priority="3">PermissionSet SHOPIFY Full ori - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="PermissionSet 3252234552 - Property 2879900210" maxwidth="30" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Bifrost Shopify Read</source>
-          <target>Bifröst Shopify lestur</target>
-          <note from="Developer" annotates="general" priority="2">is-IS=Bifröst Shopify lestur</note>
-          <note from="Xliff Generator" annotates="general" priority="3">PermissionSet SHOPIFY Read ori - Property Caption</note>
-        </trans-unit>
         <trans-unit id="Codeunit 158272105 - Method 3571782927 - NamedType 64258721" size-unit="char" translate="yes" xml:space="preserve">
           <source>You do not have the permissions to synchronize Shopify customers.</source>
           <target>Þú hefur ekki heimildir til að samstilla Shopify viðskiptamenn.</target>
@@ -69,6 +51,12 @@
           <note from="Developer" annotates="general" priority="2">is-IS=Sendu kóða Shopify verslunarinnar.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit Customer Sync Impl ori - Method ExecuteBifrostTask - NamedType InvalidNextLbl</note>
         </trans-unit>
+        <trans-unit id="Codeunit 158272105 - Method 3571782927 - NamedType 3351274" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Shopify shop %1 was not found.</source>
+          <target>Shopify verslun %1 fannst ekki.</target>
+          <note from="Developer" annotates="general" priority="2">%1 = Shop code||is-IS=Shopify verslun %1 fannst ekki.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Customer Sync Impl ori - Method ExecuteBifrostTask - NamedType NotFoundErr</note>
+        </trans-unit>
         <trans-unit id="Codeunit 158272105 - Method 3571782927 - NamedType 526742461" size-unit="char" translate="yes" xml:space="preserve">
           <source>the code of an existing Shopify shop</source>
           <target>kóði núverandi Shopify verslunar</target>
@@ -80,6 +68,12 @@
           <target>Lestu töflu 30102 með Data.Records.Get til að finna verslunarkóðann.</target>
           <note from="Developer" annotates="general" priority="2">is-IS=Lestu töflu 30102 með Data.Records.Get til að finna verslunarkóðann.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit Customer Sync Impl ori - Method ExecuteBifrostTask - NamedType FindShopLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 158272105 - Method 3571782927 - NamedType 2715195543" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Shop %1 is not enabled.</source>
+          <target>Verslun %1 er ekki virk.</target>
+          <note from="Developer" annotates="general" priority="2">%1 = Shop code||is-IS=Verslun %1 er ekki virk.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Customer Sync Impl ori - Method ExecuteBifrostTask - NamedType NotEnabledErr</note>
         </trans-unit>
         <trans-unit id="Codeunit 158272105 - Method 3571782927 - NamedType 2236668011" size-unit="char" translate="yes" xml:space="preserve">
           <source>an enabled shop</source>
@@ -99,6 +93,24 @@
           <note from="Developer" annotates="general" priority="2">is-IS=verslun sem getur samstillt viðskiptamenn við Shopify</note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit Customer Sync Impl ori - Method ExecuteBifrostTask - NamedType SyncedExpectedLbl</note>
         </trans-unit>
+        <trans-unit id="Codeunit 158272105 - Method 3571782927 - NamedType 1603624325" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Can not synchronize customers for shop %1. %2</source>
+          <target>Ekki er hægt að samstilla viðskiptamenn fyrir verslun %1. %2</target>
+          <note from="Developer" annotates="general" priority="2">%1 = Shop code, %2 = detailed text||is-IS=Ekki er hægt að samstilla viðskiptamenn fyrir verslun %1. %2</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Customer Sync Impl ori - Method ExecuteBifrostTask - NamedType RefusedErr</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 158272105 - Method 3571782927 - NamedType 1059027965" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Shop %1 was synchronized, but %2 Shopify customers have no Business Central customer. The connector does not report why; check the customer template and the customer mapping of the shop.</source>
+          <target>Verslun %1 var samstillt, en %2 Shopify viðskiptamenn eru án viðskiptamanns í Business Central. Tengillinn tilkynnir ekki hvers vegna; athugaðu viðskiptamannasniðmátið og varpanir viðskiptamanna í versluninni.</target>
+          <note from="Developer" annotates="general" priority="2">%1 = Shop code, %2 = number of customers||is-IS=Verslun %1 var samstillt, en %2 Shopify viðskiptamenn eru án viðskiptamanns í Business Central. Tengillinn tilkynnir ekki hvers vegna; athugaðu viðskiptamannasniðmátið og varpanir viðskiptamanna í versluninni.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Customer Sync Impl ori - Method ExecuteBifrostTask - NamedType UnmappedErr</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 158272105 - Method 3571782927 - NamedType 3440822070" size-unit="char" translate="yes" xml:space="preserve">
+          <source>a shop whose Shopify customers all got a Business Central customer</source>
+          <target>verslun þar sem allir Shopify viðskiptamenn fengu viðskiptamann í Business Central</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=verslun þar sem allir Shopify viðskiptamenn fengu viðskiptamann í Business Central</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Customer Sync Impl ori - Method ExecuteBifrostTask - NamedType UnmappedExpectedLbl</note>
+        </trans-unit>
         <trans-unit id="Codeunit 158272105 - Method 3571782927 - NamedType 2319534536" size-unit="char" translate="yes" xml:space="preserve">
           <source>Fix the cause named in the text, for example the Shopify connection of the shop, then call again.</source>
           <target>Lagaðu orsökina sem textinn nefnir, til dæmis tenginguna við Shopify í versluninni, og kallaðu aftur.</target>
@@ -111,11 +123,191 @@
           <note from="Developer" annotates="general" priority="2">is-IS=Flytur inn Shopify viðskiptamenn og uppfærir Shopify viðskiptamenn úr Business Central fyrir Shopify verslun, eins og verslunin er uppsett.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit Customer Sync Impl ori - Method GetDescription - NamedType DescriptionLbl</note>
         </trans-unit>
+        <trans-unit id="Codeunit 158272105 - Method 1479631707 - NamedType 3742287251" size-unit="char" translate="yes" xml:space="preserve">
+          <source>The shop exists and is enabled.</source>
+          <target>Verslunin er til og er virk.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Verslunin er til og er virk.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Customer Sync Impl ori - Method GetEffect - NamedType ShopPreLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 158272105 - Method 1479631707 - NamedType 2714691101" size-unit="char" translate="yes" xml:space="preserve">
+          <source>When customers are imported or updated, the shop has a working connection to Shopify (access token and URL) and the customer settings the connector needs.</source>
+          <target>Þegar viðskiptamenn eru fluttir inn eða uppfærðir hefur verslunin virka tengingu við Shopify (aðgangslykill og slóð) og viðskiptamannastillingarnar sem tengillinn þarf.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Þegar viðskiptamenn eru fluttir inn eða uppfærðir hefur verslunin virka tengingu við Shopify (aðgangslykill og slóð) og viðskiptamannastillingarnar sem tengillinn þarf.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Customer Sync Impl ori - Method GetEffect - NamedType ConnectionPreLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 158272105 - Method 1479631707 - NamedType 1449450473" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Runs codeunit Shpfy Sync Customers (30123) for the shop, the code behind the Sync action. As the shop is set up, it imports Shopify customers into the Shopify customer tables and, as the shop mapping requires, creates or updates the mapped Business Central customers (Customer Import From Shopify), and, when the shop has Can Update Shopify Customer, writes the changes of mapped Business Central customers to the customers in the Shopify store through its API. If the shop neither imports nor updates customers, nothing changes. This call commits (Commit()) once before it starts the Shopify code, and the Shopify code commits between customers while it works. It is not one transaction: when a customer fails or the call is refused part way, the customers handled before stay, and this call does not roll them back.</source>
+          <target>Keyrir codeunit Shpfy Sync Customers (30123) fyrir verslunina, kóðann á bak við aðgerðina Sync. Eins og verslunin er uppsett flytur hún inn Shopify viðskiptamenn í Shopify viðskiptamannatöflurnar og, eins og varpanir verslunarinnar krefjast, stofnar eða uppfærir tengda viðskiptamenn í Business Central (Customer Import From Shopify) og, þegar verslunin er með Can Update Shopify Customer, skrifar breytingar tengdra viðskiptamanna í Business Central í viðskiptamenn Shopify verslunarinnar í gegnum API hennar. Ef verslunin flytur hvorki inn né uppfærir viðskiptamenn breytist ekkert. Þetta kall framkvæmir Commit() einu sinni áður en Shopify kóðinn byrjar og Shopify kóðinn framkvæmir Commit á milli viðskiptamanna á meðan hann vinnur. Þetta er ekki ein færsla: þegar viðskiptamaður mistekst eða kallinu er hafnað á miðri leið standa viðskiptamennirnir sem voru afgreiddir áður eftir og þetta kall afturkallar þá ekki.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Keyrir codeunit Shpfy Sync Customers (30123) fyrir verslunina, kóðann á bak við aðgerðina Sync. Eins og verslunin er uppsett flytur hún inn Shopify viðskiptamenn í Shopify viðskiptamannatöflurnar og, eins og varpanir verslunarinnar krefjast, stofnar eða uppfærir tengda viðskiptamenn í Business Central (Customer Import From Shopify) og, þegar verslunin er með Can Update Shopify Customer, skrifar breytingar tengdra viðskiptamanna í Business Central í viðskiptamenn Shopify verslunarinnar í gegnum API hennar. Ef verslunin flytur hvorki inn né uppfærir viðskiptamenn breytist ekkert. Þetta kall framkvæmir Commit() einu sinni áður en Shopify kóðinn byrjar og Shopify kóðinn framkvæmir Commit á milli viðskiptamanna á meðan hann vinnur. Þetta er ekki ein færsla: þegar viðskiptamaður mistekst eða kallinu er hafnað á miðri leið standa viðskiptamennirnir sem voru afgreiddir áður eftir og þetta kall afturkallar þá ekki.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Customer Sync Impl ori - Method GetEffect - NamedType ChangesLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 158272105 - Method 1158096087 - NamedType 478707485" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Parameter "shopCode" is required.</source>
+          <target>Færibreytan "shopCode" er nauðsynleg.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Færibreytan "shopCode" er nauðsynleg.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Customer Sync Impl ori - Method GetErrors - NamedType MissingTextLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 158272105 - Method 1158096087 - NamedType 2408295350" size-unit="char" translate="yes" xml:space="preserve">
+          <source>The request has no shopCode. Nothing was changed.</source>
+          <target>Beiðnin hefur ekkert shopCode. Engu var breytt.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Beiðnin hefur ekkert shopCode. Engu var breytt.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Customer Sync Impl ori - Method GetErrors - NamedType MissingWhenLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 158272105 - Method 1158096087 - NamedType 570246867" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Send data.shopCode with the code of the Shopify shop.</source>
+          <target>Sendu data.shopCode með kóða Shopify verslunarinnar.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Sendu data.shopCode með kóða Shopify verslunarinnar.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Customer Sync Impl ori - Method GetErrors - NamedType MissingFixLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 158272105 - Method 1158096087 - NamedType 4175382522" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Parameter "shopCode" must be a shop code of at most 20 characters.</source>
+          <target>Færibreytan "shopCode" verður að vera verslunarkóði með í mesta lagi 20 stöfum.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Færibreytan "shopCode" verður að vera verslunarkóði með í mesta lagi 20 stöfum.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Customer Sync Impl ori - Method GetErrors - NamedType InvalidTextLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 158272105 - Method 1158096087 - NamedType 4026014561" size-unit="char" translate="yes" xml:space="preserve">
+          <source>The value is empty or too long to be a shop code. Nothing was changed.</source>
+          <target>Gildið er tómt eða of langt til að vera verslunarkóði. Engu var breytt.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Gildið er tómt eða of langt til að vera verslunarkóði. Engu var breytt.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Customer Sync Impl ori - Method GetErrors - NamedType InvalidWhenLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 158272105 - Method 1158096087 - NamedType 2979918728" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Send the code of the Shopify shop.</source>
+          <target>Sendu kóða Shopify verslunarinnar.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Sendu kóða Shopify verslunarinnar.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Customer Sync Impl ori - Method GetErrors - NamedType InvalidFixLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 158272105 - Method 1158096087 - NamedType 1093918040" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Shopify shop {code} was not found.</source>
+          <target>Shopify verslun {code} fannst ekki.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Shopify verslun {code} fannst ekki.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Customer Sync Impl ori - Method GetErrors - NamedType NotFoundTextLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 158272105 - Method 1158096087 - NamedType 1399190847" size-unit="char" translate="yes" xml:space="preserve">
+          <source>No shop has this code. Nothing was changed.</source>
+          <target>Engin verslun hefur þennan kóða. Engu var breytt.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Engin verslun hefur þennan kóða. Engu var breytt.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Customer Sync Impl ori - Method GetErrors - NamedType NotFoundWhenLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 158272105 - Method 1158096087 - NamedType 3952560250" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Read table 30102 with Data.Records.Get to find the shop code.</source>
+          <target>Lestu töflu 30102 með Data.Records.Get til að finna verslunarkóðann.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Lestu töflu 30102 með Data.Records.Get til að finna verslunarkóðann.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Customer Sync Impl ori - Method GetErrors - NamedType NotFoundFixLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 158272105 - Method 1158096087 - NamedType 1680973737" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Shop {code} is not enabled.</source>
+          <target>Verslun {code} er ekki virk.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Verslun {code} er ekki virk.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Customer Sync Impl ori - Method GetErrors - NamedType NotEnabledTextLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 158272105 - Method 1158096087 - NamedType 2642544002" size-unit="char" translate="yes" xml:space="preserve">
+          <source>The shop is not enabled. Nothing was changed.</source>
+          <target>Verslunin er ekki virk. Engu var breytt.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Verslunin er ekki virk. Engu var breytt.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Customer Sync Impl ori - Method GetErrors - NamedType NotEnabledWhenLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 158272105 - Method 1158096087 - NamedType 2178837119" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Enable the shop on the Shopify Shop Card.</source>
+          <target>Virkjaðu verslunina á Shopify Shop Card.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Virkjaðu verslunina á Shopify Shop Card.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Customer Sync Impl ori - Method GetErrors - NamedType NotEnabledFixLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 158272105 - Method 1158096087 - NamedType 2401151139" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Can not synchronize customers for shop {code}.</source>
+          <target>Ekki er hægt að samstilla viðskiptamenn fyrir verslun {code}.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Ekki er hægt að samstilla viðskiptamenn fyrir verslun {code}.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Customer Sync Impl ori - Method GetErrors - NamedType RefusedTextLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 158272105 - Method 1158096087 - NamedType 2312813484" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Business Central or the Shopify connector refused, for example because the shop has no valid connection to Shopify. The text names the cause. The Shopify connector commits while it works, so changes made before the refusal can stay.</source>
+          <target>Business Central eða Shopify tengillinn hafnaði, til dæmis vegna þess að verslunin hefur enga gilda tengingu við Shopify. Textinn nefnir orsökina. Shopify tengillinn framkvæmir Commit á meðan hann vinnur, svo breytingar sem voru gerðar áður en honum var hafnað geta staðið eftir.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Business Central eða Shopify tengillinn hafnaði, til dæmis vegna þess að verslunin hefur enga gilda tengingu við Shopify. Textinn nefnir orsökina. Shopify tengillinn framkvæmir Commit á meðan hann vinnur, svo breytingar sem voru gerðar áður en honum var hafnað geta staðið eftir.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Customer Sync Impl ori - Method GetErrors - NamedType RefusedWhenLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 158272105 - Method 1158096087 - NamedType 2688451485" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Fix the cause named in the text, for example the Shopify connection of the shop, then call again.</source>
+          <target>Lagaðu orsökina sem textinn nefnir, til dæmis tenginguna við Shopify í versluninni, og kallaðu aftur.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Lagaðu orsökina sem textinn nefnir, til dæmis tenginguna við Shopify í versluninni, og kallaðu aftur.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Customer Sync Impl ori - Method GetErrors - NamedType RefusedFixLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 158272105 - Method 1158096087 - NamedType 155546187" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Shop {code} was synchronized, but {count} Shopify customers have no Business Central customer.</source>
+          <target>Verslun {code} var samstillt, en {count} Shopify viðskiptamenn eru án viðskiptamanns í Business Central.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Verslun {code} var samstillt, en {count} Shopify viðskiptamenn eru án viðskiptamanns í Business Central.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Customer Sync Impl ori - Method GetErrors - NamedType UnmappedTextLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 158272105 - Method 1158096087 - NamedType 3984720740" size-unit="char" translate="yes" xml:space="preserve">
+          <source>The connector ran, but after it at least one Shopify customer of the shop is still not linked to a Business Central customer although the shop has Auto Create Unknown Customers and imports customers. The connector hides the error of a customer it could not import (for example an invalid customer template or mapping), so this check reports the result instead of the cause. The customers imported before stay.</source>
+          <target>Tengillinn keyrði, en eftir hann er að minnsta kosti einn Shopify viðskiptamaður verslunarinnar enn ótengdur viðskiptamanni í Business Central þótt verslunin sé með Auto Create Unknown Customers og flytji inn viðskiptamenn. Tengillinn felur villu viðskiptamanns sem hann gat ekki flutt inn (til dæmis ógilt sniðmát eða varpanir), svo þessi athugun tilkynnir niðurstöðuna en ekki orsökina. Viðskiptamennirnir sem voru fluttir inn áður standa eftir.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Tengillinn keyrði, en eftir hann er að minnsta kosti einn Shopify viðskiptamaður verslunarinnar enn ótengdur viðskiptamanni í Business Central þótt verslunin sé með Auto Create Unknown Customers og flytji inn viðskiptamenn. Tengillinn felur villu viðskiptamanns sem hann gat ekki flutt inn (til dæmis ógilt sniðmát eða varpanir), svo þessi athugun tilkynnir niðurstöðuna en ekki orsökina. Viðskiptamennirnir sem voru fluttir inn áður standa eftir.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Customer Sync Impl ori - Method GetErrors - NamedType UnmappedWhenLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 158272105 - Method 1158096087 - NamedType 1472551253" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Check the customer template and the customer mapping of the shop, then call again. Customers already imported are matched, not created again.</source>
+          <target>Athugaðu viðskiptamannasniðmátið og varpanir viðskiptamanna í versluninni og kallaðu aftur. Viðskiptamenn sem þegar eru fluttir inn eru paraðir, ekki stofnaðir aftur.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Athugaðu viðskiptamannasniðmátið og varpanir viðskiptamanna í versluninni og kallaðu aftur. Viðskiptamenn sem þegar eru fluttir inn eru paraðir, ekki stofnaðir aftur.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Customer Sync Impl ori - Method GetErrors - NamedType UnmappedFixLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 158272105 - Method 3255554567 - NamedType 36270934" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Synchronize the customers of a Shopify shop</source>
+          <target>Samstilla viðskiptamenn Shopify verslunar</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Samstilla viðskiptamenn Shopify verslunar</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Customer Sync Impl ori - Method GetExamples - NamedType ExampleLbl</note>
+        </trans-unit>
         <trans-unit id="Codeunit 158272105 - Method 1027590672 - NamedType 1290244428" size-unit="char" translate="yes" xml:space="preserve">
           <source>shopify sync customers, import shopify customers, update shopify customers, synchronize webshop customers, shopify customer sync</source>
           <target>shopify samstilla viðskiptamenn, flytja inn shopify viðskiptamenn, uppfæra shopify viðskiptamenn, samstilla vefverslunarviðskiptamenn, shopify samstilling viðskiptamanna</target>
           <note from="Developer" annotates="general" priority="2">is-IS=shopify samstilla viðskiptamenn, flytja inn shopify viðskiptamenn, uppfæra shopify viðskiptamenn, samstilla vefverslunarviðskiptamenn, shopify samstilling viðskiptamanna</note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit Customer Sync Impl ori - Method GetKeywords - NamedType KeywordsLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 158272105 - Method 3650283039 - NamedType 2344026547" size-unit="char" translate="yes" xml:space="preserve">
+          <source>What is imported and updated follows the shop settings Customer Import From Shopify and Can Update Shopify Customer; the request only names the shop. Repeating the call is safe: customers already mapped are matched, not created again. The call contacts Shopify when the shop imports or updates customers. The Shopify codeunit is internal to the connector, so it is started by its object ID; a future connector version that changes it may need an update of this type. The connector commits between customers and does not report the error of a customer it could not import, so this type checks the result: when the shop has Auto Create Unknown Customers and imports customers and a Shopify customer of the shop is still without a Business Central customer afterwards, the answer is an error, not Success. Customers handled before stay. Business Central and connector refusals are returned as a refusal. Permissions: SHOPIFY Full ori, plus the Microsoft Shopify permissions and the right to create and change customers.</source>
+          <target>Það sem er flutt inn og uppfært ræðst af verslunarstillingunum Customer Import From Shopify og Can Update Shopify Customer; beiðnin nefnir aðeins verslunina. Það er óhætt að endurtaka kallið: viðskiptamenn sem þegar eru tengdir eru paraðir, ekki stofnaðir aftur. Kallið hefur samband við Shopify þegar verslunin flytur inn eða uppfærir viðskiptamenn. Shopify codeunit er innri í tenglinum og er því ræst með hlutarnúmeri sínu; framtíðarútgáfa tengilsins sem breytir henni gæti þurft uppfærslu á þessari tegund. Tengillinn framkvæmir Commit á milli viðskiptamanna og skilar ekki villu viðskiptamanns sem hann gat ekki flutt inn, svo þessi tegund athugar niðurstöðuna: þegar verslunin er með Auto Create Unknown Customers og flytur inn viðskiptamenn og Shopify viðskiptamaður verslunarinnar er eftir það enn án viðskiptamanns í Business Central er svarið villa, ekki Success. Viðskiptamenn sem voru afgreiddir áður standa eftir. Business Central og tengillinn geta hafnað og þá er skilað synjun. Heimildir: SHOPIFY Full ori, ásamt Microsoft Shopify heimildum og heimild til að stofna og breyta viðskiptamönnum.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Það sem er flutt inn og uppfært ræðst af verslunarstillingunum Customer Import From Shopify og Can Update Shopify Customer; beiðnin nefnir aðeins verslunina. Það er óhætt að endurtaka kallið: viðskiptamenn sem þegar eru tengdir eru paraðir, ekki stofnaðir aftur. Kallið hefur samband við Shopify þegar verslunin flytur inn eða uppfærir viðskiptamenn. Shopify codeunit er innri í tenglinum og er því ræst með hlutarnúmeri sínu; framtíðarútgáfa tengilsins sem breytir henni gæti þurft uppfærslu á þessari tegund. Tengillinn framkvæmir Commit á milli viðskiptamanna og skilar ekki villu viðskiptamanns sem hann gat ekki flutt inn, svo þessi tegund athugar niðurstöðuna: þegar verslunin er með Auto Create Unknown Customers og flytur inn viðskiptamenn og Shopify viðskiptamaður verslunarinnar er eftir það enn án viðskiptamanns í Business Central er svarið villa, ekki Success. Viðskiptamenn sem voru afgreiddir áður standa eftir. Business Central og tengillinn geta hafnað og þá er skilað synjun. Heimildir: SHOPIFY Full ori, ásamt Microsoft Shopify heimildum og heimild til að stofna og breyta viðskiptamönnum.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Customer Sync Impl ori - Method GetNotes - NamedType NotesLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 158272105 - Method 2340569551 - NamedType 3593894611" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Imports Shopify customers and updates Shopify customers from Business Central for one shop, as the shop is set up, by running the Shopify connector codeunit Shpfy Sync Customers (30123), the code behind the Sync action on Shopify Customers and the Shopify Shop Card, so the connector's own validation and checks run.</source>
+          <target>Flytur inn Shopify viðskiptamenn og uppfærir Shopify viðskiptamenn úr Business Central fyrir eina verslun, eins og verslunin er uppsett, með því að keyra codeunit Shpfy Sync Customers (30123) í Shopify tenglinum, kóðann á bak við aðgerðina Sync á Shopify Customers og Shopify Shop Card, svo eigin sannprófanir og athuganir tengilsins keyra.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Flytur inn Shopify viðskiptamenn og uppfærir Shopify viðskiptamenn úr Business Central fyrir eina verslun, eins og verslunin er uppsett, með því að keyra codeunit Shpfy Sync Customers (30123) í Shopify tenglinum, kóðann á bak við aðgerðina Sync á Shopify Customers og Shopify Shop Card, svo eigin sannprófanir og athuganir tengilsins keyra.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Customer Sync Impl ori - Method GetOverview - NamedType OverviewLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 158272105 - Method 3615801952 - NamedType 351624416" size-unit="char" translate="yes" xml:space="preserve">
+          <source>The code of an enabled Shopify shop, e.g. from Data.Records.Get on table 30102. What is imported and updated follows the customer settings of the shop.</source>
+          <target>Kóði virkrar Shopify verslunar, t.d. úr Data.Records.Get á töflu 30102. Það sem er flutt inn og uppfært ræðst af viðskiptamannastillingum verslunarinnar.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Kóði virkrar Shopify verslunar, t.d. úr Data.Records.Get á töflu 30102. Það sem er flutt inn og uppfært ræðst af viðskiptamannastillingum verslunarinnar.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Customer Sync Impl ori - Method GetParameters - NamedType ShopCodeParamLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 158272105 - Method 1033708611 - NamedType 210434479" size-unit="char" translate="yes" xml:space="preserve">
+          <source>You need to find the shop, table 30102 Shpfy Shop, or read the synchronized customers, table 30105 Shpfy Customer.</source>
+          <target>Þú þarft að finna verslunina, töflu 30102 Shpfy Shop, eða lesa samstillta viðskiptamenn, töflu 30105 Shpfy Customer.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Þú þarft að finna verslunina, töflu 30102 Shpfy Shop, eða lesa samstillta viðskiptamenn, töflu 30105 Shpfy Customer.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Customer Sync Impl ori - Method GetRelated - NamedType RelatedLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 158272105 - Method 4268477247 - NamedType 3193096050" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Success. It is returned only when the connector ran and no Shopify customer is left without a Business Central customer although the shop creates unknown customers.</source>
+          <target>Success. Það er aðeins skilað þegar tengillinn keyrði og enginn Shopify viðskiptamaður er eftir án viðskiptamanns í Business Central þótt verslunin stofni óþekkta viðskiptamenn.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Success. Það er aðeins skilað þegar tengillinn keyrði og enginn Shopify viðskiptamaður er eftir án viðskiptamanns í Business Central þótt verslunin stofni óþekkta viðskiptamenn.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Customer Sync Impl ori - Method GetResponse - NamedType StatusLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 158272105 - Method 4268477247 - NamedType 3770051306" size-unit="char" translate="yes" xml:space="preserve">
+          <source>The shop that was synchronized.</source>
+          <target>Verslunin sem var samstillt.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Verslunin sem var samstillt.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Customer Sync Impl ori - Method GetResponse - NamedType ShopLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 158272105 - Method 4268477247 - NamedType 143641881" size-unit="char" translate="yes" xml:space="preserve">
+          <source>The shop setting Customer Import From Shopify that applied: None, AllCustomers or WithOrderImport.</source>
+          <target>Stillingin Customer Import From Shopify í versluninni sem gilti: None, AllCustomers eða WithOrderImport.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Stillingin Customer Import From Shopify í versluninni sem gilti: None, AllCustomers eða WithOrderImport.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Customer Sync Impl ori - Method GetResponse - NamedType ImportLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 158272105 - Method 4268477247 - NamedType 1369133989" size-unit="char" translate="yes" xml:space="preserve">
+          <source>The shop setting Can Update Shopify Customer that applied.</source>
+          <target>Stillingin Can Update Shopify Customer í versluninni sem gilti.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Stillingin Can Update Shopify Customer í versluninni sem gilti.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Customer Sync Impl ori - Method GetResponse - NamedType UpdateLbl</note>
         </trans-unit>
         <trans-unit id="Codeunit 158272105 - Method 79446908 - NamedType 895773054" size-unit="char" translate="yes" xml:space="preserve">
           <source>Use to synchronize the customers of one Shopify shop in both directions as the shop is set up (import from Shopify and update in Shopify). It does not change the shop setup (use Data.Records.Set on table 30102) and does not read customers (use Data.Records.Get on table 30105 or table 18).</source>
@@ -123,23 +315,29 @@
           <note from="Developer" annotates="general" priority="2">is-IS=Notað til að samstilla viðskiptamenn einnar Shopify verslunar í báðar áttir eins og verslunin er uppsett (inn frá Shopify og uppfærsla í Shopify). Breytir ekki uppsetningu verslunarinnar (notaðu Data.Records.Set á töflu 30102) og les ekki viðskiptamenn (notaðu Data.Records.Get á töflu 30105 eða töflu 18).</note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit Customer Sync Impl ori - Method GetSelectionDescription - NamedType SelectionLbl</note>
         </trans-unit>
-        <trans-unit id="Codeunit 158272105 - Method 3571782927 - NamedType 3351274" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Shopify shop %1 was not found.</source>
-          <target>Shopify verslun %1 fannst ekki.</target>
-          <note from="Developer" annotates="general" priority="2">%1 = Shop code||is-IS=Shopify verslun %1 fannst ekki.</note>
-          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Customer Sync Impl ori - Method ExecuteBifrostTask - NamedType NotFoundErr</note>
+        <trans-unit id="Codeunit 158272105 - Method 3897248833 - NamedType 16173077" size-unit="char" translate="yes" xml:space="preserve">
+          <source>The code of an enabled Shopify shop (table 30102).</source>
+          <target>Kóði virkrar Shopify verslunar (tafla 30102).</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Kóði virkrar Shopify verslunar (tafla 30102).</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Customer Sync Impl ori - Method GetTarget - NamedType TargetLbl</note>
         </trans-unit>
-        <trans-unit id="Codeunit 158272105 - Method 3571782927 - NamedType 2715195543" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Shop %1 is not enabled.</source>
-          <target>Verslun %1 er ekki virk.</target>
-          <note from="Developer" annotates="general" priority="2">%1 = Shop code||is-IS=Verslun %1 er ekki virk.</note>
-          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Customer Sync Impl ori - Method ExecuteBifrostTask - NamedType NotEnabledErr</note>
+        <trans-unit id="PermissionSet 1311670517 - Property 2879900210" maxwidth="30" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Bifrost Shopify Base</source>
+          <target>Bifröst Shopify grunnur</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Bifröst Shopify grunnur</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PermissionSet SHOPIFY Base ori - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Codeunit 158272105 - Method 3571782927 - NamedType 1603624325" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Can not synchronize customers for shop %1. %2</source>
-          <target>Ekki er hægt að samstilla viðskiptamenn fyrir verslun %1. %2</target>
-          <note from="Developer" annotates="general" priority="2">%1 = Shop code, %2 = detailed text||is-IS=Ekki er hægt að samstilla viðskiptamenn fyrir verslun %1. %2</note>
-          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Customer Sync Impl ori - Method ExecuteBifrostTask - NamedType RefusedErr</note>
+        <trans-unit id="PermissionSet 2984143847 - Property 2879900210" maxwidth="30" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Bifrost Shopify Full</source>
+          <target>Bifröst Shopify allur aðgangur</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Bifröst Shopify allur aðgangur</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PermissionSet SHOPIFY Full ori - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PermissionSet 3252234552 - Property 2879900210" maxwidth="30" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Bifrost Shopify Read</source>
+          <target>Bifröst Shopify lestur</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Bifröst Shopify lestur</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PermissionSet SHOPIFY Read ori - Property Caption</note>
         </trans-unit>
       </group>
     </body>

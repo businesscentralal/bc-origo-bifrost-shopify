@@ -1,6 +1,8 @@
 namespace Origo.Bifrost.Shopify.Test;
 
 using Microsoft.Integration.Shopify;
+using Microsoft.Sales.Customer;
+using Origo.Bifrost.Shopify;
 using Origo.Bifrost;
 using System.TestLibraries.Utilities;
 
@@ -144,6 +146,85 @@ codeunit 97450 "Shpfy Cust Sync Test ori"
         Cleanup();
     end;
 
+    /// <summary>A failed customer import after a successful one is detected: the connector hides it, the result check reports it.</summary>
+    [Test]
+    procedure FailedCustomerImportIsCounted()
+    var
+        Shop: Record "Shpfy Shop";
+        Customer: Record Customer;
+        Impl: Codeunit "Customer Sync Impl ori";
+    begin
+        Initialize();
+        Seed(true, "Shpfy Customer Import Range"::AllCustomers, false);
+        Shop.Get(ShopCodeTok);
+        Shop."Auto Create Unknown Customers" := true;
+        Shop."Shop Id" := 16016;
+        Shop.Modify();
+        // Mock: customer 1 was imported (mapped to a Business Central customer), customer 2 failed (no Business Central customer).
+        Customer.Init();
+        Customer."No." := 'BIFT16C';
+        Customer.Insert();
+        InsertShopifyCustomer(1600001, Customer.SystemId);
+        InsertShopifyCustomer(1600002, EmptyGuid());
+        Assert.AreEqual(1, Impl.CountUnmappedImports(Shop), 'The failed customer must be counted and the imported one not.');
+        // A shop that does not create unknown customers does not expect a mapping, so nothing is a failure.
+        Shop."Auto Create Unknown Customers" := false;
+        Assert.AreEqual(0, Impl.CountUnmappedImports(Shop), 'No failure without Auto Create Unknown Customers.');
+        // A shop that imports no customers has nothing that failed.
+        Shop."Auto Create Unknown Customers" := true;
+        Shop."Customer Import From Shopify" := "Shpfy Customer Import Range"::None;
+        Assert.AreEqual(0, Impl.CountUnmappedImports(Shop), 'No failure when no customers are imported.');
+        Cleanup();
+    end;
+
+    /// <summary>The detailed help chapters are translated: in Icelandic they differ from the English text.</summary>
+    [Test]
+    procedure HelpChaptersAreTranslated()
+    var
+        Impl: Codeunit "Customer Sync Impl ori";
+        EnglishOverview: Text;
+        EnglishNotes: Text;
+        IcelandicOverview: Text;
+        IcelandicNotes: Text;
+        EnglishParameters: JsonArray;
+        IcelandicParameters: JsonArray;
+        EnglishErrors: JsonArray;
+        IcelandicErrors: JsonArray;
+        PreviousLanguage: Integer;
+    begin
+        PreviousLanguage := GlobalLanguage();
+        GlobalLanguage(1033);
+        Impl.GetOverview(EnglishOverview);
+        Impl.GetNotes(EnglishNotes);
+        Impl.GetParameters(EnglishParameters);
+        Impl.GetErrors(EnglishErrors);
+        GlobalLanguage(1039);
+        Impl.GetOverview(IcelandicOverview);
+        Impl.GetNotes(IcelandicNotes);
+        Impl.GetParameters(IcelandicParameters);
+        Impl.GetErrors(IcelandicErrors);
+        GlobalLanguage(PreviousLanguage);
+        Assert.AreNotEqual(EnglishOverview, IcelandicOverview, 'Overview must be translated.');
+        Assert.AreNotEqual(EnglishNotes, IcelandicNotes, 'Notes must be translated.');
+        Assert.AreNotEqual(Format(EnglishParameters), Format(IcelandicParameters), 'Parameters must be translated.');
+        Assert.AreNotEqual(Format(EnglishErrors), Format(IcelandicErrors), 'Errors must be translated.');
+    end;
+
+    local procedure InsertShopifyCustomer(Id: BigInteger; CustomerSystemId: Guid)
+    var
+        ShopifyCustomer: Record "Shpfy Customer";
+    begin
+        ShopifyCustomer.Init();
+        ShopifyCustomer.Id := Id;
+        ShopifyCustomer."Shop Id" := 16016;
+        ShopifyCustomer."Customer SystemId" := CustomerSystemId;
+        ShopifyCustomer.Insert();
+    end;
+
+    local procedure EmptyGuid() NoGuid: Guid
+    begin
+    end;
+
     local procedure Initialize()
     begin
         Cleanup();
@@ -165,8 +246,14 @@ codeunit 97450 "Shpfy Cust Sync Test ori"
 
     local procedure Cleanup()
     var
+        Customer: Record Customer;
+        ShopifyCustomer: Record "Shpfy Customer";
         Shop: Record "Shpfy Shop";
     begin
+        ShopifyCustomer.SetRange("Shop Id", 16016);
+        ShopifyCustomer.DeleteAll();
+        if Customer.Get('BIFT16C') then
+            Customer.Delete();
         if Shop.Get(ShopCodeTok) then begin
             Shop.Enabled := false;
             Shop.Modify();
