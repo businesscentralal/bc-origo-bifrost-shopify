@@ -8,7 +8,7 @@ using Microsoft.Integration.Shopify;
 /// internal, so it is started by its ID. The caller starts this codeunit with Run in an if statement, so a failure rolls
 /// back what the Shopify code changed in this transaction.
 /// </summary>
-codeunit 70013451 "Customer Sync Run ori"
+codeunit 73732001 "Customer Sync Run ori"
 {
     Access = Internal;
 

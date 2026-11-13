@@ -21,6 +21,9 @@ Tests: 97400-97599
 | PermissionSet | 73731952 | SHOPIFY Full ori |
 | PermissionSetExtension | 73731951 | Shopify Read ori |
 | PermissionSetExtension | 73731952 | Shopify Full ori |
+| Codeunit | 73732000 | Customer Sync Impl ori |
+| Codeunit | 73732001 | Customer Sync Run ori |
+| EnumExtension | 73732000 | Customer Sync MsgType ori |
 | Test Codeunit | 97400 | Shopify Issue 1 Tests ori |
 
 ## Microsoft source

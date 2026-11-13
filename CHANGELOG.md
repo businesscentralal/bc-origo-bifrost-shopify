@@ -10,4 +10,4 @@
 
 - Bound permission-set captions to 30 characters (70013400–70013402), shortened the Icelandic Full caption, and removed API role extension 70013400 to keep the scaffold aligned with the Subscription Billing roles.
 - Added restricted Read/Full registration checks to test codeunit 97400; assertions run after restoring runner permissions.
-- Added message type `Shopify.Customer.Sync` (enum value 70013450, codeunits 70013450/70013451): imports Shopify customers and updates Shopify customers from Business Central for one shop, as the shop is set up, through the connector codeunit Shpfy Sync Customers (30123), the code behind the Sync action; granted through `SHOPIFY Full ori` (#16). Tests in codeunits 97450/97451.
+- Added message type `Shopify.Customer.Sync` (enum value 73732000, codeunits 73732000/73732001): imports Shopify customers and updates Shopify customers from Business Central for one shop, as the shop is set up, through the connector codeunit Shpfy Sync Customers (30123), the code behind the Sync action; granted through `SHOPIFY Full ori` (#16). Tests in codeunits 97450/97451.

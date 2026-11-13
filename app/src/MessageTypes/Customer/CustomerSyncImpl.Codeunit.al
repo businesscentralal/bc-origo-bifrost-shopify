@@ -9,7 +9,7 @@ using Origo.Bifrost;
 /// shop, as the shop is set up, through the Shopify connector codeunit Shpfy Sync Customers (30123), the code behind the
 /// report Shpfy Sync Customers (30100).
 /// </summary>
-codeunit 70013450 "Customer Sync Impl ori" implements "Msg Interface ori", "Msg Discovery ori", "Msg Contract ori"
+codeunit 73732000 "Customer Sync Impl ori" implements "Msg Interface ori", "Msg Discovery ori", "Msg Contract ori"
 {
     Access = Internal;
 
