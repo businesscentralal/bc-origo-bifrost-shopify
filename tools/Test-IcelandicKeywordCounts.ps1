@@ -19,13 +19,25 @@
     More Icelandic entries than English ones are fine (an integrator may type an English word on purpose, for example
     "delta", next to the Icelandic one).
 
+    A scaffold that has not registered any message type yet has nothing for this guard to count. That is not a vacuous
+    pass: the script prints "NOT_APPLICABLE: no message types registered" and exits 0. A message type is registered when
+    an .al file under the app folder matches any of these, and no other object counts:
+
+      - it extends "Message Type ori" (the Bifrost message-type object),
+      - it implements "Msg Interface ori", "Msg Discovery ori" or "Msg Contract ori", or
+      - it declares KeywordsLbl (a KeywordsLbl-bearing message definition).
+
+    If any of those is present and no KeywordsLbl declaration was checked, the script still throws. The vacuous-pass
+    failure stays.
+
 .PARAMETER AppFolder
     The AL app folder (default: ../app next to this script).
 
 .PARAMETER SelfTest
     Runs the guard against a small synthetic app and checks that it reports a short list, a missing is-IS= text, a list
     that is short only after repeats are removed and a short xlf target, and accepts a list that is as long as, or longer
-    than, the English one. Exits 1 when it does not.
+    than, the English one. It also checks that an app with no message-type registration exits 0 with the not-applicable
+    result, and that a message type with no KeywordsLbl still fails. Exits 1 when it does not.
 
 .EXAMPLE
     ./tools/Test-IcelandicKeywordCounts.ps1
@@ -49,6 +61,17 @@ function Get-KeywordCount([string]$Text) {
         if ($term -ne '') { [void]$terms.Add($term) }
     }
     return $terms.Count
+}
+
+function Test-MessageTypeRegistered([string]$Folder) {
+    # See the comment-based help. Registration-only code, permission sets and other objects do not count.
+    if (-not (Test-Path -LiteralPath $Folder)) { return $false }
+    $registered = '(?s)extends\s+"Message Type ori"|\bimplements\b[^{}]*"Msg (?:Interface|Discovery|Contract) ori"|\bKeywordsLbl\b'
+    foreach ($file in @(Get-ChildItem -LiteralPath $Folder -Recurse -Filter '*.al' -File -ErrorAction SilentlyContinue)) {
+        $source = Get-Content -LiteralPath $file.FullName -Raw -Encoding UTF8
+        if ($source -and ($source -match $registered)) { return $true }
+    }
+    return $false
 }
 
 function Find-ShortKeywordLists([string]$Folder) {
@@ -140,25 +163,89 @@ function Invoke-SelfTest {
         if (-not ($xr.Violations | Where-Object { $_ -like 'u1*' })) { $failures.Add('did not report the short xlf target u1') }
         if ($xr.Violations | Where-Object { $_ -like 'u2*' -or $_ -like 'u3*' }) { $failures.Add('reported a unit that is fine (u2) or not a keyword list (u3)') }
 
+        function Invoke-GuardChild([string]$Folder) {
+            $stdout = Join-Path $root ("out-" + [guid]::NewGuid().ToString('N') + '.txt')
+            $stderr = Join-Path $root ("err-" + [guid]::NewGuid().ToString('N') + '.txt')
+            $proc = Start-Process -FilePath (Get-Command pwsh).Source -ArgumentList @(
+                '-NoProfile', '-NonInteractive', '-File', $PSCommandPath, '-AppFolder', $Folder
+            ) -Wait -PassThru -RedirectStandardOutput $stdout -RedirectStandardError $stderr
+            $text = ''
+            if (Test-Path -LiteralPath $stdout) { $text += [string](Get-Content -LiteralPath $stdout -Raw -ErrorAction SilentlyContinue) }
+            if (Test-Path -LiteralPath $stderr) { $text += [string](Get-Content -LiteralPath $stderr -Raw -ErrorAction SilentlyContinue) }
+            return [pscustomobject]@{ ExitCode = $proc.ExitCode; Text = $text }
+        }
+
+        $none = Join-Path $root 'no-message-types'
+        New-Item -ItemType Directory -Path $none | Out-Null
+        Set-Content -LiteralPath (Join-Path $none 'Registration.al') -Value 'codeunit 1 "Registration ori" { InherentPermissions = X; }' -Encoding UTF8
+        $noneResult = Invoke-GuardChild $none
+        if ($noneResult.ExitCode -ne 0) { $failures.Add("no message types exited $($noneResult.ExitCode), expected 0") }
+        if ($noneResult.Text -notmatch 'NOT_APPLICABLE: no message types registered') { $failures.Add('no message types did not print the not-applicable result') }
+        if ($noneResult.Text -match 'the guard checked nothing') { $failures.Add('no message types threw the vacuous-pass failure') }
+
+        $empty = Join-Path $root 'empty-app'
+        New-Item -ItemType Directory -Path $empty | Out-Null
+        $emptyResult = Invoke-GuardChild $empty
+        if ($emptyResult.ExitCode -ne 0 -or $emptyResult.Text -notmatch 'NOT_APPLICABLE: no message types registered') {
+            $failures.Add('an app folder with no objects was not not-applicable')
+        }
+
+        foreach ($declarationWithoutKeywords in @(
+                'enumextension 2 "Types ori" extends "Message Type ori" { value(1; "Demo.Type") { } }',
+                'codeunit 2 "Impl ori" implements "Msg Interface ori" { }'
+            )) {
+            $declared = Join-Path $root ("declared-" + [guid]::NewGuid().ToString('N'))
+            New-Item -ItemType Directory -Path $declared | Out-Null
+            Set-Content -LiteralPath (Join-Path $declared 'Message.al') -Value $declarationWithoutKeywords -Encoding UTF8
+            $declaredResult = Invoke-GuardChild $declared
+            if ($declaredResult.ExitCode -eq 0) { $failures.Add("accepted a message type with no KeywordsLbl: $declarationWithoutKeywords") }
+            if ($declaredResult.Text -notmatch 'No KeywordsLbl found under' -or $declaredResult.Text -notmatch 'the guard checked nothing') {
+                $failures.Add("a message type with no KeywordsLbl did not keep the vacuous-pass failure: $declarationWithoutKeywords")
+            }
+            if ($declaredResult.Text -match 'NOT_APPLICABLE: no message types registered') {
+                $failures.Add("printed not-applicable for a registered message type: $declarationWithoutKeywords")
+            }
+        }
+
+        $covered = Join-Path $root 'keywords-present'
+        New-Item -ItemType Directory -Path $covered | Out-Null
+        Set-Content -LiteralPath (Join-Path $covered 'Keywords.al') -Value "        KeywordsLbl: Label 'a, b', Comment = 'is-IS=x, y';" -Encoding UTF8
+        $coveredResult = Invoke-GuardChild $covered
+        if ($coveredResult.ExitCode -ne 0) { $failures.Add("a KeywordsLbl list of equal length exited $($coveredResult.ExitCode)") }
+        if ($coveredResult.Text -match 'NOT_APPLICABLE: no message types registered') { $failures.Add('a KeywordsLbl declaration was treated as not applicable') }
+        if ($coveredResult.Text -notmatch 'Every Icelandic keyword list has at least as many entries') { $failures.Add('a KeywordsLbl declaration was not counted') }
+
         if ($failures.Count -gt 0) {
             $failures | ForEach-Object { Write-Host "SELF-TEST FAILED: $_" }
             exit 1
         }
-        Write-Host 'Self-test passed: short lists, a missing is-IS= text, repeats and a short xlf target are reported; longer and equal lists are accepted.'
+        Write-Host 'Self-test passed: short lists, a missing is-IS= text, repeats and a short xlf target are reported; longer and equal lists are accepted; no message types is not applicable; a message type with no KeywordsLbl still fails.'
     }
     finally {
         Remove-Item -LiteralPath $root -Recurse -Force -ErrorAction SilentlyContinue
     }
 }
 
-if ($SelfTest) { Invoke-SelfTest; exit 0 }
+if ($SelfTest) {
+    Invoke-SelfTest
+    # CI already invokes this self-test. Keep the tools-only absence/negative regression
+    # suite here so adding coverage does not require changing SourceGuards.yaml.
+    & (Join-Path $PSScriptRoot 'Test-SourceGuardApplicability.ps1')
+    exit 0
+}
 
 if (-not (Test-Path -LiteralPath $AppFolder)) { throw "App folder not found: $AppFolder" }
 $sourceResult = Find-ShortKeywordLists $AppFolder
 $xlfPath = Get-ChildItem -LiteralPath (Join-Path $AppFolder 'Translations') -Filter '*.is-IS.xlf' -ErrorAction SilentlyContinue | Select-Object -First 1
 $xlfResult = if ($xlfPath) { Find-ShortKeywordTargets $xlfPath.FullName } else { [pscustomobject]@{ Checked = 0; Violations = @() } }
 
-if ($sourceResult.Checked -eq 0) { throw "No KeywordsLbl found under $AppFolder - the guard checked nothing." }
+if ($sourceResult.Checked -eq 0) {
+    if (-not (Test-MessageTypeRegistered $AppFolder)) {
+        Write-Host 'NOT_APPLICABLE: no message types registered'
+        exit 0
+    }
+    throw "No KeywordsLbl found under $AppFolder - the guard checked nothing."
+}
 $all = @($sourceResult.Violations) + @($xlfResult.Violations)
 if ($all.Count -gt 0) {
     Write-Host "$($all.Count) Icelandic keyword list(s) have fewer entries than the English one:"
