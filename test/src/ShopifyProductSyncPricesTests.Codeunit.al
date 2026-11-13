@@ -1,6 +1,8 @@
 namespace Origo.Bifrost.Shopify.Test;
 
 using Microsoft.Integration.Shopify;
+using Microsoft.Finance.GeneralLedger.Setup;
+using Microsoft.Finance.VAT.Setup;
 using Microsoft.Inventory.Item;
 using Origo.Bifrost;
 using System.TestLibraries.Utilities;
@@ -39,6 +41,7 @@ codeunit 97440 "Shpfy Prod SyncPrices Test ori"
     [Test]
     procedure ConnectorFailureIsRefused()
     var
+        ShopifyVariant: Record "Shpfy Variant";
         Response: JsonObject;
     begin
         Initialize();
@@ -47,6 +50,8 @@ codeunit 97440 "Shpfy Prod SyncPrices Test ori"
         Response := Execute(ShopCodeTok);
         Assert.AreEqual('Error', ReadText(Response, 'status'), 'Connector failure status.');
         Assert.AreEqual('BusinessCentralError', ReadText(Response, 'code'), 'Connector failure code.');
+        ShopifyVariant.Get(940000010);
+        Assert.AreEqual(1, ShopifyVariant.Price, 'A refused sync must leave the stored variant price unchanged.');
         Cleanup();
     end;
 
@@ -116,7 +121,8 @@ codeunit 97440 "Shpfy Prod SyncPrices Test ori"
         LowerPermissions.SetExactPermissionSet('BIFROST Read ori');
         Response := Execute(ShopCodeTok);
         LowerPermissions.StopLoggingNAVPermissions();
-        Assert.AreNotEqual('Success', ReadText(Response, 'status'), 'Caller without permission must be refused.');
+        Assert.AreEqual('Error', ReadText(Response, 'status'), 'Caller without permission status.');
+        Assert.AreEqual('PermissionDenied', ReadText(Response, 'code'), 'Caller without permission code.');
         Cleanup();
     end;
 
@@ -139,6 +145,8 @@ codeunit 97440 "Shpfy Prod SyncPrices Test ori"
 
     local procedure SeedMappedVariant()
     var
+        GenProdPostingGroup: Record "Gen. Product Posting Group";
+        VATProdPostingGroup: Record "VAT Product Posting Group";
         Item: Record Item;
         ShopifyProduct: Record "Shpfy Product";
         ShopifyVariant: Record "Shpfy Variant";
@@ -147,6 +155,10 @@ codeunit 97440 "Shpfy Prod SyncPrices Test ori"
         Item."No." := 'BIFT9-I';
         Item.Insert();
         Item."Unit Price" := 25;
+        if GenProdPostingGroup.FindFirst() then
+            Item."Gen. Prod. Posting Group" := GenProdPostingGroup.Code;
+        if VATProdPostingGroup.FindFirst() then
+            Item."VAT Prod. Posting Group" := VATProdPostingGroup.Code;
         Item.Modify();
         ShopifyProduct.Init();
         ShopifyProduct.Id := 940000009;

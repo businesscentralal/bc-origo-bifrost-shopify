@@ -130,7 +130,7 @@ codeunit 70013440 "Product SyncPrices Impl ori" implements "Msg Interface ori", 
         Preconditions.Add('The shop exists and is enabled.');
         Preconditions.Add('The shop''s products are mapped to items (Shopify Products with an item).');
         Effect.Add('effect', 'write');
-        Effect.Add('changes', 'Runs the connector''s price sync (report Shpfy Sync Products, Only Sync Price): updates the prices, compare-at prices and unit costs of the shop''s Shopify variants in Shopify and stores them (and the updated-at time) on the Shopify variants in Business Central, through a Shopify bulk operation or single requests. The connector commits inside this path (Commit() in Shpfy Variant API), so earlier variant updates are kept even if a later step fails.');
+        Effect.Add('changes', 'Runs the connector''s price sync (report Shpfy Sync Products, Only Sync Price): updates the prices, compare-at prices and unit costs of the shop''s Shopify variants in Shopify and stores them (and the updated-at time) on the Shopify variants in Business Central, through a Shopify bulk operation or single requests. If the connector refuses or Shopify cannot be reached, the variants of the shop are restored to their values before the call, so nothing is recorded as sent that was not.');
         Effect.Add('idempotent', true);
         Effect.Add('permissionSet', 'SHOPIFY Full ori');
         Effect.Add('preconditions', Preconditions);
@@ -191,7 +191,7 @@ codeunit 70013440 "Product SyncPrices Impl ori" implements "Msg Interface ori", 
     /// <returns>True; the chapter was supplied.</returns>
     procedure GetNotes(var Notes: Text): Boolean
     begin
-        Notes := 'Idempotent: only variants whose calculated price, compare-at price or unit cost differ from what is stored are sent, so a second call with unchanged prices sends nothing. The price follows the shop''s price calculation settings. The connector commits inside the path. A failure of the connector is returned as a refusal; changes the connector committed before the failure are kept. Permissions: SHOPIFY Full ori, plus the Microsoft Shopify permissions for products and variants.';
+        Notes := 'Idempotent: only variants whose calculated price, compare-at price or unit cost differ from what is stored are sent, so a second call with unchanged prices sends nothing. The price follows the shop''s price calculation settings. The connector commits inside the path. A failure of the connector is returned as a refusal and the variants of the shop are restored to what they were before the call, so a repeat call after the cause is fixed sends the prices again. Permissions: SHOPIFY Full ori, plus the Microsoft Shopify permissions for products and variants.';
         exit(true);
     end;
 
@@ -208,6 +208,7 @@ codeunit 70013440 "Product SyncPrices Impl ori" implements "Msg Interface ori", 
     var
         Shop: Record "Shpfy Shop";
         ShopifyProduct: Record "Shpfy Product";
+        TempVariantSnapshot: Record "Shpfy Variant" temporary;
         RequestJson: JsonObject;
         ResponseJson: JsonObject;
         Token: JsonToken;
@@ -257,7 +258,9 @@ codeunit 70013440 "Product SyncPrices Impl ori" implements "Msg Interface ori", 
 
         // The connector report calculates the prices and sends the changed variants to Shopify.
         ClearLastError();
+        SnapshotVariants(Shop.Code, TempVariantSnapshot);
         if not TrySyncPrices(Shop) then begin
+            RestoreVariants(TempVariantSnapshot);
             Argument.RespondWithError("Bifrost Error Code ori"::BusinessCentralError, StrSubstNo(RefusedErr, Shop.Code, GetLastErrorText()), 'shopCode', Shop.Code, SyncExpectedLbl, FixCauseLbl);
             exit;
         end;
@@ -275,6 +278,35 @@ codeunit 70013440 "Product SyncPrices Impl ori" implements "Msg Interface ori", 
         EmptyGuid: Guid;
     begin
         exit(EmptyGuid);
+    end;
+
+    local procedure SnapshotVariants(ShopCode: Code[20]; var TempSnapshot: Record "Shpfy Variant" temporary)
+    var
+        ShopifyVariant: Record "Shpfy Variant";
+    begin
+        TempSnapshot.Reset();
+        TempSnapshot.DeleteAll();
+        ShopifyVariant.SetRange("Shop Code", ShopCode);
+        if ShopifyVariant.FindSet() then
+            repeat
+                TempSnapshot := ShopifyVariant;
+                TempSnapshot.Insert();
+            until ShopifyVariant.Next() = 0;
+    end;
+
+    /// A [TryFunction] does not roll back database writes. When the connector refuses, put the variants back as they were
+    /// so Business Central does not record prices as sent that never reached Shopify.
+    local procedure RestoreVariants(var TempSnapshot: Record "Shpfy Variant" temporary)
+    var
+        ShopifyVariant: Record "Shpfy Variant";
+    begin
+        if TempSnapshot.FindSet() then
+            repeat
+                if ShopifyVariant.Get(TempSnapshot.Id) then begin
+                    ShopifyVariant.TransferFields(TempSnapshot, false);
+                    ShopifyVariant.Modify();
+                end;
+            until TempSnapshot.Next() = 0;
     end;
 
     [TryFunction]
