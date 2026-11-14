@@ -98,7 +98,7 @@ Write-Host "Alpaca overrides path: $overridesPath"
 $overridePath = Join-Path $overridesPath "PipelineInitialize.ps1"
 if (Test-Path $overridePath) {
     if ($env:BIFROST_SHARED_CONTAINER -eq 'true') {
-        . ./tools/SharedAlpacaContainer.ps1
+        . (Join-Path $env:GITHUB_WORKSPACE 'tools/SharedAlpacaContainer.ps1')
         Initialize-BifrostSharedContainer -OverridePath $overridePath -ScriptsPath $scriptsPath -BackendUrl $jobs.initialization.outputs.backendUrl
     }
     Write-Host "Invoking Alpaca override"
@@ -110,7 +110,7 @@ if ($env:BIFROST_SHARED_CONTAINER -eq 'true') {
     Set-Variable -Name 'BifrostAlpacaPublish' -Value (Get-Variable -Name 'PublishBcContainerApp' -Scope 1 -ValueOnly) -Scope 1
     Set-Variable -Name 'PublishBcContainerApp' -Scope 1 -Value {
         param([hashtable] $Parameters)
-        . ./tools/SharedAlpacaContainer.ps1
+        . (Join-Path $env:GITHUB_WORKSPACE 'tools/SharedAlpacaContainer.ps1')
         Invoke-BifrostSharedPublish -Parameters $Parameters -Publisher $BifrostAlpacaPublish
     }
 }
