@@ -4,6 +4,7 @@
 
 - Moved Shopify scaffold objects 70013400–70013402 to 73731950–73731952 and the app allocation to 73731950–73732149 (#54). Test objects remain in 97400–97599.
 - Moved `Shopify.Order.CreateSalesDocument` enum extension, enum value and codeunit from 70013470 to 73732020 (the #54 mapping); restores the main build after #55 (AL0297) (#56).
+- MCP fixture codeunit 97471 now sets the fixture shop's "Order Attributes To Shopify" to false, so `Shopify.Order.CreateSalesDocument` can create the document without asking Shopify for an access token (#56).
 
 - Repository scaffolded from Bifrost Subscription Billing setup.
 - Added Foundation app registration, adapter permission roles and registration smoke tests (#1).
