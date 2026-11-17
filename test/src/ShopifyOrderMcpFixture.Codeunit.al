@@ -42,6 +42,8 @@ codeunit 97471 "Shopify Order MCP Fixture ori"
         SetShopUrl(Shop, 'https://mcp24.myshopify.com');
         Shop."Customer Mapping Type" := Shop."Customer Mapping Type"::DefaultCustomer;
         Shop."Default Customer No." := Customer."No.";
+        // Without this, report 30103 asks Shopify for an access token; the fixture never calls a live shop.
+        Shop."Order Attributes To Shopify" := false;
         Shop.Modify();
         Variant.Init();
         Variant.Id := 960000011;

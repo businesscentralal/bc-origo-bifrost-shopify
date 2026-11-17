@@ -9,7 +9,7 @@ using Origo.Bifrost;
 /// invoice of one imported Shopify order by running the Shopify report "Shpfy Create Sales Orders" (30103), which
 /// runs the order process (codeunit 30167 Shpfy Process Orders) with all of Microsoft's own checks.
 /// </summary>
-codeunit 70013470 "Order CreateSalesDoc Impl ori" implements "Msg Interface ori", "Msg Discovery ori", "Msg Contract ori"
+codeunit 73732020 "Order CreateSalesDoc Impl ori" implements "Msg Interface ori", "Msg Discovery ori", "Msg Contract ori"
 {
     Access = Internal;
 
