@@ -1,0 +1,42 @@
+[
+ {
+  "name": "call_message_type",
+  "args": {
+   "type": "Shopify.Order.CreateSalesDocument",
+   "data": {
+    "orderId": 950000011
+   },
+   "lcid": 1039
+  },
+  "isError": false,
+  "text": "{\n  \"company\": \"CRONUS International Ltd.\",\n  \"messageType\": \"Shopify.Order.CreateSalesDocument\",\n  \"status\": \"Success\",\n  \"orderId\": 950000011,\n  \"documentType\": \"Order\",\n  \"documentNo\": \"1013\"\n}"
+ },
+ {
+  "name": "call_message_type",
+  "args": {
+   "type": "Shopify.Order.CreateSalesDocument",
+   "data": {
+    "orderId": 950000011
+   },
+   "lcid": 1033
+  },
+  "isError": true,
+  "text": "{\"status\":\"Error\",\"code\":\"PreconditionFailed\",\"error\":\"Shopify order 950000011 already has a sales document.\",\"parameter\":\"orderId\",\"received\":\"950000011\",\"expected\":\"an order that is not processed\",\"nextStep\":\"Nothing to do.\",\"hint\":\"For usage details, call the \\\"Help.Implementation.Get\\\" message type with subject \\\"Shopify.Order.CreateSalesDocument\\\". Always read the help before calling a message type.\"}"
+ },
+ {
+  "name": "get_records",
+  "args": {
+   "table": "Shpfy Order Header",
+   "filter": "WHERE(Shop Code=CONST(MCP24))",
+   "fields": [
+    1,
+    1001,
+    1002,
+    1003,
+    1004
+   ]
+  },
+  "isError": false,
+  "text": "{\n  \"company\": \"CRONUS International Ltd.\",\n  \"table\": \"Shpfy Order Header\",\n  \"skip\": 0,\n  \"take\": 50,\n  \"count\": 2,\n  \"records\": [\n    {\n      \"id\": \"432FD6A2-8CE2-F111-B701-00090FFE0001\",\n      \"primaryKey\": {\n        \"ShopifyOrderId\": \"950000011\"\n      },\n      \"fields\": {\n        \"SalesOrderNo_\": \"1013\",\n        \"HasError\": \"false\",\n        \"ErrorMessage\": \"\",\n        \"Processed\": \"true\"\n      }\n    },\n    {\n      \"id\": \"452FD6A2-8CE2-F111-B701-00090FFE0001\",\n      \"primaryKey\": {\n        \"ShopifyOrderId\": \"950000012\"\n      },\n      \"fields\": {\n        \"SalesOrderNo_\": \"\",\n        \"HasError\": \"false\",\n        \"ErrorMessage\": \"\",\n        \"Processed\": \"false\"\n      }\n    }\n  ],\n  \"noOfRecords\": 2\n}"
+ }
+]

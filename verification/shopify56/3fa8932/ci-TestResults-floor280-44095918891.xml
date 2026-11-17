@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+  <testsuite name="97400 Shopify Issue 1 Tests ori" timestamp="2026-11-17T14:04:01" hostname="runnervmm7ud1" time="10.441" tests="7" errors="0" failures="0" skipped="0">
+    <properties>
+      <property name="extensionid" value="435aa982-b3bd-4074-8b2a-f30781c17504" />
+      <property name="appName" value="Bifrost Shopify - Tests" />
+    </properties>
+    <testcase classname="97400 Shopify Issue 1 Tests ori" name="LicenceAdminOpensSetupEnglish" time="10.234" />
+    <testcase classname="97400 Shopify Issue 1 Tests ori" name="LicenceAdminOpensSetupIcelandic" time="0.16" />
+    <testcase classname="97400 Shopify Issue 1 Tests ori" name="RegistryContainsShopify" time="0.004" />
+    <testcase classname="97400 Shopify Issue 1 Tests ori" name="RegistryCanBeReadTwice" time="0.02" />
+    <testcase classname="97400 Shopify Issue 1 Tests ori" name="RegistryDoesNotInventUnknownApp" time="0.007" />
+    <testcase classname="97400 Shopify Issue 1 Tests ori" name="ReaderCanReadRegistry" time="0.01" />
+    <testcase classname="97400 Shopify Issue 1 Tests ori" name="FullRoleCanReadRegistry" time="0.006" />
+  </testsuite>
+  <testsuite name="97470 Shopify Order Create Tests ori" timestamp="2026-11-17T14:04:26" hostname="runnervmm7ud1" time="24.881" tests="7" errors="0" failures="0" skipped="0">
+    <properties>
+      <property name="extensionid" value="435aa982-b3bd-4074-8b2a-f30781c17504" />
+      <property name="appName" value="Bifrost Shopify - Tests" />
+    </properties>
+    <testcase classname="97470 Shopify Order Create Tests ori" name="ProcessedOrderIsRefused" time="15.376" />
+    <testcase classname="97470 Shopify Order Create Tests ori" name="DisabledShopIsRefused" time="0.133" />
+    <testcase classname="97470 Shopify Order Create Tests ori" name="MissingKeyIsRefused" time="0.023" />
+    <testcase classname="97470 Shopify Order Create Tests ori" name="UnknownKeyIsRefused" time="0.046" />
+    <testcase classname="97470 Shopify Order Create Tests ori" name="UnknownOrderIsRefused" time="0.02" />
+    <testcase classname="97470 Shopify Order Create Tests ori" name="BusinessCentralRefusalIsReturned" time="9.11" />
+    <testcase classname="97470 Shopify Order Create Tests ori" name="CallerWithoutPermissionIsRefused" time="0.173" />
+  </testsuite>
+  <testsuite name="97471 Shopify Order MCP Fixture ori" timestamp="2026-11-17T14:04:27" hostname="runnervmm7ud1" time="0.16" tests="2" errors="0" failures="0" skipped="0">
+    <properties>
+      <property name="extensionid" value="435aa982-b3bd-4074-8b2a-f30781c17504" />
+      <property name="appName" value="Bifrost Shopify - Tests" />
+    </properties>
+    <testcase classname="97471 Shopify Order MCP Fixture ori" name="A1SeedFixture" time="0.11" />
+    <testcase classname="97471 Shopify Order MCP Fixture ori" name="A2RemoveFixture" time="0.05" />
+  </testsuite>
+</testsuites>

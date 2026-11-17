@@ -1,0 +1,8 @@
+{"sha":"3fa8932d71a1dcd352a930a8a9f3379a613f7cfc","worker":"Nár (worker-26)","tenant":"w129-36 (local BC 29 W1, own)","foundation":"Bifrost Foundation 28.0.13.930 (installed on own tenant)",
+"compile":{"compiler":"alc 30.0.42.60748 + CodeCop/UICop/AppSourceCop","app":{"errors":0,"warnings":0},"testApp":{"errors":0,"warnings":0}},
+"localTests":[{"range":"97400|97470","executed":14,"passed":14,"failed":0,"skipped":0},{"range":"97471 (fixture, isolation Disabled)","executed":2,"passed":2,"failed":0,"skipped":0}],
+"ciTests":{"run":"https://github.com/businesscentralal/bc-origo-bifrost-shopify/actions/runs/44095918891","default":{"executed":16,"failed":0,"skipped":0},"bc28floor":{"executed":16,"failed":0,"skipped":0}},
+"mcp":{"type":"Shopify.Order.CreateSalesDocument","lcids":[1033,1039],"calls":["Help.Implementation.Get 1039","get_message_type_help","MissingParameter 1033/1039","UnknownParameter 1033/1039","RecordNotFound 1033/1039","Success 1033 (SO 1011, 1012)","PreconditionFailed repeat 1039","Success 1039 (SO 1013, round 2)","PreconditionFailed repeat 1033"],"data":"self-seeded by fixture 97471 A1 (shop MCP24, customer, item, variant 960000011, orders 950000011/12); removed by A2",
+"cleanup":{"Shpfy Shop MCP24":0,"Shpfy Order Header shop MCP24":0,"Shpfy Variant 960000011":0,"Sales Header Shpfy Order Id 950000000..950999999":0,"Customer GL00000388":0}},
+"acO2":"git grep 700134xx/700135xx in app/ test/ = 0","xlf":"g.xlf 26 units, is-IS 26, 0 missing, 0 stale",
+"ui":"NOT_RUN: no page or action changed (object renumber + test fixture only)"}

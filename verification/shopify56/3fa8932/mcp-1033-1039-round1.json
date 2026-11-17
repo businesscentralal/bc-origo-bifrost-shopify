@@ -1,0 +1,170 @@
+[
+ {
+  "name": "get_message_type_help",
+  "args": {
+   "messageType": "Shopify.Order.CreateSalesDocument"
+  },
+  "isError": false,
+  "text": "{\n  \"company\": \"CRONUS International Ltd.\",\n  \"messageType\": \"Shopify.Order.CreateSalesDocument\",\n  \"status\": \"Success\",\n  \"contract\": \"json\",\n  \"format\": \"chapters\",\n  \"catalogue\": {\n    \"name\": \"Shopify.Order.CreateSalesDocument\",\n    \"isEnabled\": true,\n    \"filterTableNo\": 30118,\n    \"description\": \"Creates the Business Central sales order or invoice of an imported Shopify order.\",\n    \"selectionDescription\": \"Use for an already imported Shopify order that has no Business Central document yet. It does not import orders from Shopify, does not release or post the document beyond the shop's own setting, and does not create refunds.\",\n    \"messageDirection\": \"Inbound\",\n    \"keywords\": [\n      \"shopify order\",\n      \"create sales order\",\n      \"create sales invoice\",\n      \"process shopify order\",\n      \"convert shopify order\"\n    ],\n    \"chargeable\": true\n  },\n  \"chapters\": {\n    \"target\": [\n      {\n        \"source\": \"Shpfy Order Header\",\n        \"form\": \"data.orderId\",\n        \"description\": \"The Shopify Order Id of an imported order (table 30118).\"\n      }\n    ],\n    \"parameters\": [\n      {\n        \"name\": \"orderId\",\n        \"type\": \"integer\",\n        \"required\": true,\n        \"description\": \"The Shopify Order Id of an imported order, e.g. from Data.Records.Get on table 30118.\"\n      }\n    ],\n    \"response\": {\n      \"contentType\": \"text/json\",\n      \"fields\": [\n        {\n          \"name\": \"status\",\n          \"type\": \"string\",\n          \"description\": \"Success.\"\n        },\n        {\n          \"name\": \"orderId\",\n          \"type\": \"integer\",\n          \"description\": \"The Shopify Order Id.\"\n        },\n        {\n          \"name\": \"documentType\",\n          \"type\": \"string\",\n          \"description\": \"Order or Invoice, following the shop's Create Invoices From Orders setting.\"\n        },\n        {\n          \"name\": \"documentNo\",\n          \"type\": \"string\",\n          \"description\": \"The No. of the created sales document.\"\n        },\n        {\n          \"name\": \"code\",\n          \"type\": \"string\",\n          \"description\": \"Present on errors only. The application error code, or BusinessCentralError when no code was supplied.\"\n        }\n      ]\n    },\n    \"errors\": [\n      {\n        \"code\": \"MissingParameter\",\n        \"error\": \"Parameter \\\"orderId\\\" is required.\",\n        \"when\": \"The request has no orderId. Nothing was changed.\",\n        \"fix\": \"Send data.orderId with the Shopify Order Id.\"\n      },\n      {\n        \"code\": \"InvalidParameterFormat\",\n        \"error\": \"Parameter \\\"orderId\\\" must be a whole number greater than 0.\",\n        \"when\": \"The value is not a positive integer. Nothing was changed.\",\n        \"fix\": \"Send the Shopify Order Id as a number.\"\n      },\n      {\n        \"code\": \"RecordNotFound\",\n        \"error\": \"Shopify order {id} was not found.\",\n        \"when\": \"No imported order has this Id. Nothing was changed.\",\n        \"fix\": \"Import the order first, or read table 30118 with Data.Records.Get.\"\n      },\n      {\n        \"code\": \"Preconditi"
+ },
+ {
+  "name": "call_message_type",
+  "args": {
+   "type": "Help.Implementation.Get",
+   "subject": "Shopify.Order.CreateSalesDocument",
+   "data": {},
+   "lcid": 1039
+  },
+  "isError": false,
+  "text": "{\n  \"company\": \"CRONUS International Ltd.\",\n  \"messageType\": \"Help.Implementation.Get\",\n  \"status\": \"Success\",\n  \"result\": [\n    {\n      \"status\": \"Success\",\n      \"name\": \"Shopify.Order.CreateSalesDocument\",\n      \"isEnabled\": true,\n      \"filterTableNo\": 30118,\n      \"description\": \"Býr til sölupöntun eða sölureikning í Business Central fyrir innflutta Shopify pöntun.\",\n      \"selectionDescription\": \"Notað fyrir innflutta Shopify pöntun sem hefur ekki Business Central skjal. Flytur ekki inn pantanir frá Shopify, losar ekki og bókar ekki skjalið umfram stillingu verslunarinnar og býr ekki til endurgreiðslur.\",\n      \"messageDirection\": \"Inbound\",\n      \"keywords\": [\n        \"shopify pöntun\",\n        \"búa til sölupöntun\",\n        \"búa til sölureikning\",\n        \"vinna shopify pöntun\",\n        \"umbreyta shopify pöntun\"\n      ],\n      \"chargeable\": true,\n      \"target\": [\n        {\n          \"source\": \"Shpfy Order Header\",\n          \"form\": \"data.orderId\",\n          \"description\": \"The Shopify Order Id of an imported order (table 30118).\"\n        }\n      ],\n      \"parameters\": [\n        {\n          \"name\": \"orderId\",\n          \"type\": \"integer\",\n          \"required\": true,\n          \"description\": \"The Shopify Order Id of an imported order, e.g. from Data.Records.Get on table 30118.\"\n        }\n      ],\n      \"response\": {\n        \"contentType\": \"text/json\",\n        \"fields\": [\n          {\n            \"name\": \"status\",\n            \"type\": \"string\",\n            \"description\": \"Success.\"\n          },\n          {\n            \"name\": \"orderId\",\n            \"type\": \"integer\",\n            \"description\": \"The Shopify Order Id.\"\n          },\n          {\n            \"name\": \"documentType\",\n            \"type\": \"string\",\n            \"description\": \"Order or Invoice, following the shop's Create Invoices From Orders setting.\"\n          },\n          {\n            \"name\": \"documentNo\",\n            \"type\": \"string\",\n            \"description\": \"The No. of the created sales document.\"\n          },\n          {\n            \"name\": \"code\",\n            \"type\": \"string\",\n            \"description\": \"Present on errors only. The application error code, or BusinessCentralError when no code was supplied.\"\n          }\n        ]\n      },\n      \"errors\": [\n        {\n          \"code\": \"MissingParameter\",\n          \"error\": \"Parameter \\\"orderId\\\" is required.\",\n          \"when\": \"The request has no orderId. Nothing was changed.\",\n          \"fix\": \"Send data.orderId with the Shopify Order Id.\"\n        },\n        {\n          \"code\": \"InvalidParameterFormat\",\n          \"error\": \"Parameter \\\"orderId\\\" must be a whole number greater than 0.\",\n          \"when\": \"The value is not a positive integer. Nothing was changed.\",\n          \"fix\": \"Send the Shopify Order Id as a number.\"\n        },\n        {\n          \"code\": \"RecordNotFound\",\n          \"error\": \"Shopify order {id} was not found.\",\n          \"when\": \"No imported order has this Id. Nothing was changed.\",\n          \"fix\": \"Import th"
+ },
+ {
+  "name": "call_message_type",
+  "args": {
+   "type": "Shopify.Order.CreateSalesDocument",
+   "data": {},
+   "lcid": 1033
+  },
+  "isError": true,
+  "text": "{\"status\":\"Error\",\"code\":\"MissingParameter\",\"error\":\"Parameter \\\"orderId\\\" is required.\",\"parameter\":\"orderId\",\"expected\":\"a whole number greater than 0\",\"nextStep\":\"Send data.orderId with the Shopify Order Id.\",\"hint\":\"For usage details, call the \\\"Help.Implementation.Get\\\" message type with subject \\\"Shopify.Order.CreateSalesDocument\\\". Always read the help before calling a message type.\"}"
+ },
+ {
+  "name": "call_message_type",
+  "args": {
+   "type": "Shopify.Order.CreateSalesDocument",
+   "data": {
+    "orderId": 950000011,
+    "bogus": 1
+   },
+   "lcid": 1033
+  },
+  "isError": true,
+  "text": "{\"status\":\"Error\",\"code\":\"UnknownParameter\",\"error\":\"Parameter \\\"bogus\\\" is not declared by this message type. Nothing was executed.\",\"parameter\":\"bogus\",\"received\":\"1\",\"expected\":\"declared request parameters\",\"nextStep\":\"Remove this key or consult Help.Implementation.Get for the declared parameters.\",\"hint\":\"For usage details, call the \\\"Help.Implementation.Get\\\" message type with subject \\\"Shopify.Order.CreateSalesDocument\\\". Always read the help before calling a message type.\"}"
+ },
+ {
+  "name": "call_message_type",
+  "args": {
+   "type": "Shopify.Order.CreateSalesDocument",
+   "data": {
+    "orderId": 959999999
+   },
+   "lcid": 1033
+  },
+  "isError": true,
+  "text": "{\"status\":\"Error\",\"code\":\"RecordNotFound\",\"error\":\"Shopify order 959999999 was not found.\",\"parameter\":\"orderId\",\"received\":\"959999999\",\"expected\":\"the Id of an imported order\",\"nextStep\":\"Import the order first, or read table 30118 with Data.Records.Get.\",\"hint\":\"For usage details, call the \\\"Help.Implementation.Get\\\" message type with subject \\\"Shopify.Order.CreateSalesDocument\\\". Always read the help before calling a message type.\"}"
+ },
+ {
+  "name": "call_message_type",
+  "args": {
+   "type": "Shopify.Order.CreateSalesDocument",
+   "data": {
+    "orderId": 950000012
+   },
+   "lcid": 1033
+  },
+  "isError": false,
+  "text": "{\n  \"company\": \"CRONUS International Ltd.\",\n  \"messageType\": \"Shopify.Order.CreateSalesDocument\",\n  \"status\": \"Success\",\n  \"orderId\": 950000012,\n  \"documentType\": \"Order\",\n  \"documentNo\": \"1011\"\n}"
+ },
+ {
+  "name": "call_message_type",
+  "args": {
+   "type": "Shopify.Order.CreateSalesDocument",
+   "data": {},
+   "lcid": 1039
+  },
+  "isError": true,
+  "text": "{\"status\":\"Error\",\"code\":\"MissingParameter\",\"error\":\"Færibreytan \\\"orderId\\\" er nauðsynleg.\",\"parameter\":\"orderId\",\"expected\":\"heiltala stærri en 0\",\"nextStep\":\"Sendu data.orderId með auðkenni Shopify pöntunarinnar.\",\"hint\":\"Til að sjá notkunarupplýsingar skaltu kalla á skilaboðategundina \\\"Help.Implementation.Get\\\" með subject \\\"Shopify.Order.CreateSalesDocument\\\". Lestu alltaf hjálpina áður en þú kallar á skilaboðategund.\"}"
+ },
+ {
+  "name": "call_message_type",
+  "args": {
+   "type": "Shopify.Order.CreateSalesDocument",
+   "data": {
+    "orderId": 950000011,
+    "bogus": 1
+   },
+   "lcid": 1039
+  },
+  "isError": true,
+  "text": "{\"status\":\"Error\",\"code\":\"UnknownParameter\",\"error\":\"Viðfangið \\\"bogus\\\" er ekki skilgreint fyrir þessa skilaboðategund. Ekkert var keyrt.\",\"parameter\":\"bogus\",\"received\":\"1\",\"expected\":\"skilgreind beiðniviðföng\",\"nextStep\":\"Fjarlægðu þennan lykil eða skoðaðu Help.Implementation.Get til að sjá skilgreind viðföng.\",\"hint\":\"Til að sjá notkunarupplýsingar skaltu kalla á skilaboðategundina \\\"Help.Implementation.Get\\\" með subject \\\"Shopify.Order.CreateSalesDocument\\\". Lestu alltaf hjálpina áður en þú kallar á skilaboðategund.\"}"
+ },
+ {
+  "name": "call_message_type",
+  "args": {
+   "type": "Shopify.Order.CreateSalesDocument",
+   "data": {
+    "orderId": 959999999
+   },
+   "lcid": 1039
+  },
+  "isError": true,
+  "text": "{\"status\":\"Error\",\"code\":\"RecordNotFound\",\"error\":\"Shopify pöntun 959999999 fannst ekki.\",\"parameter\":\"orderId\",\"received\":\"959999999\",\"expected\":\"auðkenni innfluttrar pöntunar\",\"nextStep\":\"Fluttu pöntunina fyrst inn eða lestu töflu 30118 með Data.Records.Get.\",\"hint\":\"Til að sjá notkunarupplýsingar skaltu kalla á skilaboðategundina \\\"Help.Implementation.Get\\\" með subject \\\"Shopify.Order.CreateSalesDocument\\\". Lestu alltaf hjálpina áður en þú kallar á skilaboðategund.\"}"
+ },
+ {
+  "name": "call_message_type",
+  "args": {
+   "type": "Shopify.Order.CreateSalesDocument",
+   "data": {
+    "orderId": 950000012
+   },
+   "lcid": 1039
+  },
+  "isError": true,
+  "text": "{\"status\":\"Error\",\"code\":\"PreconditionFailed\",\"error\":\"Shopify pöntun 950000012 hefur þegar sölugagn.\",\"parameter\":\"orderId\",\"received\":\"950000012\",\"expected\":\"pöntun sem hefur ekki verið unnin\",\"nextStep\":\"Ekkert að gera.\",\"hint\":\"Til að sjá notkunarupplýsingar skaltu kalla á skilaboðategundina \\\"Help.Implementation.Get\\\" með subject \\\"Shopify.Order.CreateSalesDocument\\\". Lestu alltaf hjálpina áður en þú kallar á skilaboðategund.\"}"
+ },
+ {
+  "name": "call_message_type",
+  "args": {
+   "type": "Shopify.Order.CreateSalesDocument",
+   "data": {
+    "orderId": 950000011
+   },
+   "lcid": 1033
+  },
+  "isError": false,
+  "text": "{\n  \"company\": \"CRONUS International Ltd.\",\n  \"messageType\": \"Shopify.Order.CreateSalesDocument\",\n  \"status\": \"Success\",\n  \"orderId\": 950000011,\n  \"documentType\": \"Order\",\n  \"documentNo\": \"1012\"\n}"
+ },
+ {
+  "name": "call_message_type",
+  "args": {
+   "type": "Shopify.Order.CreateSalesDocument",
+   "data": {
+    "orderId": 950000011
+   },
+   "lcid": 1039
+  },
+  "isError": true,
+  "text": "{\"status\":\"Error\",\"code\":\"PreconditionFailed\",\"error\":\"Shopify pöntun 950000011 hefur þegar sölugagn.\",\"parameter\":\"orderId\",\"received\":\"950000011\",\"expected\":\"pöntun sem hefur ekki verið unnin\",\"nextStep\":\"Ekkert að gera.\",\"hint\":\"Til að sjá notkunarupplýsingar skaltu kalla á skilaboðategundina \\\"Help.Implementation.Get\\\" með subject \\\"Shopify.Order.CreateSalesDocument\\\". Lestu alltaf hjálpina áður en þú kallar á skilaboðategund.\"}"
+ },
+ {
+  "name": "get_records",
+  "args": {
+   "table": "Sales Header",
+   "filter": "WHERE(Shpfy Order Id=CONST(950000011))",
+   "fields": [
+    1,
+    3,
+    2,
+    120
+   ]
+  },
+  "isError": false,
+  "text": "{\n  \"company\": \"CRONUS International Ltd.\",\n  \"table\": \"Sales Header\",\n  \"skip\": 0,\n  \"take\": 50,\n  \"count\": 1,\n  \"records\": [\n    {\n      \"id\": \"3A280693-8CE2-F111-B701-00090FFE0001\",\n      \"primaryKey\": {\n        \"DocumentType\": \"Order\",\n        \"No_\": \"1012\"\n      },\n      \"fields\": {\n        \"SelltoCustomerNo_\": \"GL00000388\",\n        \"Status\": \"Released\"\n      }\n    }\n  ],\n  \"noOfRecords\": 1\n}"
+ },
+ {
+  "name": "get_records",
+  "args": {
+   "table": "Shpfy Order Header",
+   "filter": "WHERE(Shop Code=CONST(MCP24))",
+   "fields": [
+    1,
+    1001,
+    1002,
+    1003,
+    1004
+   ]
+  },
+  "isError": false,
+  "text": "{\n  \"company\": \"CRONUS International Ltd.\",\n  \"table\": \"Shpfy Order Header\",\n  \"skip\": 0,\n  \"take\": 50,\n  \"count\": 2,\n  \"records\": [\n    {\n      \"id\": \"4C5D8288-8CE2-F111-B701-00090FFE0001\",\n      \"primaryKey\": {\n        \"ShopifyOrderId\": \"950000011\"\n      },\n      \"fields\": {\n        \"SalesOrderNo_\": \"1012\",\n        \"HasError\": \"false\",\n        \"ErrorMessage\": \"\",\n        \"Processed\": \"true\"\n      }\n    },\n    {\n      \"id\": \"4E5D8288-8CE2-F111-B701-00090FFE0001\",\n      \"primaryKey\": {\n        \"ShopifyOrderId\": \"950000012\"\n      },\n      \"fields\": {\n        \"SalesOrderNo_\": \"1011\",\n        \"HasError\": \"false\",\n        \"ErrorMessage\": \"\",\n        \"Processed\": \"true\"\n      }\n    }\n  ],\n  \"noOfRecords\": 2\n}"
+ }
+]
