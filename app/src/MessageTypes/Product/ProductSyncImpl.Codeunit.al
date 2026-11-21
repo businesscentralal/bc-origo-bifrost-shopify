@@ -9,7 +9,7 @@ using Origo.Bifrost;
 /// without Only Sync Price) for one shop: imports products from Shopify and exports changed items to Shopify, as the
 /// shop's Sync Item and Shopify Can Update Items setup says.
 /// </summary>
-codeunit 70013460 "Product Sync Impl ori" implements "Msg Interface ori", "Msg Discovery ori", "Msg Contract ori"
+codeunit 73732010 "Product Sync Impl ori" implements "Msg Interface ori", "Msg Discovery ori", "Msg Contract ori"
 {
     Access = Internal;
 

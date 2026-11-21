@@ -1,10 +1,11 @@
 namespace Origo.Bifrost.Shopify;
 
 /// <summary>Grants the adapter's action surface; callers must also hold Microsoft Shopify permissions.</summary>
-permissionset 70013402 "SHOPIFY Full ori"
+permissionset 73731952 "SHOPIFY Full ori"
 {
     Assignable = true;
     Caption = 'Bifrost Shopify Full', MaxLength = 30, Comment = 'is-IS=Bifröst Shopify allur aðgangur';
     IncludedPermissionSets = "SHOPIFY Read ori";
-    Permissions = codeunit "Product Sync Impl ori" = X;
+    Permissions = codeunit "Order CreateSalesDoc Impl ori" = X,
+        codeunit "Product Sync Impl ori" = X;
 }
