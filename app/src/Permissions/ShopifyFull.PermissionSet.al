@@ -9,6 +9,8 @@ permissionset 73731952 "SHOPIFY Full ori"
     Permissions = codeunit "Fulfillment Sync Impl ori" = X,
                   codeunit "Fulfillment Sync Run ori" = X,
                   codeunit "Order CreateSalesDoc Impl ori" = X,
+                  codeunit "Inventory Sync Impl ori" = X,
+                  codeunit "Inventory Sync Run ori" = X,
                   codeunit "Order Import Impl ori" = X,
                   codeunit "Order Import Run ori" = X;
 }
