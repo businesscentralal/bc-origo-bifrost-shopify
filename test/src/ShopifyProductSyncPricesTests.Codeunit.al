@@ -4,6 +4,7 @@ using Microsoft.Integration.Shopify;
 using Microsoft.Finance.GeneralLedger.Setup;
 using Microsoft.Finance.VAT.Setup;
 using Microsoft.Inventory.Item;
+using Microsoft.Inventory.Setup;
 using Origo.Bifrost;
 using System.TestLibraries.Utilities;
 
@@ -43,6 +44,7 @@ codeunit 97440 "Shpfy Prod SyncPrices Test ori"
     var
         ShopifyVariant: Record "Shpfy Variant";
         Response: JsonObject;
+        ResponseText: Text;
     begin
         Initialize();
         SeedShop(true);
@@ -50,8 +52,12 @@ codeunit 97440 "Shpfy Prod SyncPrices Test ori"
         Response := Execute(ShopCodeTok);
         Assert.AreEqual('Error', ReadText(Response, 'status'), 'Connector failure status.');
         Assert.AreEqual('BusinessCentralError', ReadText(Response, 'code'), 'Connector failure code.');
+        Response.WriteTo(ResponseText);
+        Assert.IsTrue(ResponseText.Contains('Shopify Admin URL'), 'The refusal must name the connector cause (missing Shopify Admin URL), not a setup failure: ' + ResponseText);
+        Assert.IsFalse(ResponseText.Contains('Posting Group'), 'The refusal must not come from price calculation setup: ' + ResponseText);
         ShopifyVariant.Get(940000010);
         Assert.AreEqual(1, ShopifyVariant.Price, 'A refused sync must leave the stored variant price unchanged.');
+        Assert.AreEqual(0DT, ShopifyVariant."Updated At", 'A refused sync must leave Updated At blank.');
         Cleanup();
     end;
 
@@ -147,6 +153,8 @@ codeunit 97440 "Shpfy Prod SyncPrices Test ori"
     var
         GenProdPostingGroup: Record "Gen. Product Posting Group";
         VATProdPostingGroup: Record "VAT Product Posting Group";
+        VATPostingSetup: Record "VAT Posting Setup";
+        InventoryPostingGroup: Record "Inventory Posting Group";
         Item: Record Item;
         ShopifyProduct: Record "Shpfy Product";
         ShopifyVariant: Record "Shpfy Variant";
@@ -157,8 +165,19 @@ codeunit 97440 "Shpfy Prod SyncPrices Test ori"
         Item."Unit Price" := 25;
         if GenProdPostingGroup.FindFirst() then
             Item."Gen. Prod. Posting Group" := GenProdPostingGroup.Code;
-        if VATProdPostingGroup.FindFirst() then
-            Item."VAT Prod. Posting Group" := VATProdPostingGroup.Code;
+        // The shop has no VAT Bus. Posting Group, so the price calculation needs a VAT Posting Setup with a blank business group; otherwise it refuses before the connector runs.
+        VATPostingSetup.SetRange("VAT Bus. Posting Group", '');
+        if VATPostingSetup.FindFirst() then
+            Item."VAT Prod. Posting Group" := VATPostingSetup."VAT Prod. Posting Group"
+        else
+            if VATProdPostingGroup.FindFirst() then begin
+                VATPostingSetup.Init();
+                VATPostingSetup."VAT Prod. Posting Group" := VATProdPostingGroup.Code;
+                VATPostingSetup.Insert();
+                Item."VAT Prod. Posting Group" := VATProdPostingGroup.Code;
+            end;
+        if InventoryPostingGroup.FindFirst() then
+            Item."Inventory Posting Group" := InventoryPostingGroup.Code;
         Item.Modify();
         ShopifyProduct.Init();
         ShopifyProduct.Id := 940000009;
