@@ -8,7 +8,7 @@ using Microsoft.Sales.History;
 /// for one posted sales shipment. The caller starts this codeunit with Run in an if statement, so a failure rolls back
 /// everything it changed, including the skip markers the Shopify report writes on the shipment.
 /// </summary>
-codeunit 70013431 "Fulfillment Sync Run ori"
+codeunit 73731981 "Fulfillment Sync Run ori"
 {
     Access = Internal;
 

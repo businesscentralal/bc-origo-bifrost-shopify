@@ -1,0 +1,54 @@
+{
+  "$schema": "https://raw.githubusercontent.com/microsoft/AL-Go-Actions/v9.2/.Modules/settings.schema.json",
+  "projectName": "BC 28.0 W1 floor",
+  "country": "w1",
+  "artifact": "/sandbox/28.0.46665.55743/w1/latest",
+  "appSourceCopMandatoryAffixes": [
+    "ori"
+  ],
+  "appFolders": [
+    "../app"
+  ],
+  "testFolders": [
+    "../test"
+  ],
+  "bcptTestFolders": [],
+  "doNotRunTests": false,
+  "appDependencyProbingPaths": [
+    {
+      "repo": "https://github.com/OrigoSoftwareSolutions/bc-origo-bifrost-core",
+      "release_status": "latestBuild",
+      "version": "latest",
+      "projects": "*",
+      "authTokenSecret": "ghTokenWorkflow"
+    }
+  ],
+  "nuGetFeedSelectMode": "Exact",
+  "buildModes": [
+    "Default",
+    "Test"
+  ],
+  "doNotSignApps": true,
+  "skipUpgrade": true,
+  "conditionalSettings": [
+    {
+      "buildModes": [
+        "Default"
+      ],
+      "settings": {
+        "doNotBuildTests": true,
+        "doNotRunTests": true
+      }
+    },
+    {
+      "buildModes": [
+        "Test"
+      ],
+      "settings": {
+        "doNotSignApps": true,
+        "skipUpgrade": true
+      }
+    }
+  ],
+  "repoVersion": "28.0"
+}

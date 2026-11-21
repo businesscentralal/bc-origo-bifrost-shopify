@@ -8,7 +8,7 @@ using Origo.Bifrost;
 /// Implementation of <c>Shopify.Fulfillment.Sync</c>. Sends one posted sales shipment of a Shopify order, with its tracking
 /// information, to Shopify as a fulfillment by running the connector report Sync Shipments To Shopify (30109) for that shipment.
 /// </summary>
-codeunit 70013430 "Fulfillment Sync Impl ori" implements "Msg Interface ori", "Msg Discovery ori", "Msg Contract ori"
+codeunit 73731980 "Fulfillment Sync Impl ori" implements "Msg Interface ori", "Msg Discovery ori", "Msg Contract ori"
 {
     Access = Internal;
 
