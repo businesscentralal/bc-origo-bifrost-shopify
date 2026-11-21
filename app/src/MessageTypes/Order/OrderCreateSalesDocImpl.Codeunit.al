@@ -100,6 +100,7 @@ codeunit 73732020 "Order CreateSalesDoc Impl ori" implements "Msg Interface ori"
         Fields.Add(ContractMgt.ResponseField('orderId', 'integer', 'The Shopify Order Id.'));
         Fields.Add(ContractMgt.ResponseField('documentType', 'string', 'Order or Invoice, following the shop''s Create Invoices From Orders setting.'));
         Fields.Add(ContractMgt.ResponseField('documentNo', 'string', 'The No. of the created sales document.'));
+        Fields.Add(ContractMgt.ResponseField('documentStatus', 'string', 'The status of the created document: Open, Released, Pending Approval or Pending Prepayment. The same name in every language.'));
         Response.Add('contentType', 'text/json');
         Response.Add('fields', Fields);
         exit(true);
@@ -117,6 +118,7 @@ codeunit 73732020 "Order CreateSalesDoc Impl ori" implements "Msg Interface ori"
         Errors.Add(ContractMgt.ErrorEntry("Bifrost Error Code ori"::RecordNotFound, 'Shopify order {id} was not found.', 'No imported order has this Id. Nothing was changed.', 'Import the order first, or read table 30118 with Data.Records.Get.'));
         Errors.Add(ContractMgt.ErrorEntry("Bifrost Error Code ori"::PreconditionFailed, 'Shopify order {id} already has a sales document.', 'The order is already processed. Nothing was changed.', 'Nothing to do.'));
         Errors.Add(ContractMgt.ErrorEntry("Bifrost Error Code ori"::PreconditionFailed, 'Shop {code} is not enabled.', 'The shop of the order is disabled. Nothing was changed.', 'Enable the shop.'));
+        Errors.Add(ContractMgt.ErrorEntry("Bifrost Error Code ori"::PreconditionFailed, 'Shop {code} creates credit memos for refunds automatically.', 'The shop''s Return and Refund Process is Auto Create Credit Memo. The standard process would then also create credit memos for every unprocessed refund of any order and any shop, including a refund imported while the request runs. Nothing was changed.', 'Create the documents of this shop with the standard Create Sales Orders action.'));
         Errors.Add(ContractMgt.ErrorEntry("Bifrost Error Code ori"::BusinessCentralError, 'Can not create a sales document for the order {id}.', 'Business Central refused: a customer, item, location or setup is missing. The order keeps the error text and nothing is created.', 'Fix the cause named in the text, then call again.'));
         exit(true);
     end;
@@ -130,9 +132,10 @@ codeunit 73732020 "Order CreateSalesDoc Impl ori" implements "Msg Interface ori"
     begin
         Preconditions.Add('The order is imported and not yet processed (no linked sales document).');
         Preconditions.Add('The shop of the order is enabled.');
+        Preconditions.Add('The shop''s Return and Refund Process is not Auto Create Credit Memo.');
         Preconditions.Add('Customer mapping, item mapping and posting setup of the shop allow Business Central to create the document.');
         Effect.Add('effect', 'write');
-        Effect.Add('changes', 'Runs the Shopify report Shpfy Create Sales Orders for the one order: inserts a sales order (or a sales invoice when the shop has Create Invoices From Orders) with its lines, may create a customer when the shop allows it, and releases the document when the shop has Auto Release Sales Orders. The Shopify code commits (Commit()) during the processing, so a result is kept even if a later step of the message fails.');
+        Effect.Add('changes', 'Runs the Shopify report Shpfy Create Sales Orders for the one order: inserts a sales order (or a sales invoice when the shop has Create Invoices From Orders) with its lines, may create a customer when the shop allows it, and releases the document when the shop has Auto Release Sales Orders. When the shop''s Return and Refund Process is Auto Create Credit Memo, the request is refused before anything is changed, so the report''s refund phase never creates credit memos for other orders or shops. The Shopify code commits (Commit()) during the processing, so a result is kept even if a later step of the message fails.');
         Effect.Add('idempotent', false);
         Effect.Add('permissionSet', 'SHOPIFY Full ori');
         Effect.Add('preconditions', Preconditions);
@@ -176,7 +179,7 @@ codeunit 73732020 "Order CreateSalesDoc Impl ori" implements "Msg Interface ori"
     begin
         Examples.Add(ContractMgt.Example('Create the sales order of an imported order',
             '{"type":"Shopify.Order.CreateSalesDocument","data":{"orderId":820982911946154508}}',
-            '{"status":"Success","orderId":820982911946154508,"documentType":"Order","documentNo":"101001"}'));
+            '{"status":"Success","orderId":820982911946154508,"documentType":"Order","documentNo":"101001","documentStatus":"Open"}'));
         exit(true);
     end;
 
@@ -185,7 +188,7 @@ codeunit 73732020 "Order CreateSalesDoc Impl ori" implements "Msg Interface ori"
     /// <returns>True; the chapter was supplied.</returns>
     procedure GetOverview(var Overview: Text): Boolean
     begin
-        Overview := 'Creates the Business Central sales order or sales invoice of one imported Shopify order by running the Shopify report Shpfy Create Sales Orders (30103, which runs codeunit 30167 Shpfy Process Orders), so Business Central''s own validation and checks run.';
+        Overview := 'Creates the Business Central sales order or sales invoice of one imported Shopify order by running the Shopify report Shpfy Create Sales Orders (30103, which runs codeunit 30167 Shpfy Process Orders), so Business Central''s own validation and checks run. A shop set to Auto Create Credit Memo is refused before anything is changed.';
         exit(true);
     end;
 
@@ -194,7 +197,7 @@ codeunit 73732020 "Order CreateSalesDoc Impl ori" implements "Msg Interface ori"
     /// <returns>True; the chapter was supplied.</returns>
     procedure GetNotes(var Notes: Text): Boolean
     begin
-        Notes := 'Not idempotent: a second call on the same order answers that it already has a sales document. The Shopify code commits during the processing. A refusal from the Shopify process is returned as a refusal and creates nothing; the order keeps the error text on its Has Error and Error Message fields. Permissions: SHOPIFY Full ori, plus the Microsoft Shopify permissions for orders and sales documents.';
+        Notes := 'Not idempotent: a second call on the same order answers that it already has a sales document. The Shopify code commits during the processing. A refusal from the Shopify process is returned as a refusal and creates nothing; the order keeps the error text on its Has Error and Error Message fields. When the shop''s Return and Refund Process is Auto Create Credit Memo, the request is refused before anything is changed, because the standard report would also create credit memos for every unprocessed refund of any order and any shop, including a refund imported while the request runs. The response values documentType (Order, Invoice) and documentStatus (Open, Released, Pending Approval, Pending Prepayment) are the same in every language. Permissions: SHOPIFY Full ori, plus the Microsoft Shopify permissions for orders and sales documents.';
         exit(true);
     end;
 
@@ -211,6 +214,7 @@ codeunit 73732020 "Order CreateSalesDoc Impl ori" implements "Msg Interface ori"
     var
         OrderHeader: Record "Shpfy Order Header";
         Shop: Record "Shpfy Shop";
+        SalesHeader: Record "Sales Header";
         RequestJson: JsonObject;
         ResponseJson: JsonObject;
         Token: JsonToken;
@@ -236,6 +240,9 @@ codeunit 73732020 "Order CreateSalesDoc Impl ori" implements "Msg Interface ori"
         CreatedExpectedLbl: Label 'an order that Business Central can create a sales document for', Comment = 'is-IS=pöntun sem Business Central getur búið til sölugagn fyrir';
         FixCauseLbl: Label 'Fix the cause named in the text, then call again.', Comment = 'is-IS=Lagaðu orsökina sem textinn nefnir og kallaðu aftur.';
         RefusedErr: Label 'Can not create a sales document for the order %1. %2', Comment = '%1 = Order Id, %2 = detailed text||is-IS=Ekki er hægt að búa til sölugagn fyrir pöntunina %1. %2';
+        AutoCreditMemoShopErr: Label 'Shop %1 creates credit memos for refunds automatically.', Comment = '%1 = Shop Code||is-IS=Verslunin %1 býr sjálfkrafa til kreditreikninga fyrir endurgreiðslur.';
+        NoAutoCreditMemoExpectedLbl: Label 'a shop that does not create credit memos for refunds automatically', Comment = 'is-IS=verslun sem býr ekki sjálfkrafa til kreditreikninga fyrir endurgreiðslur';
+        UseStandardActionLbl: Label 'Create the documents of this shop with the standard Create Sales Orders action.', Comment = 'is-IS=Búðu til fylgiskjöl þessarar verslunar með stöðluðu aðgerðinni Create Sales Orders.';
     begin
         Argument.AssertVersion1();
         Argument.AssertIsLicensed();
@@ -261,9 +268,16 @@ codeunit 73732020 "Order CreateSalesDoc Impl ori" implements "Msg Interface ori"
             Argument.RespondWithError("Bifrost Error Code ori"::PreconditionFailed, StrSubstNo(ProcessedErr, OrderId), 'orderId', Format(OrderId, 0, 9), UnprocessedExpectedLbl, NothingToDoLbl);
             exit;
         end;
+        Shop.SetLoadFields(Enabled, "Return and Refund Process");
         Shop.Get(OrderHeader."Shop Code");
         if not Shop.Enabled then begin
             Argument.RespondWithError("Bifrost Error Code ori"::PreconditionFailed, StrSubstNo(ShopDisabledErr, Shop.Code), 'orderId', Format(OrderId, 0, 9), ShopEnabledExpectedLbl, EnableShopLbl);
+            exit;
+        end;
+        // Codeunit 30167 creates credit memos for every unprocessed refund when the shop is Auto Create Credit Memo,
+        // including refunds imported while the request runs. Refuse before the report, whatever refunds exist now.
+        if Shop."Return and Refund Process" = "Shpfy ReturnRefund ProcessType"::"Auto Create Credit Memo" then begin
+            Argument.RespondWithError("Bifrost Error Code ori"::PreconditionFailed, StrSubstNo(AutoCreditMemoShopErr, Shop.Code), 'orderId', Format(OrderId, 0, 9), NoAutoCreditMemoExpectedLbl, UseStandardActionLbl);
             exit;
         end;
 
@@ -280,9 +294,11 @@ codeunit 73732020 "Order CreateSalesDoc Impl ori" implements "Msg Interface ori"
         if OrderHeader."Sales Invoice No." <> '' then begin
             ResponseJson.Add('documentType', 'Invoice');
             ResponseJson.Add('documentNo', OrderHeader."Sales Invoice No.");
+            ResponseJson.Add('documentStatus', DocumentStatusName(SalesHeader."Document Type"::Invoice, OrderHeader."Sales Invoice No."));
         end else begin
             ResponseJson.Add('documentType', 'Order');
             ResponseJson.Add('documentNo', OrderHeader."Sales Order No.");
+            ResponseJson.Add('documentStatus', DocumentStatusName(SalesHeader."Document Type"::Order, OrderHeader."Sales Order No."));
         end;
         Argument.SetResponseJson(ResponseJson);
         Argument."Content Type" := Argument.GetContentTypeJson();
@@ -301,5 +317,20 @@ codeunit 73732020 "Order CreateSalesDoc Impl ori" implements "Msg Interface ori"
             '<DataItem name="ShopifyOrder">' + OrderHeader.GetView(false) + '</DataItem>' +
             '</DataItems></ReportParameters>';
         Report.Execute(Report::"Shpfy Create Sales Orders", Parameters);
+    end;
+
+    local procedure DocumentStatusName(DocumentType: Enum "Sales Document Type"; DocumentNo: Code[20]): Text
+    var
+        SalesHeader: Record "Sales Header";
+    begin
+        SalesHeader.SetLoadFields(Status);
+        if not SalesHeader.Get(DocumentType, DocumentNo) then
+            exit('');
+        exit(StatusName(SalesHeader.Status));
+    end;
+
+    local procedure StatusName(Status: Enum "Sales Document Status"): Text
+    begin
+        exit(Status.Names().Get(Status.Ordinals().IndexOf(Status.AsInteger())));
     end;
 }
