@@ -25,15 +25,15 @@ codeunit 97421 "Shpfy Product MCP Fixture ori"
     procedure A1SeedFixture()
     var
         Source: Record "Item Templ.";
-        Template: Record "Item Templ.";
+        ItemTemplate: Record "Item Templ.";
     begin
         RemoveAll();
         Source.SetRange(Type, Source.Type::Inventory);
         Source.FindFirst();
-        Template := Source;
-        Template.Code := CopyStr(TemplateTok, 1, MaxStrLen(Template.Code));
-        Template."No. Series" := '';
-        Template.Insert();
+        ItemTemplate := Source;
+        ItemTemplate.Code := CopyStr(TemplateTok, 1, MaxStrLen(ItemTemplate.Code));
+        ItemTemplate."No. Series" := '';
+        ItemTemplate.Insert();
         SeedProduct('MCP8ON', true, TemplateTok, 8810000001L, 'MCP8-ITEM');
         SeedProduct('MCP8NT', true, '', 8810000011L, 'MCP8-NT');
         SeedProduct('MCP8OFF', false, TemplateTok, 8810000021L, 'MCP8-OFF');
@@ -83,7 +83,7 @@ codeunit 97421 "Shpfy Product MCP Fixture ori"
         Product: Record "Shpfy Product";
         Variant: Record "Shpfy Variant";
         Item: Record Item;
-        Template: Record "Item Templ.";
+        ItemTemplate: Record "Item Templ.";
     begin
         Variant.SetFilter("Product Id", '8810000001|8810000011|8810000021');
         Variant.DeleteAll();
@@ -98,8 +98,8 @@ codeunit 97421 "Shpfy Product MCP Fixture ori"
                 Shop.Modify();
             until Shop.Next() = 0;
         Shop.DeleteAll(true);
-        if Template.Get(TemplateTok) then
-            Template.Delete();
+        if ItemTemplate.Get(TemplateTok) then
+            ItemTemplate.Delete();
         Commit();
     end;
 }

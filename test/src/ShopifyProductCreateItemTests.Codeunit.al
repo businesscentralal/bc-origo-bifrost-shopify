@@ -217,14 +217,14 @@ codeunit 97420 "Shpfy Prod CreateItem Test ori"
     local procedure SeedTemplate()
     var
         Source: Record "Item Templ.";
-        Template: Record "Item Templ.";
+        ItemTemplate: Record "Item Templ.";
     begin
         Source.SetRange(Type, Source.Type::Inventory);
         Source.FindFirst();
-        Template := Source;
-        Template.Code := CopyStr(TemplateCodeTok, 1, MaxStrLen(Template.Code));
-        Template."No. Series" := '';
-        Template.Insert();
+        ItemTemplate := Source;
+        ItemTemplate.Code := CopyStr(TemplateCodeTok, 1, MaxStrLen(ItemTemplate.Code));
+        ItemTemplate."No. Series" := '';
+        ItemTemplate.Insert();
     end;
 
     local procedure Cleanup()
@@ -233,7 +233,7 @@ codeunit 97420 "Shpfy Prod CreateItem Test ori"
         Product: Record "Shpfy Product";
         Variant: Record "Shpfy Variant";
         Item: Record Item;
-        Template: Record "Item Templ.";
+        ItemTemplate: Record "Item Templ.";
     begin
         if Variant.Get(VariantId()) then
             Variant.Delete();
@@ -246,8 +246,8 @@ codeunit 97420 "Shpfy Prod CreateItem Test ori"
             Shop.Modify();
             Shop.Delete(true);
         end;
-        if Template.Get(TemplateCodeTok) then
-            Template.Delete();
+        if ItemTemplate.Get(TemplateCodeTok) then
+            ItemTemplate.Delete();
         Commit();
     end;
 

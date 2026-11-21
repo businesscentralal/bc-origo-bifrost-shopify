@@ -287,7 +287,10 @@ codeunit 73731970 "Product CreateItem Impl ori" implements "Msg Interface ori", 
         Argument."Content Type" := Argument.GetContentTypeJson();
     end;
 
-    local procedure NullGuidValue() NullGuid: Guid
+    local procedure NullGuidValue(): Guid
+    var
+        NullGuid: Guid;
     begin
+        exit(NullGuid);
     end;
 }
