@@ -8,7 +8,7 @@ using Origo.Bifrost;
 /// Implementation of <c>Shopify.Product.CreateItem</c>. Creates Business Central items for the variants of one imported Shopify
 /// product and maps them, through the Shopify connector codeunit Shpfy Create Item (30171), the code behind the Create Item action.
 /// </summary>
-codeunit 70013420 "Product CreateItem Impl ori" implements "Msg Interface ori", "Msg Discovery ori", "Msg Contract ori"
+codeunit 73731970 "Product CreateItem Impl ori" implements "Msg Interface ori", "Msg Discovery ori", "Msg Contract ori"
 {
     Access = Internal;
 

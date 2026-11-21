@@ -8,7 +8,7 @@ using Microsoft.Integration.Shopify;
 /// is started by its ID, as the connector's own product import starts it. The caller starts this codeunit with Run in an if
 /// statement, so a failure rolls back everything it created.
 /// </summary>
-codeunit 70013421 "Product CreateItem Run ori"
+codeunit 73731971 "Product CreateItem Run ori"
 {
     Access = Internal;
 
