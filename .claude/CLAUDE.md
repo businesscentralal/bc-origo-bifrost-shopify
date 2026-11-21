@@ -21,6 +21,9 @@ Tests: 97400-97599
 | PermissionSet | 73731952 | SHOPIFY Full ori |
 | PermissionSetExtension | 73731951 | Shopify Read ori |
 | PermissionSetExtension | 73731952 | Shopify Full ori |
+| Codeunit | 73731970 | Product CreateItem Impl ori |
+| Codeunit | 73731971 | Product CreateItem Run ori |
+| EnumExtension | 73731970 | Product CreateItem MsgType ori (value Shopify.Product.CreateItem) |
 | Codeunit | 73731980 | Fulfillment Sync Impl ori |
 | EnumExtension | 73731980 | Fulfillment Sync MsgType ori (value Shopify.Fulfillment.Sync) |
 | Codeunit | 73731981 | Fulfillment Sync Run ori |
