@@ -26,11 +26,13 @@ Tests: 97400-97599
 | Codeunit | 73731960 | Order Import Impl ori |
 | Codeunit | 73731961 | Order Import Run ori |
 | EnumExtension | 73731960 | Order Import MsgType ori (value Shopify.Order.Import) |
-| Test Codeunit | 97403 | Shopify Order Import Tests ori |
-| Test Codeunit | 97404 | Shopify Import MCP Fixture ori |
+| Test Codeunit | 97472 | Shopify Order Import Tests ori |
+| Test Codeunit | 97473 | Shopify OrdImport Fixture ori |
 | Test Codeunit | 97400 | Shopify Issue 1 Tests ori |
 | Test Codeunit | 97470 | Shopify Order Create Tests ori |
 | Test Codeunit | 97471 | Shopify Order MCP Fixture ori |
+
+Integration note for PR #43: the temporary import app IDs 73732030/73732031 in commit 79654f2 are reconciled to 73731960/73731961, following the published #54 mapping (70013400+n → 73731950+n). Import test codeunits remain 97472/97473 from that branch update; the 97400–97599 test range is unchanged.
 
 ## Microsoft source
 Wrapped Microsoft app: Shopify Connector (`ec255f57-31d0-4ca2-b751-f2fa7c745abb`, minimum 28.0.0.0). Source: https://github.com/microsoft/BCApps/tree/main/src/Apps/W1/Shopify

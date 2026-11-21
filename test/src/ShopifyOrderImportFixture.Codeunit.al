@@ -7,7 +7,7 @@ using System.TestLibraries.Utilities;
 /// Issue #23: self-seeded fixture for MCP checks of Shopify.Order.Import. A1SeedFixture commits an enabled shop MCP23ON
 /// and a disabled shop MCP23OFF; A2RemoveFixture deletes them again. Run in this order, nothing is left behind.
 /// </summary>
-codeunit 97404 "Shopify Import MCP Fixture ori"
+codeunit 97473 "Shopify OrdImport Fixture ori"
 {
     Subtype = Test;
     RequiredTestIsolation = Disabled;
