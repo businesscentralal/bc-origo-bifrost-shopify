@@ -30,7 +30,7 @@ Tests: 97400-97599
 | Test Codeunit | 97470 | Shopify Order Create Tests ori |
 | Test Codeunit | 97471 | Shopify Order MCP Fixture ori |
 | Test Codeunit | 97472 | Shopify Order Import Tests ori |
-| Test Codeunit | 97473 | Shopify Order Import Fixture ori |
+| Test Codeunit | 97473 | Shopify OrdImport Fixture ori |
 
 ## Microsoft source
 Wrapped Microsoft app: Shopify Connector (`ec255f57-31d0-4ca2-b751-f2fa7c745abb`, minimum 28.0.0.0). Source: https://github.com/microsoft/BCApps/tree/main/src/Apps/W1/Shopify
