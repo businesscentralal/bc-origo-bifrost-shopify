@@ -73,8 +73,9 @@ codeunit 73732010 "Product Sync Impl ori" implements "Msg Interface ori", "Msg D
     procedure GetTarget(var Target: JsonArray): Boolean
     var
         ContractMgt: Codeunit "Msg Contract Mgt ori";
+        TargetLbl: Label 'The code of the Shopify shop (table 30102) whose products are synchronized.', Comment = 'is-IS=Kóði Shopify verslunarinnar (tafla 30102) sem vörurnar eru samstilltar fyrir.';
     begin
-        Target.Add(ContractMgt.TargetEntry('Shpfy Shop', 'data.shopCode', 'The code of the Shopify shop (table 30102) whose products are synchronized.'));
+        Target.Add(ContractMgt.TargetEntry('Shpfy Shop', 'data.shopCode', TargetLbl));
         exit(true);
     end;
 
@@ -84,8 +85,9 @@ codeunit 73732010 "Product Sync Impl ori" implements "Msg Interface ori", "Msg D
     procedure GetParameters(var Parameters: JsonArray): Boolean
     var
         ContractMgt: Codeunit "Msg Contract Mgt ori";
+        ShopCodeParamLbl: Label 'The code of the Shopify shop, e.g. from Data.Records.Get on table 30102.', Comment = 'is-IS=Kóði Shopify verslunarinnar, t.d. úr Data.Records.Get á töflu 30102.';
     begin
-        Parameters.Add(ContractMgt.Parameter('shopCode', 'string', true, 'The code of the Shopify shop, e.g. from Data.Records.Get on table 30102.'));
+        Parameters.Add(ContractMgt.Parameter('shopCode', 'string', true, ShopCodeParamLbl));
         exit(true);
     end;
 
@@ -96,10 +98,13 @@ codeunit 73732010 "Product Sync Impl ori" implements "Msg Interface ori", "Msg D
     var
         ContractMgt: Codeunit "Msg Contract Mgt ori";
         Fields: JsonArray;
+        StatusLbl: Label 'Success.', Comment = 'is-IS=Success (tókst).';
+        ShopCodeLbl: Label 'The Shopify shop code.', Comment = 'is-IS=Kóði Shopify verslunarinnar.';
+        ProductsInShopLbl: Label 'The number of Shopify products stored for the shop after the sync.', Comment = 'is-IS=Fjöldi Shopify vara sem eru vistaðar fyrir verslunina eftir samstillinguna.';
     begin
-        Fields.Add(ContractMgt.ResponseField('status', 'string', 'Success.'));
-        Fields.Add(ContractMgt.ResponseField('shopCode', 'string', 'The Shopify shop code.'));
-        Fields.Add(ContractMgt.ResponseField('productsInShop', 'integer', 'The number of Shopify products stored for the shop after the sync.'));
+        Fields.Add(ContractMgt.ResponseField('status', 'string', StatusLbl));
+        Fields.Add(ContractMgt.ResponseField('shopCode', 'string', ShopCodeLbl));
+        Fields.Add(ContractMgt.ResponseField('productsInShop', 'integer', ProductsInShopLbl));
         Response.Add('contentType', 'text/json');
         Response.Add('fields', Fields);
         exit(true);
@@ -111,12 +116,27 @@ codeunit 73732010 "Product Sync Impl ori" implements "Msg Interface ori", "Msg D
     procedure GetErrors(var Errors: JsonArray): Boolean
     var
         ContractMgt: Codeunit "Msg Contract Mgt ori";
+        MissingMsgLbl: Label 'Parameter "shopCode" is required.', Comment = 'is-IS=Færibreytan "shopCode" er nauðsynleg.';
+        MissingWhenLbl: Label 'The request has no shopCode. Nothing was changed.', Comment = 'is-IS=Beiðnin hefur ekkert shopCode. Engu var breytt.';
+        MissingNextLbl: Label 'Send data.shopCode with the Shopify shop code.', Comment = 'is-IS=Sendu data.shopCode með kóða Shopify verslunarinnar.';
+        InvalidMsgLbl: Label 'Parameter "shopCode" must be text of at most 20 characters.', Comment = 'is-IS=Færibreytan "shopCode" verður að vera texti, mest 20 stafir.';
+        InvalidWhenLbl: Label 'The value is empty or too long. Nothing was changed.', Comment = 'is-IS=Gildið er tómt eða of langt. Engu var breytt.';
+        InvalidNextLbl: Label 'Send the Shopify shop code as text.', Comment = 'is-IS=Sendu kóða Shopify verslunarinnar sem texta.';
+        NotFoundMsgLbl: Label 'Shopify shop {code} was not found.', Comment = 'is-IS=Shopify verslun {code} fannst ekki.';
+        NotFoundWhenLbl: Label 'No shop has this code. Nothing was changed.', Comment = 'is-IS=Engin verslun hefur þennan kóða. Engu var breytt.';
+        NotFoundNextLbl: Label 'Read table 30102 with Data.Records.Get.', Comment = 'is-IS=Lestu töflu 30102 með Data.Records.Get.';
+        NotEnabledMsgLbl: Label 'Shopify shop {code} is not enabled.', Comment = 'is-IS=Shopify verslun {code} er ekki virk.';
+        NotEnabledWhenLbl: Label 'The shop is not enabled, so the connector cannot talk to Shopify. Nothing was changed.', Comment = 'is-IS=Verslunin er ekki virk, svo tengillinn getur ekki átt samskipti við Shopify. Engu var breytt.';
+        NotEnabledNextLbl: Label 'Enable the shop on the Shopify Shop Card.', Comment = 'is-IS=Virkjaðu verslunina á Shopify verslunarspjaldinu.';
+        RefusedMsgLbl: Label 'Can not synchronize the products of shop {code} with Shopify.', Comment = 'is-IS=Ekki er hægt að samstilla vörur verslunar {code} við Shopify.';
+        RefusedWhenLbl: Label 'The connector refused or Shopify could not be reached. The connector''s own error text is returned.', Comment = 'is-IS=Tengillinn hafnaði eða ekki náðist samband við Shopify. Villutexti tengilsins sjálfs er skilaður.';
+        RefusedNextLbl: Label 'Fix the cause named in the text, then call again.', Comment = 'is-IS=Lagaðu orsökina sem textinn nefnir og kallaðu aftur.';
     begin
-        Errors.Add(ContractMgt.ErrorEntry("Bifrost Error Code ori"::MissingParameter, 'Parameter "shopCode" is required.', 'The request has no shopCode. Nothing was changed.', 'Send data.shopCode with the Shopify shop code.'));
-        Errors.Add(ContractMgt.ErrorEntry("Bifrost Error Code ori"::InvalidParameterFormat, 'Parameter "shopCode" must be text of at most 20 characters.', 'The value is empty or too long. Nothing was changed.', 'Send the Shopify shop code as text.'));
-        Errors.Add(ContractMgt.ErrorEntry("Bifrost Error Code ori"::RecordNotFound, 'Shopify shop {code} was not found.', 'No shop has this code. Nothing was changed.', 'Read table 30102 with Data.Records.Get.'));
-        Errors.Add(ContractMgt.ErrorEntry("Bifrost Error Code ori"::PreconditionFailed, 'Shopify shop {code} is not enabled.', 'The shop is not enabled, so the connector cannot talk to Shopify. Nothing was changed.', 'Enable the shop on the Shopify Shop Card.'));
-        Errors.Add(ContractMgt.ErrorEntry("Bifrost Error Code ori"::BusinessCentralError, 'Can not synchronize the products of shop {code} with Shopify.', 'The connector refused or Shopify could not be reached. The connector''s own error text is returned.', 'Fix the cause named in the text, then call again.'));
+        Errors.Add(ContractMgt.ErrorEntry("Bifrost Error Code ori"::MissingParameter, MissingMsgLbl, MissingWhenLbl, MissingNextLbl));
+        Errors.Add(ContractMgt.ErrorEntry("Bifrost Error Code ori"::InvalidParameterFormat, InvalidMsgLbl, InvalidWhenLbl, InvalidNextLbl));
+        Errors.Add(ContractMgt.ErrorEntry("Bifrost Error Code ori"::RecordNotFound, NotFoundMsgLbl, NotFoundWhenLbl, NotFoundNextLbl));
+        Errors.Add(ContractMgt.ErrorEntry("Bifrost Error Code ori"::PreconditionFailed, NotEnabledMsgLbl, NotEnabledWhenLbl, NotEnabledNextLbl));
+        Errors.Add(ContractMgt.ErrorEntry("Bifrost Error Code ori"::BusinessCentralError, RefusedMsgLbl, RefusedWhenLbl, RefusedNextLbl));
         exit(true);
     end;
 
@@ -126,11 +146,14 @@ codeunit 73732010 "Product Sync Impl ori" implements "Msg Interface ori", "Msg D
     procedure GetEffect(var Effect: JsonObject): Boolean
     var
         Preconditions: JsonArray;
+        ShopEnabledLbl: Label 'The shop exists and is enabled.', Comment = 'is-IS=Verslunin er til og er virk.';
+        SyncDirectionLbl: Label 'The shop''s Sync Item setup (From Shopify or To Shopify) names the direction the connector syncs.', Comment = 'is-IS=Uppsetningin Sync Item í versluninni (From Shopify eða To Shopify) segir í hvora átt tengillinn samstillir.';
+        ChangesLbl: Label 'Runs the connector''s product sync (report Shpfy Sync Products): with Sync Item From Shopify it imports products and variants from Shopify into the Shopify product tables (and creates or updates items as the shop is set up); with Sync Item To Shopify it sends changed items to Shopify (shop Can Update Shopify Products decides whether Shopify products are changed). The connector commits inside this path (Commit() in the product and variant sync codeunits), so earlier products stay even if a later step fails.', Comment = 'is-IS=Keyrir vörusamstillingu tengilsins (skýrslan Shpfy Sync Products): með Sync Item From Shopify flytur hún inn vörur og afbrigði frá Shopify í Shopify vörutöflurnar (og stofnar eða uppfærir vörur eins og verslunin er uppsett); með Sync Item To Shopify sendir hún breyttar vörur til Shopify (Can Update Shopify Products í versluninni ræður hvort Shopify vörum er breytt). Tengillinn staðfestir (Commit()) inni í þessari leið, í kótaeiningum vöru- og afbrigðasamstillingar, svo fyrri vörur haldast þótt síðara skref mistakist.';
     begin
-        Preconditions.Add('The shop exists and is enabled.');
-        Preconditions.Add('The shop''s Sync Item setup (From Shopify or To Shopify) names the direction the connector syncs.');
+        Preconditions.Add(ShopEnabledLbl);
+        Preconditions.Add(SyncDirectionLbl);
         Effect.Add('effect', 'write');
-        Effect.Add('changes', 'Runs the connector''s product sync (report Shpfy Sync Products): with Sync Item From Shopify it imports products and variants from Shopify into the Shopify product tables (and creates or updates items as the shop is set up); with Sync Item To Shopify it sends changed items to Shopify (shop Can Update Shopify Products decides whether Shopify products are changed). The connector commits inside this path (Commit() in the product and variant sync codeunits), so earlier products stay even if a later step fails.');
+        Effect.Add('changes', ChangesLbl);
         Effect.Add('idempotent', true);
         Effect.Add('permissionSet', 'SHOPIFY Full ori');
         Effect.Add('preconditions', Preconditions);
@@ -151,8 +174,9 @@ codeunit 73732010 "Product Sync Impl ori" implements "Msg Interface ori", "Msg D
     procedure GetRelated(var Related: JsonArray): Boolean
     var
         ContractMgt: Codeunit "Msg Contract Mgt ori";
+        FindShopLbl: Label 'You need to find the shop, e.g. table 30102 Shpfy Shop.', Comment = 'is-IS=Þú þarft að finna verslunina, t.d. í töflu 30102 Shpfy Shop.';
     begin
-        Related.Add(ContractMgt.RelatedEntry('Data.Records.Get', 'You need to find the shop, e.g. table 30102 Shpfy Shop.'));
+        Related.Add(ContractMgt.RelatedEntry('Data.Records.Get', FindShopLbl));
         exit(true);
     end;
 
@@ -181,8 +205,10 @@ codeunit 73732010 "Product Sync Impl ori" implements "Msg Interface ori", "Msg D
     /// <param name="Overview">Out: the overview.</param>
     /// <returns>True; the chapter was supplied.</returns>
     procedure GetOverview(var Overview: Text): Boolean
+    var
+        OverviewLbl: Label 'Runs the connector''s own product sync for one Shopify shop (report Shpfy Sync Products, not the price-only mode): imports products from Shopify and exports changed items to Shopify as the shop is set up, so the connector''s mapping rules and checks run.', Comment = 'is-IS=Keyrir vörusamstillingu tengilsins sjálfs fyrir eina Shopify verslun (skýrslan Shpfy Sync Products, ekki aðeins verð): flytur inn vörur frá Shopify og sendir breyttar vörur til Shopify eins og verslunin er uppsett, svo vörpunarreglur og athuganir tengilsins keyra.';
     begin
-        Overview := 'Runs the connector''s own product sync for one Shopify shop (report Shpfy Sync Products, not the price-only mode): imports products from Shopify and exports changed items to Shopify as the shop is set up, so the connector''s mapping rules and checks run.';
+        Overview := OverviewLbl;
         exit(true);
     end;
 
@@ -190,8 +216,10 @@ codeunit 73732010 "Product Sync Impl ori" implements "Msg Interface ori", "Msg D
     /// <param name="Notes">Out: the notes.</param>
     /// <returns>True; the chapter was supplied.</returns>
     procedure GetNotes(var Notes: Text): Boolean
+    var
+        NotesLbl: Label 'Idempotent: a second call with nothing changed in Shopify or Business Central changes nothing, because products are matched on the stored mapping. The direction follows the shop setup (Sync Item). A shop with Sync Item empty does nothing. The connector commits inside the path. A failure of the connector is returned as a refusal; products the connector committed before the failure are kept. Use Shopify.Product.SyncPrices to send only prices. Permissions: SHOPIFY Full ori, plus the Microsoft Shopify permissions for products and variants.', Comment = 'is-IS=Endurtekningaröruggt (idempotent): annað kall þegar engu hefur verið breytt í Shopify eða Business Central breytir engu, því vörur eru paraðar á vistaðri vörpun. Áttin fer eftir uppsetningu verslunarinnar (Sync Item). Verslun með Sync Item autt gerir ekkert. Tengillinn staðfestir (commit) inni í leiðinni. Villa í tenglinum er skilað sem höfnun; vörur sem tengillinn staðfesti fyrir villuna haldast. Notaðu Shopify.Product.SyncPrices til að senda aðeins verð. Heimildir: SHOPIFY Full ori, auk Microsoft Shopify heimilda fyrir vörur og afbrigði.';
     begin
-        Notes := 'Idempotent: a second call with nothing changed in Shopify or Business Central changes nothing, because products are matched on the stored mapping. The direction follows the shop setup (Sync Item). A shop with Sync Item empty does nothing. The connector commits inside the path. A failure of the connector is returned as a refusal; products the connector committed before the failure are kept. Use Shopify.Product.SyncPrices to send only prices. Permissions: SHOPIFY Full ori, plus the Microsoft Shopify permissions for products and variants.';
+        Notes := NotesLbl;
         exit(true);
     end;
 
@@ -262,7 +290,7 @@ codeunit 73732010 "Product Sync Impl ori" implements "Msg Interface ori", "Msg D
             exit;
         end;
         ShopifyProduct.SetRange("Shop Code", Shop.Code);
-                ResponseJson.Add('status', 'Success');
+        ResponseJson.Add('status', 'Success');
         ResponseJson.Add('shopCode', Shop.Code);
         ResponseJson.Add('productsInShop', ShopifyProduct.Count());
         Argument.SetResponseJson(ResponseJson);
@@ -275,6 +303,12 @@ codeunit 73732010 "Product Sync Impl ori" implements "Msg Interface ori", "Msg D
         ParametersTxt: Label '<?xml version="1.0" standalone="yes"?><ReportParameters name="Shpfy Sync Products" id="30108"><Options><Field name="OnlySyncPrices">false</Field></Options><DataItems><DataItem name="Shop">%1</DataItem></DataItems></ReportParameters>', Locked = true;
     begin
         Shop.SetRecFilter();
-        Report.Execute(Report::"Shpfy Sync Products", StrSubstNo(ParametersTxt, Shop.GetView()));
+        Report.Execute(Report::"Shpfy Sync Products", StrSubstNo(ParametersTxt, XmlEscape(Shop.GetView())));
+    end;
+
+    /// <summary>Escapes a value for an XML text node, so a shop code with &amp; or &lt; keeps the report parameters well-formed.</summary>
+    local procedure XmlEscape(Value: Text): Text
+    begin
+        exit(Value.Replace('&', '&amp;').Replace('<', '&lt;').Replace('>', '&gt;'));
     end;
 }

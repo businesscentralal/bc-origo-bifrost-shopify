@@ -18,6 +18,7 @@ codeunit 97460 "Shpfy Prod Sync Test ori"
         Assert: Codeunit "Library Assert";
         LowerPermissions: Codeunit "Library - Lower Permissions";
         ShopCodeTok: Label 'BIFT6', Locked = true;
+        AmpShopCodeTok: Label 'BIFT6&A<B', Locked = true;
 
     /// <summary>An enabled shop without products runs the connector product sync and succeeds.</summary>
     [Test]
@@ -30,6 +31,21 @@ codeunit 97460 "Shpfy Prod Sync Test ori"
         Response := Execute(ShopCodeTok);
         Assert.AreEqual('Success', ReadText(Response, 'status'), 'Success status.');
         Assert.AreEqual(ShopCodeTok, ReadText(Response, 'shopCode'), 'Shop code echoed.');
+        Assert.AreEqual('0', ReadText(Response, 'productsInShop'), 'No products stored for the shop.');
+        Cleanup();
+    end;
+
+    /// <summary>A shop code with XML special characters (&amp; and &lt;) reaches the connector product sync and succeeds like a plain code.</summary>
+    [Test]
+    procedure ShopCodeWithXmlCharactersSucceeds()
+    var
+        Response: JsonObject;
+    begin
+        Initialize();
+        SeedShopWithCode(AmpShopCodeTok, true);
+        Response := Execute(AmpShopCodeTok);
+        Assert.AreEqual('Success', ReadText(Response, 'status'), 'Success status for a shop code with & and <.');
+        Assert.AreEqual(AmpShopCodeTok, ReadText(Response, 'shopCode'), 'Shop code with & and < echoed.');
         Assert.AreEqual('0', ReadText(Response, 'productsInShop'), 'No products stored for the shop.');
         Cleanup();
     end;
@@ -125,11 +141,16 @@ codeunit 97460 "Shpfy Prod Sync Test ori"
     end;
 
     local procedure SeedShop(Enabled: Boolean)
+    begin
+        SeedShopWithCode(ShopCodeTok, Enabled);
+    end;
+
+    local procedure SeedShopWithCode(ShopCode: Text; Enabled: Boolean)
     var
         Shop: Record "Shpfy Shop";
     begin
         Shop.Init();
-        Shop.Code := CopyStr(ShopCodeTok, 1, MaxStrLen(Shop.Code));
+        Shop.Code := CopyStr(ShopCode, 1, MaxStrLen(Shop.Code));
         Shop.Insert();
         Shop.Enabled := Enabled;
         Shop.Modify();
@@ -151,6 +172,8 @@ codeunit 97460 "Shpfy Prod Sync Test ori"
         Shop: Record "Shpfy Shop";
     begin
         if Shop.Get(ShopCodeTok) then
+            Shop.Delete(true);
+        if Shop.Get(AmpShopCodeTok) then
             Shop.Delete(true);
         Commit();
     end;
