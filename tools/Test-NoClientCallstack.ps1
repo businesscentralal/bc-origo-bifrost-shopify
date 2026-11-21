@@ -13,6 +13,9 @@
 
     The telemetry codeunit (app/src/Setup/Telemetry) is allowed to name the callStack dimension.
 
+    Applicability: only an absent app/src directory returns NOT_APPLICABLE. An existing
+    source directory always runs the original checks, including their failure paths.
+
 .PARAMETER AppFolder
     The AL app folder (default: ../app next to this script).
 
@@ -24,6 +27,12 @@ param(
 )
 
 $ErrorActionPreference = 'Stop'
+# A scaffold without app/src has no source input; do not hide errors in an existing source tree.
+if (-not (Test-Path -LiteralPath (Join-Path $AppFolder 'src'))) {
+    Write-Host 'NOT_APPLICABLE: app/src is absent'
+    exit 0
+}
+
 $sourceFolder = Join-Path $AppFolder 'src'
 $telemetryFolder = [System.IO.Path]::GetFullPath((Join-Path $sourceFolder 'Setup/Telemetry'))
 $jsonProperty = [regex]::new("\.(Add|Replace)\(\s*'callstack'", 'IgnoreCase')

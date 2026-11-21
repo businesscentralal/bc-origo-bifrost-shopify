@@ -9,7 +9,7 @@ using Origo.Bifrost;
 /// imported Shopify refund through the shop's own refund process (Shpfy RetRefProc Cr.Memo, which runs
 /// Shpfy Create Sales Doc. Refund, codeunit 30246).
 /// </summary>
-codeunit 70013404 "Refund CrMemo Impl ori" implements "Msg Interface ori", "Msg Discovery ori", "Msg Contract ori"
+codeunit 73731954 "Refund CrMemo Impl ori" implements "Msg Interface ori", "Msg Discovery ori", "Msg Contract ori"
 {
     Access = Internal;
 
