@@ -146,35 +146,78 @@ codeunit 97450 "Shpfy Cust Sync Test ori"
         Cleanup();
     end;
 
-    /// <summary>A failed customer import after a successful one is detected: the connector hides it, the result check reports it.</summary>
+    /// <summary>
+    /// AC04: after a successful customer, a failed update of a mapped customer and a failed creation of a new one are not hidden
+    /// by the connector: the dispatcher answers BusinessCentralError naming those two Shopify customers and not the good one.
+    /// </summary>
     [Test]
-    procedure FailedCustomerImportIsCounted()
+    procedure FailedMappedUpdateAfterSuccessIsReported()
     var
-        Shop: Record "Shpfy Shop";
-        Customer: Record Customer;
-        Impl: Codeunit "Customer Sync Impl ori";
+        Stub: Codeunit "Shpfy Cust Sync Stub ori";
+        Response: JsonObject;
+        Message: Text;
     begin
         Initialize();
-        Seed(true, "Shpfy Customer Import Range"::AllCustomers, false);
+        SeedImportShop("Shpfy Customer Import Range"::AllCustomers, true, true);
+        InsertShopifyCustomer(1600001, InsertCustomer('BIFT16A'));
+        InsertShopifyCustomer(1600002, InsertCustomer('BIFT16B'));
+        // An unmapped customer the import does not handle in this call is not judged.
+        InsertShopifyCustomer(1600004, EmptyGuid());
+        Commit();
+        Sleep(50);
+        BindSubscription(Stub);
+        Response := ExecuteRaw('{"shopCode":"' + ShopCodeTok + '"}');
+        UnbindSubscription(Stub);
+        Message := ReadText(Response, 'error');
+        Assert.AreEqual('Error', ReadText(Response, 'status'), 'A failed customer must not answer Success: ' + Message);
+        Assert.AreEqual('BusinessCentralError', ReadText(Response, 'code'), 'Failure code.');
+        Assert.IsTrue(Message.Contains('1600002'), 'The failed update must be named: ' + Message);
+        Assert.IsTrue(Message.Contains('1600003'), 'The failed creation must be named: ' + Message);
+        Assert.IsFalse(Message.Contains('1600001'), 'The updated customer is not a failure: ' + Message);
+        Assert.IsFalse(Message.Contains('1600004'), 'A customer the import did not handle is not a failure: ' + Message);
+        Assert.AreEqual('IU', Stub.GetPasses(), 'The import pass runs first without the update, then the update pass without the import.');
+        Cleanup();
+    end;
+
+    /// <summary>
+    /// With Customer Import From Shopify = WithOrderImport and Shopify Can Update Customer off the connector does not import
+    /// customers, so an existing unmapped Shopify customer is not a failure of this call (real connector, no Shopify call).
+    /// </summary>
+    [Test]
+    procedure SkippedImportIsNotAFailure()
+    var
+        Response: JsonObject;
+    begin
+        Initialize();
+        SeedImportShop("Shpfy Customer Import Range"::WithOrderImport, false, false);
+        InsertShopifyCustomer(1600004, EmptyGuid());
+        Commit();
+        Response := ExecuteRaw('{"shopCode":"' + ShopCodeTok + '"}');
+        Assert.AreEqual('Success', ReadText(Response, 'status'), 'No import ran, so nothing failed: ' + ReadText(Response, 'message'));
+        Assert.AreEqual('WithOrderImport', ReadText(Response, 'customerImportFromShopify'), 'Import setting.');
+        Cleanup();
+    end;
+
+    local procedure SeedImportShop(ImportRange: Enum "Shpfy Customer Import Range"; ShopifyCanUpdate: Boolean; CanUpdateShopify: Boolean)
+    var
+        Shop: Record "Shpfy Shop";
+    begin
+        Seed(true, ImportRange, CanUpdateShopify);
         Shop.Get(ShopCodeTok);
         Shop."Auto Create Unknown Customers" := true;
+        Shop."Shopify Can Update Customer" := ShopifyCanUpdate;
         Shop."Shop Id" := 16016;
         Shop.Modify();
-        // Mock: customer 1 was imported (mapped to a Business Central customer), customer 2 failed (no Business Central customer).
+    end;
+
+    local procedure InsertCustomer(CustomerNo: Code[20]): Guid
+    var
+        Customer: Record Customer;
+    begin
         Customer.Init();
-        Customer."No." := 'BIFT16C';
+        Customer."No." := CustomerNo;
         Customer.Insert();
-        InsertShopifyCustomer(1600001, Customer.SystemId);
-        InsertShopifyCustomer(1600002, EmptyGuid());
-        Assert.AreEqual(1, Impl.CountUnmappedImports(Shop), 'The failed customer must be counted and the imported one not.');
-        // A shop that does not create unknown customers does not expect a mapping, so nothing is a failure.
-        Shop."Auto Create Unknown Customers" := false;
-        Assert.AreEqual(0, Impl.CountUnmappedImports(Shop), 'No failure without Auto Create Unknown Customers.');
-        // A shop that imports no customers has nothing that failed.
-        Shop."Auto Create Unknown Customers" := true;
-        Shop."Customer Import From Shopify" := "Shpfy Customer Import Range"::None;
-        Assert.AreEqual(0, Impl.CountUnmappedImports(Shop), 'No failure when no customers are imported.');
-        Cleanup();
+        exit(Customer.SystemId);
     end;
 
     local procedure InsertShopifyCustomer(Id: BigInteger; CustomerSystemId: Guid)
@@ -222,8 +265,8 @@ codeunit 97450 "Shpfy Cust Sync Test ori"
     begin
         ShopifyCustomer.SetRange("Shop Id", 16016);
         ShopifyCustomer.DeleteAll();
-        if Customer.Get('BIFT16C') then
-            Customer.Delete();
+        Customer.SetFilter("No.", 'BIFT16A|BIFT16B');
+        Customer.DeleteAll();
         if Shop.Get(ShopCodeTok) then begin
             Shop.Enabled := false;
             Shop.Modify();

@@ -99,17 +99,29 @@
           <note from="Developer" annotates="general" priority="2">%1 = Shop code, %2 = detailed text||is-IS=Ekki er hægt að samstilla viðskiptamenn fyrir verslun %1. %2</note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit Customer Sync Impl ori - Method ExecuteBifrostTask - NamedType RefusedErr</note>
         </trans-unit>
-        <trans-unit id="Codeunit 158272105 - Method 3571782927 - NamedType 1059027965" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Shop %1 was synchronized, but %2 Shopify customers have no Business Central customer. The connector does not report why; check the customer template and the customer mapping of the shop.</source>
-          <target>Verslun %1 var samstillt, en %2 Shopify viðskiptamenn eru án viðskiptamanns í Business Central. Tengillinn tilkynnir ekki hvers vegna; athugaðu viðskiptamannasniðmátið og varpanir viðskiptamanna í versluninni.</target>
-          <note from="Developer" annotates="general" priority="2">%1 = Shop code, %2 = number of customers||is-IS=Verslun %1 var samstillt, en %2 Shopify viðskiptamenn eru án viðskiptamanns í Business Central. Tengillinn tilkynnir ekki hvers vegna; athugaðu viðskiptamannasniðmátið og varpanir viðskiptamanna í versluninni.</note>
-          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Customer Sync Impl ori - Method ExecuteBifrostTask - NamedType UnmappedErr</note>
+        <trans-unit id="Codeunit 158272105 - Method 3571782927 - NamedType 4068070405" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Shop %1 was synchronized, but %2 Shopify customers were not created or updated in Business Central (Shopify customer IDs: %3). %4</source>
+          <target>Verslun %1 var samstillt, en %2 Shopify viðskiptamenn voru ekki stofnaðir eða uppfærðir í Business Central (Shopify auðkenni viðskiptamanna: %3). %4</target>
+          <note from="Developer" annotates="general" priority="2">%1 = Shop code, %2 = number of customers, %3 = comma-separated Shopify customer IDs, %4 = the last connector error or empty||is-IS=Verslun %1 var samstillt, en %2 Shopify viðskiptamenn voru ekki stofnaðir eða uppfærðir í Business Central (Shopify auðkenni viðskiptamanna: %3). %4</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Customer Sync Impl ori - Method ExecuteBifrostTask - NamedType FailedImportErr</note>
         </trans-unit>
-        <trans-unit id="Codeunit 158272105 - Method 3571782927 - NamedType 3440822070" size-unit="char" translate="yes" xml:space="preserve">
-          <source>a shop whose Shopify customers all got a Business Central customer</source>
-          <target>verslun þar sem allir Shopify viðskiptamenn fengu viðskiptamann í Business Central</target>
-          <note from="Developer" annotates="general" priority="2">is-IS=verslun þar sem allir Shopify viðskiptamenn fengu viðskiptamann í Business Central</note>
-          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Customer Sync Impl ori - Method ExecuteBifrostTask - NamedType UnmappedExpectedLbl</note>
+        <trans-unit id="Codeunit 158272105 - Method 3571782927 - NamedType 2857367805" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Last connector error: %1</source>
+          <target>Síðasta villa tengilsins: %1</target>
+          <note from="Developer" annotates="general" priority="2">%1 = error text from the Shopify connector||is-IS=Síðasta villa tengilsins: %1</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Customer Sync Impl ori - Method ExecuteBifrostTask - NamedType LastConnectorErrorLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 158272105 - Method 3571782927 - NamedType 2233163380" size-unit="char" translate="yes" xml:space="preserve">
+          <source>a shop whose imported Shopify customers all got their Business Central customer created or updated</source>
+          <target>verslun þar sem allir innfluttir Shopify viðskiptamenn fengu viðskiptamann sinn stofnaðan eða uppfærðan í Business Central</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=verslun þar sem allir innfluttir Shopify viðskiptamenn fengu viðskiptamann sinn stofnaðan eða uppfærðan í Business Central</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Customer Sync Impl ori - Method ExecuteBifrostTask - NamedType ImportedExpectedLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 158272105 - Method 3571782927 - NamedType 4168831020" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Fix the cause for the named Shopify customers, for example the customer template, the mapping or the default address, then call again.</source>
+          <target>Lagaðu orsökina fyrir nefndu Shopify viðskiptamennina, til dæmis viðskiptamannasniðmátið, vörpunina eða sjálfgefna heimilisfangið, og kallaðu aftur.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Lagaðu orsökina fyrir nefndu Shopify viðskiptamennina, til dæmis viðskiptamannasniðmátið, vörpunina eða sjálfgefna heimilisfangið, og kallaðu aftur.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Customer Sync Impl ori - Method ExecuteBifrostTask - NamedType FixImportLbl</note>
         </trans-unit>
         <trans-unit id="Codeunit 158272105 - Method 3571782927 - NamedType 2319534536" size-unit="char" translate="yes" xml:space="preserve">
           <source>Fix the cause named in the text, for example the Shopify connection of the shop, then call again.</source>
