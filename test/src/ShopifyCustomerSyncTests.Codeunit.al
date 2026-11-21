@@ -188,8 +188,11 @@ codeunit 97450 "Shpfy Cust Sync Test ori"
         ShopifyCustomer.Insert();
     end;
 
-    local procedure EmptyGuid() NoGuid: Guid
+    local procedure EmptyGuid(): Guid
+    var
+        NoGuid: Guid;
     begin
+        exit(NoGuid);
     end;
 
     local procedure Initialize()

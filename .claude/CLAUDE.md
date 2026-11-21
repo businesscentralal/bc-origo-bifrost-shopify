@@ -24,7 +24,13 @@ Tests: 97400-97599
 | Codeunit | 73732000 | Customer Sync Impl ori |
 | Codeunit | 73732001 | Customer Sync Run ori |
 | EnumExtension | 73732000 | Customer Sync MsgType ori |
+| Codeunit | 73732020 | Order CreateSalesDoc Impl ori |
+| EnumExtension | 73732020 | Order SalesDoc MsgType ori (value Shopify.Order.CreateSalesDocument) |
 | Test Codeunit | 97400 | Shopify Issue 1 Tests ori |
+| Test Codeunit | 97450 | Shpfy Cust Sync Test ori |
+| Test Codeunit | 97451 | Shpfy Customer MCP Fixture ori |
+| Test Codeunit | 97470 | Shopify Order Create Tests ori |
+| Test Codeunit | 97471 | Shopify Order MCP Fixture ori |
 
 ## Microsoft source
 Wrapped Microsoft app: Shopify Connector (`ec255f57-31d0-4ca2-b751-f2fa7c745abb`, minimum 28.0.0.0). Source: https://github.com/microsoft/BCApps/tree/main/src/Apps/W1/Shopify
