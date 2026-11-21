@@ -29,6 +29,11 @@ Tests: 97400-97599
 | Codeunit | 73731981 | Fulfillment Sync Run ori |
 | Codeunit | 73732010 | Product Sync Impl ori |
 | EnumExtension | 73732010 | Product Sync MsgType ori (value Shopify.Product.Sync) |
+| Codeunit | 73732000 | Customer Sync Impl ori |
+| EnumExtension | 73732000 | Customer Sync MsgType ori |
+| Codeunit | 73732001 | Customer Sync Run ori |
+| Codeunit | 73732002 | Customer Sync Monitor ori |
+| Table | 73732000 | Customer Sync Marker ori |
 | Codeunit | 73732020 | Order CreateSalesDoc Impl ori |
 | EnumExtension | 73732020 | Order SalesDoc MsgType ori (value Shopify.Order.CreateSalesDocument) |
 | Test Codeunit | 97400 | Shopify Issue 1 Tests ori |
@@ -36,6 +41,10 @@ Tests: 97400-97599
 | Test Codeunit | 97431 | Shpfy Fulfill MCP Fixture ori |
 | Test Codeunit | 97460 | Shpfy Prod Sync Test ori |
 | Test Codeunit | 97461 | Shpfy Prod Sync MCP ori |
+| Test Codeunit | 97450 | Shpfy Cust Sync Test ori |
+| Test Codeunit | 97451 | Shpfy Customer MCP Fixture ori |
+| Test Codeunit | 97452 | Shpfy Cust Sync Stub ori |
+| Test Codeunit | 97453 | Shpfy Cust Fail Step ori |
 | Test Codeunit | 97470 | Shopify Order Create Tests ori |
 | Test Codeunit | 97471 | Shopify Order MCP Fixture ori |
 
