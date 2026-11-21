@@ -9,7 +9,7 @@ using Origo.Bifrost;
 /// products to Shopify by running the connector report Shpfy Sync Stock to Shopify (30102), the code behind the
 /// action Sync Inventory on the Shopify Shop Card and Products.
 /// </summary>
-codeunit 70013480 "Inventory Sync Impl ori" implements "Msg Interface ori", "Msg Discovery ori", "Msg Contract ori"
+codeunit 73732030 "Inventory Sync Impl ori" implements "Msg Interface ori", "Msg Discovery ori", "Msg Contract ori"
 {
     Access = Internal;
 

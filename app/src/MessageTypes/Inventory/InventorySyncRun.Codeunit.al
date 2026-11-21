@@ -8,7 +8,7 @@ using System.Reflection;
 /// for one shop. The connector commits as it goes, so the caller calls Execute directly (a Codeunit.Run is not possible
 /// while the message pipeline holds an open write transaction); a failure is an error that the message pipeline turns into a refusal.
 /// </summary>
-codeunit 70013481 "Inventory Sync Run ori"
+codeunit 73732031 "Inventory Sync Run ori"
 {
     Access = Internal;
 
