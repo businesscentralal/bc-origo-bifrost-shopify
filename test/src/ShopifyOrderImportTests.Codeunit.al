@@ -5,7 +5,7 @@ using Origo.Bifrost;
 using System.TestLibraries.Utilities;
 
 /// <summary>Issue #23: Shopify.Order.Import request validation, Business Central refusals and permissions.</summary>
-codeunit 97403 "Shopify Order Import Tests ori"
+codeunit 97472 "Shopify Order Import Tests ori"
 {
     Subtype = Test;
     TestPermissions = Disabled;

@@ -6,7 +6,7 @@ using Microsoft.Integration.Shopify;
 /// Runs the Shopify report Shpfy Sync Orders from Shopify (30104) for one shop. Run through Codeunit.Run so that a
 /// failure of the report is caught by the caller and returned as a refusal.
 /// </summary>
-codeunit 70013411 "Order Import Run ori"
+codeunit 73732031 "Order Import Run ori"
 {
     Access = Internal;
 

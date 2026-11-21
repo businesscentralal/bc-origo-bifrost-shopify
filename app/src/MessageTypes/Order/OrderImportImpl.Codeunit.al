@@ -7,7 +7,7 @@ using Origo.Bifrost;
 /// Implementation of <c>Shopify.Order.Import</c>. Fetches new and changed orders of one Shopify shop and imports and
 /// maps them by running the Shopify report Sync Orders from Shopify (30104), which uses codeunit Shpfy Orders API (30165).
 /// </summary>
-codeunit 70013410 "Order Import Impl ori" implements "Msg Interface ori", "Msg Discovery ori", "Msg Contract ori"
+codeunit 73732030 "Order Import Impl ori" implements "Msg Interface ori", "Msg Discovery ori", "Msg Contract ori"
 {
     Access = Internal;
 

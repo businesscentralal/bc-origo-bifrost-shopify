@@ -24,6 +24,17 @@
         "githubRunner": "windows-latest",
         "githubRunnerShell": "pwsh"
       }
+    },
+    {
+      "workflows": [
+        "CI/CD",
+        "Create release"
+      ],
+      "settings": {
+        "projects": [
+          "."
+        ]
+      }
     }
   ],
   "Environments": [
@@ -37,6 +48,7 @@
     ],
     "ContinuousDeployment": true,
     "Scope": "Dev",
-    "DependencyInstallMode": "ignore"
+    "DependencyInstallMode": "ignore",
+    "Projects": "bc-origo-bifrost-shopify"
   }
 }
