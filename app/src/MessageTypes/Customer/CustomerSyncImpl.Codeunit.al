@@ -117,6 +117,7 @@ codeunit 73732000 "Customer Sync Impl ori" implements "Msg Interface ori", "Msg 
         Errors.Add(ContractMgt.ErrorEntry("Bifrost Error Code ori"::PreconditionFailed, 'Shop {code} is not enabled.', 'The shop is not enabled. Nothing was changed.', 'Enable the shop on the Shopify Shop Card.'));
         Errors.Add(ContractMgt.ErrorEntry("Bifrost Error Code ori"::BusinessCentralError, 'Can not synchronize customers for shop {code}.', 'Business Central or the Shopify connector refused, for example because the shop has no valid connection to Shopify. The text names the cause. The Shopify connector commits while it works, so changes made before the refusal can stay.', 'Fix the cause named in the text, for example the Shopify connection of the shop, then call again.'));
         Errors.Add(ContractMgt.ErrorEntry("Bifrost Error Code ori"::BusinessCentralError, 'Shop {code} was synchronized, but {count} Shopify customers were not created or updated in Business Central (Shopify customer IDs: {ids}).', 'The connector imported Shopify customers in this call, but for at least one of them it did not create the Business Central customer (the shop has Auto Create Unknown Customers) or did not update the mapped Business Central customer (the shop has Shopify Can Update Customer), for example because of an invalid customer template or a Shopify customer without a default address. The connector hides the error of such a customer; the text names the customers and, when the connector left it, the last error. Customers handled before stay. The update of Shopify customers from Business Central still ran.', 'Fix the cause for the named Shopify customers (customer template, mapping or address), then call again. Customers already imported are matched, not created again.'));
+        Errors.Add(ContractMgt.ErrorEntry("Bifrost Error Code ori"::BusinessCentralError, 'Shop {code} was synchronized, but the Shopify connector could not import or update a Shopify customer: {text}', 'The connector reported an error for a Shopify customer it could not import or update, for example because its retrieval from Shopify failed, and no customer of this call could be named. Customers handled before stay.', 'Fix the cause named in the text, then call again.'));
         exit(true);
     end;
 
@@ -191,7 +192,7 @@ codeunit 73732000 "Customer Sync Impl ori" implements "Msg Interface ori", "Msg 
     /// <returns>True; the chapter was supplied.</returns>
     procedure GetNotes(var Notes: Text): Boolean
     begin
-        Notes := 'What is imported and updated follows the shop settings Customer Import From Shopify and Can Update Shopify Customer; the request only names the shop. Repeating the call is safe: customers already mapped are matched, not created again. The call contacts Shopify when the shop imports or updates customers. The Shopify codeunit is internal to the connector, so it is started by its object ID; a future connector version that changes it may need an update of this type. The connector commits between customers and does not report the error of a customer it could not import, so this type checks the result of the Shopify customers the import of this call handled: one that should have got a new Business Central customer (Auto Create Unknown Customers) and has none, or one that is mapped and should have updated its Business Central customer (Shopify Can Update Customer) and did not, makes the answer an error that names them, not Success. Shopify customers the import did not handle in this call, for example because the shop imports customers only with orders, are not judged. Customers handled before stay. Business Central and connector refusals are returned as a refusal. Permissions: SHOPIFY Full ori, plus the Microsoft Shopify permissions and the right to create and change customers.';
+        Notes := 'What is imported and updated follows the shop settings Customer Import From Shopify and Can Update Shopify Customer; the request only names the shop. Repeating the call is safe: customers already mapped are matched, not created again. The call contacts Shopify when the shop imports or updates customers. The Shopify codeunit is internal to the connector, so it is started by its object ID; a future connector version that changes it may need an update of this type. The connector commits between customers and does not report the error of a customer it could not import, so this type checks the result of the Shopify customers the import of this call handled: one that should have got a new Business Central customer (Auto Create Unknown Customers) and has none, or one that is mapped and should have updated its Business Central customer (Shopify Can Update Customer) and did not, makes the answer an error that names them, not Success. A customer counts as updated or created only when the work of the connector on it was committed: a write that a later step of the connector rolled back, for example the contact update, is a failure. A new Shopify customer whose retrieval from Shopify failed, or an error the connector kept for the last customer it handled, is a failure too. An existing Shopify customer whose retrieval from Shopify failed before the connector wrote anything, followed by other customers, leaves no trace the connector exposes and cannot be named. Shopify customers the import did not handle in this call, for example because the shop imports customers only with orders, are not judged. Customers handled before stay. Business Central and connector refusals are returned as a refusal. Permissions: SHOPIFY Full ori, plus the Microsoft Shopify permissions and the right to create and change customers.';
         exit(true);
     end;
 
@@ -230,6 +231,7 @@ codeunit 73732000 "Customer Sync Impl ori" implements "Msg Interface ori", "Msg 
         SyncedExpectedLbl: Label 'a shop that can synchronize customers with Shopify', Comment = 'is-IS=verslun sem getur samstillt viðskiptamenn við Shopify';
         RefusedErr: Label 'Can not synchronize customers for shop %1. %2', Comment = '%1 = Shop code, %2 = detailed text||is-IS=Ekki er hægt að samstilla viðskiptamenn fyrir verslun %1. %2';
         FailedImportErr: Label 'Shop %1 was synchronized, but %2 Shopify customers were not created or updated in Business Central (Shopify customer IDs: %3). %4', Comment = '%1 = Shop code, %2 = number of customers, %3 = comma-separated Shopify customer IDs, %4 = the last connector error or empty||is-IS=Verslun %1 var samstillt, en %2 Shopify viðskiptamenn voru ekki stofnaðir eða uppfærðir í Business Central (Shopify auðkenni viðskiptamanna: %3). %4';
+        ConnectorErrorErr: Label 'Shop %1 was synchronized, but the Shopify connector could not import or update a Shopify customer: %2', Comment = '%1 = Shop code, %2 = error text from the Shopify connector||is-IS=Verslun %1 var samstillt, en Shopify tengillinn gat ekki flutt inn eða uppfært Shopify viðskiptamann: %2';
         LastConnectorErrorLbl: Label 'Last connector error: %1', Comment = '%1 = error text from the Shopify connector||is-IS=Síðasta villa tengilsins: %1';
         ImportedExpectedLbl: Label 'a shop whose imported Shopify customers all got their Business Central customer created or updated', Comment = 'is-IS=verslun þar sem allir innfluttir Shopify viðskiptamenn fengu viðskiptamann sinn stofnaðan eða uppfærðan í Business Central';
         FixImportLbl: Label 'Fix the cause for the named Shopify customers, for example the customer template, the mapping or the default address, then call again.', Comment = 'is-IS=Lagaðu orsökina fyrir nefndu Shopify viðskiptamennina, til dæmis viðskiptamannasniðmátið, vörpunina eða sjálfgefna heimilisfangið, og kallaðu aftur.';
@@ -270,11 +272,13 @@ codeunit 73732000 "Customer Sync Impl ori" implements "Msg Interface ori", "Msg 
         // Import pass: the connector hides the error of a customer it could not import, so record the Business Central
         // customers written during it and judge the Shopify customers it handled afterwards.
         ImportStart := CurrentDateTime();
+        Monitor.Start();
         BindSubscription(Monitor);
         SyncRun.SetShopCode(Shop.Code, true);
         ClearLastError();
         if not SyncRun.Run() then begin
             UnbindSubscription(Monitor);
+            Monitor.Finish();
             Argument.RespondWithError("Bifrost Error Code ori"::BusinessCentralError, StrSubstNo(RefusedErr, Shop.Code, GetLastErrorText()), 'shopCode', ShopCodeText, SyncedExpectedLbl, FixCauseLbl);
             exit;
         end;
@@ -282,6 +286,9 @@ codeunit 73732000 "Customer Sync Impl ori" implements "Msg Interface ori", "Msg 
         UnbindSubscription(Monitor);
         Shop.Get(Shop.Code);
         FailedCount := FindFailedImports(Shop, ImportStart, Monitor, FailedIds);
+        Monitor.Finish();
+        // Commit the removal of the markers: the update pass below runs in its own transaction.
+        Commit();
 
         // Update pass: Business Central to Shopify, as the shop is set up.
         if Shop."Can Update Shopify Customer" then begin
@@ -299,6 +306,12 @@ codeunit 73732000 "Customer Sync Impl ori" implements "Msg Interface ori", "Msg 
             if ConnectorErrorText <> '' then
                 ConnectorErrorText := StrSubstNo(LastConnectorErrorLbl, ConnectorErrorText);
             Argument.RespondWithError("Bifrost Error Code ori"::BusinessCentralError, StrSubstNo(FailedImportErr, Shop.Code, FailedCount, FailedIds, ConnectorErrorText), 'shopCode', ShopCodeText, ImportedExpectedLbl, FixImportLbl);
+            exit;
+        end;
+        // The connector keeps the error of the last customer it could not import or update; a customer whose retrieval from
+        // Shopify failed before the connector wrote anything leaves no other trace, so that error is a failure, not Success.
+        if ConnectorErrorText <> '' then begin
+            Argument.RespondWithError("Bifrost Error Code ori"::BusinessCentralError, StrSubstNo(ConnectorErrorErr, Shop.Code, ConnectorErrorText), 'shopCode', ShopCodeText, ImportedExpectedLbl, FixImportLbl);
             exit;
         end;
         ResponseJson.Add('status', 'Success');
@@ -326,6 +339,7 @@ codeunit 73732000 "Customer Sync Impl ori" implements "Msg Interface ori", "Msg 
     var
         ShopifyCustomer: Record "Shpfy Customer";
         NoCustomer: Guid;
+        DeletedId: BigInteger;
         Failed: Boolean;
     begin
         FailedIds := '';
@@ -346,6 +360,17 @@ codeunit 73732000 "Customer Sync Impl ori" implements "Msg Interface ori", "Msg 
                     FailedIds += Format(ShopifyCustomer.Id);
                 end;
             until ShopifyCustomer.Next() = 0;
+        // The connector deletes a new Shopify customer again when its retrieval from Shopify fails.
+        foreach DeletedId in Monitor.GetDeletedShopifyCustomers() do begin
+            ShopifyCustomer.Reset();
+            ShopifyCustomer.SetRange(Id, DeletedId);
+            if ShopifyCustomer.IsEmpty() then begin
+                FailedCount += 1;
+                if FailedIds <> '' then
+                    FailedIds += ', ';
+                FailedIds += Format(DeletedId);
+            end;
+        end;
     end;
 
     /// <summary>Tells whether codeunit Shpfy Sync Customers imports customers for this shop setup, as its OnRun decides.</summary>

@@ -180,6 +180,104 @@ codeunit 97450 "Shpfy Cust Sync Test ori"
     end;
 
     /// <summary>
+    /// The stand-in connector updates customer 1, modifies the mapped Business Central customer of customer 2 and then fails
+    /// in a later step, so that write is rolled back, and updates customer 5 afterwards (which clears the last error, as the
+    /// connector does). The rolled-back write is not counted as an update: the answer names customer 2 only.
+    /// </summary>
+    [Test]
+    procedure RolledBackWriteAfterSuccessIsReported()
+    var
+        Customer: Record Customer;
+        Message: Text;
+    begin
+        Initialize();
+        SeedImportShop("Shpfy Customer Import Range"::AllCustomers, true, true);
+        InsertShopifyCustomer(1600001, InsertCustomer('BIFT16A'));
+        InsertShopifyCustomer(1600002, InsertCustomer('BIFT16B'));
+        InsertShopifyCustomer(1600005, InsertCustomer('BIFT16C'));
+        Commit();
+        Sleep(50);
+        Message := ExecuteScenarioExpectingError('ROLLBACK');
+        Assert.IsTrue(Message.Contains('1600002'), 'The rolled-back update must be named: ' + Message);
+        Assert.IsFalse(Message.Contains('1600001'), 'The updated customer 1 is not a failure: ' + Message);
+        Assert.IsFalse(Message.Contains('1600005'), 'The updated customer 5 is not a failure: ' + Message);
+        Customer.Get('BIFT16B');
+        Assert.AreNotEqual('Bifrost Shopify updated', Customer.Name, 'The failed write must have been rolled back.');
+        Customer.Get('BIFT16C');
+        Assert.AreEqual('Bifrost Shopify updated', Customer.Name, 'Customer 5 was updated.');
+        Assert.IsTrue(MarkersRemoved(), 'The call removes its markers.');
+        Cleanup();
+    end;
+
+    /// <summary>
+    /// The stand-in connector updates customer 1, inserts the row of the new Shopify customer 3 and deletes it again because
+    /// its retrieval failed (as the connector does), then updates customer 5. The answer names customer 3.
+    /// </summary>
+    [Test]
+    procedure FailedRetrievalOfNewCustomerIsReported()
+    var
+        Message: Text;
+    begin
+        Initialize();
+        SeedImportShop("Shpfy Customer Import Range"::AllCustomers, true, true);
+        InsertShopifyCustomer(1600001, InsertCustomer('BIFT16A'));
+        InsertShopifyCustomer(1600005, InsertCustomer('BIFT16C'));
+        Commit();
+        Sleep(50);
+        Message := ExecuteScenarioExpectingError('RETRIEVE');
+        Assert.IsTrue(Message.Contains('1600003'), 'The new customer whose retrieval failed must be named: ' + Message);
+        Assert.IsFalse(Message.Contains('1600001'), 'The updated customer 1 is not a failure: ' + Message);
+        Assert.IsFalse(Message.Contains('1600005'), 'The updated customer 5 is not a failure: ' + Message);
+        Assert.IsTrue(MarkersRemoved(), 'The call removes its markers.');
+        Cleanup();
+    end;
+
+    /// <summary>
+    /// The stand-in connector updates customer 1, then the retrieval of the existing customer 2 fails before anything is
+    /// written, and it is the last customer, so only the connector's last error is left. The answer is BusinessCentralError
+    /// with that error, not Success.
+    /// </summary>
+    [Test]
+    procedure FailedRetrievalLeftAsLastErrorIsReported()
+    var
+        Message: Text;
+    begin
+        Initialize();
+        SeedImportShop("Shpfy Customer Import Range"::AllCustomers, true, true);
+        InsertShopifyCustomer(1600001, InsertCustomer('BIFT16A'));
+        InsertShopifyCustomer(1600002, InsertCustomer('BIFT16B'));
+        Commit();
+        Sleep(50);
+        Message := ExecuteScenarioExpectingError('LASTERROR');
+        Assert.IsTrue(Message.Contains('could not import or update a Shopify customer'), 'The connector error must be reported: ' + Message);
+        Assert.IsTrue(Message.Contains('retrieval of the Shopify customer failed'), 'The connector error text must be included: ' + Message);
+        Assert.IsTrue(MarkersRemoved(), 'The call removes its markers.');
+        Cleanup();
+    end;
+
+    local procedure ExecuteScenarioExpectingError(Scenario: Text) Message: Text
+    var
+        Stub: Codeunit "Shpfy Cust Sync Stub ori";
+        Response: JsonObject;
+    begin
+        Stub.SetScenario(Scenario);
+        BindSubscription(Stub);
+        Response := ExecuteRaw('{"shopCode":"' + ShopCodeTok + '"}');
+        UnbindSubscription(Stub);
+        Message := ReadText(Response, 'error');
+        Assert.AreEqual('Error', ReadText(Response, 'status'), 'A failed customer must not answer Success: ' + Message);
+        Assert.AreEqual('BusinessCentralError', ReadText(Response, 'code'), 'Failure code.');
+        Assert.AreEqual('IU', Stub.GetPasses(), 'Import pass first, then the update pass.');
+    end;
+
+    local procedure MarkersRemoved(): Boolean
+    var
+        Marker: Record "Customer Sync Marker ori";
+    begin
+        exit(Marker.IsEmpty());
+    end;
+
+    /// <summary>
     /// With Customer Import From Shopify = WithOrderImport and Shopify Can Update Customer off the connector does not import
     /// customers, so an existing unmapped Shopify customer is not a failure of this call (real connector, no Shopify call).
     /// </summary>
@@ -265,7 +363,7 @@ codeunit 97450 "Shpfy Cust Sync Test ori"
     begin
         ShopifyCustomer.SetRange("Shop Id", 16016);
         ShopifyCustomer.DeleteAll();
-        Customer.SetFilter("No.", 'BIFT16A|BIFT16B');
+        Customer.SetFilter("No.", 'BIFT16A|BIFT16B|BIFT16C');
         Customer.DeleteAll();
         if Shop.Get(ShopCodeTok) then begin
             Shop.Enabled := false;

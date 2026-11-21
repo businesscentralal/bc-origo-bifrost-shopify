@@ -3,6 +3,36 @@
   <file datatype="xml" source-language="en-US" target-language="is-IS" original="Bifrost Shopify">
     <body>
       <group id="body">
+        <trans-unit id="Table 2149711095 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Customer Sync Marker</source>
+          <target>Merki viðskiptamannasamstillingar</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Merki viðskiptamannasamstillingar</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Customer Sync Marker ori - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2149711095 - Field 415281632 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the SystemId of the Business Central customer that was written.</source>
+          <target>Tilgreinir SystemId Business Central viðskiptamannsins sem var skrifaður.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Tilgreinir SystemId Business Central viðskiptamannsins sem var skrifaður.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Customer Sync Marker ori - Field Customer SystemId - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Table 2149711095 - Field 415281632 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Customer SystemId</source>
+          <target>SystemId viðskiptamanns</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=SystemId viðskiptamanns</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Customer Sync Marker ori - Field Customer SystemId - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2149711095 - Field 3633922808 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the Shopify.Customer.Sync call that wrote the marker.</source>
+          <target>Tilgreinir Shopify.Customer.Sync kallið sem skrifaði merkið.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Tilgreinir Shopify.Customer.Sync kallið sem skrifaði merkið.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Customer Sync Marker ori - Field Run Id - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Table 2149711095 - Field 3633922808 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Run Id</source>
+          <target>Keyrslukenni</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Keyrslukenni</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Customer Sync Marker ori - Field Run Id - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Codeunit 158272105 - Method 3571782927 - NamedType 64258721" size-unit="char" translate="yes" xml:space="preserve">
           <source>You do not have the permissions to synchronize Shopify customers.</source>
           <target>Þú hefur ekki heimildir til að samstilla Shopify viðskiptamenn.</target>
@@ -104,6 +134,12 @@
           <target>Verslun %1 var samstillt, en %2 Shopify viðskiptamenn voru ekki stofnaðir eða uppfærðir í Business Central (Shopify auðkenni viðskiptamanna: %3). %4</target>
           <note from="Developer" annotates="general" priority="2">%1 = Shop code, %2 = number of customers, %3 = comma-separated Shopify customer IDs, %4 = the last connector error or empty||is-IS=Verslun %1 var samstillt, en %2 Shopify viðskiptamenn voru ekki stofnaðir eða uppfærðir í Business Central (Shopify auðkenni viðskiptamanna: %3). %4</note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit Customer Sync Impl ori - Method ExecuteBifrostTask - NamedType FailedImportErr</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 158272105 - Method 3571782927 - NamedType 1762062770" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Shop %1 was synchronized, but the Shopify connector could not import or update a Shopify customer: %2</source>
+          <target>Verslun %1 var samstillt, en Shopify tengillinn gat ekki flutt inn eða uppfært Shopify viðskiptamann: %2</target>
+          <note from="Developer" annotates="general" priority="2">%1 = Shop code, %2 = error text from the Shopify connector||is-IS=Verslun %1 var samstillt, en Shopify tengillinn gat ekki flutt inn eða uppfært Shopify viðskiptamann: %2</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Customer Sync Impl ori - Method ExecuteBifrostTask - NamedType ConnectorErrorErr</note>
         </trans-unit>
         <trans-unit id="Codeunit 158272105 - Method 3571782927 - NamedType 2857367805" size-unit="char" translate="yes" xml:space="preserve">
           <source>Last connector error: %1</source>
