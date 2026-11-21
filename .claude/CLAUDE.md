@@ -24,11 +24,15 @@ Tests: 97400-97599
 | Codeunit | 73731980 | Fulfillment Sync Impl ori |
 | EnumExtension | 73731980 | Fulfillment Sync MsgType ori (value Shopify.Fulfillment.Sync) |
 | Codeunit | 73731981 | Fulfillment Sync Run ori |
+| Codeunit | 73732010 | Product Sync Impl ori |
+| EnumExtension | 73732010 | Product Sync MsgType ori (value Shopify.Product.Sync) |
 | Codeunit | 73732020 | Order CreateSalesDoc Impl ori |
 | EnumExtension | 73732020 | Order SalesDoc MsgType ori (value Shopify.Order.CreateSalesDocument) |
 | Test Codeunit | 97400 | Shopify Issue 1 Tests ori |
 | Test Codeunit | 97430 | Shpfy Fulfill Sync Tests ori |
 | Test Codeunit | 97431 | Shpfy Fulfill MCP Fixture ori |
+| Test Codeunit | 97460 | Shpfy Prod Sync Test ori |
+| Test Codeunit | 97461 | Shpfy Prod Sync MCP ori |
 | Test Codeunit | 97470 | Shopify Order Create Tests ori |
 | Test Codeunit | 97471 | Shopify Order MCP Fixture ori |
 
