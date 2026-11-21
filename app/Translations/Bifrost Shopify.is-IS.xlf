@@ -3,6 +3,468 @@
   <file datatype="xml" source-language="en-US" target-language="is-IS" original="Bifrost Shopify">
     <body>
       <group id="body">
+        <trans-unit id="Codeunit 1964054211 - Method 3571782927 - NamedType 64258721" size-unit="char" translate="yes" xml:space="preserve">
+          <source>You do not have the permissions to send shipments to Shopify.</source>
+          <target>Þú hefur ekki heimildir til að senda vöruafhendingar til Shopify.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Þú hefur ekki heimildir til að senda vöruafhendingar til Shopify.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Fulfillment Sync Impl ori - Method ExecuteBifrostTask - NamedType NoPermissionErr</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 1964054211 - Method 3571782927 - NamedType 1780497417" size-unit="char" translate="yes" xml:space="preserve">
+          <source>a user with the permission set SHOPIFY Full ori and the Shopify Connector permissions</source>
+          <target>notandi með heimildasettið SHOPIFY Full ori og heimildir Shopify Connector</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=notandi með heimildasettið SHOPIFY Full ori og heimildir Shopify Connector</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Fulfillment Sync Impl ori - Method ExecuteBifrostTask - NamedType PermissionExpectedLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 1964054211 - Method 3571782927 - NamedType 3674803952" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Ask an administrator to assign the permission set SHOPIFY Full ori.</source>
+          <target>Biddu kerfisstjóra um að úthluta heimildasettinu SHOPIFY Full ori.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Biddu kerfisstjóra um að úthluta heimildasettinu SHOPIFY Full ori.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Fulfillment Sync Impl ori - Method ExecuteBifrostTask - NamedType AskAdminLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 1964054211 - Method 3571782927 - NamedType 1830439019" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Parameter "shipmentNo" is required.</source>
+          <target>Færibreytan "shipmentNo" er nauðsynleg.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Færibreytan "shipmentNo" er nauðsynleg.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Fulfillment Sync Impl ori - Method ExecuteBifrostTask - NamedType MissingErr</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 1964054211 - Method 3571782927 - NamedType 3129818787" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Send data.shipmentNo with the posted shipment No.</source>
+          <target>Sendu data.shipmentNo með númeri bókuðu vöruafhendingarinnar.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Sendu data.shipmentNo með númeri bókuðu vöruafhendingarinnar.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Fulfillment Sync Impl ori - Method ExecuteBifrostTask - NamedType MissingNextLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 1964054211 - Method 3571782927 - NamedType 1879669363" size-unit="char" translate="yes" xml:space="preserve">
+          <source>a posted sales shipment No. of at most 20 characters</source>
+          <target>númer bókaðrar vöruafhendingar, mest 20 stafir</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=númer bókaðrar vöruafhendingar, mest 20 stafir</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Fulfillment Sync Impl ori - Method ExecuteBifrostTask - NamedType TextExpectedLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 1964054211 - Method 3571782927 - NamedType 3177803720" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Parameter "shipmentNo" must be text of at most 20 characters.</source>
+          <target>Færibreytan "shipmentNo" verður að vera texti, mest 20 stafir.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Færibreytan "shipmentNo" verður að vera texti, mest 20 stafir.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Fulfillment Sync Impl ori - Method ExecuteBifrostTask - NamedType InvalidErr</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 1964054211 - Method 3571782927 - NamedType 780995952" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Send the posted sales shipment No.</source>
+          <target>Sendu númer bókuðu vöruafhendingarinnar.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Sendu númer bókuðu vöruafhendingarinnar.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Fulfillment Sync Impl ori - Method ExecuteBifrostTask - NamedType InvalidNextLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 1964054211 - Method 3571782927 - NamedType 3351274" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Posted sales shipment %1 was not found.</source>
+          <target>Bókuð vöruafhending %1 fannst ekki.</target>
+          <note from="Developer" annotates="general" priority="2">%1 = Shipment No.||is-IS=Bókuð vöruafhending %1 fannst ekki.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Fulfillment Sync Impl ori - Method ExecuteBifrostTask - NamedType NotFoundErr</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 1964054211 - Method 3571782927 - NamedType 3073054675" size-unit="char" translate="yes" xml:space="preserve">
+          <source>the No. of a posted sales shipment</source>
+          <target>númer bókaðrar vöruafhendingar</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=númer bókaðrar vöruafhendingar</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Fulfillment Sync Impl ori - Method ExecuteBifrostTask - NamedType ExistingShipmentLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 1964054211 - Method 3571782927 - NamedType 3626931473" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Read table 110 with Data.Records.Get.</source>
+          <target>Lestu töflu 110 með Data.Records.Get.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Lestu töflu 110 með Data.Records.Get.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Fulfillment Sync Impl ori - Method ExecuteBifrostTask - NamedType FindShipmentLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 1964054211 - Method 3571782927 - NamedType 4042929718" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Shipment %1 does not belong to a Shopify order.</source>
+          <target>Vöruafhending %1 tilheyrir ekki Shopify pöntun.</target>
+          <note from="Developer" annotates="general" priority="2">%1 = Shipment No.||is-IS=Vöruafhending %1 tilheyrir ekki Shopify pöntun.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Fulfillment Sync Impl ori - Method ExecuteBifrostTask - NamedType NotShopifyErr</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 1964054211 - Method 3571782927 - NamedType 3786148828" size-unit="char" translate="yes" xml:space="preserve">
+          <source>a shipment of an imported Shopify order</source>
+          <target>vöruafhending innfluttrar Shopify pöntunar</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=vöruafhending innfluttrar Shopify pöntunar</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Fulfillment Sync Impl ori - Method ExecuteBifrostTask - NamedType ShopifyShipmentLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 1964054211 - Method 3571782927 - NamedType 1445404933" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Use a shipment of an imported Shopify order that has item lines and no fulfillment yet.</source>
+          <target>Notaðu vöruafhendingu innfluttrar Shopify pöntunar sem er með vörulínur og enga afgreiðslu enn.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Notaðu vöruafhendingu innfluttrar Shopify pöntunar sem er með vörulínur og enga afgreiðslu enn.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Fulfillment Sync Impl ori - Method ExecuteBifrostTask - NamedType UseShopifyShipmentLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 1964054211 - Method 3571782927 - NamedType 3990440899" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Shipment %1 was already sent to Shopify or skipped (Shopify Fulfillment Id %2).</source>
+          <target>Vöruafhending %1 hefur þegar verið send til Shopify eða sleppt (Shopify Fulfillment Id %2).</target>
+          <note from="Developer" annotates="general" priority="2">%1 = Shipment No., %2 = Fulfillment Id||is-IS=Vöruafhending %1 hefur þegar verið send til Shopify eða sleppt (Shopify Fulfillment Id %2).</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Fulfillment Sync Impl ori - Method ExecuteBifrostTask - NamedType SentErr</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 1964054211 - Method 3571782927 - NamedType 579334151" size-unit="char" translate="yes" xml:space="preserve">
+          <source>a shipment that is not sent to Shopify yet</source>
+          <target>vöruafhending sem hefur ekki enn verið send til Shopify</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=vöruafhending sem hefur ekki enn verið send til Shopify</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Fulfillment Sync Impl ori - Method ExecuteBifrostTask - NamedType UnsentLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 1964054211 - Method 3571782927 - NamedType 3359697259" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Shipment %1 has no item lines with a quantity above 0.</source>
+          <target>Vöruafhending %1 er ekki með vörulínur með magn yfir 0.</target>
+          <note from="Developer" annotates="general" priority="2">%1 = Shipment No.||is-IS=Vöruafhending %1 er ekki með vörulínur með magn yfir 0.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Fulfillment Sync Impl ori - Method ExecuteBifrostTask - NamedType NoLinesErr</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 1964054211 - Method 3571782927 - NamedType 3616618409" size-unit="char" translate="yes" xml:space="preserve">
+          <source>a shipment with item lines</source>
+          <target>vöruafhending með vörulínum</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=vöruafhending með vörulínum</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Fulfillment Sync Impl ori - Method ExecuteBifrostTask - NamedType LinesLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 1964054211 - Method 3571782927 - NamedType 2982625366" size-unit="char" translate="yes" xml:space="preserve">
+          <source>The Shopify order %1 of shipment %2 is not imported.</source>
+          <target>Shopify pöntun %1 vöruafhendingar %2 er ekki innflutt.</target>
+          <note from="Developer" annotates="general" priority="2">%1 = Shopify Order Id, %2 = Shipment No.||is-IS=Shopify pöntun %1 vöruafhendingar %2 er ekki innflutt.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Fulfillment Sync Impl ori - Method ExecuteBifrostTask - NamedType NoOrderErr</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 1964054211 - Method 3571782927 - NamedType 293110076" size-unit="char" translate="yes" xml:space="preserve">
+          <source>a shipment whose Shopify order is imported</source>
+          <target>vöruafhending þar sem Shopify pöntunin er innflutt</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=vöruafhending þar sem Shopify pöntunin er innflutt</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Fulfillment Sync Impl ori - Method ExecuteBifrostTask - NamedType ImportedOrderLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 1964054211 - Method 3571782927 - NamedType 974163739" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Import the Shopify order first.</source>
+          <target>Fluttu Shopify pöntunina fyrst inn.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Fluttu Shopify pöntunina fyrst inn.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Fulfillment Sync Impl ori - Method ExecuteBifrostTask - NamedType ImportOrderLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 1964054211 - Method 3571782927 - NamedType 1603624325" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Can not send shipment %1 to Shopify. %2</source>
+          <target>Ekki er hægt að senda vöruafhendingu %1 til Shopify. %2</target>
+          <note from="Developer" annotates="general" priority="2">%1 = Shipment No., %2 = detailed text||is-IS=Ekki er hægt að senda vöruafhendingu %1 til Shopify. %2</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Fulfillment Sync Impl ori - Method ExecuteBifrostTask - NamedType RefusedErr</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 1964054211 - Method 3571782927 - NamedType 1453209100" size-unit="char" translate="yes" xml:space="preserve">
+          <source>a shipment Shopify can fulfill</source>
+          <target>vöruafhending sem Shopify getur afgreitt</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=vöruafhending sem Shopify getur afgreitt</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Fulfillment Sync Impl ori - Method ExecuteBifrostTask - NamedType SentExpectedLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 1964054211 - Method 3571782927 - NamedType 2319534536" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Fix the cause named in the text, then call again.</source>
+          <target>Lagaðu orsökina sem textinn nefnir og kallaðu aftur.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Lagaðu orsökina sem textinn nefnir og kallaðu aftur.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Fulfillment Sync Impl ori - Method ExecuteBifrostTask - NamedType FixCauseLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 1964054211 - Method 4077369804 - NamedType 3569966352" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Sends a posted sales shipment of a Shopify order to Shopify as a fulfillment with its tracking information.</source>
+          <target>Sendir bókaða vöruafhendingu Shopify pöntunar til Shopify sem afgreiðslu ásamt rakningarupplýsingum.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Sendir bókaða vöruafhendingu Shopify pöntunar til Shopify sem afgreiðslu ásamt rakningarupplýsingum.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Fulfillment Sync Impl ori - Method GetDescription - NamedType DescriptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 1964054211 - Method 1027590672 - NamedType 1290244428" size-unit="char" translate="yes" xml:space="preserve">
+          <source>shopify fulfillment, sync shipment, send tracking number, fulfill shopify order, export shipment to shopify</source>
+          <target>shopify afgreiðsla, senda vöruafhendingu, senda rakningarnúmer, afgreiða shopify pöntun, flytja vöruafhendingu út til shopify</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=shopify afgreiðsla, senda vöruafhendingu, senda rakningarnúmer, afgreiða shopify pöntun, flytja vöruafhendingu út til shopify</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Fulfillment Sync Impl ori - Method GetKeywords - NamedType KeywordsLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 1964054211 - Method 79446908 - NamedType 895773054" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Use for a posted sales shipment created from an imported Shopify order that has not been sent to Shopify yet. It does not import orders and does not post shipments.</source>
+          <target>Notað fyrir bókaða vöruafhendingu úr innfluttri Shopify pöntun sem hefur ekki enn verið send til Shopify. Flytur ekki inn pantanir og bókar ekki vöruafhendingar.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Notað fyrir bókaða vöruafhendingu úr innfluttri Shopify pöntun sem hefur ekki enn verið send til Shopify. Flytur ekki inn pantanir og bókar ekki vöruafhendingar.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Fulfillment Sync Impl ori - Method GetSelectionDescription - NamedType SelectionLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 3068989452 - NamedType 3188175074" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Shopify did not create a fulfillment for shipment %1. The Shopify skipped-record log holds the reason.</source>
+          <target>Shopify bjó ekki til afgreiðslu fyrir vöruafhendingu %1. Ástæðan er í skráningu Shopify á sleppt færslum.</target>
+          <note from="Developer" annotates="general" priority="2">%1 = Shipment No.||is-IS=Shopify bjó ekki til afgreiðslu fyrir vöruafhendingu %1. Ástæðan er í skráningu Shopify á sleppt færslum.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Fulfillment Sync Run ori - NamedType NoFulfillmentErr</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 805337187 - Method 3571782927 - NamedType 64258721" size-unit="char" translate="yes" xml:space="preserve">
+          <source>You do not have the permissions to send stock to Shopify.</source>
+          <target>Þú hefur ekki heimildir til að senda birgðastöðu til Shopify.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Þú hefur ekki heimildir til að senda birgðastöðu til Shopify.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Inventory Sync Impl ori - Method ExecuteBifrostTask - NamedType NoPermissionErr</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 805337187 - Method 3571782927 - NamedType 1780497417" size-unit="char" translate="yes" xml:space="preserve">
+          <source>a user with the permission set SHOPIFY Full ori and the Shopify Connector permissions</source>
+          <target>notandi með heimildasettið SHOPIFY Full ori og heimildir Shopify Connector</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=notandi með heimildasettið SHOPIFY Full ori og heimildir Shopify Connector</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Inventory Sync Impl ori - Method ExecuteBifrostTask - NamedType PermissionExpectedLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 805337187 - Method 3571782927 - NamedType 3674803952" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Ask an administrator to assign the permission set SHOPIFY Full ori.</source>
+          <target>Biddu kerfisstjóra um að úthluta heimildasettinu SHOPIFY Full ori.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Biddu kerfisstjóra um að úthluta heimildasettinu SHOPIFY Full ori.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Inventory Sync Impl ori - Method ExecuteBifrostTask - NamedType AskAdminLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 805337187 - Method 3571782927 - NamedType 1830439019" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Parameter "shopCode" is required.</source>
+          <target>Færibreytan "shopCode" er nauðsynleg.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Færibreytan "shopCode" er nauðsynleg.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Inventory Sync Impl ori - Method ExecuteBifrostTask - NamedType MissingErr</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 805337187 - Method 3571782927 - NamedType 3129818787" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Send data.shopCode with the code of a Shopify shop.</source>
+          <target>Sendu data.shopCode með kóða Shopify verslunar.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Sendu data.shopCode með kóða Shopify verslunar.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Inventory Sync Impl ori - Method ExecuteBifrostTask - NamedType MissingNextLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 805337187 - Method 3571782927 - NamedType 1879669363" size-unit="char" translate="yes" xml:space="preserve">
+          <source>a text of 1 to 20 characters</source>
+          <target>texti með 1 til 20 stöfum</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=texti með 1 til 20 stöfum</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Inventory Sync Impl ori - Method ExecuteBifrostTask - NamedType TextExpectedLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 805337187 - Method 3571782927 - NamedType 3177803720" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Parameter "shopCode" must be a text of 1 to 20 characters.</source>
+          <target>Færibreytan "shopCode" verður að vera texti með 1 til 20 stöfum.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Færibreytan "shopCode" verður að vera texti með 1 til 20 stöfum.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Inventory Sync Impl ori - Method ExecuteBifrostTask - NamedType InvalidErr</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 805337187 - Method 3571782927 - NamedType 780995952" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Send the shop code as text.</source>
+          <target>Sendu kóða verslunarinnar sem texta.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Sendu kóða verslunarinnar sem texta.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Inventory Sync Impl ori - Method ExecuteBifrostTask - NamedType InvalidNextLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 805337187 - Method 3571782927 - NamedType 3030677188" size-unit="char" translate="yes" xml:space="preserve">
+          <source>true or false</source>
+          <target>true eða false</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=true eða false</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Inventory Sync Impl ori - Method ExecuteBifrostTask - NamedType BooleanExpectedLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 805337187 - Method 3571782927 - NamedType 1423409815" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Parameter "skipImport" must be true or false.</source>
+          <target>Færibreytan "skipImport" verður að vera true eða false.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Færibreytan "skipImport" verður að vera true eða false.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Inventory Sync Impl ori - Method ExecuteBifrostTask - NamedType InvalidSkipErr</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 805337187 - Method 3571782927 - NamedType 174578767" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Send true or false.</source>
+          <target>Sendu true eða false.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Sendu true eða false.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Inventory Sync Impl ori - Method ExecuteBifrostTask - NamedType InvalidSkipNextLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 805337187 - Method 3571782927 - NamedType 880984256" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Parameter "variantIdFilter" is not a valid filter: %1</source>
+          <target>Færibreytan "variantIdFilter" er ekki gild sía: %1</target>
+          <note from="Developer" annotates="general" priority="2">%1 = the filter text||is-IS=Færibreytan "variantIdFilter" er ekki gild sía: %1</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Inventory Sync Impl ori - Method ExecuteBifrostTask - NamedType InvalidFilterErr</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 805337187 - Method 3571782927 - NamedType 633023824" size-unit="char" translate="yes" xml:space="preserve">
+          <source>a Business Central number filter such as 123|456</source>
+          <target>talnasía úr Business Central, til dæmis 123|456</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=talnasía úr Business Central, til dæmis 123|456</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Inventory Sync Impl ori - Method ExecuteBifrostTask - NamedType FilterExpectedLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 805337187 - Method 3571782927 - NamedType 1127090504" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Send a valid filter or leave the parameter out.</source>
+          <target>Sendu gilda síu eða slepptu færibreytunni.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Sendu gilda síu eða slepptu færibreytunni.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Inventory Sync Impl ori - Method ExecuteBifrostTask - NamedType InvalidFilterNextLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 805337187 - Method 3571782927 - NamedType 3351274" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Shopify shop %1 was not found.</source>
+          <target>Shopify verslun %1 fannst ekki.</target>
+          <note from="Developer" annotates="general" priority="2">%1 = Shop code||is-IS=Shopify verslun %1 fannst ekki.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Inventory Sync Impl ori - Method ExecuteBifrostTask - NamedType NotFoundErr</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 805337187 - Method 3571782927 - NamedType 1856496999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>the code of an existing shop</source>
+          <target>kóði verslunar sem er til</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=kóði verslunar sem er til</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Inventory Sync Impl ori - Method ExecuteBifrostTask - NamedType ExistingShopLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 805337187 - Method 3571782927 - NamedType 1787450605" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Read table 30102 with Data.Records.Get to find the code.</source>
+          <target>Lestu töflu 30102 með Data.Records.Get til að finna kóðann.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Lestu töflu 30102 með Data.Records.Get til að finna kóðann.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Inventory Sync Impl ori - Method ExecuteBifrostTask - NamedType FindShopLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 805337187 - Method 3571782927 - NamedType 2715195543" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Shopify shop %1 is not enabled.</source>
+          <target>Shopify verslun %1 er ekki virk.</target>
+          <note from="Developer" annotates="general" priority="2">%1 = Shop code||is-IS=Shopify verslun %1 er ekki virk.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Inventory Sync Impl ori - Method ExecuteBifrostTask - NamedType NotEnabledErr</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 805337187 - Method 3571782927 - NamedType 2430023549" size-unit="char" translate="yes" xml:space="preserve">
+          <source>an enabled shop</source>
+          <target>virk verslun</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=virk verslun</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Inventory Sync Impl ori - Method ExecuteBifrostTask - NamedType EnabledShopLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 805337187 - Method 3571782927 - NamedType 4027318585" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Enable the shop on the Shopify Shop Card.</source>
+          <target>Virkjaðu verslunina á Shopify verslunarspjaldinu.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Virkjaðu verslunina á Shopify verslunarspjaldinu.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Inventory Sync Impl ori - Method ExecuteBifrostTask - NamedType EnableShopLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 805337187 - Method 4077369804 - NamedType 3569966352" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Sends the Business Central stock levels per location of a shop's products to Shopify.</source>
+          <target>Sendir birgðastöðu úr Business Central eftir staðsetningum fyrir vörur verslunar til Shopify.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Sendir birgðastöðu úr Business Central eftir staðsetningum fyrir vörur verslunar til Shopify.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Inventory Sync Impl ori - Method GetDescription - NamedType DescriptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 805337187 - Method 1027590672 - NamedType 1290244428" size-unit="char" translate="yes" xml:space="preserve">
+          <source>shopify inventory, sync stock, send stock to shopify, update shopify stock levels, sync inventory</source>
+          <target>shopify birgðir, samstilla birgðastöðu, senda birgðir til shopify, uppfæra birgðastöðu í shopify, samstilla birgðir</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=shopify birgðir, samstilla birgðastöðu, senda birgðir til shopify, uppfæra birgðastöðu í shopify, samstilla birgðir</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Inventory Sync Impl ori - Method GetKeywords - NamedType KeywordsLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 805337187 - Method 79446908 - NamedType 895773054" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Use to push stock levels of the items already mapped to Shopify products to one enabled shop. It does not create products and does not send prices; use Shopify.Product.Sync and Shopify.Product.SyncPrices for those.</source>
+          <target>Notað til að senda birgðastöðu vara sem þegar eru tengdar Shopify vörum í eina virka verslun. Býr ekki til vörur og sendir ekki verð; notaðu Shopify.Product.Sync og Shopify.Product.SyncPrices fyrir það.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Notað til að senda birgðastöðu vara sem þegar eru tengdar Shopify vörum í eina virka verslun. Býr ekki til vörur og sendir ekki verð; notaðu Shopify.Product.Sync og Shopify.Product.SyncPrices fyrir það.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Inventory Sync Impl ori - Method GetSelectionDescription - NamedType SelectionLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 4087984018 - Method 3571782927 - NamedType 64258721" size-unit="char" translate="yes" xml:space="preserve">
+          <source>You do not have the permissions to create sales documents from Shopify orders.</source>
+          <target>Þú hefur ekki heimildir til að búa til sölugögn úr Shopify pöntunum.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Þú hefur ekki heimildir til að búa til sölugögn úr Shopify pöntunum.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Order CreateSalesDoc Impl ori - Method ExecuteBifrostTask - NamedType NoPermissionErr</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 4087984018 - Method 3571782927 - NamedType 1780497417" size-unit="char" translate="yes" xml:space="preserve">
+          <source>a user with the permission set SHOPIFY Full ori and the Shopify Connector permissions</source>
+          <target>notandi með heimildasettið SHOPIFY Full ori og heimildir Shopify Connector</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=notandi með heimildasettið SHOPIFY Full ori og heimildir Shopify Connector</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Order CreateSalesDoc Impl ori - Method ExecuteBifrostTask - NamedType PermissionExpectedLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 4087984018 - Method 3571782927 - NamedType 3674803952" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Ask an administrator to assign the permission set SHOPIFY Full ori.</source>
+          <target>Biddu kerfisstjóra um að úthluta heimildasettinu SHOPIFY Full ori.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Biddu kerfisstjóra um að úthluta heimildasettinu SHOPIFY Full ori.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Order CreateSalesDoc Impl ori - Method ExecuteBifrostTask - NamedType AskAdminLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 4087984018 - Method 3571782927 - NamedType 1830439019" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Parameter "orderId" is required.</source>
+          <target>Færibreytan "orderId" er nauðsynleg.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Færibreytan "orderId" er nauðsynleg.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Order CreateSalesDoc Impl ori - Method ExecuteBifrostTask - NamedType MissingErr</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 4087984018 - Method 3571782927 - NamedType 3129818787" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Send data.orderId with the Shopify Order Id.</source>
+          <target>Sendu data.orderId með auðkenni Shopify pöntunarinnar.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Sendu data.orderId með auðkenni Shopify pöntunarinnar.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Order CreateSalesDoc Impl ori - Method ExecuteBifrostTask - NamedType MissingNextLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 4087984018 - Method 3571782927 - NamedType 93319113" size-unit="char" translate="yes" xml:space="preserve">
+          <source>a whole number greater than 0</source>
+          <target>heiltala stærri en 0</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=heiltala stærri en 0</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Order CreateSalesDoc Impl ori - Method ExecuteBifrostTask - NamedType NumberExpectedLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 4087984018 - Method 3571782927 - NamedType 3177803720" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Parameter "orderId" must be a whole number greater than 0.</source>
+          <target>Færibreytan "orderId" verður að vera heiltala stærri en 0.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Færibreytan "orderId" verður að vera heiltala stærri en 0.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Order CreateSalesDoc Impl ori - Method ExecuteBifrostTask - NamedType InvalidErr</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 4087984018 - Method 3571782927 - NamedType 780995952" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Send the Shopify Order Id as a number.</source>
+          <target>Sendu auðkenni Shopify pöntunarinnar sem tölu.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Sendu auðkenni Shopify pöntunarinnar sem tölu.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Order CreateSalesDoc Impl ori - Method ExecuteBifrostTask - NamedType InvalidNextLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 4087984018 - Method 3571782927 - NamedType 3351274" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Shopify order %1 was not found.</source>
+          <target>Shopify pöntun %1 fannst ekki.</target>
+          <note from="Developer" annotates="general" priority="2">%1 = Order Id||is-IS=Shopify pöntun %1 fannst ekki.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Order CreateSalesDoc Impl ori - Method ExecuteBifrostTask - NamedType NotFoundErr</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 4087984018 - Method 3571782927 - NamedType 2233163380" size-unit="char" translate="yes" xml:space="preserve">
+          <source>the Id of an imported order</source>
+          <target>auðkenni innfluttrar pöntunar</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=auðkenni innfluttrar pöntunar</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Order CreateSalesDoc Impl ori - Method ExecuteBifrostTask - NamedType ImportedExpectedLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 4087984018 - Method 3571782927 - NamedType 1220520351" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Import the order first, or read table 30118 with Data.Records.Get.</source>
+          <target>Fluttu pöntunina fyrst inn eða lestu töflu 30118 með Data.Records.Get.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Fluttu pöntunina fyrst inn eða lestu töflu 30118 með Data.Records.Get.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Order CreateSalesDoc Impl ori - Method ExecuteBifrostTask - NamedType ImportFirstLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 4087984018 - Method 3571782927 - NamedType 4268774073" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Shopify order %1 already has a sales document.</source>
+          <target>Shopify pöntun %1 hefur þegar sölugagn.</target>
+          <note from="Developer" annotates="general" priority="2">%1 = Order Id||is-IS=Shopify pöntun %1 hefur þegar sölugagn.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Order CreateSalesDoc Impl ori - Method ExecuteBifrostTask - NamedType ProcessedErr</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 4087984018 - Method 3571782927 - NamedType 2681587447" size-unit="char" translate="yes" xml:space="preserve">
+          <source>an order that is not processed</source>
+          <target>pöntun sem hefur ekki verið unnin</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=pöntun sem hefur ekki verið unnin</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Order CreateSalesDoc Impl ori - Method ExecuteBifrostTask - NamedType UnprocessedExpectedLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 4087984018 - Method 3571782927 - NamedType 3431089313" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Nothing to do.</source>
+          <target>Ekkert að gera.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Ekkert að gera.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Order CreateSalesDoc Impl ori - Method ExecuteBifrostTask - NamedType NothingToDoLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 4087984018 - Method 3571782927 - NamedType 3917760611" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Shop %1 is not enabled.</source>
+          <target>Verslun %1 er ekki virk.</target>
+          <note from="Developer" annotates="general" priority="2">%1 = Shop code||is-IS=Verslun %1 er ekki virk.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Order CreateSalesDoc Impl ori - Method ExecuteBifrostTask - NamedType ShopDisabledErr</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 4087984018 - Method 3571782927 - NamedType 1764883415" size-unit="char" translate="yes" xml:space="preserve">
+          <source>an order of an enabled shop</source>
+          <target>pöntun í virkri verslun</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=pöntun í virkri verslun</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Order CreateSalesDoc Impl ori - Method ExecuteBifrostTask - NamedType ShopEnabledExpectedLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 4087984018 - Method 3571782927 - NamedType 4027318585" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Enable the shop.</source>
+          <target>Virkjaðu verslunina.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Virkjaðu verslunina.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Order CreateSalesDoc Impl ori - Method ExecuteBifrostTask - NamedType EnableShopLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 4087984018 - Method 3571782927 - NamedType 3005683376" size-unit="char" translate="yes" xml:space="preserve">
+          <source>an order that Business Central can create a sales document for</source>
+          <target>pöntun sem Business Central getur búið til sölugagn fyrir</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=pöntun sem Business Central getur búið til sölugagn fyrir</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Order CreateSalesDoc Impl ori - Method ExecuteBifrostTask - NamedType CreatedExpectedLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 4087984018 - Method 3571782927 - NamedType 2319534536" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Fix the cause named in the text, then call again.</source>
+          <target>Lagaðu orsökina sem textinn nefnir og kallaðu aftur.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Lagaðu orsökina sem textinn nefnir og kallaðu aftur.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Order CreateSalesDoc Impl ori - Method ExecuteBifrostTask - NamedType FixCauseLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 4087984018 - Method 3571782927 - NamedType 1603624325" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Can not create a sales document for the order %1. %2</source>
+          <target>Ekki er hægt að búa til sölugagn fyrir pöntunina %1. %2</target>
+          <note from="Developer" annotates="general" priority="2">%1 = Order Id, %2 = detailed text||is-IS=Ekki er hægt að búa til sölugagn fyrir pöntunina %1. %2</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Order CreateSalesDoc Impl ori - Method ExecuteBifrostTask - NamedType RefusedErr</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 4087984018 - Method 3571782927 - NamedType 583919035" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Shop %1 creates credit memos for refunds automatically.</source>
+          <target>Verslunin %1 býr sjálfkrafa til kreditreikninga fyrir endurgreiðslur.</target>
+          <note from="Developer" annotates="general" priority="2">%1 = Shop Code||is-IS=Verslunin %1 býr sjálfkrafa til kreditreikninga fyrir endurgreiðslur.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Order CreateSalesDoc Impl ori - Method ExecuteBifrostTask - NamedType AutoCreditMemoShopErr</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 4087984018 - Method 3571782927 - NamedType 497000287" size-unit="char" translate="yes" xml:space="preserve">
+          <source>a shop that does not create credit memos for refunds automatically</source>
+          <target>verslun sem býr ekki sjálfkrafa til kreditreikninga fyrir endurgreiðslur</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=verslun sem býr ekki sjálfkrafa til kreditreikninga fyrir endurgreiðslur</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Order CreateSalesDoc Impl ori - Method ExecuteBifrostTask - NamedType NoAutoCreditMemoExpectedLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 4087984018 - Method 3571782927 - NamedType 3201778888" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Create the documents of this shop with the standard Create Sales Orders action.</source>
+          <target>Búðu til fylgiskjöl þessarar verslunar með stöðluðu aðgerðinni Create Sales Orders.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Búðu til fylgiskjöl þessarar verslunar með stöðluðu aðgerðinni Create Sales Orders.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Order CreateSalesDoc Impl ori - Method ExecuteBifrostTask - NamedType UseStandardActionLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 4087984018 - Method 4077369804 - NamedType 3569966352" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Creates the Business Central sales order or invoice of an imported Shopify order.</source>
+          <target>Býr til sölupöntun eða sölureikning í Business Central fyrir innflutta Shopify pöntun.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Býr til sölupöntun eða sölureikning í Business Central fyrir innflutta Shopify pöntun.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Order CreateSalesDoc Impl ori - Method GetDescription - NamedType DescriptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 4087984018 - Method 1027590672 - NamedType 1290244428" size-unit="char" translate="yes" xml:space="preserve">
+          <source>shopify order, create sales order, create sales invoice, process shopify order, convert shopify order</source>
+          <target>shopify pöntun, búa til sölupöntun, búa til sölureikning, vinna shopify pöntun, umbreyta shopify pöntun</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=shopify pöntun, búa til sölupöntun, búa til sölureikning, vinna shopify pöntun, umbreyta shopify pöntun</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Order CreateSalesDoc Impl ori - Method GetKeywords - NamedType KeywordsLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 4087984018 - Method 79446908 - NamedType 895773054" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Use for an already imported Shopify order that has no Business Central document yet. It does not import orders from Shopify, does not release or post the document beyond the shop's own setting, and does not create refunds.</source>
+          <target>Notað fyrir innflutta Shopify pöntun sem hefur ekki Business Central skjal. Flytur ekki inn pantanir frá Shopify, losar ekki og bókar ekki skjalið umfram stillingu verslunarinnar og býr ekki til endurgreiðslur.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Notað fyrir innflutta Shopify pöntun sem hefur ekki Business Central skjal. Flytur ekki inn pantanir frá Shopify, losar ekki og bókar ekki skjalið umfram stillingu verslunarinnar og býr ekki til endurgreiðslur.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Order CreateSalesDoc Impl ori - Method GetSelectionDescription - NamedType SelectionLbl</note>
+        </trans-unit>
         <trans-unit id="Codeunit 1060827874 - Method 3571782927 - NamedType 64258721" size-unit="char" translate="yes" xml:space="preserve">
           <source>You do not have the permissions to send prices to Shopify.</source>
           <target>Þú hefur ekki heimildir til að senda verð til Shopify.</target>
@@ -122,6 +584,144 @@
           <target>Notað til að senda núverandi söluverð (og samanburðarverð og einingarkostnað) þegar tengdra vara til Shopify fyrir eina verslun. Býr ekki til vörur og flytur ekkert inn.</target>
           <note from="Developer" annotates="general" priority="2">is-IS=Notað til að senda núverandi söluverð (og samanburðarverð og einingarkostnað) þegar tengdra vara til Shopify fyrir eina verslun. Býr ekki til vörur og flytur ekkert inn.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit Product SyncPrices Impl ori - Method GetSelectionDescription - NamedType SelectionLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 4086981307 - Method 3571782927 - NamedType 64258721" size-unit="char" translate="yes" xml:space="preserve">
+          <source>You do not have the permissions to create credit memos from Shopify refunds.</source>
+          <target>Þú hefur ekki heimildir til að búa til kreditreikninga úr Shopify endurgreiðslum.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Þú hefur ekki heimildir til að búa til kreditreikninga úr Shopify endurgreiðslum.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Refund CrMemo Impl ori - Method ExecuteBifrostTask - NamedType NoPermissionErr</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 4086981307 - Method 3571782927 - NamedType 1780497417" size-unit="char" translate="yes" xml:space="preserve">
+          <source>a user with the permission set SHOPIFY Full ori and the Shopify Connector permissions</source>
+          <target>notandi með heimildasettið SHOPIFY Full ori og heimildir Shopify Connector</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=notandi með heimildasettið SHOPIFY Full ori og heimildir Shopify Connector</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Refund CrMemo Impl ori - Method ExecuteBifrostTask - NamedType PermissionExpectedLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 4086981307 - Method 3571782927 - NamedType 3674803952" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Ask an administrator to assign the permission set SHOPIFY Full ori.</source>
+          <target>Biddu kerfisstjóra um að úthluta heimildasettinu SHOPIFY Full ori.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Biddu kerfisstjóra um að úthluta heimildasettinu SHOPIFY Full ori.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Refund CrMemo Impl ori - Method ExecuteBifrostTask - NamedType AskAdminLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 4086981307 - Method 3571782927 - NamedType 1830439019" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Parameter "refundId" is required.</source>
+          <target>Færibreytan "refundId" er nauðsynleg.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Færibreytan "refundId" er nauðsynleg.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Refund CrMemo Impl ori - Method ExecuteBifrostTask - NamedType MissingErr</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 4086981307 - Method 3571782927 - NamedType 3129818787" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Send data.refundId with the Shopify Refund Id.</source>
+          <target>Sendu data.refundId með auðkenni Shopify endurgreiðslunnar.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Sendu data.refundId með auðkenni Shopify endurgreiðslunnar.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Refund CrMemo Impl ori - Method ExecuteBifrostTask - NamedType MissingNextLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 4086981307 - Method 3571782927 - NamedType 93319113" size-unit="char" translate="yes" xml:space="preserve">
+          <source>a whole number greater than 0</source>
+          <target>heiltala stærri en 0</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=heiltala stærri en 0</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Refund CrMemo Impl ori - Method ExecuteBifrostTask - NamedType NumberExpectedLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 4086981307 - Method 3571782927 - NamedType 3177803720" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Parameter "refundId" must be a whole number greater than 0.</source>
+          <target>Færibreytan "refundId" verður að vera heiltala stærri en 0.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Færibreytan "refundId" verður að vera heiltala stærri en 0.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Refund CrMemo Impl ori - Method ExecuteBifrostTask - NamedType InvalidErr</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 4086981307 - Method 3571782927 - NamedType 780995952" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Send the Shopify Refund Id as a number.</source>
+          <target>Sendu auðkenni Shopify endurgreiðslunnar sem tölu.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Sendu auðkenni Shopify endurgreiðslunnar sem tölu.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Refund CrMemo Impl ori - Method ExecuteBifrostTask - NamedType InvalidNextLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 4086981307 - Method 3571782927 - NamedType 3351274" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Shopify refund %1 was not found.</source>
+          <target>Shopify endurgreiðsla %1 fannst ekki.</target>
+          <note from="Developer" annotates="general" priority="2">%1 = Refund Id||is-IS=Shopify endurgreiðsla %1 fannst ekki.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Refund CrMemo Impl ori - Method ExecuteBifrostTask - NamedType NotFoundErr</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 4086981307 - Method 3571782927 - NamedType 2233163380" size-unit="char" translate="yes" xml:space="preserve">
+          <source>the Id of an imported refund</source>
+          <target>auðkenni innfluttrar endurgreiðslu</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=auðkenni innfluttrar endurgreiðslu</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Refund CrMemo Impl ori - Method ExecuteBifrostTask - NamedType ImportedExpectedLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 4086981307 - Method 3571782927 - NamedType 1220520351" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Import the refund first, or read table 30142 with Data.Records.Get.</source>
+          <target>Fluttu endurgreiðsluna fyrst inn eða lestu töflu 30142 með Data.Records.Get.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Fluttu endurgreiðsluna fyrst inn eða lestu töflu 30142 með Data.Records.Get.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Refund CrMemo Impl ori - Method ExecuteBifrostTask - NamedType ImportFirstLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 4086981307 - Method 3571782927 - NamedType 4268774073" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Shopify refund %1 is already processed.</source>
+          <target>Shopify endurgreiðsla %1 hefur þegar verið unnin.</target>
+          <note from="Developer" annotates="general" priority="2">%1 = Refund Id||is-IS=Shopify endurgreiðsla %1 hefur þegar verið unnin.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Refund CrMemo Impl ori - Method ExecuteBifrostTask - NamedType ProcessedErr</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 4086981307 - Method 3571782927 - NamedType 2681587447" size-unit="char" translate="yes" xml:space="preserve">
+          <source>a refund that is not processed</source>
+          <target>endurgreiðsla sem hefur ekki verið unnin</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=endurgreiðsla sem hefur ekki verið unnin</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Refund CrMemo Impl ori - Method ExecuteBifrostTask - NamedType UnprocessedExpectedLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 4086981307 - Method 3571782927 - NamedType 3431089313" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Nothing to do.</source>
+          <target>Ekkert að gera.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Ekkert að gera.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Refund CrMemo Impl ori - Method ExecuteBifrostTask - NamedType NothingToDoLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 4086981307 - Method 3571782927 - NamedType 1463801249" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Shop %1 does not create credit memos automatically.</source>
+          <target>Verslun %1 býr ekki til kreditreikninga sjálfkrafa.</target>
+          <note from="Developer" annotates="general" priority="2">%1 = Shop code||is-IS=Verslun %1 býr ekki til kreditreikninga sjálfkrafa.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Refund CrMemo Impl ori - Method ExecuteBifrostTask - NamedType NotAutoErr</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 4086981307 - Method 3571782927 - NamedType 812713933" size-unit="char" translate="yes" xml:space="preserve">
+          <source>a shop with Return and Refund Process = Auto Create Credit Memo</source>
+          <target>verslun með Return and Refund Process = Auto Create Credit Memo</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=verslun með Return and Refund Process = Auto Create Credit Memo</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Refund CrMemo Impl ori - Method ExecuteBifrostTask - NamedType AutoExpectedLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 4086981307 - Method 3571782927 - NamedType 876890025" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Set the shop's Return and Refund Process to Auto Create Credit Memo.</source>
+          <target>Stilltu Return and Refund Process verslunarinnar á Auto Create Credit Memo.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Stilltu Return and Refund Process verslunarinnar á Auto Create Credit Memo.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Refund CrMemo Impl ori - Method ExecuteBifrostTask - NamedType SetAutoLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 4086981307 - Method 3571782927 - NamedType 3005683376" size-unit="char" translate="yes" xml:space="preserve">
+          <source>a refund that Business Central can create a credit memo for</source>
+          <target>endurgreiðsla sem Business Central getur búið til kreditreikning fyrir</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=endurgreiðsla sem Business Central getur búið til kreditreikning fyrir</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Refund CrMemo Impl ori - Method ExecuteBifrostTask - NamedType CreatedExpectedLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 4086981307 - Method 3571782927 - NamedType 2319534536" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Fix the cause named in the text, then call again.</source>
+          <target>Lagaðu orsökina sem textinn nefnir og kallaðu aftur.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Lagaðu orsökina sem textinn nefnir og kallaðu aftur.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Refund CrMemo Impl ori - Method ExecuteBifrostTask - NamedType FixCauseLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 4086981307 - Method 3571782927 - NamedType 1603624325" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Can not create a credit memo for the refund %1. %2</source>
+          <target>Ekki er hægt að búa til kreditreikning fyrir endurgreiðsluna %1. %2</target>
+          <note from="Developer" annotates="general" priority="2">%1 = Refund Id, %2 = detailed text||is-IS=Ekki er hægt að búa til kreditreikning fyrir endurgreiðsluna %1. %2</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Refund CrMemo Impl ori - Method ExecuteBifrostTask - NamedType RefusedErr</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 4086981307 - Method 4077369804 - NamedType 3569966352" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Creates the Business Central credit memo of an imported Shopify refund.</source>
+          <target>Býr til kreditreikning í Business Central fyrir innflutta Shopify endurgreiðslu.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Býr til kreditreikning í Business Central fyrir innflutta Shopify endurgreiðslu.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Refund CrMemo Impl ori - Method GetDescription - NamedType DescriptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 4086981307 - Method 1027590672 - NamedType 1290244428" size-unit="char" translate="yes" xml:space="preserve">
+          <source>shopify refund, create credit memo, refund credit memo, process shopify refund, return money to customer</source>
+          <target>shopify endurgreiðsla, búa til kreditreikning, kreditreikningur endurgreiðslu, vinna shopify endurgreiðslu, endurgreiða viðskiptavini</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=shopify endurgreiðsla, búa til kreditreikning, kreditreikningur endurgreiðslu, vinna shopify endurgreiðslu, endurgreiða viðskiptavini</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Refund CrMemo Impl ori - Method GetKeywords - NamedType KeywordsLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 4086981307 - Method 79446908 - NamedType 895773054" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Use for an already imported Shopify refund whose shop is set to Auto Create Credit Memo and that has no credit memo yet. It does not import refunds from Shopify and does not post the credit memo.</source>
+          <target>Notað fyrir innflutta Shopify endurgreiðslu þar sem verslun er stillt á Auto Create Credit Memo og enginn kreditreikningur er til. Flytur ekki inn endurgreiðslur frá Shopify og bókar ekki kreditreikninginn.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Notað fyrir innflutta Shopify endurgreiðslu þar sem verslun er stillt á Auto Create Credit Memo og enginn kreditreikningur er til. Flytur ekki inn endurgreiðslur frá Shopify og bókar ekki kreditreikninginn.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Refund CrMemo Impl ori - Method GetSelectionDescription - NamedType SelectionLbl</note>
         </trans-unit>
         <trans-unit id="PermissionSet 1311670517 - Property 2879900210" maxwidth="30" size-unit="char" translate="yes" xml:space="preserve">
           <source>Bifrost Shopify Base</source>
