@@ -1,0 +1,6 @@
+{"sha":"4223f4ae099f0bf337daa4eca6a5ac3340ec15dc","pr":"businesscentralal/bc-origo-bifrost-shopify#47","worker":"Nar (worker-26)","tenant":"w129-36 (local BC 29, CRONUS International Ltd.)",
+"compile":{"app":"0 errors/0 warnings","test":"0 errors/0 warnings","analyzers":"CodeCop, UICop, AppSourceCop (alc 30.0.42)"},
+"tests":{"97400|97450":{"passed":17,"failed":0,"skipped":0},"97451 fixture":{"passed":2,"failed":0,"skipped":0}},
+"guards":"tools/Test-*.ps1 all passed, incl. Test-IcelandicXlfInSync after Update-IcelandicXlf.ps1",
+"mcp":"Not re-run: the amend changes no Shopify.Customer.Sync code; evidence at 812161b/d2cfa8d carries forward",
+"ui":"N/A: no page or action"}

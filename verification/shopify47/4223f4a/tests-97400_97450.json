@@ -1,0 +1,19 @@
+{
+  "ok": true,
+  "mode": "local",
+  "exitCode": 0,
+  "durationMs": 19766,
+  "passed": 17,
+  "failed": 0,
+  "skipped": 0,
+  "errors": 0,
+  "cosmoExecTestEndpoint": "none",
+  "local": {
+    "clientServicesUrl": "http://host.docker.internal:8080/BC290/",
+    "serviceUrl": "http://host.docker.internal:8080/BC290/cs?tenant=w129-36&company=CRONUS%20International%20Ltd.",
+    "testAssembliesPath": "/opt/origo-mcp/bc29-test-assemblies"
+  },
+  "stdoutPreview": "[MCP] bc_dev_run_tests local start (native BC, Client Services)\n[MCP] Client Services URL: http://host.docker.internal:8080/BC290/cs?tenant=w129-36&company=CRONUS%20International%20Ltd. (PowerShell 7.6.9)\n[MCP] New-ClientContext + Run-Tests testPage=130455\n[MCP] Walking InnerHandler from Microsoft.Dynamics.Framework.UI.Client.JsonHttpClient+BasicAuthHandler\n[MCP] SSL trust-any on System.Net.Http.HttpClientHandler (depth=2)\n[MCP] Page 130455 filters TestCodeunitRange='97400|97450' TestCodeunit='' TestRunner='' RequiredTestIsolation=''\nSetting test codeunit range '97400|97450'\n  Codeunit 97400 Shopify Issue 1 Tests ori Success (0.43 seconds)\n    Testfunction LicenceAdminOpensSetupEnglish Success (0.2 seconds)\n    Testfunction LicenceAdminOpensSetupIcelandic Success (0.106 seconds)\n    Testfunction RegistryContainsShopify Success (0.02 seconds)\n    Testfunction RegistryCanBeReadTwice Success (0.034 seconds)\n    Testfunction RegistryDoesNotInventUnknownApp Success (0.017 seconds)\n    Testfunction ReaderCanReadRegistry Success (0.023 seconds)\n    Testfunction FullRoleCanReadRegistry Success (0.03 seconds)\n  Codeunit 97450 Shpfy Cust Sync Test ori Success (0.722 seconds)\n    Testfunction MissingKeyIsRefused Success (0.113 seconds)\n    Testfunction UnknownKeyIsRefused Success (0.027 seconds)\n    Testfunction InvalidShopCodeIsRefused Success (0.043 seconds)\n    Testfunction UnknownShopIsRefused Success (0.026 seconds)\n    Testfunction DisabledShopIsRefused Success (0.056 seconds)\n    Testfunction SyncRunsForEnabledShop Success (0.096 seconds)\n    Testfunction BusinessCentralRefusalIsReturned Success (0.17 seconds)\n    Testfunction BusinessCentralRefusalIsReturnedIcelandic Success (0.04 seconds)\n    Testfunction CallerWithoutPermissionIsRefused Success (0.034 seconds)\n    Testfunction FailedCustomerImportIsCounted Success (0.117 seconds)\n[MCP] Tests finished (local Client Services)\n",
+  "stderrPreview": "",
+  "commandPreview": "/opt/origo-mcp/pwsh/pwsh -NoProfile -NonInteractive -File run-tests.ps1 # local Client Services http://host.docker.internal:8080/BC290/cs?tenant=w129-36&company=CRONUS%20International%20Ltd."
+}

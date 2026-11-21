@@ -1,0 +1,19 @@
+{
+  "ok": true,
+  "mode": "local",
+  "exitCode": 0,
+  "durationMs": 5542,
+  "passed": 2,
+  "failed": 0,
+  "skipped": 0,
+  "errors": 0,
+  "cosmoExecTestEndpoint": "none",
+  "local": {
+    "clientServicesUrl": "http://host.docker.internal:8080/BC290/",
+    "serviceUrl": "http://host.docker.internal:8080/BC290/cs?tenant=w129-36&company=CRONUS%20International%20Ltd.",
+    "testAssembliesPath": "/opt/origo-mcp/bc29-test-assemblies"
+  },
+  "stdoutPreview": "[MCP] bc_dev_run_tests local start (native BC, Client Services)\n[MCP] Client Services URL: http://host.docker.internal:8080/BC290/cs?tenant=w129-36&company=CRONUS%20International%20Ltd. (PowerShell 7.6.9)\n[MCP] New-ClientContext + Run-Tests testPage=130455\n[MCP] Walking InnerHandler from Microsoft.Dynamics.Framework.UI.Client.JsonHttpClient+BasicAuthHandler\n[MCP] SSL trust-any on System.Net.Http.HttpClientHandler (depth=2)\n[MCP] Page 130455 filters TestCodeunitRange='97451' TestCodeunit='' TestRunner='' RequiredTestIsolation=''\nSetting test codeunit range '97451'\n  Codeunit 97451 Shpfy Customer MCP Fixture ori Success (0.04 seconds)\n    Testfunction A1SeedFixture Success (0.02 seconds)\n    Testfunction A2RemoveFixture Success (0.02 seconds)\n[MCP] Tests finished (local Client Services)\n",
+  "stderrPreview": "",
+  "commandPreview": "/opt/origo-mcp/pwsh/pwsh -NoProfile -NonInteractive -File run-tests.ps1 # local Client Services http://host.docker.internal:8080/BC290/cs?tenant=w129-36&company=CRONUS%20International%20Ltd."
+}

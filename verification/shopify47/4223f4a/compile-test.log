@@ -1,0 +1,9 @@
+Microsoft (R) AL Compiler version 30.0.42.60748
+Copyright (C) Microsoft Corporation. All rights reserved
+
+Compilation started for project 'Bifrost Shopify - Tests' containing '5' files at '10:29:03.993'.
+
+src/test/src/ShopifyCustomerSyncTests.Codeunit.al(6,1): info AA0477: The using statements are not in a sorted order.
+
+Compilation ended at '10:29:14.207'.
+
