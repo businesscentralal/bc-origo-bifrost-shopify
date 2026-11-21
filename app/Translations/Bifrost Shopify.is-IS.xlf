@@ -158,6 +158,7 @@
           <target>Biddu kerfisstjóra um að úthluta heimildasettinu SHOPIFY Full ori.</target>
           <note from="Developer" annotates="general" priority="2">is-IS=Biddu kerfisstjóra um að úthluta heimildasettinu SHOPIFY Full ori.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit Refund CrMemo Impl ori - Method ExecuteBifrostTask - NamedType AskAdminLbl</note>
+        </trans-unit>
         <trans-unit id="Codeunit 4087984018 - Method 3571782927 - NamedType 64258721" size-unit="char" translate="yes" xml:space="preserve">
           <source>You do not have the permissions to create sales documents from Shopify orders.</source>
           <target>Þú hefur ekki heimildir til að búa til sölugögn úr Shopify pöntunum.</target>
