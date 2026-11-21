@@ -7,9 +7,9 @@ using Microsoft.Sales.Document;
 using System.TestLibraries.Utilities;
 
 /// <summary>
-/// Issue #24: self-seeded fixture for MCP checks of Shopify.Order.CreateSalesDocument. A1SeedFixture commits shop
-/// MCP24 with a customer, an item and two orders (950000011 and 950000012); A2RemoveFixture deletes them again
-/// together with any sales order that was created. Run in this order, the two functions leave no data behind.
+/// Issue #24 and #59: self-seeded fixture for MCP checks of Shopify.Order.CreateSalesDocument. A1SeedFixture commits
+/// shop MCP24 (orders 950000011 and 950000012) and shop MCP24A, which is set to Auto Create Credit Memo (order
+/// 950000013). A2RemoveFixture deletes them again together with any sales document that was created.
 /// </summary>
 codeunit 97471 "Shopify Order MCP Fixture ori"
 {
@@ -20,8 +20,9 @@ codeunit 97471 "Shopify Order MCP Fixture ori"
     var
         Assert: Codeunit "Library Assert";
         ShopCodeTok: Label 'MCP24', Locked = true;
+        AutoShopCodeTok: Label 'MCP24A', Locked = true;
 
-    /// <summary>Seeds shop MCP24 with two unprocessed orders, each with one line.</summary>
+    /// <summary>Seeds shop MCP24 with two unprocessed orders, and shop MCP24A (Auto Create Credit Memo) with one order.</summary>
     [Test]
     procedure A1SeedFixture()
     var
@@ -35,25 +36,20 @@ codeunit 97471 "Shopify Order MCP Fixture ori"
         RemoveAll();
         LibrarySales.CreateCustomer(Customer);
         LibraryInventory.CreateItem(Item);
-        Shop.Init();
-        Shop.Code := ShopCodeTok;
-        Shop.Enabled := true;
-        Shop.Insert();
-        SetShopUrl(Shop, 'https://mcp24.myshopify.com');
-        Shop."Customer Mapping Type" := Shop."Customer Mapping Type"::DefaultCustomer;
-        Shop."Default Customer No." := Customer."No.";
-        // Without this, report 30103 asks Shopify for an access token; the fixture never calls a live shop.
-        Shop."Order Attributes To Shopify" := false;
-        Shop.Modify();
+        InsertShop(ShopCodeTok, Customer."No.", "Shpfy ReturnRefund ProcessType"::"Import Only", 'https://mcp24.myshopify.com');
         Variant.Init();
         Variant.Id := 960000011;
         Variant."Shop Code" := ShopCodeTok;
         Variant."Item No." := Item."No.";
         Variant.Insert();
-        SeedOrder(950000011, 970000011, Variant.Id, Item);
-        SeedOrder(950000012, 970000012, Variant.Id, Item);
+        SeedOrder(ShopCodeTok, 950000011, 970000011, Variant.Id, Item);
+        SeedOrder(ShopCodeTok, 950000012, 970000012, Variant.Id, Item);
+        LibrarySales.CreateCustomer(Customer);
+        InsertShop(AutoShopCodeTok, Customer."No.", "Shpfy ReturnRefund ProcessType"::"Auto Create Credit Memo", 'https://mcp24a.myshopify.com');
+        SeedOrder(AutoShopCodeTok, 950000013, 970000013, Variant.Id, Item);
         Commit();
         Assert.IsTrue(Shop.Get(ShopCodeTok), 'Fixture shop exists.');
+        Assert.IsTrue(Shop.Get(AutoShopCodeTok), 'Fixture auto credit memo shop exists.');
     end;
 
     /// <summary>Removes everything A1SeedFixture and the MCP calls created.</summary>
@@ -64,16 +60,39 @@ codeunit 97471 "Shopify Order MCP Fixture ori"
     begin
         RemoveAll();
         Assert.IsFalse(Shop.Get(ShopCodeTok), 'Fixture shop is removed.');
+        Assert.IsFalse(Shop.Get(AutoShopCodeTok), 'Fixture auto credit memo shop is removed.');
     end;
 
-    local procedure SeedOrder(OrderId: BigInteger; LineId: BigInteger; VariantId: BigInteger; Item: Record Item)
+    local procedure InsertShop(ShopCode: Code[20]; CustomerNo: Code[20]; RefundProcess: Enum "Shpfy ReturnRefund ProcessType"; Url: Text)
+    var
+        Shop: Record "Shpfy Shop";
+    begin
+        Shop.Init();
+        Shop.Code := ShopCode;
+        Shop.Enabled := true;
+        Shop.Insert();
+        SetShopUrl(Shop, Url);
+        Shop."Customer Mapping Type" := Shop."Customer Mapping Type"::DefaultCustomer;
+        Shop."Default Customer No." := CustomerNo;
+        Shop."Auto Release Sales Orders" := false;
+        // Without this, report 30103 asks Shopify for an access token; the fixture never calls a live shop.
+        Shop."Order Attributes To Shopify" := false;
+        Shop."Return and Refund Process" := RefundProcess;
+        Shop.Modify();
+    end;
+
+    local procedure SeedOrder(ShopCode: Code[20]; OrderId: BigInteger; LineId: BigInteger; VariantId: BigInteger; Item: Record Item)
     var
         OrderHeader: Record "Shpfy Order Header";
         OrderLine: Record "Shpfy Order Line";
+        Shop: Record "Shpfy Shop";
     begin
+        Shop.Get(ShopCode);
         OrderHeader.Init();
         OrderHeader."Shopify Order Id" := OrderId;
-        OrderHeader."Shop Code" := ShopCodeTok;
+        OrderHeader."Shop Code" := ShopCode;
+        OrderHeader."Sell-to Customer No." := Shop."Default Customer No.";
+        OrderHeader."Bill-to Customer No." := Shop."Default Customer No.";
         OrderHeader."Shopify Order No." := 'MCP24-' + Format(OrderId, 0, 9);
         OrderHeader."Document Date" := WorkDate();
         OrderHeader."Processed Currency Handling" := "Shpfy Currency Handling"::"Shop Currency";
@@ -104,35 +123,45 @@ codeunit 97471 "Shopify Order MCP Fixture ori"
 
     local procedure RemoveAll()
     var
-        Shop: Record "Shpfy Shop";
-        OrderHeader: Record "Shpfy Order Header";
-        OrderLine: Record "Shpfy Order Line";
         Variant: Record "Shpfy Variant";
-        SalesHeader: Record "Sales Header";
-        Customer: Record Customer;
         Item: Record Item;
     begin
-        OrderHeader.SetRange("Shop Code", ShopCodeTok);
-        if OrderHeader.FindSet() then
-            repeat
-                if OrderHeader."Sales Order No." <> '' then
-                    if SalesHeader.Get(SalesHeader."Document Type"::Order, OrderHeader."Sales Order No.") then
-                        SalesHeader.Delete(true);
-                OrderLine.SetRange("Shopify Order Id", OrderHeader."Shopify Order Id");
-                OrderLine.DeleteAll(true);
-            until OrderHeader.Next() = 0;
-        OrderHeader.DeleteAll(true);
+        RemoveShop(ShopCodeTok);
+        RemoveShop(AutoShopCodeTok);
         if Variant.Get(960000011) then begin
             if Item.Get(Variant."Item No.") then
                 Item.Delete(true);
             Variant.Delete(true);
         end;
-        if Shop.Get(ShopCodeTok) then begin
+        Commit();
+    end;
+
+    local procedure RemoveShop(ShopCode: Code[20])
+    var
+        Shop: Record "Shpfy Shop";
+        OrderHeader: Record "Shpfy Order Header";
+        OrderLine: Record "Shpfy Order Line";
+        SalesHeader: Record "Sales Header";
+        Customer: Record Customer;
+    begin
+        OrderHeader.SetRange("Shop Code", ShopCode);
+        if OrderHeader.FindSet() then
+            repeat
+                if OrderHeader."Sales Order No." <> '' then
+                    if SalesHeader.Get(SalesHeader."Document Type"::Order, OrderHeader."Sales Order No.") then
+                        SalesHeader.Delete(true);
+                if OrderHeader."Sales Invoice No." <> '' then
+                    if SalesHeader.Get(SalesHeader."Document Type"::Invoice, OrderHeader."Sales Invoice No.") then
+                        SalesHeader.Delete(true);
+                OrderLine.SetRange("Shopify Order Id", OrderHeader."Shopify Order Id");
+                OrderLine.DeleteAll(true);
+            until OrderHeader.Next() = 0;
+        OrderHeader.DeleteAll(true);
+        if Shop.Get(ShopCode) then begin
             if Shop."Default Customer No." <> '' then
                 if Customer.Get(Shop."Default Customer No.") then
                     Customer.Delete(true);
             Shop.Delete(true);
         end;
-        Commit();
     end;
 }

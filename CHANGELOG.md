@@ -2,6 +2,7 @@
 
 ## [28.0.0.0] - Unreleased
 
+- `Shopify.Order.CreateSalesDocument` (enum value 73732020, codeunit 73732020) refuses with `PreconditionFailed` before any change when the order's shop has Return and Refund Process = Auto Create Credit Memo, and the success response adds `documentStatus` (Open, Released, Pending Approval, Pending Prepayment), the same name in every language. Existing request and response fields are unchanged (#59). Tests in codeunit 97470. No new objects.
 - Moved Shopify scaffold objects 70013400–70013402 to 73731950–73731952 and the app allocation to 73731950–73732149 (#54). Test objects remain in 97400–97599.
 - Moved `Shopify.Order.CreateSalesDocument` enum extension, enum value and codeunit from 70013470 to 73732020 (the #54 mapping); restores the main build after #55 (AL0297) (#56).
 - Numbered `Shopify.Fulfillment.Sync` enum extension, enum value and codeunits 73731980/73731981 (the #54 mapping of 70013430/70013431) when merging main into #46 (#29).
@@ -13,6 +14,7 @@
 
 - Bound permission-set captions to 30 characters (70013400–70013402), shortened the Icelandic Full caption, and removed API role extension 70013400 to keep the scaffold aligned with the Subscription Billing roles.
 - Added restricted Read/Full registration checks to test codeunit 97400; assertions run after restoring runner permissions.
+- Added message type `Shopify.Refund.CreateCreditMemo` (enum value 73731955, codeunit 73731954): creates the credit memo of an imported Shopify refund through the shop's refund process (Shpfy RetRefProc Cr.Memo, which runs Shpfy Create Sales Doc. Refund 30246); granted through `SHOPIFY Full ori` (#30). Tests in codeunit 97401.
 - Added message type `Shopify.Customer.Sync` (enum value 73732000, codeunits 73732000/73732001): imports Shopify customers and updates Shopify customers from Business Central for one shop, as the shop is set up, through the connector codeunit Shpfy Sync Customers (30123), the code behind the Sync action; granted through `SHOPIFY Full ori` (#16). A customer counts as updated or created only when the connector committed its work on it: writes are marked in the internal table `Customer Sync Marker ori` (73732000) inside the connector transaction, so a write a later step rolled back is reported, as are a new Shopify customer whose retrieval failed and an error the connector kept for the last customer. Tests in codeunits 97450/97451 (stand-ins 97452/97453).
 - Added message type `Shopify.Fulfillment.Sync` (enum value 73731980, codeunits 73731980/73731981): sends one posted sales shipment of a Shopify order to Shopify as a fulfillment by running the connector report Sync Shipments To Shopify (30109); granted through `SHOPIFY Full ori` (#29). Tests in codeunit 97430; the live Shopify success path is not covered by container tests.
 - Added message type `Shopify.Order.CreateSalesDocument` (enum value 73732020, codeunit 73732020): creates the sales order or invoice of an imported Shopify order by running Shopify's report Shpfy Create Sales Orders (30103) for that one order; granted through `SHOPIFY Full ori` (#24). Tests in codeunits 97470 and 97471.
