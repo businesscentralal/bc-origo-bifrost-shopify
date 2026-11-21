@@ -21,14 +21,21 @@ Tests: 97400-97599
 | PermissionSet | 73731952 | SHOPIFY Full ori |
 | PermissionSetExtension | 73731951 | Shopify Read ori |
 | PermissionSetExtension | 73731952 | Shopify Full ori |
+| Codeunit | 73731980 | Fulfillment Sync Impl ori |
+| EnumExtension | 73731980 | Fulfillment Sync MsgType ori (value Shopify.Fulfillment.Sync) |
+| Codeunit | 73731981 | Fulfillment Sync Run ori |
 | Codeunit | 73732000 | Customer Sync Impl ori |
-| Codeunit | 73732001 | Customer Sync Run ori |
 | EnumExtension | 73732000 | Customer Sync MsgType ori |
+| Codeunit | 73732001 | Customer Sync Run ori |
+| Codeunit | 73732002 | Customer Sync Monitor ori |
 | Codeunit | 73732020 | Order CreateSalesDoc Impl ori |
 | EnumExtension | 73732020 | Order SalesDoc MsgType ori (value Shopify.Order.CreateSalesDocument) |
 | Test Codeunit | 97400 | Shopify Issue 1 Tests ori |
+| Test Codeunit | 97430 | Shpfy Fulfill Sync Tests ori |
+| Test Codeunit | 97431 | Shpfy Fulfill MCP Fixture ori |
 | Test Codeunit | 97450 | Shpfy Cust Sync Test ori |
 | Test Codeunit | 97451 | Shpfy Customer MCP Fixture ori |
+| Test Codeunit | 97452 | Shpfy Cust Sync Stub ori |
 | Test Codeunit | 97470 | Shopify Order Create Tests ori |
 | Test Codeunit | 97471 | Shopify Order MCP Fixture ori |
 
