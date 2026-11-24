@@ -76,7 +76,7 @@ Repository: bc-origo-bifrost-shopify
 Default branch: main
 
 ## Dependencies
-- Bifrost Foundation (`7505e808-6e52-4b96-a328-82573391297a`, 28.0.5.590, same floor as Bifrost Subscription Billing)
+- Bifrost Foundation (`7505e808-6e52-4b96-a328-82573391297a`, 28.0.15.6, current Foundation release 28.0.15)
 - Shopify Connector (Microsoft, 28.0.0.0; application floor 28.0.0.0)
 
 ## Naming Rules

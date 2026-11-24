@@ -41,7 +41,7 @@ site repository and is published at <https://docs.bifrost.origo.is>.
 
 | App | ID | Publisher | Version |
 | --- | --- | --- | --- |
-| Bifrost Foundation | `7505e808-6e52-4b96-a328-82573391297a` | Origo | 28.0.5.590 |
+| Bifrost Foundation | `7505e808-6e52-4b96-a328-82573391297a` | Origo | 28.0.15.6 |
 | Shopify Connector | `ec255f57-31d0-4ca2-b751-f2fa7c745abb` | Microsoft | 28.0.0.0 |
 
 ---
