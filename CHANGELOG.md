@@ -1,5 +1,11 @@
 # Changelog
 
+## [29.0.0.0] - Unreleased
+
+### Changed
+
+- Raised the floor to Business Central 29.0: version, application and platform 29.0.0.0, runtime 18.0, Shopify Connector 29.0.0.0, and the CI artifacts on 29.0 (main and floor projects; Test Current on 29.1). Gunnar 26.11.2026.
+
 ## [28.0.0.0] - Unreleased
 
 ### Added
