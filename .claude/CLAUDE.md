@@ -79,6 +79,14 @@ Tests: 97400-97599
 
 Integration note for PR #43: the temporary import app IDs 73732030/73732031 in commit 79654f2 are reconciled to 73731960/73731961, following the published #54 mapping (70013400+n → 73731950+n). Import test codeunits remain 97472/97473 from that branch update; the 97400–97599 test range is unchanged.
 
+| Type | ID | Object |
+| --- | --- | --- |
+| Codeunit | 73732080 | Catalog Sync Impl ori |
+| Codeunit | 73732081 | Catalog Sync Run ori |
+| EnumExtension | 73732080 | Catalog Sync MsgType ori (Shopify.Catalog.Sync) |
+| Test Codeunit | 97533 | Shpfy Catalog Sync Test ori |
+| Codeunit | 97534 | Shpfy Catalog Sync Stub ori |
+| Test Codeunit | 97535 | Shpfy Catalog Fixture ori |
 | Codeunit | 73732044 | Company Sync Impl ori |
 | Codeunit | 73732045 | Company Sync Run ori |
 | EnumExtension | 73732044 | Company Sync MsgType ori (value Shopify.Company.Sync) |
