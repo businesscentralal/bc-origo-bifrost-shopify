@@ -16,6 +16,12 @@ Tests: 97400-97599
 | Type | ID | Object |
 | --- | --- | --- |
 | Codeunit | 73731950 | Shopify Registration ori |
+| EnumExtension | 73732060 | Metafield Sync MsgType ori (value Shopify.Metafield.Sync) |
+| Codeunit | 73732060 | Metafield Sync Impl ori |
+| Codeunit | 73732061 | Metafield Sync Run ori |
+| Test Codeunit | 97510 | Shopify Issue 35 Tests ori |
+| Codeunit | 97511 | Shpfy Metafield Stub ori |
+| Test Codeunit | 97512 | Shpfy Metafield MCP ori |
 | PermissionSet | 73731950 | SHOPIFY Base ori |
 | PermissionSet | 73731951 | SHOPIFY Read ori |
 | PermissionSet | 73731952 | SHOPIFY Full ori |
@@ -53,7 +59,7 @@ Tests: 97400-97599
 | Test Codeunit | 97470 | Shopify Order Create Tests ori |
 | Test Codeunit | 97471 | Shopify Order MCP Fixture ori |
 
-New issue #34 objects (checked against open PRs #66 and #67 on 26.11.2026): enum extension/value and implementation 73732060 `Suggest Payments MsgType ori` / `Suggest Payments Impl ori`; runner 73732061 `Suggest Payments Run ori`; manual journal-navigation subscriber 73732062 `Suggest Payments UI Guard ori`; tests 97510 `Shpfy Suggest Tests ori`, mock subscriber 97511 `Shpfy Suggest Stub ori`, MCP fixture 97512 `Shpfy Suggest Fixture ori`.
+New issue #34 objects (checked against open PRs #66 and #67 on 26.11.2026): enum extension/value and implementation 73732063 `Suggest Payments MsgType ori` / `Suggest Payments Impl ori`; runner 73732064 `Suggest Payments Run ori`; manual journal-navigation subscriber 73732062 `Suggest Payments UI Guard ori`; tests 97513 `Shpfy Suggest Tests ori`, mock subscriber 97514 `Shpfy Suggest Stub ori`, MCP fixture 97515 `Shpfy Suggest Fixture ori`. Moved during the main merge to avoid Metafield Sync object IDs.
 
 Integration note for PR #43: the temporary import app IDs 73732030/73732031 in commit 79654f2 are reconciled to 73731960/73731961, following the published #54 mapping (70013400+n → 73731950+n). Import test codeunits remain 97472/97473 from that branch update; the 97400–97599 test range is unchanged.
 

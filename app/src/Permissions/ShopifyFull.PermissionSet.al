@@ -6,7 +6,9 @@ permissionset 73731952 "SHOPIFY Full ori"
     Assignable = true;
     Caption = 'Bifrost Shopify Full', MaxLength = 30, Comment = 'is-IS=Bifröst Shopify allur aðgangur';
     IncludedPermissionSets = "SHOPIFY Read ori";
-    Permissions = codeunit "Product SyncPrices Impl ori" = X,
+    Permissions = codeunit "Metafield Sync Impl ori" = X,
+                  codeunit "Metafield Sync Run ori" = X,
+                  codeunit "Product SyncPrices Impl ori" = X,
                   codeunit "Customer Sync Impl ori" = X,
                   codeunit "Customer Sync Run ori" = X,
                   codeunit "Customer Sync Monitor ori" = X,
@@ -15,6 +17,8 @@ permissionset 73731952 "SHOPIFY Full ori"
                   codeunit "Fulfillment Sync Run ori" = X,
                   codeunit "Product CreateItem Impl ori" = X,
                   codeunit "Product CreateItem Run ori" = X,
+                  codeunit "Product AddItems Impl ori" = X,
+                  codeunit "Product AddItems Run ori" = X,
                   codeunit "Order CreateSalesDoc Impl ori" = X,
                   codeunit "Product Sync Impl ori" = X,
                   codeunit "Refund CrMemo Impl ori" = X,

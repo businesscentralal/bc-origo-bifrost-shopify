@@ -5,7 +5,7 @@ using Microsoft.Integration.Shopify;
 using Origo.Bifrost.Shopify;
 
 /// <summary>Mock-only connector for reserved BIFT34 requests; never accesses a provider or credential.</summary>
-codeunit 97511 "Shpfy Suggest Stub ori"
+codeunit 97514 "Shpfy Suggest Stub ori"
 {
     Access = Internal;
 

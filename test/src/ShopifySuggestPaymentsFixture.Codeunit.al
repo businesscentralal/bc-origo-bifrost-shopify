@@ -6,7 +6,7 @@ using Microsoft.Sales.Receivables;
 using System.TestLibraries.Utilities;
 
 /// <summary>Own-tenant CRONUS fixture for issue #34 and bilingual MCP checks; no provider credentials.</summary>
-codeunit 97512 "Shpfy Suggest Fixture ori"
+codeunit 97515 "Shpfy Suggest Fixture ori"
 {
     Subtype = Test;
     RequiredTestIsolation = Disabled;

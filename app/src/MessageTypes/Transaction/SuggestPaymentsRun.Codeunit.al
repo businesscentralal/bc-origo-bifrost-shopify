@@ -5,7 +5,7 @@ using Microsoft.Integration.Shopify;
 using System.Reflection;
 
 /// <summary>Runs report 30118 inside an isolated transaction, with no explicit connector commits.</summary>
-codeunit 73732061 "Suggest Payments Run ori"
+codeunit 73732064 "Suggest Payments Run ori"
 {
     Access = Internal;
 

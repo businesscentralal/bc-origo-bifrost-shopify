@@ -5,7 +5,7 @@ using Microsoft.Integration.Shopify;
 using Origo.Bifrost;
 
 /// <summary>Suggests cash receipt journal lines through the Microsoft Shopify report without posting.</summary>
-codeunit 73732060 "Suggest Payments Impl ori" implements "Msg Interface ori", "Msg Discovery ori", "Msg Contract ori"
+codeunit 73732063 "Suggest Payments Impl ori" implements "Msg Interface ori", "Msg Discovery ori", "Msg Contract ori"
 {
     Access = Internal;
     TableNo = "Message Argument ori";
