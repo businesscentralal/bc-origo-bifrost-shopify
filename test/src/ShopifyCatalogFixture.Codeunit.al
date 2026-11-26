@@ -17,28 +17,37 @@ codeunit 97532 "Shpfy Catalog Fixture ori"
         Seed();
     end;
 
+    /// <summary>Seeds a company and its shop for the MCP company-catalog scenario.</summary>
+    [Test]
+    procedure A1SeedCompanyFixture()
+    begin
+        Seed();
+        AddCompany();
+    end;
+
     /// <summary>Removes the fixture and checks that nothing remains.</summary>
     [Test]
     procedure A2RemoveFixture()
     var
         Shop: Record "Shpfy Shop";
         Catalog: Record "Shpfy Catalog";
+        Relation: Record "Shpfy Market Catalog Relation";
+        Company: Record "Shpfy Company";
         Assert: Codeunit "Library Assert";
     begin
         Remove();
-        Assert.IsFalse(Shop.Get('BIFT21'), 'Shop removed.');
-        Catalog.SetRange("Shop Code", 'BIFT21');
+        Shop.SetFilter(Code, 'BIFT21*');
+        Assert.IsTrue(Shop.IsEmpty(), 'All fixture shops removed.');
+        Catalog.SetFilter("Shop Code", 'BIFT21*');
         Assert.IsTrue(Catalog.IsEmpty(), 'Catalogs removed.');
+        Relation.SetFilter("Shop Code", 'BIFT21*');
+        Assert.IsTrue(Relation.IsEmpty(), 'Relations removed.');
+        Company.SetFilter("Shop Code", 'BIFT21*');
+        Company.SetRange(Id, 2100001, 2100099);
+        Assert.IsTrue(Company.IsEmpty(), 'Companies removed.');
     end;
 
-    /// <summary>Adds a company for the MCP company-catalog scenario.</summary>
-    [Test]
-    procedure A3AddCompany()
-    begin
-        AddCompany();
-    end;
-
-    /// <summary>Seeds four isolated shop scenarios, without any connector credentials.</summary>
+    /// <summary>Seeds isolated shop scenarios, without any connector credentials.</summary>
     procedure Seed()
     var
         Shop: Record "Shpfy Shop";

@@ -286,7 +286,8 @@ codeunit 97530 "Shpfy Catalog Sync Test ori"
         ResponseContent.GetSubText(ResponseText, 1);
         Response.ReadFrom(ResponseText);
         Assert.AreEqual('Success', ReadText(Response, 'status'), 'Valid contract: ' + ResponseText);
-        Response.Get('chapters', Token);
+        Response.Get('result', Token);
+        Token.AsArray().Get(0, Token);
         Token.AsObject().Get('effect', Token);
         Effect := Token.AsObject();
         Assert.AreEqual('write', ReadText(Effect, 'effect'), 'Write classification.');
