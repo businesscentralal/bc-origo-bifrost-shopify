@@ -15,6 +15,12 @@ Tests: 97400-97599
 
 | Type | ID | Object |
 | --- | --- | --- |
+| Codeunit | 73732046 | Payment Disputes Impl ori |
+| Codeunit | 73732047 | Payment Disputes Run ori |
+| EnumExtension | 73732046 | Payment Disputes MsgType ori (Shopify.Payment.SyncDisputes) |
+| Test Codeunit | 97517 | Shopify Disputes Tests ori |
+| Codeunit | 97518 | Shopify Disputes Stub ori |
+| Test Codeunit | 97519 | Shopify Disputes Fixture ori |
 | Codeunit | 73731950 | Shopify Registration ori |
 | EnumExtension | 73732060 | Metafield Sync MsgType ori (value Shopify.Metafield.Sync) |
 | Codeunit | 73732060 | Metafield Sync Impl ori |
@@ -75,6 +81,13 @@ Integration note for PR #43: the temporary import app IDs 73732030/73732031 in c
 | Test Codeunit | 97530 | Shpfy Catalog Sync Test ori |
 | Codeunit | 97531 | Shpfy Catalog Sync Stub ori |
 | Test Codeunit | 97532 | Shpfy Catalog Fixture ori |
+| Codeunit | 73732044 | Company Sync Impl ori |
+| Codeunit | 73732045 | Company Sync Run ori |
+| EnumExtension | 73732044 | Company Sync MsgType ori (value Shopify.Company.Sync) |
+| Test Codeunit | 97513 | Shopify Company Sync Tests ori |
+| Codeunit | 97514 | Shopify Company Stub ori (manual mock) |
+| Codeunit | 97515 | Shopify Company MCP Stub ori (fixture-only mock) |
+| Test Codeunit | 97516 | Shopify Company Fixture ori |
 | Codeunit | 73732140 | Customer Add Impl ori |
 | Codeunit | 73732141 | Customer Add Run ori |
 | EnumExtension | 73732140 | Customer Add MsgType ori (value Shopify.Customer.Add) |

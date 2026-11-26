@@ -21,6 +21,19 @@ for returned market catalogs. The operation writes only to Business Central and 
 `SHOPIFY Full ori` plus Microsoft Shopify permissions. A failed run rolls back its local changes.
 Use `Help.Implementation.Get` for the full contract, refusals and examples.
 
+## Shopify.Payment.SyncDisputes
+
+`Shopify.Payment.SyncDisputes` imports new disputes and refreshes open disputes for one enabled shop:
+
+```json
+{"type":"Shopify.Payment.SyncDisputes","data":{"shopCode":"WEBSHOP"}}
+```
+
+It returns `status`, `shopCode`, `disputesBefore` and `disputesAfter`. Repeated calls are idempotent.
+Unchanged counts can also mean the shop has no Shopify Payments account. Connector errors roll back
+dispute changes and Shopify log entries from the failed run. Callers need `SHOPIFY Full ori` and
+Microsoft Shopify Connector permissions. Runtime help supplies the full contract, notes and examples.
+
 ---
 
 ## Shopify.Customer.Add
@@ -84,3 +97,5 @@ site repository and is published at <https://docs.bifrost.origo.is>.
 | `test/` | Test app (`Bifrost Shopify - Tests`) |
 | `tools/` | Pipeline guard scripts |
 | `.AL-Go/`, `.github/`, `.alpaca/` | AL-Go for GitHub / COSMO Alpaca pipeline configuration |
+
+`Shopify.Company.Sync` synchronizes one shop’s B2B companies and BC customer links according to its company settings. Call with `{"shopCode":"WEBSHOP"}`; the response echoes import/export settings and local company counts. Full permission is required. The runtime contract supplies Overview, Notes and Examples.
