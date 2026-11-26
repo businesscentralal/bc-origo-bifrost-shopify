@@ -55,6 +55,22 @@ Tests: 97400-97599
 
 Integration note for PR #43: the temporary import app IDs 73732030/73732031 in commit 79654f2 are reconciled to 73731960/73731961, following the published #54 mapping (70013400+n → 73731950+n). Import test codeunits remain 97472/97473 from that branch update; the 97400–97599 test range is unchanged.
 
+## Issue 22 objects
+
+| Type | ID | Object |
+| --- | --- | --- |
+| Codeunit / EnumExtension / Enum value | 73732080 | Catalog SyncPrices Impl ori / Catalog SyncPrices MsgType ori / Shopify.Catalog.SyncPrices |
+| Codeunit | 73732081 | Catalog SyncPrices Run ori |
+| Test Codeunit | 97520 | Shopify Issue 22 Tests ori |
+| Codeunit | 97521 | Shpfy Catalog Prices Stub ori |
+| Test Codeunit | 97522 | Shpfy Catalog MCP Fixture ori |
+| Codeunit | 97523 | Shpfy Catalog MCP Stub ori |
+
+Checked main and open PRs #67–#69 before allocation. Connector report 30116 uses Shop and Catalog data items,
+ShopifyCatalogType as an ordinal, and Company SystemId for its company filter. The message accepts Shopify company Id
+and resolves it within the selected shop. Table 30159 is internal: RecordRef reads its documented field IDs to count new
+log rows for the selected catalog RecordIds; no internal connector procedures are called.
+
 ## Microsoft source
 Wrapped Microsoft app: Shopify Connector (`ec255f57-31d0-4ca2-b751-f2fa7c745abb`, minimum 28.0.0.0). Source: https://github.com/microsoft/BCApps/tree/main/src/Apps/W1/Shopify
 Read it there before designing message types.

@@ -2,6 +2,10 @@
 
 ## [28.0.0.0] - Unreleased
 
+### Added
+- `Shopify.Catalog.SyncPrices` (#22): sends prices for selected catalogs with Sync Prices enabled through connector report 30116. Supports catalog, type and Shopify company filters, typed refusals, new skipped-record counts and mock-only tests. Adds codeunits 73732080–73732081, enum extension/value 73732080 and test/helper codeunits 97520–97523.
+
+
 - Prepared the first AppSource release with all nine Shopify operations, raised the Foundation minimum to 28.0.15.807 (release 28.0.15); context-sensitive help retains the Shopify app page URL because the app has no pages of its own (#62). No new objects. The release date is set when the release is approved.
 
 - `Shopify.Order.CreateSalesDocument` (enum value 73732020, codeunit 73732020) refuses with `PreconditionFailed` before any change when the order's shop has Return and Refund Process = Auto Create Credit Memo, and the success response adds `documentStatus` (Open, Released, Pending Approval, Pending Prepayment), the same name in every language. Existing request and response fields are unchanged (#59). Tests in codeunit 97470. No new objects.

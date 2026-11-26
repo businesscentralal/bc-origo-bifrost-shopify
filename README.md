@@ -11,7 +11,9 @@ Bifröst message types, so an agent can operate it end to end. It is built on th
 
 **Microsoft source:** <https://github.com/microsoft/BCApps/tree/main/src/Apps/W1/Shopify>
 
-**Status:** planning, no message types yet.
+**Status:** message types wrap supported Microsoft Shopify Connector operations.
+
+`Shopify.Catalog.SyncPrices` sends changed BC prices for catalogs with Sync Prices enabled. It accepts optional catalog, type and Shopify company filters and reports considered catalogs and new skip-log rows. This type requires Shopify Connector 29 or later; BC 28 is refused before the report runs. Runtime help provides the full request and response contract.
 
 ---
 
