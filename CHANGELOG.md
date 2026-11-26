@@ -2,7 +2,10 @@
 
 ## [28.0.0.0] - Unreleased
 
+### Added
 - Added `Shopify.Product.AddItemsAsVariants` (#10), enum/implementation 73732050 and runner 73732051. Validates product, shop, all 1–100 items and `expectedCount` before writes; runs report 30117 once per item, stops on refusal and reports earlier successful additions. Duplicate mappings are refused. Granted through `SHOPIFY Full ori`; bilingual refusal text and mock-only dispatcher tests 97500, stand-in 97501 and MCP fixture 97502.
+- `Shopify.Metafield.Sync` (#35): loads definitions or sends changed values for one product, variant, customer or company using public connector codeunit 30418. Full permission only; validates shop, owner and expected local row count. Adds enum extension/value and implementation 73732060, runner 73732061, and mock tests/fixtures 97510–97512. Local counts do not imply sent counts; legacy types and empty values follow connector filtering.
+
 
 - Prepared the first AppSource release with all nine Shopify operations, raised the Foundation minimum to 28.0.15.807 (release 28.0.15); context-sensitive help retains the Shopify app page URL because the app has no pages of its own (#62). No new objects. The release date is set when the release is approved.
 
