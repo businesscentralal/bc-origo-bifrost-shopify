@@ -2,6 +2,8 @@
 
 ## [28.0.0.0] - Unreleased
 
+- Added `Shopify.Transaction.SuggestPayments` (#34): fills an existing cash receipt journal batch through connector report 30118 without posting. Typed preflight refusals, exact eligible count, used/unposted transaction exclusion and isolated rollback protect the batch. New enum extension/value and implementation 73732060, runner 73732061, journal navigation guard 73732062; mock-only dispatcher tests 97510, stand-in 97511 and removable MCP fixture 97512. Granted only through `SHOPIFY Full ori`.
+
 - Prepared the first AppSource release with all nine Shopify operations, raised the Foundation minimum to 28.0.15.807 (release 28.0.15); context-sensitive help retains the Shopify app page URL because the app has no pages of its own (#62). No new objects. The release date is set when the release is approved.
 
 - `Shopify.Order.CreateSalesDocument` (enum value 73732020, codeunit 73732020) refuses with `PreconditionFailed` before any change when the order's shop has Return and Refund Process = Auto Create Credit Memo, and the success response adds `documentStatus` (Open, Released, Pending Approval, Pending Prepayment), the same name in every language. Existing request and response fields are unchanged (#59). Tests in codeunit 97470. No new objects.

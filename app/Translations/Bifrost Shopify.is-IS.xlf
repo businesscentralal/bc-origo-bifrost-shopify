@@ -1419,6 +1419,78 @@
           <note from="Developer" annotates="general" priority="2">is-IS=Notað fyrir innflutta Shopify endurgreiðslu þar sem verslun er stillt á Auto Create Credit Memo og enginn kreditreikningur er til. Flytur ekki inn endurgreiðslur frá Shopify og bókar ekki kreditreikninginn.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit Refund CrMemo Impl ori - Method GetSelectionDescription - NamedType SelectionLbl</note>
         </trans-unit>
+        <trans-unit id="Codeunit 3128270315 - Method 4077369804 - NamedType 3569966352" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Suggests Shopify payments in a cash receipt journal without posting.</source>
+          <target>Leggur til Shopify greiðslur í inngreiðslubók án bókunar.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Leggur til Shopify greiðslur í inngreiðslubók án bókunar.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Suggest Payments Impl ori - Method GetDescription - NamedType DescriptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 3128270315 - Method 1027590672 - NamedType 1290244428" size-unit="char" translate="yes" xml:space="preserve">
+          <source>shopify payments, suggest payments, cash receipt journal, order transactions, payment journal</source>
+          <target>shopify greiðslur, leggja til greiðslur, inngreiðslubók, pantanafærslur, greiðslubók</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=shopify greiðslur, leggja til greiðslur, inngreiðslubók, pantanafærslur, greiðslubók</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Suggest Payments Impl ori - Method GetKeywords - NamedType KeywordsLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 3128270315 - Method 79446908 - NamedType 895773054" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Use to suggest payments from successful Capture, Sale and Refund transactions. Writes journal lines and does not post.</source>
+          <target>Notað til að leggja til greiðslur úr heppnuðum Capture, Sale og Refund færslum. Skrifar færslur í bók en bókar ekki.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Notað til að leggja til greiðslur úr heppnuðum Capture, Sale og Refund færslum. Skrifar færslur í bók en bókar ekki.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Suggest Payments Impl ori - Method GetSelectionDescription - NamedType SelectionLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 3128270315 - Method 2962684526 - NamedType 1128910002" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Required parameter %1 is missing.</source>
+          <target>Nauðsynlega færibreytu %1 vantar.</target>
+          <note from="Developer" annotates="general" priority="2">%1 = parameter||is-IS=Nauðsynlega færibreytu %1 vantar.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Suggest Payments Impl ori - Method Refuse - NamedType MissingLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 3128270315 - Method 2962684526 - NamedType 1066607173" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Parameter %1 is unknown or has an invalid format.</source>
+          <target>Færibreytan %1 er óþekkt eða á ógildu sniði.</target>
+          <note from="Developer" annotates="general" priority="2">%1 = parameter||is-IS=Færibreytan %1 er óþekkt eða á ógildu sniði.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Suggest Payments Impl ori - Method Refuse - NamedType InvalidLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 3128270315 - Method 2962684526 - NamedType 704880291" size-unit="char" translate="yes" xml:space="preserve">
+          <source>The record for parameter %1 was not found.</source>
+          <target>Færsla fyrir færibreytu %1 fannst ekki.</target>
+          <note from="Developer" annotates="general" priority="2">%1 = parameter||is-IS=Færsla fyrir færibreytu %1 fannst ekki.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Suggest Payments Impl ori - Method Refuse - NamedType NotFoundLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 3128270315 - Method 2962684526 - NamedType 1687577938" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Parameter %1 does not meet the preconditions: use a Cash Receipts template, an enabled shop and the exact eligible count.</source>
+          <target>Færibreytan %1 uppfyllir ekki forsendur: notaðu inngreiðslubók, virka verslun og nákvæman fjölda gildra færslna.</target>
+          <note from="Developer" annotates="general" priority="2">%1 = parameter||is-IS=Færibreytan %1 uppfyllir ekki forsendur: notaðu inngreiðslubók, virka verslun og nákvæman fjölda gildra færslna.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Suggest Payments Impl ori - Method Refuse - NamedType PreconditionLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 3128270315 - Method 2962684526 - NamedType 286034047" size-unit="char" translate="yes" xml:space="preserve">
+          <source>You do not have permission to suggest Shopify payments.</source>
+          <target>Þú hefur ekki heimild til að leggja til Shopify greiðslur.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Þú hefur ekki heimild til að leggja til Shopify greiðslur.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Suggest Payments Impl ori - Method Refuse - NamedType DeniedLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 3128270315 - Method 2962684526 - NamedType 751038299" size-unit="char" translate="yes" xml:space="preserve">
+          <source>The Shopify payment suggestion failed. Journal lines from this run were rolled back.</source>
+          <target>Tillaga að Shopify greiðslum mistókst. Færslur í bók úr þessari keyrslu voru afturkallaðar.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Tillaga að Shopify greiðslum mistókst. Færslur í bók úr þessari keyrslu voru afturkallaðar.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Suggest Payments Impl ori - Method Refuse - NamedType FailedLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 3128270315 - Method 2962684526 - NamedType 4120398360" size-unit="char" translate="yes" xml:space="preserve">
+          <source>a valid parameter matching the message contract</source>
+          <target>gild færibreyta sem samsvarar samningi skilaboða</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=gild færibreyta sem samsvarar samningi skilaboða</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Suggest Payments Impl ori - Method Refuse - NamedType ExpectedLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 3128270315 - Method 2962684526 - NamedType 2029447175" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Read the message help, correct the parameter and refresh the eligible count before retrying.</source>
+          <target>Lestu hjálp skilaboðanna, leiðréttu færibreytuna og endurnýjaðu fjölda gildra færslna áður en þú reynir aftur.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Lestu hjálp skilaboðanna, leiðréttu færibreytuna og endurnýjaðu fjölda gildra færslna áður en þú reynir aftur.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Suggest Payments Impl ori - Method Refuse - NamedType NextLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 66941812 - Method 1665861916 - NamedType 1068406684" size-unit="char" translate="yes" xml:space="preserve">
+          <source>The eligible transaction count changed. Refresh the count and retry.</source>
+          <target>Fjöldi gildra færslna breyttist. Endurnýjaðu fjöldann og reyndu aftur.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Fjöldi gildra færslna breyttist. Endurnýjaðu fjöldann og reyndu aftur.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Suggest Payments Run ori - Method OnRun - NamedType ChangedLbl</note>
+        </trans-unit>
         <trans-unit id="PermissionSet 1311670517 - Property 2879900210" maxwidth="30" size-unit="char" translate="yes" xml:space="preserve">
           <source>Bifrost Shopify Base</source>
           <target>Bifröst Shopify grunnur</target>
