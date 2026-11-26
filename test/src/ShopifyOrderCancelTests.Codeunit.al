@@ -7,7 +7,7 @@ using Origo.Bifrost.Shopify;
 using System.TestLibraries.Utilities;
 
 /// <summary>Issue #27: mock-only public-dispatcher cancellation tests. No credential or external Shopify call is used.</summary>
-codeunit 97500 "Shopify Order Cancel Tests ori"
+codeunit 97503 "Shopify Order Cancel Tests ori"
 {
     Subtype = Test;
     TestPermissions = Disabled;
@@ -15,7 +15,7 @@ codeunit 97500 "Shopify Order Cancel Tests ori"
     var
         Assert: Codeunit "Library Assert";
         LowerPermissions: Codeunit "Library - Lower Permissions";
-        OrderIdTok: Label '975000027', Locked = true;
+        OrderIdTok: Label '975030027', Locked = true;
         ShopCodeTok: Label 'XCANCEL27', Locked = true;
 
     /// <summary>All eight boolean combinations and all six reasons reach the API unchanged; local records stay unchanged.</summary>

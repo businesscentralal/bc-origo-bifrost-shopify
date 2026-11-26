@@ -5,7 +5,7 @@ using Origo.Bifrost.Shopify;
 using System.TestLibraries.Utilities;
 
 /// <summary>Manually bound mock of the cancellation API. Asserts exact arguments and can write then refuse to prove rollback.</summary>
-codeunit 97501 "Shopify Cancel Stub ori"
+codeunit 97504 "Shopify Cancel Stub ori"
 {
     EventSubscriberInstance = Manual;
 

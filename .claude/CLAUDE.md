@@ -56,10 +56,10 @@ Tests: 97400-97599
 | Codeunit | 73732042 | Order Cancel Impl ori |
 | Codeunit | 73732043 | Order Cancel Run ori |
 | EnumExtension | 73732042 | Order Cancel MsgType ori (value Shopify.Order.Cancel) |
-| Test Codeunit | 97500 | Shopify Order Cancel Tests ori |
-| Codeunit | 97501 | Shopify Cancel Stub ori (manual mock) |
-| Codeunit | 97502 | Shopify Cancel MCP Stub ori (fixture-only mock) |
-| Test Codeunit | 97503 | Shopify Cancel Fixture ori |
+| Test Codeunit | 97503 | Shopify Order Cancel Tests ori |
+| Codeunit | 97504 | Shopify Cancel Stub ori (manual mock) |
+| Codeunit | 97505 | Shopify Cancel MCP Stub ori (fixture-only mock) |
+| Test Codeunit | 97506 | Shopify Cancel Fixture ori |
 
 Integration note for PR #43: the temporary import app IDs 73732030/73732031 in commit 79654f2 are reconciled to 73731960/73731961, following the published #54 mapping (70013400+n → 73731950+n). Import test codeunits remain 97472/97473 from that branch update; the 97400–97599 test range is unchanged.
 

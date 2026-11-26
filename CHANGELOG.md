@@ -2,7 +2,7 @@
 
 ## [28.0.0.0] - Unreleased
 
-- Added `Shopify.Order.Cancel` (#27): explicit reason, notification, refund, restock and expectedCount = 1 cancel one imported order irreversibly through public `Shpfy Orders.CancelOrder`. Linked BC sales documents and imported order rows remain unchanged. Full-role execution only; mock-only dispatcher tests. New enum extension/value and implementation 73732042, connector runner 73732043; test/mock/fixture codeunits 97500–97503.
+- Added `Shopify.Order.Cancel` (#27): explicit reason, notification, refund, restock and expectedCount = 1 cancel one imported order irreversibly through public `Shpfy Orders.CancelOrder`. Linked BC sales documents and imported order rows remain unchanged. Full-role execution only; mock-only dispatcher tests. New enum extension/value and implementation 73732042, connector runner 73732043; test/mock/fixture codeunits 97503–97506.
 
 - Prepared the first AppSource release with all nine Shopify operations, raised the Foundation minimum to 28.0.15.807 (release 28.0.15); context-sensitive help retains the Shopify app page URL because the app has no pages of its own (#62). No new objects. The release date is set when the release is approved.
 

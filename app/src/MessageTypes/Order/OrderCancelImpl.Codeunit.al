@@ -246,21 +246,21 @@ codeunit 73732042 "Order Cancel Impl ori" implements "Msg Interface ori", "Msg D
             exit;
         end;
         Request := Argument.GetRequestJson();
-        if not ReadInteger(Argument, Request, 'orderId', OrderId) then
+        if not ReadInteger(Request, 'orderId', Argument, OrderId) then
             exit;
         if OrderId < 1 then begin
             Invalid(Argument, 'orderId');
             exit;
         end;
-        if not ReadReason(Argument, Request, ReasonText, Reason) then
+        if not ReadReason(Request, Argument, ReasonText, Reason) then
             exit;
-        if not ReadBoolean(Argument, Request, 'notifyCustomer', NotifyCustomer) then
+        if not ReadBoolean(Request, 'notifyCustomer', Argument, NotifyCustomer) then
             exit;
-        if not ReadBoolean(Argument, Request, 'refund', Refund) then
+        if not ReadBoolean(Request, 'refund', Argument, Refund) then
             exit;
-        if not ReadBoolean(Argument, Request, 'restock', Restock) then
+        if not ReadBoolean(Request, 'restock', Argument, Restock) then
             exit;
-        if not ReadInteger(Argument, Request, 'expectedCount', ExpectedCount) then
+        if not ReadInteger(Request, 'expectedCount', Argument, ExpectedCount) then
             exit;
         if ExpectedCount <> 1 then begin
             Invalid(Argument, 'expectedCount');
@@ -302,7 +302,7 @@ codeunit 73732042 "Order Cancel Impl ori" implements "Msg Interface ori", "Msg D
         Argument."Content Type" := Argument.GetContentTypeJson();
     end;
 
-    local procedure ReadToken(var Argument: Record "Message Argument ori"; Request: JsonObject; Name: Text; var Token: JsonToken): Boolean
+    local procedure ReadToken(Request: JsonObject; Name: Text; var Argument: Record "Message Argument ori"; var Token: JsonToken): Boolean
     var
         MissingErr: Label 'Parameter "%1" is required.', Comment = '%1 = parameter name||is-IS=Færibreytan "%1" er nauðsynleg.';
         NextLbl: Label 'Send all six parameters: orderId, reason, notifyCustomer, refund, restock and expectedCount.', Comment = 'is-IS=Sendu allar sex færibreyturnar: orderId, reason, notifyCustomer, refund, restock og expectedCount.';
@@ -322,12 +322,12 @@ codeunit 73732042 "Order Cancel Impl ori" implements "Msg Interface ori", "Msg D
         exit(true);
     end;
 
-    local procedure ReadInteger(var Argument: Record "Message Argument ori"; Request: JsonObject; Name: Text; var Value: BigInteger): Boolean
+    local procedure ReadInteger(Request: JsonObject; Name: Text; var Argument: Record "Message Argument ori"; var Value: BigInteger): Boolean
     var
         Token: JsonToken;
         Serialized: Text;
     begin
-        if not ReadToken(Argument, Request, Name, Token) then
+        if not ReadToken(Request, Name, Argument, Token) then
             exit(false);
         Token.WriteTo(Serialized);
         if Evaluate(Value, Serialized, 9) then
@@ -337,12 +337,12 @@ codeunit 73732042 "Order Cancel Impl ori" implements "Msg Interface ori", "Msg D
         exit(false);
     end;
 
-    local procedure ReadBoolean(var Argument: Record "Message Argument ori"; Request: JsonObject; Name: Text; var Value: Boolean): Boolean
+    local procedure ReadBoolean(Request: JsonObject; Name: Text; var Argument: Record "Message Argument ori"; var Value: Boolean): Boolean
     var
         Token: JsonToken;
         Serialized: Text;
     begin
-        if not ReadToken(Argument, Request, Name, Token) then
+        if not ReadToken(Request, Name, Argument, Token) then
             exit(false);
         Token.WriteTo(Serialized);
         if Serialized in ['true', 'false'] then begin
@@ -353,13 +353,13 @@ codeunit 73732042 "Order Cancel Impl ori" implements "Msg Interface ori", "Msg D
         exit(false);
     end;
 
-    local procedure ReadReason(var Argument: Record "Message Argument ori"; Request: JsonObject; var ReasonText: Text; var Reason: Enum "Shpfy Cancel Reason"): Boolean
+    local procedure ReadReason(Request: JsonObject; var Argument: Record "Message Argument ori"; var ReasonText: Text; var Reason: Enum "Shpfy Cancel Reason"): Boolean
     var
         Token: JsonToken;
         Serialized: Text;
         Position: Integer;
     begin
-        if not ReadToken(Argument, Request, 'reason', Token) then
+        if not ReadToken(Request, 'reason', Argument, Token) then
             exit(false);
         Token.WriteTo(Serialized);
         if CopyStr(Serialized, 1, 1) = '"' then begin

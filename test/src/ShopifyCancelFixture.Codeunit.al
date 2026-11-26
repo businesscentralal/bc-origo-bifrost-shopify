@@ -4,7 +4,7 @@ using Microsoft.Integration.Shopify;
 using System.TestLibraries.Utilities;
 
 /// <summary>Self-seeded demo-only fixture for mock MCP cancellation calls; cleanup removes every fixture row.</summary>
-codeunit 97503 "Shopify Cancel Fixture ori"
+codeunit 97506 "Shopify Cancel Fixture ori"
 {
     Subtype = Test;
     RequiredTestIsolation = Disabled;
@@ -28,16 +28,16 @@ codeunit 97503 "Shopify Cancel Fixture ori"
         Shop.Init();
         Shop.Code := 'XMCPCANCEL27OFF';
         Shop.Insert();
-        for OrderId := 975030027 to 975030031 do begin
+        for OrderId := 975060027 to 975060031 do begin
             OrderHeader.Init();
             OrderHeader."Shopify Order Id" := OrderId;
             OrderHeader."Shop Code" := 'XMCPCANCEL27';
             case OrderId of
-                975030029:
+                975060029:
                     OrderHeader."Cancelled At" := CurrentDateTime();
-                975030030:
+                975060030:
                     OrderHeader."Shop Code" := 'XMCPCANCEL27NONE';
-                975030031:
+                975060031:
                     OrderHeader."Shop Code" := 'XMCPCANCEL27OFF';
             end;
             OrderHeader.Insert();
@@ -54,7 +54,7 @@ codeunit 97503 "Shopify Cancel Fixture ori"
         Assert: Codeunit "Library Assert";
     begin
         RemoveAll();
-        OrderHeader.SetRange("Shopify Order Id", 975030027, 975030031);
+        OrderHeader.SetRange("Shopify Order Id", 975060027, 975060031);
         Assert.IsTrue(OrderHeader.IsEmpty(), 'All fixture orders removed.');
         Assert.IsFalse(Shop.Get('XMCPCANCEL27'), 'Enabled fixture shop removed.');
         Assert.IsFalse(Shop.Get('XMCPCANCEL27OFF'), 'Disabled fixture shop removed.');
@@ -65,7 +65,7 @@ codeunit 97503 "Shopify Cancel Fixture ori"
         OrderHeader: Record "Shpfy Order Header";
         Shop: Record "Shpfy Shop";
     begin
-        OrderHeader.SetRange("Shopify Order Id", 975030027, 975030031);
+        OrderHeader.SetRange("Shopify Order Id", 975060027, 975060031);
         OrderHeader.DeleteAll();
         if Shop.Get('XMCPCANCEL27') then
             Shop.Delete();
