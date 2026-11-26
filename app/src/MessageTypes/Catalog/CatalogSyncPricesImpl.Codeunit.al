@@ -194,7 +194,7 @@ codeunit 73732080 "Catalog SyncPrices Impl ori" implements "Msg Interface ori", 
     /// <returns>True; the chapter was supplied.</returns>
     procedure GetNotes(var Notes: Text): Boolean
     begin
-        Notes := 'Requires Shopify Connector 29 or later; version 28 is refused because report 30116 cannot filter catalogs. Idempotent: the connector reads current Shopify prices and sends only changes, in batches of 250. catalogId selects one Shopify catalog; catalogType is Company or Market; companyId is the Shopify company ID, resolved to its local SystemId. Filters intersect and never select another shop. Currency mismatches count in catalogsConsidered and produce skippedRecords. Counts describe local rows, not prices sent. A connector failure rolls back uncommitted BC changes; prices already sent to Shopify cannot be rolled back. Retry after fixing the reported cause. Requires SHOPIFY Full ori and Microsoft Shopify permissions.';
+        Notes := 'Requires Shopify Connector 29 or later (report 30116 filters by catalog). Idempotent: the connector reads current Shopify prices and sends only changes, in batches of 250. catalogId selects one Shopify catalog; catalogType is Company or Market; companyId is the Shopify company ID, resolved to its local SystemId. Filters intersect and never select another shop. Currency mismatches count in catalogsConsidered and produce skippedRecords. Counts describe local rows, not prices sent. A connector failure rolls back uncommitted BC changes; prices already sent to Shopify cannot be rolled back. Retry after fixing the reported cause. Requires SHOPIFY Full ori and Microsoft Shopify permissions.';
         exit(true);
     end;
 
@@ -316,9 +316,6 @@ codeunit 73732080 "Catalog SyncPrices Impl ori" implements "Msg Interface ori", 
             Argument.RespondWithError("Bifrost Error Code ori"::PreconditionFailed, EmptyLbl, 'catalogId', '', '', EmptyNextLbl);
             exit;
         end;
-        // BC 28 report 30116 cannot accept a Catalog view. Never let a selected-catalog request become a shop-wide write.
-        if not SupportsCatalogView(Argument) then
-            exit;
         LastSkipEntry := LastSkippedEntry();
         Shop.SetRecFilter();
         SyncRun.SetParameters(Shop.Code, Shop.GetView(false), Catalog.GetView(false), CatalogType);
@@ -334,20 +331,6 @@ codeunit 73732080 "Catalog SyncPrices Impl ori" implements "Msg Interface ori", 
         Response.Add('skippedRecords', CountNewSkips(Catalog, LastSkipEntry));
         Argument.SetResponseJson(Response);
         Argument."Content Type" := Argument.GetContentTypeJson();
-    end;
-
-    local procedure SupportsCatalogView(var Argument: Record "Message Argument ori"): Boolean
-    var
-        ConnectorInfo: ModuleInfo;
-        ConnectorId: Guid;
-        UnsupportedLbl: Label 'Catalog price synchronization requires Shopify Connector version 29 or later.', Comment = 'is-IS=Verðsamstilling vöruskráa krefst Shopify Connector útgáfu 29 eða nýrri.';
-        UpgradeLbl: Label 'Upgrade the Shopify Connector before retrying; version 28 cannot filter this report by catalog.', Comment = 'is-IS=Uppfærðu Shopify Connector áður en þú reynir aftur; útgáfa 28 getur ekki síað þessa skýrslu eftir vöruskrá.';
-    begin
-        ConnectorId := 'ec255f57-31d0-4ca2-b751-f2fa7c745abb';
-        NavApp.GetModuleInfo(ConnectorId, ConnectorInfo);
-        if ConnectorInfo.AppVersion.Major >= 29 then
-            exit(true);
-        Argument.RespondWithError("Bifrost Error Code ori"::PreconditionFailed, UnsupportedLbl, '', '', '', UpgradeLbl);
     end;
 
     local procedure InvalidParameter(var Argument: Record "Message Argument ori"; ParameterName: Text)
