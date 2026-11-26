@@ -489,6 +489,120 @@
           <note from="Developer" annotates="general" priority="2">is-IS=Notað til að senda birgðastöðu vara sem þegar eru tengdar Shopify vörum í eina virka verslun. Býr ekki til vörur og sendir ekki verð; notaðu Shopify.Product.Sync og Shopify.Product.SyncPrices fyrir það.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit Inventory Sync Impl ori - Method GetSelectionDescription - NamedType SelectionLbl</note>
         </trans-unit>
+        <trans-unit id="Codeunit 2656532920 - Method 3571782927 - NamedType 64258721" size-unit="char" translate="yes" xml:space="preserve">
+          <source>You do not have permission to cancel Shopify orders.</source>
+          <target>Þú hefur ekki heimild til að afturkalla Shopify pantanir.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Þú hefur ekki heimild til að afturkalla Shopify pantanir.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Order Cancel Impl ori - Method ExecuteBifrostTask - NamedType NoPermissionErr</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 2656532920 - Method 3571782927 - NamedType 3932376842" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Ask an administrator for SHOPIFY Full ori and Microsoft Shopify permissions.</source>
+          <target>Biddu kerfisstjóra um SHOPIFY Full ori og Shopify heimildir Microsoft.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Biddu kerfisstjóra um SHOPIFY Full ori og Shopify heimildir Microsoft.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Order Cancel Impl ori - Method ExecuteBifrostTask - NamedType PermissionNextLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 2656532920 - Method 3571782927 - NamedType 1531178868" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Shopify order %1 was not found.</source>
+          <target>Shopify pöntun %1 fannst ekki.</target>
+          <note from="Developer" annotates="general" priority="2">%1 = order ID||is-IS=Shopify pöntun %1 fannst ekki.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Order Cancel Impl ori - Method ExecuteBifrostTask - NamedType OrderNotFoundErr</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 2656532920 - Method 3571782927 - NamedType 3371615541" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Import the order first and check its shop.</source>
+          <target>Fluttu pöntunina fyrst inn og athugaðu verslun hennar.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Fluttu pöntunina fyrst inn og athugaðu verslun hennar.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Order Cancel Impl ori - Method ExecuteBifrostTask - NamedType OrderNextLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 2656532920 - Method 3571782927 - NamedType 1100090462" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Shopify shop %1 was not found.</source>
+          <target>Shopify verslun %1 fannst ekki.</target>
+          <note from="Developer" annotates="general" priority="2">%1 = shop code||is-IS=Shopify verslun %1 fannst ekki.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Order Cancel Impl ori - Method ExecuteBifrostTask - NamedType ShopNotFoundErr</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 2656532920 - Method 3571782927 - NamedType 3917760611" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Shopify shop %1 is disabled.</source>
+          <target>Shopify verslun %1 er óvirk.</target>
+          <note from="Developer" annotates="general" priority="2">%1 = shop code||is-IS=Shopify verslun %1 er óvirk.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Order Cancel Impl ori - Method ExecuteBifrostTask - NamedType ShopDisabledErr</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 2656532920 - Method 3571782927 - NamedType 245955643" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Configure and enable the shop before cancelling the order.</source>
+          <target>Settu upp og virkjaðu verslunina áður en þú afturkallar pöntunina.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Settu upp og virkjaðu verslunina áður en þú afturkallar pöntunina.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Order Cancel Impl ori - Method ExecuteBifrostTask - NamedType ShopNextLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 2656532920 - Method 3571782927 - NamedType 3910898602" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Shopify order %1 is already cancelled.</source>
+          <target>Shopify pöntun %1 hefur þegar verið afturkölluð.</target>
+          <note from="Developer" annotates="general" priority="2">%1 = order ID||is-IS=Shopify pöntun %1 hefur þegar verið afturkölluð.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Order Cancel Impl ori - Method ExecuteBifrostTask - NamedType CancelledErr</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 2656532920 - Method 3571782927 - NamedType 800177746" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Check the order in Shopify; do not repeat its cancellation.</source>
+          <target>Athugaðu pöntunina í Shopify; ekki endurtaka afturköllun hennar.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Athugaðu pöntunina í Shopify; ekki endurtaka afturköllun hennar.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Order Cancel Impl ori - Method ExecuteBifrostTask - NamedType CancelledNextLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 2656532920 - Method 3571782927 - NamedType 1603624325" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Cancellation of Shopify order %1 failed. %2</source>
+          <target>Afturköllun Shopify pöntunar %1 mistókst. %2</target>
+          <note from="Developer" annotates="general" priority="2">%1 = order ID, %2 = connector error||is-IS=Afturköllun Shopify pöntunar %1 mistókst. %2</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Order Cancel Impl ori - Method ExecuteBifrostTask - NamedType RefusedErr</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 2656532920 - Method 3571782927 - NamedType 4045007133" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Review Shopify Log Entries (table 30115) and the current Shopify order before retrying.</source>
+          <target>Skoðaðu Shopify Log Entries (töflu 30115) og núverandi stöðu pöntunarinnar í Shopify áður en þú reynir aftur.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Skoðaðu Shopify Log Entries (töflu 30115) og núverandi stöðu pöntunarinnar í Shopify áður en þú reynir aftur.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Order Cancel Impl ori - Method ExecuteBifrostTask - NamedType RefusedNextLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 2656532920 - Method 4077369804 - NamedType 3569966352" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Cancels one Shopify order irreversibly; may refund payment, restock inventory and email the customer.</source>
+          <target>Afturkallar eina Shopify pöntun óafturkræft; getur endurgreitt greiðslu, endurheimt birgðir og sent viðskiptavini tölvupóst.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Afturkallar eina Shopify pöntun óafturkræft; getur endurgreitt greiðslu, endurheimt birgðir og sent viðskiptavini tölvupóst.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Order Cancel Impl ori - Method GetDescription - NamedType DescriptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 2656532920 - Method 1027590672 - NamedType 1290244428" size-unit="char" translate="yes" xml:space="preserve">
+          <source>shopify cancel order, cancel shopify purchase, refund cancelled order</source>
+          <target>shopify afturkalla pöntun, afturkalla shopify kaup, endurgreiða afturkallaða pöntun</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=shopify afturkalla pöntun, afturkalla shopify kaup, endurgreiða afturkallaða pöntun</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Order Cancel Impl ori - Method GetKeywords - NamedType KeywordsLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 2656532920 - Method 79446908 - NamedType 895773054" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Use to cancel one imported order in Shopify. Choose refund, restock and notify explicitly; confirm expectedCount = 1.</source>
+          <target>Notað til að afturkalla eina innflutta pöntun í Shopify. Veldu endurgreiðslu, birgðir og tilkynningu sérstaklega; staðfestu expectedCount = 1.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Notað til að afturkalla eina innflutta pöntun í Shopify. Veldu endurgreiðslu, birgðir og tilkynningu sérstaklega; staðfestu expectedCount = 1.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Order Cancel Impl ori - Method GetSelectionDescription - NamedType SelectionLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 2656532920 - Method 1990146883 - NamedType 3177803720" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Parameter "%1" has an invalid format or value.</source>
+          <target>Færibreytan "%1" er á röngu sniði eða hefur ógilt gildi.</target>
+          <note from="Developer" annotates="general" priority="2">%1 = parameter name||is-IS=Færibreytan "%1" er á röngu sniði eða hefur ógilt gildi.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Order Cancel Impl ori - Method Invalid - NamedType InvalidErr</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 2656532920 - Method 1990146883 - NamedType 2029447175" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Use a positive JSON integer orderId, reason Customer/Fraud/Inventory/Other/Staff/Declined, JSON booleans and expectedCount = 1.</source>
+          <target>Notaðu jákvæða JSON heiltölu fyrir orderId, reason Customer/Fraud/Inventory/Other/Staff/Declined, JSON rökgildi og expectedCount = 1.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Notaðu jákvæða JSON heiltölu fyrir orderId, reason Customer/Fraud/Inventory/Other/Staff/Declined, JSON rökgildi og expectedCount = 1.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Order Cancel Impl ori - Method Invalid - NamedType NextLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 2656532920 - Method 4166012883 - NamedType 1830439019" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Parameter "%1" is required.</source>
+          <target>Færibreytan "%1" er nauðsynleg.</target>
+          <note from="Developer" annotates="general" priority="2">%1 = parameter name||is-IS=Færibreytan "%1" er nauðsynleg.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Order Cancel Impl ori - Method ReadToken - NamedType MissingErr</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 2656532920 - Method 4166012883 - NamedType 2029447175" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Send all six parameters: orderId, reason, notifyCustomer, refund, restock and expectedCount.</source>
+          <target>Sendu allar sex færibreyturnar: orderId, reason, notifyCustomer, refund, restock og expectedCount.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Sendu allar sex færibreyturnar: orderId, reason, notifyCustomer, refund, restock og expectedCount.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Order Cancel Impl ori - Method ReadToken - NamedType NextLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 1805496583 - Method 1665861916 - NamedType 1603624325" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Shopify refused to cancel order %1. Review Shopify Log Entries (table 30115) for the connector request and user errors.</source>
+          <target>Shopify hafnaði afturköllun pöntunar %1. Skoðaðu Shopify Log Entries (töflu 30115) fyrir beiðni tengilsins og villur.</target>
+          <note from="Developer" annotates="general" priority="2">%1 = order ID||is-IS=Shopify hafnaði afturköllun pöntunar %1. Skoðaðu Shopify Log Entries (töflu 30115) fyrir beiðni tengilsins og villur.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Order Cancel Run ori - Method OnRun - NamedType RefusedErr</note>
+        </trans-unit>
         <trans-unit id="Codeunit 4087984018 - Method 3571782927 - NamedType 64258721" size-unit="char" translate="yes" xml:space="preserve">
           <source>You do not have the permissions to create sales documents from Shopify orders.</source>
           <target>Þú hefur ekki heimildir til að búa til sölugögn úr Shopify pöntunum.</target>

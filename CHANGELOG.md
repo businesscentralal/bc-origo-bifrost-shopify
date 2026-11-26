@@ -2,6 +2,8 @@
 
 ## [28.0.0.0] - Unreleased
 
+- Added `Shopify.Order.Cancel` (#27): explicit reason, notification, refund, restock and expectedCount = 1 cancel one imported order irreversibly through public `Shpfy Orders.CancelOrder`. Linked BC sales documents and imported order rows remain unchanged. Full-role execution only; mock-only dispatcher tests. New enum extension/value and implementation 73732042, connector runner 73732043; test/mock/fixture codeunits 97500–97503.
+
 - Prepared the first AppSource release with all nine Shopify operations, raised the Foundation minimum to 28.0.15.807 (release 28.0.15); context-sensitive help retains the Shopify app page URL because the app has no pages of its own (#62). No new objects. The release date is set when the release is approved.
 
 - `Shopify.Order.CreateSalesDocument` (enum value 73732020, codeunit 73732020) refuses with `PreconditionFailed` before any change when the order's shop has Return and Refund Process = Auto Create Credit Memo, and the success response adds `documentStatus` (Open, Released, Pending Approval, Pending Prepayment), the same name in every language. Existing request and response fields are unchanged (#59). Tests in codeunit 97470. No new objects.
