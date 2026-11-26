@@ -15,6 +15,12 @@ Tests: 97400-97599
 
 | Type | ID | Object |
 | --- | --- | --- |
+| Codeunit | 73732046 | Payment Disputes Impl ori |
+| Codeunit | 73732047 | Payment Disputes Run ori |
+| EnumExtension | 73732046 | Payment Disputes MsgType ori (Shopify.Payment.SyncDisputes) |
+| Test Codeunit | 97517 | Shopify Disputes Tests ori |
+| Codeunit | 97518 | Shopify Disputes Stub ori |
+| Test Codeunit | 97519 | Shopify Disputes Fixture ori |
 | Codeunit | 73731950 | Shopify Registration ori |
 | PermissionSet | 73731950 | SHOPIFY Base ori |
 | PermissionSet | 73731951 | SHOPIFY Read ori |
