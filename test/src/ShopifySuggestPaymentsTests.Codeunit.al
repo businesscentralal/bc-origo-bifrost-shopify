@@ -6,7 +6,7 @@ using Origo.Bifrost;
 using System.TestLibraries.Utilities;
 
 /// <summary>Issue #34: public dispatcher coverage of mock-only payment suggestions and atomic refusals.</summary>
-codeunit 97513 "Shpfy Suggest Tests ori"
+codeunit 97560 "Shpfy Suggest Tests ori"
 {
     Subtype = Test;
     TestPermissions = Disabled;

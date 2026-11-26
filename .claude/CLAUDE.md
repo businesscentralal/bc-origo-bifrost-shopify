@@ -59,7 +59,7 @@ Tests: 97400-97599
 | Test Codeunit | 97470 | Shopify Order Create Tests ori |
 | Test Codeunit | 97471 | Shopify Order MCP Fixture ori |
 
-New issue #34 objects (checked against open PRs #66 and #67 on 26.11.2026): enum extension/value and implementation 73732063 `Suggest Payments MsgType ori` / `Suggest Payments Impl ori`; runner 73732064 `Suggest Payments Run ori`; manual journal-navigation subscriber 73732062 `Suggest Payments UI Guard ori`; tests 97513 `Shpfy Suggest Tests ori`, mock subscriber 97514 `Shpfy Suggest Stub ori`, MCP fixture 97515 `Shpfy Suggest Fixture ori`. Moved during the main merge to avoid Metafield Sync object IDs.
+New issue #34 objects (test IDs checked against main and all 14 other open PR heads on 26.11.2026): enum extension/value and implementation 73732063 `Suggest Payments MsgType ori` / `Suggest Payments Impl ori`; runner 73732064 `Suggest Payments Run ori`; manual journal-navigation subscriber 73732062 `Suggest Payments UI Guard ori`; tests 97560 `Shpfy Suggest Tests ori`, mock subscriber 97561 `Shpfy Suggest Stub ori`, MCP fixture 97562 `Shpfy Suggest Fixture ori`. App IDs moved during the main merge to avoid Metafield Sync; test IDs moved to 97560–97562 after review to avoid open PRs #75 and #79.
 
 Integration note for PR #43: the temporary import app IDs 73732030/73732031 in commit 79654f2 are reconciled to 73731960/73731961, following the published #54 mapping (70013400+n → 73731950+n). Import test codeunits remain 97472/97473 from that branch update; the 97400–97599 test range is unchanged.
 
