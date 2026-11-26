@@ -15,6 +15,16 @@ Bifröst message types, so an agent can operate it end to end. It is built on th
 
 ---
 
+## Shopify.Customer.Add
+
+```json
+{"type":"Shopify.Customer.Add","data":{"shopCode":"WEBSHOP","customerNos":["C00010"],"expectedCount":1}}
+```
+
+Creates and links selected Business Central customers through connector report 30112. Use `Help.MessageType.Get` for its runtime contract. Use an enabled shop with a configured positive Shop Id, 1–100 distinct customer numbers and a matching integer `expectedCount`. Callers need `SHOPIFY Full ori` and Microsoft Shopify customer permissions. Existing links in the selected shop return `alreadyLinked`; repeating a completed call creates no duplicate.
+
+The response reports `requested`, `created`, `alreadyLinked`, `failed` and one result per customer with its Shopify ID. Failed customers include the connector error or fresh skipped-record reason and do not stop the others. Local writes roll back separately for each failed customer; completed Shopify requests cannot be rolled back. After a connection failure, check Shopify before retrying. Runtime help contains the complete English Overview, Notes, Examples and error contract; labels and refusals support English and Icelandic.
+
 ## Shopify.Metafield.Sync
 
 ```json
