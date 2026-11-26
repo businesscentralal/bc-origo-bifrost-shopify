@@ -2,7 +2,9 @@
 
 ## [28.0.0.0] - Unreleased
 
+### Added
 - Added message type `Shopify.Company.Add` (enum value 73732070, codeunits 73732070/73732071): creates Shopify companies, each with a main contact and a location, from selected Business Central customers (`customerNos`, 1 to 100, `expectedCount` equal to the array length) by running the connector report Shpfy Add Company to Shopify (30113) once per customer; a customer already linked in that shop is `alreadyLinked` and a customer the connector cannot export is `failed` with the connector's text without stopping the others; granted through `SHOPIFY Full ori` (#19). Tests in codeunit 97513 (stand-in 97514, MCP fixture 97515).
+- `Shopify.Metafield.Sync` (#35): loads definitions or sends changed values for one product, variant, customer or company using public connector codeunit 30418. Full permission only; validates shop, owner and expected local row count. Adds enum extension/value and implementation 73732060, runner 73732061, and mock tests/fixtures 97510–97512. Local counts do not imply sent counts; legacy types and empty values follow connector filtering.
 
 - Prepared the first AppSource release with all nine Shopify operations, raised the Foundation minimum to 28.0.15.807 (release 28.0.15); context-sensitive help retains the Shopify app page URL because the app has no pages of its own (#62). No new objects. The release date is set when the release is approved.
 
