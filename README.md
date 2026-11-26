@@ -5,13 +5,26 @@
 **App ID:** `61a67425-c1e2-45e1-85b5-9e01488f6c1d` — **Test app ID:** `435aa982-b3bd-4074-8b2a-f30781c17504`
 **Object ID range:** 73731950–73732149 (tests 97400–97599) — **Namespace:** `Origo.Bifrost.Shopify`
 
-Bifrost Shopify will make Microsoft's **Shopify Connector** app callable from outside Business Central through
+Bifrost Shopify makes Microsoft's **Shopify Connector** app callable from outside Business Central through
 Bifröst message types, so an agent can operate it end to end. It is built on the same basis as
 [Bifrost Subscription Billing](https://github.com/businesscentralal/bc-origo-bifrost-subscription-billing).
 
 **Microsoft source:** <https://github.com/microsoft/BCApps/tree/main/src/Apps/W1/Shopify>
 
 **Status:** Shopify Connector operations are registered as Bifröst message types. See the in-app message contracts for supported requests, permissions and effects.
+
+## Shopify.Payment.SyncDisputes
+
+`Shopify.Payment.SyncDisputes` imports new disputes and refreshes open disputes for one enabled shop:
+
+```json
+{"type":"Shopify.Payment.SyncDisputes","data":{"shopCode":"WEBSHOP"}}
+```
+
+It returns `status`, `shopCode`, `disputesBefore` and `disputesAfter`. Repeated calls are idempotent.
+Unchanged counts can also mean the shop has no Shopify Payments account. Connector errors roll back
+dispute changes and Shopify log entries from the failed run. Callers need `SHOPIFY Full ori` and
+Microsoft Shopify Connector permissions. Runtime help supplies the full contract, notes and examples.
 
 ---
 
@@ -76,3 +89,5 @@ site repository and is published at <https://docs.bifrost.origo.is>.
 | `test/` | Test app (`Bifrost Shopify - Tests`) |
 | `tools/` | Pipeline guard scripts |
 | `.AL-Go/`, `.github/`, `.alpaca/` | AL-Go for GitHub / COSMO Alpaca pipeline configuration |
+
+`Shopify.Company.Sync` synchronizes one shop’s B2B companies and BC customer links according to its company settings. Call with `{"shopCode":"WEBSHOP"}`; the response echoes import/export settings and local company counts. Full permission is required. The runtime contract supplies Overview, Notes and Examples.
