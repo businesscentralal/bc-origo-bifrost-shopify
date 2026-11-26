@@ -2391,6 +2391,210 @@
           <note from="Developer" annotates="general" priority="2">is-IS=Samstilla Shopify greiðsluágreining</note>
           <note from="Xliff Generator" annotates="general" priority="3">EnumExtension Payment Disputes MsgType ori - EnumValue Shopify.Payment.SyncDisputes - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Table 3405159736 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Shopify paid order request</source>
+          <target>Beiðni um greidda Shopify pöntun</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Beiðni um greidda Shopify pöntun</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Order Paid Marker ori - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3405159736 - Field 2070199485 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Order Id</source>
+          <target>Pöntunarauðkenni</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Pöntunarauðkenni</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Order Paid Marker ori - Field Order Id - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3405159736 - Field 1669136979 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Shop Code</source>
+          <target>Verslunarkóði</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Verslunarkóði</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Order Paid Marker ori - Field Shop Code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 1847823125 - NamedType 1614553106" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Shopify did not confirm payment. Check Shopify log entries (table 30115).</source>
+          <target>Shopify staðfesti ekki greiðslu. Skoðaðu Shopify annálsfærslur (töflu 30115).</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Shopify staðfesti ekki greiðslu. Skoðaðu Shopify annálsfærslur (töflu 30115).</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Order MarkPaid Impl ori - NamedType ConnectorErr</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 1847823125 - NamedType 1735161005" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Check Shopify and available log entries before retrying.</source>
+          <target>Skoðaðu Shopify og tiltækar annálsfærslur áður en þú reynir aftur.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Skoðaðu Shopify og tiltækar annálsfærslur áður en þú reynir aftur.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Order MarkPaid Impl ori - NamedType ConnectorErrNextLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 1847823125 - NamedType 1377788994" size-unit="char" translate="yes" xml:space="preserve">
+          <source>expectedCount must be 1 to confirm marking this order as paid.</source>
+          <target>expectedCount verður að vera 1 til að staðfesta að þessi pöntun verði merkt greidd.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=expectedCount verður að vera 1 til að staðfesta að þessi pöntun verði merkt greidd.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Order MarkPaid Impl ori - NamedType CountErr</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 1847823125 - NamedType 3791449231" size-unit="char" translate="yes" xml:space="preserve">
+          <source>The shop of this order is disabled.</source>
+          <target>Verslun þessarar pöntunar er óvirk.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Verslun þessarar pöntunar er óvirk.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Order MarkPaid Impl ori - NamedType DisabledErr</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 1847823125 - NamedType 3177803720" size-unit="char" translate="yes" xml:space="preserve">
+          <source>The parameter must be a JSON integer in range.</source>
+          <target>Færibreytan verður að vera JSON heiltala innan marka.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Færibreytan verður að vera JSON heiltala innan marka.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Order MarkPaid Impl ori - NamedType InvalidErr</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 1847823125 - NamedType 2448081043" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Send a positive orderId and expectedCount as integers.</source>
+          <target>Sendu jákvætt orderId og expectedCount sem heiltölur.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Sendu jákvætt orderId og expectedCount sem heiltölur.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Order MarkPaid Impl ori - NamedType InvalidErrNextLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 1847823125 - NamedType 1830439019" size-unit="char" translate="yes" xml:space="preserve">
+          <source>A required parameter is missing.</source>
+          <target>Nauðsynlega færibreytu vantar.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Nauðsynlega færibreytu vantar.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Order MarkPaid Impl ori - NamedType MissingErr</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 1847823125 - NamedType 3509621720" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Send orderId and expectedCount = 1.</source>
+          <target>Sendu orderId og expectedCount = 1.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Sendu orderId og expectedCount = 1.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Order MarkPaid Impl ori - NamedType MissingErrNextLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 1847823125 - NamedType 3351274" size-unit="char" translate="yes" xml:space="preserve">
+          <source>The imported order or its shop was not found.</source>
+          <target>Innflutta pöntunin eða verslun hennar fannst ekki.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Innflutta pöntunin eða verslun hennar fannst ekki.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Order MarkPaid Impl ori - NamedType NotFoundErr</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 1847823125 - NamedType 3390315173" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Import the order and verify its shop.</source>
+          <target>Flyttu pöntunina inn og staðfestu verslun hennar.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Flyttu pöntunina inn og staðfestu verslun hennar.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Order MarkPaid Impl ori - NamedType NotFoundErrNextLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 1847823125 - NamedType 1287808147" size-unit="char" translate="yes" xml:space="preserve">
+          <source>The imported order is already marked Fully Paid.</source>
+          <target>Innflutta pöntunin er þegar merkt að fullu greidd.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Innflutta pöntunin er þegar merkt að fullu greidd.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Order MarkPaid Impl ori - NamedType PaidErr</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 1847823125 - NamedType 315309378" size-unit="char" translate="yes" xml:space="preserve">
+          <source>You do not have permission to mark Shopify orders as paid.</source>
+          <target>Þú hefur ekki heimild til að merkja Shopify pantanir sem greiddar.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Þú hefur ekki heimild til að merkja Shopify pantanir sem greiddar.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Order MarkPaid Impl ori - NamedType PermissionErr</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 1847823125 - NamedType 3017831261" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Ask an administrator for SHOPIFY Full ori and Shopify Connector permissions.</source>
+          <target>Biddu kerfisstjóra um SHOPIFY Full ori og heimildir Shopify Connector.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Biddu kerfisstjóra um SHOPIFY Full ori og heimildir Shopify Connector.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Order MarkPaid Impl ori - NamedType PermissionErrNextLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 1847823125 - NamedType 2389106955" size-unit="char" translate="yes" xml:space="preserve">
+          <source>The shop is disabled, the order is already paid or previously submitted, or expectedCount is not 1.</source>
+          <target>Verslunin er óvirk, pöntunin er þegar greidd eða áður send, eða expectedCount er ekki 1.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Verslunin er óvirk, pöntunin er þegar greidd eða áður send, eða expectedCount er ekki 1.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Order MarkPaid Impl ori - NamedType PreconditionErr</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 1847823125 - NamedType 788895032" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Enable the shop, choose an unpaid order and confirm expectedCount = 1.</source>
+          <target>Virkjaðu verslunina, veldu ógreidda pöntun og staðfestu expectedCount = 1.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Virkjaðu verslunina, veldu ógreidda pöntun og staðfestu expectedCount = 1.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Order MarkPaid Impl ori - NamedType PreconditionErrNextLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 1847823125 - NamedType 1500932821" size-unit="char" translate="yes" xml:space="preserve">
+          <source>This order was already successfully marked as paid by an earlier request.</source>
+          <target>Þessi pöntun var þegar merkt greidd með fyrri heppnaðri beiðni.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Þessi pöntun var þegar merkt greidd með fyrri heppnaðri beiðni.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Order MarkPaid Impl ori - NamedType RepeatedErr</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 1847823125 - Method 4077369804 - NamedType 918378481" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Marks one imported Shopify order as paid in Shopify. This write is hard to undo.</source>
+          <target>Merkir eina innflutta Shopify pöntun sem greidda í Shopify. Erfitt er að afturkalla þessi skrif.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Merkir eina innflutta Shopify pöntun sem greidda í Shopify. Erfitt er að afturkalla þessi skrif.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Order MarkPaid Impl ori - Method GetDescription - NamedType TextLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 1847823125 - Method 1479631707 - NamedType 2214933811" size-unit="char" translate="yes" xml:space="preserve">
+          <source>An imported unpaid order, an enabled shop, no previous successful request and expectedCount = 1.</source>
+          <target>Innflutt ógreidd pöntun, virk verslun, engin fyrri heppnuð beiðni og expectedCount = 1.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Innflutt ógreidd pöntun, virk verslun, engin fyrri heppnuð beiðni og expectedCount = 1.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Order MarkPaid Impl ori - Method GetEffect - NamedType ReadyLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 1847823125 - Method 1479631707 - NamedType 1449450473" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Marks the order paid in Shopify; hard to undo. Keeps a local success marker to refuse repeats; does not refresh the imported order. Explicit connector commits are ignored inside the rollback runner. A remote payment cannot be rolled back if the response is lost.</source>
+          <target>Merkir pöntunina greidda í Shopify; erfitt að afturkalla. Geymir staðbundna staðfestingu til að hafna endurtekningum; uppfærir ekki innfluttu pöntunina. Beinum staðfestingum tengilsins er sleppt innan afturköllunarvinnslunnar. Ekki er hægt að afturkalla ytri greiðslu ef svarið glatast.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Merkir pöntunina greidda í Shopify; erfitt að afturkalla. Geymir staðbundna staðfestingu til að hafna endurtekningum; uppfærir ekki innfluttu pöntunina. Beinum staðfestingum tengilsins er sleppt innan afturköllunarvinnslunnar. Ekki er hægt að afturkalla ytri greiðslu ef svarið glatast.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Order MarkPaid Impl ori - Method GetEffect - NamedType ChangesLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 1847823125 - Method 1027590672 - NamedType 918378481" size-unit="char" translate="yes" xml:space="preserve">
+          <source>shopify order, mark as paid, payment confirmation, paid order, confirm payment</source>
+          <target>shopify pöntun, merkja sem greitt, greiðslustaðfesting, greidd pöntun, staðfesta greiðslu</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=shopify pöntun, merkja sem greitt, greiðslustaðfesting, greidd pöntun, staðfesta greiðslu</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Order MarkPaid Impl ori - Method GetKeywords - NamedType TextLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 1847823125 - Method 3615801952 - NamedType 1210317888" size-unit="char" translate="yes" xml:space="preserve">
+          <source>The positive Shopify order Id, as a JSON integer.</source>
+          <target>Jákvætt Shopify pöntunarauðkenni sem JSON heiltala.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Jákvætt Shopify pöntunarauðkenni sem JSON heiltala.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Order MarkPaid Impl ori - Method GetParameters - NamedType OrderLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 1847823125 - Method 3615801952 - NamedType 3071622107" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Must be 1 to confirm this hard-to-undo write to one Shopify order.</source>
+          <target>Verður að vera 1 til að staðfesta þessi skrif á eina Shopify pöntun sem erfitt er að afturkalla.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Verður að vera 1 til að staðfesta þessi skrif á eina Shopify pöntun sem erfitt er að afturkalla.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Order MarkPaid Impl ori - Method GetParameters - NamedType CountLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 1847823125 - Method 1033708611 - NamedType 3376520585" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Refresh the local imported order after marking it paid.</source>
+          <target>Uppfærðu staðbundnu innfluttu pöntunina eftir að hún er merkt greidd.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Uppfærðu staðbundnu innfluttu pöntunina eftir að hún er merkt greidd.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Order MarkPaid Impl ori - Method GetRelated - NamedType RefreshLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 1847823125 - Method 4268477247 - NamedType 3193096050" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Success.</source>
+          <target>Success (tókst).</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Success (tókst).</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Order MarkPaid Impl ori - Method GetResponse - NamedType StatusLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 1847823125 - Method 4268477247 - NamedType 1541717987" size-unit="char" translate="yes" xml:space="preserve">
+          <source>The imported Shopify order Id.</source>
+          <target>Auðkenni innfluttu Shopify pöntunarinnar.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Auðkenni innfluttu Shopify pöntunarinnar.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Order MarkPaid Impl ori - Method GetResponse - NamedType OrderidLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 1847823125 - Method 4268477247 - NamedType 1759211453" size-unit="char" translate="yes" xml:space="preserve">
+          <source>The shop derived from the order.</source>
+          <target>Verslunin sem pöntunin tilheyrir.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Verslunin sem pöntunin tilheyrir.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Order MarkPaid Impl ori - Method GetResponse - NamedType ShopcodeLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 1847823125 - Method 4268477247 - NamedType 2850576176" size-unit="char" translate="yes" xml:space="preserve">
+          <source>True: Shopify confirmed the order as fully paid.</source>
+          <target>True: Shopify staðfesti að pöntunin væri að fullu greidd.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=True: Shopify staðfesti að pöntunin væri að fullu greidd.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Order MarkPaid Impl ori - Method GetResponse - NamedType FullypaidLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 1847823125 - Method 79446908 - NamedType 918378481" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Use to mark an unpaid imported order as paid in Shopify with expectedCount = 1. Refresh the local order separately.</source>
+          <target>Notað til að merkja ógreidda innflutta pöntun sem greidda í Shopify með expectedCount = 1. Uppfærðu staðbundnu pöntunina sérstaklega.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Notað til að merkja ógreidda innflutta pöntun sem greidda í Shopify með expectedCount = 1. Uppfærðu staðbundnu pöntunina sérstaklega.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Order MarkPaid Impl ori - Method GetSelectionDescription - NamedType TextLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 1847823125 - Method 3897248833 - NamedType 1210317888" size-unit="char" translate="yes" xml:space="preserve">
+          <source>The Shopify Id of an imported order (table 30118).</source>
+          <target>Shopify auðkenni innfluttrar pöntunar (tafla 30118).</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Shopify auðkenni innfluttrar pöntunar (tafla 30118).</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Order MarkPaid Impl ori - Method GetTarget - NamedType OrderLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 83522350 - Method 468342310 - NamedType 1603624325" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Shopify did not confirm the order as paid. Check Shopify log entries (table 30115) for details.</source>
+          <target>Shopify staðfesti ekki að pöntunin væri greidd. Skoðaðu Shopify annálsfærslur (töflu 30115) fyrir nánari upplýsingar.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Shopify staðfesti ekki að pöntunin væri greidd. Skoðaðu Shopify annálsfærslur (töflu 30115) fyrir nánari upplýsingar.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Order MarkPaid Run ori - Method RunConnector - NamedType RefusedErr</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 83522350 - Method 468342310 - NamedType 4087415185" size-unit="char" translate="yes" xml:space="preserve">
+          <source>The order or shop changed. Refresh the order before trying again.</source>
+          <target>Pöntunin eða verslunin breyttist. Uppfærðu pöntunina áður en þú reynir aftur.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Pöntunin eða verslunin breyttist. Uppfærðu pöntunina áður en þú reynir aftur.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Order MarkPaid Run ori - Method RunConnector - NamedType ChangedErr</note>
+        </trans-unit>
         <trans-unit id="Codeunit 3128270315 - Method 4077369804 - NamedType 3569966352" size-unit="char" translate="yes" xml:space="preserve">
           <source>Suggests Shopify payments in a cash receipt journal without posting.</source>
           <target>Leggur til Shopify greiðslur í inngreiðslubók án bókunar.</target>
