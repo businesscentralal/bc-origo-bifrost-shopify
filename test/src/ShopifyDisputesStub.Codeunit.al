@@ -39,7 +39,7 @@ codeunit 97518 "Shopify Disputes Stub ori"
         if Shop.Code = 'X33-FAIL' then
             InsertDispute(975170005, Shop.Code, 1)
         else
-            InsertDispute(975170002, Shop.Code, 1);
+            InsertDispute(975170002, Shop.Code, 2);
         if Shop.Code = 'X33-FAIL' then begin
             LogEntry.Open(30115);
             LogEntry.Init();

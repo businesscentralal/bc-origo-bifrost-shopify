@@ -21,6 +21,7 @@ codeunit 97517 "Shopify Disputes Tests ori"
     procedure Scenario_AC02_ImportRefreshRepeat()
     var
         Response: JsonObject;
+        BeforeRepeat: Text;
     begin
         // Story #33, AC02/AC06 | Time: none | Risk: None
         Fixture.Cleanup();
@@ -35,7 +36,9 @@ codeunit 97517 "Shopify Disputes Tests ori"
         Assert.AreEqual('2', ReadText(Response, 'disputesAfter'), 'One new dispute.');
         Assert.AreEqual('2', DisputeValue(975170001, 8), 'Open dispute moved under review.');
         Assert.AreEqual('1', DisputeValue(975170003, 8), 'Other shop unchanged.');
+        BeforeRepeat := Snapshot('X33-OK');
         Response := Execute('{"shopCode":"X33-OK"}');
+        Assert.AreEqual(BeforeRepeat, Snapshot('X33-OK'), 'Repeat preserves all stored dispute fields.');
         Assert.AreEqual('2', ReadText(Response, 'disputesBefore'), 'Repeat starts with two.');
         Assert.AreEqual('2', ReadText(Response, 'disputesAfter'), 'Repeat adds no duplicates.');
         Fixture.Cleanup();
