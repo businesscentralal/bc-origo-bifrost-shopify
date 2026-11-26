@@ -87,6 +87,7 @@ Integration note for PR #43: the temporary import app IDs 73732030/73732031 in c
 | Codeunit | 97591 | Shopify Customer Add Stub ori (manual mock) |
 | Codeunit | 97592 | Shopify CustAdd MCP Stub ori (fixture-only mock) |
 | Test Codeunit | 97593 | Shopify CustAdd Fixture ori |
+Issue #26 objects: enum extension/value and implementation 73732090 `Order MarkPaid MsgType ori` / `Order MarkPaid Impl ori`; runner 73732091 `Order MarkPaid Run ori`; table 73732090 `Order Paid Marker ori`. Tests: 97530 `Shpfy MarkPaid Tests ori`, subscriber 97531 `Shpfy MarkPaid Stub ori`, MCP fixture 97532 `Shpfy MarkPaid Fixture ori`. Open PRs #67–#69 were checked before allocation.
 
 Issue #28 (checked against open PRs on 26 November 2026):
 - Codeunit 73731951 `Order ForceSync Impl ori`; codeunit 73731952 `Order ForceSync Run ori`.
