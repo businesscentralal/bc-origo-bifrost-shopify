@@ -605,10 +605,14 @@ codeunit 97503 "Shopify Issue 31 Tests ori"
         ResponseContentType: Text[100];
         Version: Enum "Message Version ori";
         ResponsePayload: Text;
+        EmptyTaskId: Guid;
+        MessageId: Guid;
+        ResponseTime: Duration;
     begin
         BindSubscription(Stub);
         RequestContent.AddText(RequestText);
-        Dispatcher.Execute("Message Type ori"::"Shopify.Invoice.Sync", Version, '', '', 'application/json', RequestContent, ResponseContent, ResponseContentType);
+        // Execute uses the Foundation default language; the public orchestration overload honors this test's LCID.
+        Dispatcher.EnqueueAndProcess("Message Type ori"::"Shopify.Invoice.Sync", Version, '', '', 'application/json', RequestContent, EmptyTaskId, GlobalLanguage(), MessageId, ResponseContent, ResponseContentType, ResponseTime);
         UnbindSubscription(Stub);
         ResponseContent.GetSubText(ResponsePayload, 1);
         Response.ReadFrom(ResponsePayload);
