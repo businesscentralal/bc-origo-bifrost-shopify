@@ -2,6 +2,10 @@
 
 ## [28.0.0.0] - Unreleased
 
+### Added
+- `Shopify.Customer.Add`: create and link 1–100 selected BC customers through connector report 30112, with expected-count confirmation, existing-link handling and isolated per-customer failures. English help and Icelandic translations included. Objects: enumextension/value and implementation 73732140, runner 73732141; tests/stand-ins/fixture 97590–97593.
+
+
 - Prepared the first AppSource release with all nine Shopify operations, raised the Foundation minimum to 28.0.15.807 (release 28.0.15); context-sensitive help retains the Shopify app page URL because the app has no pages of its own (#62). No new objects. The release date is set when the release is approved.
 
 - `Shopify.Order.CreateSalesDocument` (enum value 73732020, codeunit 73732020) refuses with `PreconditionFailed` before any change when the order's shop has Return and Refund Process = Auto Create Credit Memo, and the success response adds `documentStatus` (Open, Released, Pending Approval, Pending Prepayment), the same name in every language. Existing request and response fields are unchanged (#59). Tests in codeunit 97470. No new objects.

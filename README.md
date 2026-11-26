@@ -11,7 +11,7 @@ Bifröst message types, so an agent can operate it end to end. It is built on th
 
 **Microsoft source:** <https://github.com/microsoft/BCApps/tree/main/src/Apps/W1/Shopify>
 
-**Status:** planning, no message types yet.
+**Status:** message types are registered with Bifröst Foundation. Use `Help.MessageTypes.Get` to discover available operations and `Help.MessageType.Get` for their contracts.
 
 ---
 
