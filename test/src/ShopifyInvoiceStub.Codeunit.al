@@ -4,7 +4,7 @@ using Microsoft.Sales.History;
 using Origo.Bifrost.Shopify;
 
 /// <summary>Mock-only replacement for report 30119. It never reads credentials or calls Shopify.</summary>
-codeunit 97504 "Shpfy Invoice Stub ori"
+codeunit 97508 "Shpfy Invoice Stub ori"
 {
     Access = Internal;
     EventSubscriberInstance = Manual;

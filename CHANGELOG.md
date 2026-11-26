@@ -2,7 +2,7 @@
 
 ## [Unreleased]
 
-- Add Shopify.Invoice.Sync to export selected posted invoices through connector report 30119 with batch preflight, per-invoice outcomes and mock-only tests. New objects: codeunits 73731955/73731956, enum extension 73731955/value 73731956; test codeunits 97503/97505 and stand-in 97504.
+- Add Shopify.Invoice.Sync to export selected posted invoices through connector report 30119 with batch preflight, per-invoice outcomes and mock-only tests. New objects: codeunits 73731955/73731956, enum extension 73731955/value 73731956; test codeunits 97507/97509 and stand-in 97508.
 
 ## [28.0.0.0] - Unreleased
 

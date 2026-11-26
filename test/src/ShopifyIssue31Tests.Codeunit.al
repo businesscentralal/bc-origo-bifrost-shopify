@@ -7,7 +7,7 @@ using Origo.Bifrost.Shopify;
 using System.TestLibraries.Utilities;
 
 /// <summary>Issue #31: mock-only dispatcher tests for invoice exports, validation, rollback and idempotency.</summary>
-codeunit 97503 "Shopify Issue 31 Tests ori"
+codeunit 97507 "Shopify Issue 31 Tests ori"
 {
     Subtype = Test;
     TestPermissions = Disabled;

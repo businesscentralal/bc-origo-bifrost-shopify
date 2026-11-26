@@ -5,7 +5,7 @@ using Microsoft.Sales.History;
 using System.TestLibraries.Utilities;
 
 /// <summary>Issue #31: self-seeded, already-exported invoice for safe MCP idempotency checks; no external calls.</summary>
-codeunit 97505 "Shpfy Invoice MCP ori"
+codeunit 97509 "Shpfy Invoice MCP ori"
 {
     Subtype = Test;
     RequiredTestIsolation = Disabled;
