@@ -6,7 +6,11 @@ permissionset 73731952 "SHOPIFY Full ori"
     Assignable = true;
     Caption = 'Bifrost Shopify Full', MaxLength = 30, Comment = 'is-IS=Bifröst Shopify allur aðgangur';
     IncludedPermissionSets = "SHOPIFY Read ori";
-    Permissions = codeunit "Payment Sync Impl ori" = X,
+    Permissions = codeunit "Company Sync Impl ori" = X,
+                  codeunit "Company Sync Run ori" = X,
+                  codeunit "Payment Disputes Impl ori" = X,
+                  codeunit "Payment Disputes Run ori" = X,
+                  codeunit "Payment Sync Impl ori" = X,
                   codeunit "Payment Sync Run ori" = X,
                   codeunit "Metafield Sync Impl ori" = X,
                   codeunit "Metafield Sync Run ori" = X,
@@ -29,5 +33,7 @@ permissionset 73731952 "SHOPIFY Full ori"
                   codeunit "Inventory Sync Impl ori" = X,
                   codeunit "Inventory Sync Run ori" = X,
                   codeunit "Order Import Impl ori" = X,
-                  codeunit "Order Import Run ori" = X;
+                  codeunit "Order Import Run ori" = X,
+                  codeunit "Product SyncImages Impl ori" = X,
+                  codeunit "Product SyncImages Run ori" = X;
 }
