@@ -7,10 +7,10 @@ using Origo.Bifrost.Shopify;
 using System.TestLibraries.Utilities;
 
 /// <summary>
-/// Issue #19: Shopify.Company.Add. The live Shopify API is not called. The stand-in 97514 stores the company, the main
+/// Issue #19: Shopify.Company.Add. The live Shopify API is not called. The stand-in 97528 stores the company, the main
 /// contact and the location. A customer with no e-mail is left to report 30113, which skips it without calling Shopify.
 /// </summary>
-codeunit 97513 "Shpfy Company Add Test ori"
+codeunit 97527 "Shpfy Company Add Test ori"
 {
     Subtype = Test;
     TestPermissions = Disabled;

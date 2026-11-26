@@ -9,7 +9,7 @@ using Origo.Bifrost.Shopify;
 /// a main contact and a location for a customer that has none in the shop. A customer marked as failing is written and then
 /// refused, so the caller's Run rolls the row back. A customer marked as pass-through is left to the connector report.
 /// </summary>
-codeunit 97514 "Shpfy Company Add Stub ori"
+codeunit 97528 "Shpfy Company Add Stub ori"
 {
     EventSubscriberInstance = Manual;
 
@@ -63,7 +63,7 @@ codeunit 97514 "Shpfy Company Add Stub ori"
         Shop: Record "Shpfy Shop";
     begin
         if NextCompanyId = 0 then
-            NextCompanyId := 975140001;
+            NextCompanyId := 975280001;
         Company.Init();
         Company.Id := NextCompanyId;
         Company."Shop Code" := ShopCode;
@@ -82,7 +82,7 @@ codeunit 97514 "Shpfy Company Add Stub ori"
         ShopifyCustomer: Record "Shpfy Customer";
     begin
         ShopifyCustomer.Init();
-        ShopifyCustomer.Id := Company.Id + 975140000;
+        ShopifyCustomer.Id := Company.Id + 975280000;
         if Shop.Get(ShopCode) then
             ShopifyCustomer."Shop Id" := Shop."Shop Id";
         ShopifyCustomer."Customer SystemId" := Customer.SystemId;
@@ -97,7 +97,7 @@ codeunit 97514 "Shpfy Company Add Stub ori"
         CompanyLocation: Record "Shpfy Company Location";
     begin
         CompanyLocation.Init();
-        CompanyLocation.Id := Company.Id + 975141000;
+        CompanyLocation.Id := Company.Id + 975281000;
         CompanyLocation."Company SystemId" := Company.SystemId;
         CompanyLocation.Name := Customer.Name;
         CompanyLocation.Default := true;

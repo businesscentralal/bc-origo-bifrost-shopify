@@ -9,7 +9,7 @@ using System.TestLibraries.Utilities;
 /// and the customer MCP19-A. A2RemoveFixture deletes them and any company stored for them. MCP calls stay on the refusal
 /// path so they do not reach Shopify.
 /// </summary>
-codeunit 97515 "Shpfy Company Add MCP ori"
+codeunit 97529 "Shpfy Company Add MCP ori"
 {
     Subtype = Test;
     RequiredTestIsolation = Disabled;
