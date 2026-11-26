@@ -79,6 +79,14 @@ Integration note for PR #43: the temporary import app IDs 73732030/73732031 in c
 | Test Codeunit | 97507 | Shopify Issue 31 Tests ori |
 | Codeunit | 97508 | Shpfy Invoice Stub ori |
 | Test Codeunit | 97509 | Shpfy Invoice MCP ori |
+| Type | ID | Object |
+| --- | --- | --- |
+| Codeunit | 73732080 | Catalog Sync Impl ori |
+| Codeunit | 73732081 | Catalog Sync Run ori |
+| EnumExtension | 73732080 | Catalog Sync MsgType ori (Shopify.Catalog.Sync) |
+| Test Codeunit | 97533 | Shpfy Catalog Sync Test ori |
+| Codeunit | 97534 | Shpfy Catalog Sync Stub ori |
+| Test Codeunit | 97535 | Shpfy Catalog Fixture ori |
 | Codeunit | 73732044 | Company Sync Impl ori |
 | Codeunit | 73732045 | Company Sync Run ori |
 | EnumExtension | 73732044 | Company Sync MsgType ori (value Shopify.Company.Sync) |
@@ -93,6 +101,7 @@ Integration note for PR #43: the temporary import app IDs 73732030/73732031 in c
 | Codeunit | 97591 | Shopify Customer Add Stub ori (manual mock) |
 | Codeunit | 97592 | Shopify CustAdd MCP Stub ori (fixture-only mock) |
 | Test Codeunit | 97593 | Shopify CustAdd Fixture ori |
+Issue #26 objects: enum extension/value and implementation 73732090 `Order MarkPaid MsgType ori` / `Order MarkPaid Impl ori`; runner 73732091 `Order MarkPaid Run ori`; table 73732090 `Order Paid Marker ori`. Tests: 97530 `Shpfy MarkPaid Tests ori`, subscriber 97531 `Shpfy MarkPaid Stub ori`, MCP fixture 97532 `Shpfy MarkPaid Fixture ori`. Open PRs #67–#69 were checked before allocation.
 
 ## Microsoft source
 Wrapped Microsoft app: Shopify Connector (`ec255f57-31d0-4ca2-b751-f2fa7c745abb`, minimum 28.0.0.0). Source: https://github.com/microsoft/BCApps/tree/main/src/Apps/W1/Shopify
