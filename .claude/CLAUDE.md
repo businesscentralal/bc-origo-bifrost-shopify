@@ -61,6 +61,14 @@ Tests: 97400-97599
 
 Integration note for PR #43: the temporary import app IDs 73732030/73732031 in commit 79654f2 are reconciled to 73731960/73731961, following the published #54 mapping (70013400+n → 73731950+n). Import test codeunits remain 97472/97473 from that branch update; the 97400–97599 test range is unchanged.
 
+| Codeunit | 73732140 | Customer Add Impl ori |
+| Codeunit | 73732141 | Customer Add Run ori |
+| EnumExtension | 73732140 | Customer Add MsgType ori (value Shopify.Customer.Add) |
+| Test Codeunit | 97590 | Shopify Customer Add Tests ori |
+| Codeunit | 97591 | Shopify Customer Add Stub ori (manual mock) |
+| Codeunit | 97592 | Shopify CustAdd MCP Stub ori (fixture-only mock) |
+| Test Codeunit | 97593 | Shopify CustAdd Fixture ori |
+
 ## Microsoft source
 Wrapped Microsoft app: Shopify Connector (`ec255f57-31d0-4ca2-b751-f2fa7c745abb`, minimum 28.0.0.0). Source: https://github.com/microsoft/BCApps/tree/main/src/Apps/W1/Shopify
 Read it there before designing message types.
