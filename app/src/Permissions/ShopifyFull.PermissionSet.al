@@ -30,5 +30,7 @@ permissionset 73731952 "SHOPIFY Full ori"
                   codeunit "Order Import Run ori" = X,
                   codeunit "Suggest Payments Impl ori" = X,
                   codeunit "Suggest Payments Run ori" = X,
-                  codeunit "Suggest Payments UI Guard ori" = X;
+                  codeunit "Suggest Payments UI Guard ori" = X,
+                  codeunit "Product SyncImages Impl ori" = X,
+                  codeunit "Product SyncImages Run ori" = X;
 }

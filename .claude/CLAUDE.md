@@ -58,6 +58,12 @@ Tests: 97400-97599
 | Test Codeunit | 97453 | Shpfy Cust Fail Step ori |
 | Test Codeunit | 97470 | Shopify Order Create Tests ori |
 | Test Codeunit | 97471 | Shopify Order MCP Fixture ori |
+| Codeunit | 73732100 | Product SyncImages Impl ori |
+| EnumExtension | 73732100 | Product SyncImages MsgType ori (value Shopify.Product.SyncImages) |
+| Codeunit | 73732101 | Product SyncImages Run ori |
+| Test Codeunit | 97540 | Shpfy Prod SyncImg Test ori |
+| Test Codeunit | 97541 | Shpfy SyncImg Stub ori |
+| Test Codeunit | 97542 | Shpfy SyncImg MCP ori |
 
 New issue #34 objects (test IDs checked against main and all 14 other open PR heads on 26.11.2026): enum extension/value and implementation 73732063 `Suggest Payments MsgType ori` / `Suggest Payments Impl ori`; runner 73732064 `Suggest Payments Run ori`; manual journal-navigation subscriber 73732062 `Suggest Payments UI Guard ori`; tests 97560 `Shpfy Suggest Tests ori`, mock subscriber 97561 `Shpfy Suggest Stub ori`, MCP fixture 97562 `Shpfy Suggest Fixture ori`. App IDs moved during the main merge to avoid Metafield Sync; test IDs moved to 97560–97562 after review to avoid open PRs #75 and #79.
 
