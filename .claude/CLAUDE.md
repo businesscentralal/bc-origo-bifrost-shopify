@@ -52,6 +52,12 @@ Tests: 97400-97599
 | Test Codeunit | 97453 | Shpfy Cust Fail Step ori |
 | Test Codeunit | 97470 | Shopify Order Create Tests ori |
 | Test Codeunit | 97471 | Shopify Order MCP Fixture ori |
+| EnumExtension | 73732070 | Company Add MsgType ori (value Shopify.Company.Add) |
+| Codeunit | 73732070 | Company Add Impl ori |
+| Codeunit | 73732071 | Company Add Run ori |
+| Test Codeunit | 97513 | Shpfy Company Add Test ori |
+| Codeunit | 97514 | Shpfy Company Add Stub ori |
+| Test Codeunit | 97515 | Shpfy Company Add MCP ori |
 
 Integration note for PR #43: the temporary import app IDs 73732030/73732031 in commit 79654f2 are reconciled to 73731960/73731961, following the published #54 mapping (70013400+n → 73731950+n). Import test codeunits remain 97472/97473 from that branch update; the 97400–97599 test range is unchanged.
 

@@ -2,6 +2,8 @@
 
 ## [28.0.0.0] - Unreleased
 
+- Added message type `Shopify.Company.Add` (enum value 73732070, codeunits 73732070/73732071): creates Shopify companies, each with a main contact and a location, from selected Business Central customers (`customerNos`, 1 to 100, `expectedCount` equal to the array length) by running the connector report Shpfy Add Company to Shopify (30113) once per customer; a customer already linked in that shop is `alreadyLinked` and a customer the connector cannot export is `failed` with the connector's text without stopping the others; granted through `SHOPIFY Full ori` (#19). Tests in codeunit 97513 (stand-in 97514, MCP fixture 97515).
+
 - Prepared the first AppSource release with all nine Shopify operations, raised the Foundation minimum to 28.0.15.807 (release 28.0.15); context-sensitive help retains the Shopify app page URL because the app has no pages of its own (#62). No new objects. The release date is set when the release is approved.
 
 - `Shopify.Order.CreateSalesDocument` (enum value 73732020, codeunit 73732020) refuses with `PreconditionFailed` before any change when the order's shop has Return and Refund Process = Auto Create Credit Memo, and the success response adds `documentStatus` (Open, Released, Pending Approval, Pending Prepayment), the same name in every language. Existing request and response fields are unchanged (#59). Tests in codeunit 97470. No new objects.
