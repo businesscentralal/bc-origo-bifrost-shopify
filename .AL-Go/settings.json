@@ -55,7 +55,7 @@
     "tools/SharedAlpacaContainer.ps1",
     "tools/Test-SharedAlpacaContainer.ps1"
   ],
-  "repoVersion": "28.0",
+  "repoVersion": "28.0.1",
   "deliverToAppSource": {
     "mainAppFolder": "app",
     "branches": [
