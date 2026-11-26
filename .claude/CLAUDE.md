@@ -79,6 +79,13 @@ Integration note for PR #43: the temporary import app IDs 73732030/73732031 in c
 | Test Codeunit | 97507 | Shopify Issue 31 Tests ori |
 | Codeunit | 97508 | Shpfy Invoice Stub ori |
 | Test Codeunit | 97509 | Shpfy Invoice MCP ori |
+| Codeunit | 73732044 | Company Sync Impl ori |
+| Codeunit | 73732045 | Company Sync Run ori |
+| EnumExtension | 73732044 | Company Sync MsgType ori (value Shopify.Company.Sync) |
+| Test Codeunit | 97513 | Shopify Company Sync Tests ori |
+| Codeunit | 97514 | Shopify Company Stub ori (manual mock) |
+| Codeunit | 97515 | Shopify Company MCP Stub ori (fixture-only mock) |
+| Test Codeunit | 97516 | Shopify Company Fixture ori |
 | Codeunit | 73732140 | Customer Add Impl ori |
 | Codeunit | 73732141 | Customer Add Run ori |
 | EnumExtension | 73732140 | Customer Add MsgType ori (value Shopify.Customer.Add) |
