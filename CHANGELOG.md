@@ -1,9 +1,16 @@
 # Changelog
 
+## [29.0.0.0] - Unreleased
+
+### Changed
+
+- Raised the floor to Business Central 29.0: version, application and platform 29.0.0.0, runtime 18.0, Shopify Connector 29.0.0.0, and the CI artifacts on 29.0 (main and floor projects; Test Current on 29.1). Gunnar 26.11.2026.
+
 ## [28.0.0.0] - Unreleased
 
 ### Added
 - #28: Add `Shopify.Order.ForceSync` to re-import one existing order with `expectedCount = 1`, refuse the two connector paths that can write to Shopify, and roll back local changes including explicit connector commits and failed-run Shopify logs. New codeunits 73731951/73731952, enum extension/value 73731951, test codeunits 97524/97525/97526.
+- Added `Shopify.Company.Sync` (#18), enum/value and implementation 73732044, rollback runner 73732045: synchronizes companies through connector codeunit 30285, echoes the shop settings and local before/after counts. Only `SHOPIFY Full ori` grants execution. Explicit connector commits stay inside the rollback boundary. Mock dispatcher tests 97513, manual stub 97514, fixture-only MCP stub 97515 and seed/cleanup fixture 97516.
 - `Shopify.Customer.Add`: create and link 1–100 selected BC customers through connector report 30112, with expected-count confirmation, existing-link handling and isolated per-customer failures. English help and Icelandic translations included. Objects: enumextension/value and implementation 73732140, runner 73732141; tests/stand-ins/fixture 97590–97593.
 - `Shopify.Metafield.Sync` (#35): loads definitions or sends changed values for one product, variant, customer or company using public connector codeunit 30418. Full permission only; validates shop, owner and expected local row count. Adds enum extension/value and implementation 73732060, runner 73732061, and mock tests/fixtures 97510–97512. Local counts do not imply sent counts; legacy types and empty values follow connector filtering.
 - Added `Shopify.Payment.SyncDisputes` (#33): imports new disputes and refreshes open disputes for one enabled shop, returns shop-scoped before/after counts, and rolls back failed imports including explicit connector commits. Unchanged counts can also mean the shop has no Shopify Payments account. New enum/value and implementation 73732046, runner 73732047, tests 97517, mock 97518 and MCP fixture 97519.
