@@ -21,8 +21,8 @@ codeunit 97512 "Shpfy Metafield MCP ori"
     [Test]
     procedure A2RemoveFixture()
     var
-        Assert: Codeunit "Library Assert";
         Metafield: Record "Shpfy Metafield";
+        Assert: Codeunit "Library Assert";
     begin
         Cleanup();
         Metafield.SetRange("Owner Id", 8935000035L);
