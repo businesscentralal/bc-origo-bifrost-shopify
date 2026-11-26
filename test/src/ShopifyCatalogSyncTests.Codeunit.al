@@ -5,7 +5,7 @@ using Origo.Bifrost;
 using System.TestLibraries.Utilities;
 
 /// <summary>Issue #21: public dispatcher coverage with a mock connector; no live Shopify calls.</summary>
-codeunit 97530 "Shpfy Catalog Sync Test ori"
+codeunit 97533 "Shpfy Catalog Sync Test ori"
 {
     Subtype = Test;
     TestPermissions = Disabled;

@@ -4,7 +4,7 @@ using Microsoft.Integration.Shopify;
 using System.TestLibraries.Utilities;
 
 /// <summary>Seeds and removes reserved CRONUS records for mock-only catalog tests and MCP checks.</summary>
-codeunit 97532 "Shpfy Catalog Fixture ori"
+codeunit 97535 "Shpfy Catalog Fixture ori"
 {
     Subtype = Test;
     TestPermissions = Disabled;

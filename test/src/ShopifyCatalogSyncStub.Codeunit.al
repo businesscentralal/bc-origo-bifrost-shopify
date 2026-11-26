@@ -4,7 +4,7 @@ using Microsoft.Integration.Shopify;
 using Origo.Bifrost.Shopify;
 
 /// <summary>Replaces the connector only for reserved fixture shops. No provider call or credential is used.</summary>
-codeunit 97531 "Shpfy Catalog Sync Stub ori"
+codeunit 97534 "Shpfy Catalog Sync Stub ori"
 {
     Access = Internal;
 
