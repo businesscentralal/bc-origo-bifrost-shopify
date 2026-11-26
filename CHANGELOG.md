@@ -1,10 +1,12 @@
 # Changelog
 
-## [Unreleased]
+## [28.0.0.0] - Unreleased
 
+### Added
 - Add Shopify.Invoice.Sync to export selected posted invoices through connector report 30119 with batch preflight, per-invoice outcomes and mock-only tests. New objects: codeunits 73731955/73731956, enum extension 73731955/value 73731956; test codeunits 97507/97509 and stand-in 97508.
 
-## [28.0.0.0] - Unreleased
+- `Shopify.Metafield.Sync` (#35): loads definitions or sends changed values for one product, variant, customer or company using public connector codeunit 30418. Full permission only; validates shop, owner and expected local row count. Adds enum extension/value and implementation 73732060, runner 73732061, and mock tests/fixtures 97510–97512. Local counts do not imply sent counts; legacy types and empty values follow connector filtering.
+
 
 - Prepared the first AppSource release with all nine Shopify operations, raised the Foundation minimum to 28.0.15.807 (release 28.0.15); context-sensitive help retains the Shopify app page URL because the app has no pages of its own (#62). No new objects. The release date is set when the release is approved.
 
@@ -28,4 +30,5 @@
 - Added message type `Shopify.Fulfillment.Sync` (enum value 73731980, codeunits 73731980/73731981): sends one posted sales shipment of a Shopify order to Shopify as a fulfillment by running the connector report Sync Shipments To Shopify (30109); granted through `SHOPIFY Full ori` (#29). Tests in codeunit 97430; the live Shopify success path is not covered by container tests.
 - Added message type `Shopify.Order.CreateSalesDocument` (enum value 73732020, codeunit 73732020): creates the sales order or invoice of an imported Shopify order by running Shopify's report Shpfy Create Sales Orders (30103) for that one order; granted through `SHOPIFY Full ori` (#24). Tests in codeunits 97470 and 97471.
 - Added message type `Shopify.Product.Sync` (enum value 73732010, codeunit 73732010): runs the connector's own product sync for one shop (report Shpfy Sync Products, not the price-only mode) to import products from Shopify and export changed items as the shop is set up; granted through `SHOPIFY Full ori` (#6). Tests in codeunit 97460.
+- Added message type `Shopify.Product.AddItems` (enum value 73732040, codeunits 73732040/73732041): adds a selection of Business Central items (`itemNos`, 1 to 100) to one enabled Shopify shop as products by running the connector report Shpfy Add Item to Shopify (30106), the code behind the action Add Items on Shopify Products, with Sync Images and Sync Inventory off; per item the response says Added, AlreadyInShop or NotAdded (skipped by the connector); granted through `SHOPIFY Full ori` (#7). Tests in codeunit 97490 (stand-in 97491 for the live Shopify API, MCP fixture 97492).
 - Added message type `Shopify.Inventory.Sync` (enum value 73732030, codeunits 73732030/73732031): sends the stock levels per location of one enabled shop to Shopify by running the connector report Shpfy Sync Stock to Shopify (30102); options `skipImport` and `variantIdFilter`; granted through `SHOPIFY Full ori` (#14). Tests in codeunit 97480.

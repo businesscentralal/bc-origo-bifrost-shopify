@@ -16,6 +16,12 @@ Tests: 97400-97599
 | Type | ID | Object |
 | --- | --- | --- |
 | Codeunit | 73731950 | Shopify Registration ori |
+| EnumExtension | 73732060 | Metafield Sync MsgType ori (value Shopify.Metafield.Sync) |
+| Codeunit | 73732060 | Metafield Sync Impl ori |
+| Codeunit | 73732061 | Metafield Sync Run ori |
+| Test Codeunit | 97510 | Shopify Issue 35 Tests ori |
+| Codeunit | 97511 | Shpfy Metafield Stub ori |
+| Test Codeunit | 97512 | Shpfy Metafield MCP ori |
 | PermissionSet | 73731950 | SHOPIFY Base ori |
 | PermissionSet | 73731951 | SHOPIFY Read ori |
 | PermissionSet | 73731952 | SHOPIFY Full ori |
