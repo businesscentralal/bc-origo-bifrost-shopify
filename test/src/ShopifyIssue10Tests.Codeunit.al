@@ -270,19 +270,14 @@ codeunit 97500 "Shopify Issue 10 Tests ori"
         Shop: Record "Shpfy Shop";
         English: JsonObject;
         Icelandic: JsonObject;
-        PreviousLanguage: Integer;
     begin
         Fixture.Seed();
         Shop.Get('BIFT10');
         Shop.Enabled := false;
         Shop.Modify();
         Commit();
-        PreviousLanguage := GlobalLanguage();
-        GlobalLanguage(1033);
-        English := Dispatch(ValidRequest());
-        GlobalLanguage(1039);
-        Icelandic := Dispatch(ValidRequest());
-        GlobalLanguage(PreviousLanguage);
+        English := DispatchLcid(ValidRequest(), 1033);
+        Icelandic := DispatchLcid(ValidRequest(), 1039);
         Assert.AreEqual('PreconditionFailed', ReadText(English, 'code'), 'English refusal.');
         Assert.AreEqual('PreconditionFailed', ReadText(Icelandic, 'code'), 'Icelandic refusal.');
         Assert.AreNotEqual(ReadText(English, 'error'), ReadText(Icelandic, 'error'), 'Translated message.');
@@ -379,6 +374,25 @@ codeunit 97500 "Shopify Issue 10 Tests ori"
     begin
         RequestContent.AddText(RequestText);
         Dispatcher.Execute("Message Type ori"::"Shopify.Product.AddItemsAsVariants", Version, '', '', 'application/json', RequestContent, ResponseContent, ContentType);
+        ResponseContent.GetSubText(ResponseText, 1);
+        Response.ReadFrom(ResponseText);
+    end;
+
+    local procedure DispatchLcid(RequestText: Text; LanguageId: Integer) Response: JsonObject
+    var
+        Dispatcher: Codeunit "Dispatcher ori";
+        RequestContent: BigText;
+        ResponseContent: BigText;
+        ContentType: Text[100];
+        Version: Enum "Message Version ori";
+        EmptyTaskId: Guid;
+        MessageId: Guid;
+        ResponseTime: Duration;
+        ResponseText: Text;
+    begin
+        // Execute uses Foundation's default language. This public entry point takes an explicit LCID.
+        RequestContent.AddText(RequestText);
+        Dispatcher.EnqueueAndProcess("Message Type ori"::"Shopify.Product.AddItemsAsVariants", Version, '', '', 'application/json', RequestContent, EmptyTaskId, LanguageId, MessageId, ResponseContent, ContentType, ResponseTime);
         ResponseContent.GetSubText(ResponseText, 1);
         Response.ReadFrom(ResponseText);
     end;
