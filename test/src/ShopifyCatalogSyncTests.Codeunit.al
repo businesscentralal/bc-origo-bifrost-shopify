@@ -66,7 +66,7 @@ codeunit 97530 "Shpfy Catalog Sync Test ori"
     procedure AC03_UnknownKey()
     begin
         Fixture.Seed();
-        AssertRefusal('{"shopCode":"BIFT21","bogus":true}', 'InvalidParameterFormat');
+        AssertRefusal('{"shopCode":"BIFT21","bogus":true}', 'UnknownParameter');
         Fixture.Remove();
     end;
 
@@ -170,6 +170,7 @@ codeunit 97530 "Shpfy Catalog Sync Test ori"
         Response := ExecuteRaw('{"shopCode":"BIFT21&<|()"}');
         Assert.AreEqual('Success', ReadText(Response, 'status'), 'Literal shop success.');
         Assert.AreEqual('BIFT21&<|()', ReadText(Response, 'shopCode'), 'Exact shop selected.');
+        Assert.AreEqual('1', ReadText(Response, 'catalogsAfter'), 'Catalog belongs to the selected shop.');
         Fixture.Remove();
     end;
 
@@ -183,6 +184,7 @@ codeunit 97530 "Shpfy Catalog Sync Test ori"
         Response := ExecuteRaw('{"shopCode":"BIFT21-1234567890123"}');
         Assert.AreEqual('Success', ReadText(Response, 'status'), 'Literal shop success.');
         Assert.AreEqual('BIFT21-1234567890123', ReadText(Response, 'shopCode'), 'Exact shop selected.');
+        Assert.AreEqual('1', ReadText(Response, 'catalogsAfter'), 'Catalog belongs to the selected shop.');
         Fixture.Remove();
     end;
 

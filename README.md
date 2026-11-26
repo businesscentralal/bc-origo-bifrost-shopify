@@ -5,13 +5,21 @@
 **App ID:** `61a67425-c1e2-45e1-85b5-9e01488f6c1d` — **Test app ID:** `435aa982-b3bd-4074-8b2a-f30781c17504`
 **Object ID range:** 73731950–73732149 (tests 97400–97599) — **Namespace:** `Origo.Bifrost.Shopify`
 
-Bifrost Shopify will make Microsoft's **Shopify Connector** app callable from outside Business Central through
+Bifrost Shopify makes Microsoft's **Shopify Connector** app callable from outside Business Central through
 Bifröst message types, so an agent can operate it end to end. It is built on the same basis as
 [Bifrost Subscription Billing](https://github.com/businesscentralal/bc-origo-bifrost-subscription-billing).
 
 **Microsoft source:** <https://github.com/microsoft/BCApps/tree/main/src/Apps/W1/Shopify>
 
-**Status:** planning, no message types yet.
+**Status:** message types wrap the Microsoft Shopify Connector.
+
+`Shopify.Catalog.Sync` imports company and market catalogs for one enabled shop (`shopCode`).
+It returns `status`, `shopCode`, `catalogsBefore` and `catalogsAfter`. Run `Shopify.Company.Sync`
+first to include company catalogs; market catalogs are imported without companies. Repeated calls
+update existing rows. Catalogs absent from Shopify remain locally, and market relations are rebuilt
+for returned market catalogs. The operation writes only to Business Central and requires
+`SHOPIFY Full ori` plus Microsoft Shopify permissions. A failed run rolls back its local changes.
+Use `Help.Implementation.Get` for the full contract, refusals and examples.
 
 ---
 

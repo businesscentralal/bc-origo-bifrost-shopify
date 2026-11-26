@@ -17,8 +17,6 @@ codeunit 97531 "Shpfy Catalog Sync Stub ori"
         EmptyGuid: Guid;
         FailureLbl: Label 'Mock catalog connector failure after local writes.', Locked = true;
     begin
-        if not Shop.FindFirst() then
-            exit;
         if not (Shop.Code in ['BIFT21', 'BIFT21FAIL', 'BIFT21COMMIT', 'BIFT21&<|()', 'BIFT21-1234567890123']) then
             exit;
         Handled := true;

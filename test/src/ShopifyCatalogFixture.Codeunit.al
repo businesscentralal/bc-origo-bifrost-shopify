@@ -31,6 +31,13 @@ codeunit 97532 "Shpfy Catalog Fixture ori"
         Assert.IsTrue(Catalog.IsEmpty(), 'Catalogs removed.');
     end;
 
+    /// <summary>Adds a company for the MCP company-catalog scenario.</summary>
+    [Test]
+    procedure A3AddCompany()
+    begin
+        AddCompany();
+    end;
+
     /// <summary>Seeds four isolated shop scenarios, without any connector credentials.</summary>
     procedure Seed()
     var

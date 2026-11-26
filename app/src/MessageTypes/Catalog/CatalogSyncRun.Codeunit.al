@@ -30,6 +30,7 @@ codeunit 73732081 "Catalog Sync Run ori"
         ParametersLbl: Label '<?xml version="1.0" standalone="yes"?><ReportParameters name="Shpfy Sync Catalogs" id="30115"><Options/><DataItems><DataItem name="Shop">%1</DataItem></DataItems></ReportParameters>', Locked = true;
         ShopView: Text;
     begin
+        Shop.Get(ShopCode);
         Shop.SetRange(Code, ShopCode);
         OnBeforeRunConnector(Shop, Handled);
         if Handled then

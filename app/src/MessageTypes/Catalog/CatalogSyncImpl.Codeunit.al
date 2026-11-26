@@ -21,8 +21,9 @@ codeunit 73732080 "Catalog Sync Impl ori" implements "Msg Interface ori", "Msg D
         Shop: Record "Shpfy Shop";
         Catalog: Record "Shpfy Catalog";
         Relation: Record "Shpfy Market Catalog Relation";
+        Company: Record "Shpfy Company";
     begin
-        exit(Shop.ReadPermission() and Catalog.ReadPermission() and Catalog.WritePermission() and Relation.WritePermission());
+        exit(Shop.ReadPermission() and Catalog.ReadPermission() and Catalog.WritePermission() and Relation.ReadPermission() and Relation.WritePermission() and Company.ReadPermission());
     end;
 
     /// <summary>Identifies the table used by the message filter contract.</summary>
@@ -114,7 +115,8 @@ codeunit 73732080 "Catalog Sync Impl ori" implements "Msg Interface ori", "Msg D
         ContractMgt: Codeunit "Msg Contract Mgt ori";
     begin
         Errors.Add(ContractMgt.ErrorEntry("Bifrost Error Code ori"::MissingParameter, 'shopCode is required.', 'No shop code supplied.', 'Send data.shopCode.'));
-        Errors.Add(ContractMgt.ErrorEntry("Bifrost Error Code ori"::InvalidParameterFormat, 'Invalid request parameter.', 'Unknown key or malformed shop code.', 'Send only shopCode as a nonempty string of at most 20 characters.'));
+        Errors.Add(ContractMgt.ErrorEntry("Bifrost Error Code ori"::InvalidParameterFormat, 'Invalid request parameter.', 'Malformed shop code.', 'Send only shopCode as a nonempty string of at most 20 characters.'));
+        Errors.Add(ContractMgt.ErrorEntry("Bifrost Error Code ori"::UnknownParameter, 'Unknown request parameter.', 'Foundation refuses unknown data keys before the implementation runs.', 'Send only shopCode.'));
         Errors.Add(ContractMgt.ErrorEntry("Bifrost Error Code ori"::RecordNotFound, 'Shop not found.', 'The shop does not exist.', 'Read table 30102 to find a shop.'));
         Errors.Add(ContractMgt.ErrorEntry("Bifrost Error Code ori"::PreconditionFailed, 'Shop is disabled.', 'The shop is not enabled.', 'Enable the shop before retrying.'));
         Errors.Add(ContractMgt.ErrorEntry("Bifrost Error Code ori"::PermissionDenied, 'Permission denied.', 'The caller cannot import catalogs.', 'Ask for SHOPIFY Full ori and Microsoft Shopify write permissions.'));
@@ -200,7 +202,7 @@ codeunit 73732080 "Catalog Sync Impl ori" implements "Msg Interface ori", "Msg D
     /// <returns>The direction of the operation.</returns>
     procedure GetMessageDirection(): Enum "Msg Direction ori"
     begin
-        exit(Enum::"Msg Direction ori"::Outbound);
+        exit(Enum::"Msg Direction ori"::Inbound);
     end;
 
     /// <summary>Validates the request and imports catalogs for one shop.</summary>
