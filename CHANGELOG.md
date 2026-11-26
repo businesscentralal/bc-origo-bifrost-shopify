@@ -4,6 +4,7 @@
 
 ### Added
 - Added message type `Shopify.Payment.Sync` (enum value 73732110, codeunits 73732110/73732111): imports Shopify Payments payouts and payment transactions for one enabled shop by running report Shpfy Sync Payments (30105); granted through `SHOPIFY Full ori` (#32). A connector failure rolls back payout, payment transaction and Shopify log rows from that run, including commits the connector made between its steps. Unchanged counts can also mean the shop has no Shopify Payments account. Tests in codeunits 97550–97552.
+- `Shopify.Customer.Add`: create and link 1–100 selected BC customers through connector report 30112, with expected-count confirmation, existing-link handling and isolated per-customer failures. English help and Icelandic translations included. Objects: enumextension/value and implementation 73732140, runner 73732141; tests/stand-ins/fixture 97590–97593.
 - `Shopify.Metafield.Sync` (#35): loads definitions or sends changed values for one product, variant, customer or company using public connector codeunit 30418. Full permission only; validates shop, owner and expected local row count. Adds enum extension/value and implementation 73732060, runner 73732061, and mock tests/fixtures 97510–97512. Local counts do not imply sent counts; legacy types and empty values follow connector filtering.
 
 
