@@ -1,5 +1,10 @@
 # Changelog
 
+## Unreleased
+
+- #28: Add `Shopify.Order.ForceSync` to re-import one existing order with `expectedCount = 1`, refuse the two connector paths that can write to Shopify, and roll back local changes including explicit connector commits and failed-run Shopify logs. New codeunits 73731951/73731952, enum extension/value 73731951, test codeunits 97524/97525/97526.
+
+
 ## [28.0.0.0] - Unreleased
 
 ### Added

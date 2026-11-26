@@ -66,3 +66,5 @@ site repository and is published at <https://docs.bifrost.origo.is>.
 | `test/` | Test app (`Bifrost Shopify - Tests`) |
 | `tools/` | Pipeline guard scripts |
 | `.AL-Go/`, `.github/`, `.alpaca/` | AL-Go for GitHub / COSMO Alpaca pipeline configuration |
+
+| `Shopify.Order.ForceSync` | Re-imports one existing order with expectedCount = 1; overwrites local order data, refuses Shopify write paths, and rolls back failed runs. |

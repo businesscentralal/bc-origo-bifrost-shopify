@@ -61,6 +61,11 @@ Tests: 97400-97599
 
 Integration note for PR #43: the temporary import app IDs 73732030/73732031 in commit 79654f2 are reconciled to 73731960/73731961, following the published #54 mapping (70013400+n → 73731950+n). Import test codeunits remain 97472/97473 from that branch update; the 97400–97599 test range is unchanged.
 
+Issue #28 (checked against open PRs on 26 November 2026):
+- Codeunit 73731951 `Order ForceSync Impl ori`; codeunit 73731952 `Order ForceSync Run ori`.
+- Enum extension/value 73731951 `Order ForceSync MsgType ori` / `Shopify.Order.ForceSync`.
+- Test codeunits 97524 `Shopify ForceSync Tests ori`, 97525 `Shopify ForceSync Stub ori`, 97526 `Shopify ForceSync Fixture ori`.
+
 ## Microsoft source
 Wrapped Microsoft app: Shopify Connector (`ec255f57-31d0-4ca2-b751-f2fa7c745abb`, minimum 28.0.0.0). Source: https://github.com/microsoft/BCApps/tree/main/src/Apps/W1/Shopify
 Read it there before designing message types.
