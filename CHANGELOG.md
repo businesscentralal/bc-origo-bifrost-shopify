@@ -2,7 +2,10 @@
 
 ## [28.0.0.0] - Unreleased
 
+### Added
 - Added `Shopify.Catalog.Sync` to import company and market catalogs for one enabled shop through report 30115, with typed refusals and rollback on failure. Company catalogs require imported companies; market catalogs work without them. Catalogs absent from Shopify remain locally. Objects: enum/implementation 73732080, runner 73732081; mock-only tests 97530–97532 (#21).
+- `Shopify.Metafield.Sync` (#35): loads definitions or sends changed values for one product, variant, customer or company using public connector codeunit 30418. Full permission only; validates shop, owner and expected local row count. Adds enum extension/value and implementation 73732060, runner 73732061, and mock tests/fixtures 97510–97512. Local counts do not imply sent counts; legacy types and empty values follow connector filtering.
+
 
 - Prepared the first AppSource release with all nine Shopify operations, raised the Foundation minimum to 28.0.15.807 (release 28.0.15); context-sensitive help retains the Shopify app page URL because the app has no pages of its own (#62). No new objects. The release date is set when the release is approved.
 

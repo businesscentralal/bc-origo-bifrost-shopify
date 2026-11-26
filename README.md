@@ -11,7 +11,7 @@ Bifröst message types, so an agent can operate it end to end. It is built on th
 
 **Microsoft source:** <https://github.com/microsoft/BCApps/tree/main/src/Apps/W1/Shopify>
 
-**Status:** message types wrap the Microsoft Shopify Connector.
+**Status:** Shopify Connector operations are registered as Bifröst message types. See the in-app message contracts for supported requests, permissions and effects.
 
 `Shopify.Catalog.Sync` imports company and market catalogs for one enabled shop (`shopCode`).
 It returns `status`, `shopCode`, `catalogsBefore` and `catalogsAfter`. Run `Shopify.Company.Sync`
@@ -22,6 +22,18 @@ for returned market catalogs. The operation writes only to Business Central and 
 Use `Help.Implementation.Get` for the full contract, refusals and examples.
 
 ---
+
+## Shopify.Metafield.Sync
+
+```json
+{"type":"Shopify.Metafield.Sync","data":{"shopCode":"WEBSHOP","direction":"SendValues","ownerType":"Product","ownerId":123,"expectedCount":2}}
+```
+
+Use `GetDefinitions` to load one owner's metafield definitions into Business Central, or `SendValues` to send changed values to Shopify. Required keys are `shopCode`, `direction`, `ownerType` (`Product`, `Variant`, `Customer` or `Company`) and a positive Shopify `ownerId`. `SendValues` also requires `expectedCount` to match all local metafield rows for that owner. Both directions are idempotent for unchanged data.
+
+The shop must be enabled and the owner must belong to that shop. Callers need `SHOPIFY Full ori` and Microsoft Shopify permissions. Edit values separately with `Data.Records.Set`. The response includes `status`, the four target keys, `metafieldsBefore` and `metafieldsAfter`. Counts describe local rows, including unsent rows. Connector 28 excludes legacy `string`/`integer` types and empty values from bulk sending; Money values must use the shop currency. Local runner writes roll back on refusal; completed Shopify requests cannot be rolled back.
+
+The public `Shpfy Metafields` API (30418) is wrapped by implementation/enum value 73732060 and runner 73732061. Mock dispatcher tests 97510, stand-in 97511 and fixture 97512 cover both directions, all owners, refusals and rollback. Unknown keys are rejected by Foundation as `UnknownParameter` before dispatch. Runtime help contains the full English Overview, Notes, Examples and error contract; captions and refusals support English and Icelandic.
 
 ## Object ranges
 
