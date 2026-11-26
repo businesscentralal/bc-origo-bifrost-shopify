@@ -156,7 +156,6 @@ codeunit 73732090 "Order MarkPaid Impl ori" implements "Msg Interface ori", "Msg
         ContractMgt: Codeunit "Msg Contract Mgt ori";
         RefreshLbl: Label 'Refresh the local imported order after marking it paid.', Comment = 'is-IS=Uppfærðu staðbundnu innfluttu pöntunina eftir að hún er merkt greidd.';
     begin
-        Related.Add(ContractMgt.RelatedEntry('Shopify.Order.ForceSync', RefreshLbl));
         Related.Add(ContractMgt.RelatedEntry('Shopify.Order.Import', RefreshLbl));
         exit(true);
     end;

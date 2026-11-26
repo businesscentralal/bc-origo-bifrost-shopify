@@ -275,6 +275,37 @@ codeunit 97530 "Shpfy MarkPaid Tests ori"
         Fixture.A2RemoveFixture();
     end;
 
+    /// <summary>AC01/05: the public help path validates all contract chapters and related types.</summary>
+    [Test]
+    procedure AC01_HelpContractValid()
+    var
+        Dispatcher: Codeunit "Dispatcher ori";
+        RequestContent: BigText;
+        ResponseContent: BigText;
+        ContentType: Text[100];
+        MessageVersion: Enum "Message Version ori";
+        ResponseText: Text;
+        Response: JsonObject;
+        Row: JsonObject;
+        Effect: JsonObject;
+        Token: JsonToken;
+    begin
+        RequestContent.AddText('{"detail":"full"}');
+        Dispatcher.Execute("Message Type ori"::"Help.Implementation.Get", MessageVersion, 'Shopify.Order.MarkAsPaid', '', 'application/json', RequestContent, ResponseContent, ContentType);
+        ResponseContent.GetSubText(ResponseText, 1);
+        Response.ReadFrom(ResponseText);
+        Assert.AreEqual('Success', ReadText(Response, 'status'), 'The full contract is valid.');
+        Response.Get('result', Token);
+        Token.AsArray().Get(0, Token);
+        Row := Token.AsObject();
+        Assert.AreEqual('Success', ReadText(Row, 'status'), 'The requested type resolves.');
+        Row.Get('effect', Token);
+        Effect := Token.AsObject();
+        Assert.AreEqual('write', ReadText(Effect, 'effect'), 'Discovery declares a write.');
+        Assert.AreEqual('false', ReadText(Effect, 'idempotent'), 'A repeat is refused.');
+        Assert.AreEqual('SHOPIFY Full ori', ReadText(Effect, 'permissionSet'), 'Full permission required.');
+    end;
+
     local procedure AssertRefusal(Request: Text; ExpectedCode: Text)
     var
         Response: JsonObject;
