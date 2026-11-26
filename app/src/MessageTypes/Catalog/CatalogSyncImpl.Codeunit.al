@@ -156,7 +156,6 @@ codeunit 73732080 "Catalog Sync Impl ori" implements "Msg Interface ori", "Msg D
     var
         ContractMgt: Codeunit "Msg Contract Mgt ori";
     begin
-        Related.Add(ContractMgt.RelatedEntry('Shopify.Company.Sync', 'Import companies before importing their catalogs.'));
         Related.Add(ContractMgt.RelatedEntry('Data.Records.Get', 'Read shops (30102), catalogs (30152) and market catalog relations (30400).'));
         exit(true);
     end;

@@ -267,6 +267,32 @@ codeunit 97530 "Shpfy Catalog Sync Test ori"
         Fixture.Remove();
     end;
 
+    /// <summary>Discovery and the write contract are available through the public dispatcher.</summary>
+    [Test]
+    procedure AC01_ValidWriteContract()
+    var
+        Dispatcher: Codeunit "Dispatcher ori";
+        RequestContent: BigText;
+        ResponseContent: BigText;
+        ContentType: Text[100];
+        Version: Enum "Message Version ori";
+        Response: JsonObject;
+        Effect: JsonObject;
+        ResponseText: Text;
+        Token: JsonToken;
+    begin
+        RequestContent.AddText('{"chapters":["effect"]}');
+        Dispatcher.Execute("Message Type ori"::"Help.Implementation.Get", Version, 'Shopify.Catalog.Sync', '', 'application/json', RequestContent, ResponseContent, ContentType);
+        ResponseContent.GetSubText(ResponseText, 1);
+        Response.ReadFrom(ResponseText);
+        Assert.AreEqual('Success', ReadText(Response, 'status'), 'Valid contract: ' + ResponseText);
+        Response.Get('chapters', Token);
+        Token.AsObject().Get('effect', Token);
+        Effect := Token.AsObject();
+        Assert.AreEqual('write', ReadText(Effect, 'effect'), 'Write classification.');
+        Assert.AreEqual('SHOPIFY Full ori', ReadText(Effect, 'permissionSet'), 'Full role.');
+    end;
+
     local procedure AssertRefusal(Request: Text; Code: Text)
     var
         Catalog: Record "Shpfy Catalog";
