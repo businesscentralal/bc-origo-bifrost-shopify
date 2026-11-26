@@ -2,6 +2,8 @@
 
 ## [28.0.0.0] - Unreleased
 
+### Added
+- `Shopify.Metafield.Sync` (#35): loads definitions or sends changed values for one product, variant, customer or company using public connector codeunit 30418. Full permission only; validates shop, owner and expected local row count. Adds enum extension/value and implementation 73732060, runner 73732061, and mock tests/fixtures 97510–97512. Local counts do not imply sent counts; legacy types and empty values follow connector filtering.
 - Added `Shopify.Payment.SyncDisputes` (#33): imports new disputes and refreshes open disputes for one enabled shop, returns shop-scoped before/after counts, and rolls back failed imports including explicit connector commits. Unchanged counts can also mean the shop has no Shopify Payments account. New enum/value and implementation 73732046, runner 73732047, tests 97517, mock 97518 and MCP fixture 97519.
 
 - Prepared the first AppSource release with all nine Shopify operations, raised the Foundation minimum to 28.0.15.807 (release 28.0.15); context-sensitive help retains the Shopify app page URL because the app has no pages of its own (#62). No new objects. The release date is set when the release is approved.
