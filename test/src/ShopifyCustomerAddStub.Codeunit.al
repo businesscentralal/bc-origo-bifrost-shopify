@@ -32,8 +32,13 @@ codeunit 97591 "Shopify Customer Add Stub ori"
     end;
 
     [EventSubscriber(ObjectType::Codeunit, Codeunit::"Customer Add Run ori", 'OnBeforeRunConnector', '', false, false)]
-    local procedure RunConnector(Shop: Record "Shpfy Shop"; Customer: Record Customer; var Handled: Boolean)
+    local procedure RunConnector(Shop: Record "Shpfy Shop"; CustomerView: Text; var Handled: Boolean)
+    var
+        Customer: Record Customer;
     begin
+        Customer.SetView(CustomerView);
+        if not Customer.FindFirst() then
+            Error('XFixture customer selection is empty');
         if Shop.Code <> 'XCA17' then
             exit;
         Handled := true;
@@ -46,7 +51,7 @@ codeunit 97591 "Shopify Customer Add Stub ori"
     /// <param name="Customer">Exactly filtered fixture customer.</param>
     /// <param name="FailNo">Customer whose link must roll back despite an explicit commit.</param>
     /// <param name="SkipNo">Customer whose connector skipped-record reason must be surfaced.</param>
-    procedure ExportCustomer(Shop: Record "Shpfy Shop"; Customer: Record Customer; FailNo: Code[20]; SkipNo: Code[20])
+    procedure ExportCustomer(Shop: Record "Shpfy Shop"; var Customer: Record Customer; FailNo: Code[20]; SkipNo: Code[20])
     var
         Link: Record "Shpfy Customer";
         Assert: Codeunit "Library Assert";

@@ -391,6 +391,7 @@ codeunit 73732140 "Customer Add Impl ori" implements "Msg Interface ori", "Msg D
     var
         ShopifyCustomer: Record "Shpfy Customer";
     begin
+        ShopifyCustomer.ReadIsolation := IsolationLevel::ReadCommitted;
         ShopifyCustomer.SetLoadFields(Id);
         ShopifyCustomer.SetRange("Shop Id", ShopId);
         ShopifyCustomer.SetRange("Customer SystemId", CustomerSystemId);

@@ -30,7 +30,7 @@ codeunit 97590 "Shopify Customer Add Tests ori"
         Initialize();
         BindSubscription(Stub);
         Response := Execute(ValidRequest());
-        Assert.AreEqual('1', ReadText(Response, 'created'), 'One new link.');
+        Assert.AreEqual('1', ReadText(Response, 'created'), FirstFailure(Response));
         Response.Get('results', Results);
         Results.AsArray().Get(0, Row);
         Assert.AreEqual('created', ReadText(Row.AsObject(), 'outcome'), 'Created result.');
@@ -61,7 +61,7 @@ codeunit 97590 "Shopify Customer Add Tests ori"
         Response := Execute(RequestFor('["XCA17-1","XCA17-2","XCA17-3"]', '3'));
         UnbindSubscription(Stub);
         Assert.AreEqual('Success', ReadText(Response, 'status'), ReadText(Response, 'error'));
-        Assert.AreEqual('2', ReadText(Response, 'created'), 'Other customers continue.');
+        Assert.AreEqual('2', ReadText(Response, 'created'), FirstFailure(Response));
         Assert.AreEqual('1', ReadText(Response, 'failed'), 'One failure.');
         Response.Get('results', Results);
         Results.AsArray().Get(1, Row);
@@ -124,7 +124,7 @@ codeunit 97590 "Shopify Customer Add Tests ori"
         BindSubscription(Stub);
         Response := Execute(Request);
         UnbindSubscription(Stub);
-        Assert.AreEqual('100', ReadText(Response, 'created'), ReadText(Response, 'error'));
+        Assert.AreEqual('100', ReadText(Response, 'created'), FirstFailure(Response));
         Assert.AreEqual(100, Stub.CallCount(), 'One report per customer.');
         Cleanup();
     end;
@@ -153,7 +153,7 @@ codeunit 97590 "Shopify Customer Add Tests ori"
         BindSubscription(Stub);
         Response := Execute(ValidRequest());
         UnbindSubscription(Stub);
-        Assert.AreEqual('1', ReadText(Response, 'created'), 'Shop-scoped matching.');
+        Assert.AreEqual('1', ReadText(Response, 'created'), FirstFailure(Response));
         Assert.AreEqual('0', ReadText(Response, 'alreadyLinked'), 'Other shop excluded.');
         Cleanup();
     end;
@@ -457,7 +457,7 @@ codeunit 97590 "Shopify Customer Add Tests ori"
         Response.Get('results', Results);
         Results.AsArray().Get(0, Row);
         Assert.IsFalse(ReadText(Row.AsObject(), 'error').Contains('XStale'), 'Old log excluded.');
-        Assert.IsTrue(ReadText(Row.AsObject(), 'error') <> '', 'Actionable fallback.');
+        Assert.IsTrue(ReadText(Row.AsObject(), 'error').Contains('Shopify'), 'Actionable fallback.');
         Cleanup();
     end;
 
@@ -523,6 +523,18 @@ codeunit 97590 "Shopify Customer Add Tests ori"
         Dispatcher.Execute("Message Type ori"::"Shopify.Customer.Add", Version, '', '', 'application/json', RequestContent, ResponseContent, ContentType);
         ResponseContent.GetSubText(ResponseText, 1);
         Response.ReadFrom(ResponseText);
+    end;
+
+    local procedure FirstFailure(Response: JsonObject): Text
+    var
+        Token: JsonToken;
+        Result: JsonToken;
+    begin
+        if Response.Get('results', Token) then
+            foreach Result in Token.AsArray() do
+                if ReadText(Result.AsObject(), 'outcome') = 'failed' then
+                    exit(ReadText(Result.AsObject(), 'error'));
+        exit(ReadText(Response, 'error'));
     end;
 
     local procedure ReadText(Object: JsonObject; Name: Text): Text

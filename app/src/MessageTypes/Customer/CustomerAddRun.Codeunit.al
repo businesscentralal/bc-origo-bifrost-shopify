@@ -34,6 +34,7 @@ codeunit 73732141 "Customer Add Run ori"
         ShopifyCustomer: Record "Shpfy Customer";
         SkippedRecord: RecordRef;
         SkippedReason: Text;
+        CustomerView: Text;
         LastEntryNo: Integer;
         Handled: Boolean;
         ParametersTxt: Label '<?xml version="1.0" standalone="yes"?><ReportParameters name="Shpfy Add Customer to Shopify" id="30112"><Options><Field name="Shop">%1</Field></Options><DataItems><DataItem name="Customer">%2</DataItem></DataItems></ReportParameters>', Locked = true;
@@ -49,9 +50,11 @@ codeunit 73732141 "Customer Add Run ori"
         if SkippedRecord.FindLast() then
             LastEntryNo := SkippedRecord.Field(1).Value;
         Customer.SetRange("No.", CustomerNo);
-        OnBeforeRunConnector(Shop, Customer, Handled);
+        CustomerView := Customer.GetView(false);
+        OnBeforeRunConnector(Shop, CustomerView, Handled);
         if not Handled then
-            Report.Execute(30112, StrSubstNo(ParametersTxt, XmlEscape(Shop.Code), XmlEscape(Customer.GetView(false))));
+            Report.Execute(30112, StrSubstNo(ParametersTxt, XmlEscape(Shop.Code), XmlEscape(CustomerView)));
+        ShopifyCustomer.ReadIsolation := IsolationLevel::ReadCommitted;
         ShopifyCustomer.SetLoadFields(Id);
         ShopifyCustomer.SetRange("Shop Id", Shop."Shop Id");
         ShopifyCustomer.SetRange("Customer SystemId", Customer.SystemId);
@@ -80,10 +83,10 @@ codeunit 73732141 "Customer Add Run ori"
 
     /// <summary>Lets the test app replace the report without a token or provider call.</summary>
     /// <param name="Shop">Destination shop, unchanged.</param>
-    /// <param name="Customer">Customer with an exact-number filter for the report.</param>
+    /// <param name="CustomerView">The exact Customer view sent to the report, using numeric field IDs.</param>
     /// <param name="Handled">Set true to replace the report.</param>
     [IntegrationEvent(false, false)]
-    internal procedure OnBeforeRunConnector(Shop: Record "Shpfy Shop"; Customer: Record Customer; var Handled: Boolean)
+    internal procedure OnBeforeRunConnector(Shop: Record "Shpfy Shop"; CustomerView: Text; var Handled: Boolean)
     begin
     end;
 }
