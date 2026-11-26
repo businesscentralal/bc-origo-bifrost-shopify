@@ -5,13 +5,13 @@
 **App ID:** `61a67425-c1e2-45e1-85b5-9e01488f6c1d` — **Test app ID:** `435aa982-b3bd-4074-8b2a-f30781c17504`
 **Object ID range:** 73731950–73732149 (tests 97400–97599) — **Namespace:** `Origo.Bifrost.Shopify`
 
-Bifrost Shopify will make Microsoft's **Shopify Connector** app callable from outside Business Central through
+Bifrost Shopify makes Microsoft's **Shopify Connector** app callable from outside Business Central through
 Bifröst message types, so an agent can operate it end to end. It is built on the same basis as
 [Bifrost Subscription Billing](https://github.com/businesscentralal/bc-origo-bifrost-subscription-billing).
 
 **Microsoft source:** <https://github.com/microsoft/BCApps/tree/main/src/Apps/W1/Shopify>
 
-**Status:** planning, no message types yet.
+**Status:** message types are implemented; public contracts are available through Bifröst discovery and help.
 
 ---
 
@@ -23,6 +23,19 @@ Bifröst message types, so an agent can operate it end to end. It is built on th
 | Test app (`test/`) | 97400-97599 |
 
 ---
+
+## Export posted invoices to Shopify
+
+```json
+{"type":"Shopify.Invoice.Sync","data":{"shopCode":"WEBSHOP","invoiceNos":["INV-1001"],"expectedCount":1}}
+```
+
+Creates real completed, fulfilled Shopify orders through connector report 30119. Enable the shop and
+Posted Invoice Sync, configure Payment Terms Mapping, and grant SHOPIFY Full ori plus the Microsoft
+Shopify and posted invoice permissions. The entire selection is checked before export begins.
+Inspect each result: exported, skipped, failed or notExportable. Repeated calls skip positive order IDs;
+negative IDs are reported without reset or retry. External Shopify orders cannot be undone by a BC rollback.
+The discovery help includes Overview, Notes and Examples.
 
 ## Documentation
 

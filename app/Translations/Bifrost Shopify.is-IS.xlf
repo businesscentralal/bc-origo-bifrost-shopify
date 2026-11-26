@@ -489,6 +489,132 @@
           <note from="Developer" annotates="general" priority="2">is-IS=Notað til að senda birgðastöðu vara sem þegar eru tengdar Shopify vörum í eina virka verslun. Býr ekki til vörur og sendir ekki verð; notaðu Shopify.Product.Sync og Shopify.Product.SyncPrices fyrir það.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit Inventory Sync Impl ori - Method GetSelectionDescription - NamedType SelectionLbl</note>
         </trans-unit>
+        <trans-unit id="Codeunit 981974958 - Method 3571782927 - NamedType 64258721" size-unit="char" translate="yes" xml:space="preserve">
+          <source>You do not have permission to export posted invoices to Shopify.</source>
+          <target>Þú hefur ekki heimild til að flytja bókaða reikninga út til Shopify.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Þú hefur ekki heimild til að flytja bókaða reikninga út til Shopify.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Invoice Sync Impl ori - Method ExecuteBifrostTask - NamedType NoPermissionErr</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 981974958 - Method 3571782927 - NamedType 3932376842" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Ask an administrator for SHOPIFY Full ori and Microsoft Shopify and posted invoice permissions.</source>
+          <target>Biddu kerfisstjóra um SHOPIFY Full ori og Microsoft Shopify heimildir og heimildir fyrir bókaða reikninga.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Biddu kerfisstjóra um SHOPIFY Full ori og Microsoft Shopify heimildir og heimildir fyrir bókaða reikninga.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Invoice Sync Impl ori - Method ExecuteBifrostTask - NamedType PermissionNextLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 981974958 - Method 3571782927 - NamedType 2922492279" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Shopify shop %1 was not found.</source>
+          <target>Shopify verslun %1 fannst ekki.</target>
+          <note from="Developer" annotates="general" priority="2">%1 = shop code||is-IS=Shopify verslun %1 fannst ekki.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Invoice Sync Impl ori - Method ExecuteBifrostTask - NamedType ShopMissingErr</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 981974958 - Method 3571782927 - NamedType 245955643" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Check shopCode in Shopify Shops (table 30102).</source>
+          <target>Athugaðu shopCode í Shopify verslunum (tafla 30102).</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Athugaðu shopCode í Shopify verslunum (tafla 30102).</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Invoice Sync Impl ori - Method ExecuteBifrostTask - NamedType ShopNextLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 981974958 - Method 3571782927 - NamedType 3791449231" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Shop %1 is not enabled.</source>
+          <target>Verslun %1 er ekki virk.</target>
+          <note from="Developer" annotates="general" priority="2">%1 = shop code||is-IS=Verslun %1 er ekki virk.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Invoice Sync Impl ori - Method ExecuteBifrostTask - NamedType DisabledErr</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 981974958 - Method 3571782927 - NamedType 3272774952" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Enable the shop on the Shopify Shop Card.</source>
+          <target>Virkjaðu verslunina á Shopify verslunarspjaldinu.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Virkjaðu verslunina á Shopify verslunarspjaldinu.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Invoice Sync Impl ori - Method ExecuteBifrostTask - NamedType EnableNextLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 981974958 - Method 3571782927 - NamedType 1140118894" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Posted Invoice Sync is not enabled for shop %1.</source>
+          <target>Posted Invoice Sync er ekki virkt fyrir verslun %1.</target>
+          <note from="Developer" annotates="general" priority="2">%1 = shop code||is-IS=Posted Invoice Sync er ekki virkt fyrir verslun %1.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Invoice Sync Impl ori - Method ExecuteBifrostTask - NamedType SyncDisabledErr</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 981974958 - Method 3571782927 - NamedType 3226970774" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Enable Posted Invoice Sync on the Shopify Shop Card.</source>
+          <target>Virkjaðu Posted Invoice Sync á Shopify verslunarspjaldinu.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Virkjaðu Posted Invoice Sync á Shopify verslunarspjaldinu.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Invoice Sync Impl ori - Method ExecuteBifrostTask - NamedType SyncNextLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 981974958 - Method 3571782927 - NamedType 3120193092" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Payment terms mapping is missing for shop %1 or invoice %2.</source>
+          <target>Vörpun greiðsluskilmála vantar fyrir verslun %1 eða reikning %2.</target>
+          <note from="Developer" annotates="general" priority="2">%1 = shop code, %2 = invoice number||is-IS=Vörpun greiðsluskilmála vantar fyrir verslun %1 eða reikning %2.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Invoice Sync Impl ori - Method ExecuteBifrostTask - NamedType TermsErr</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 981974958 - Method 3571782927 - NamedType 1415695116" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Configure Payment Terms Mapping for this invoice payment terms code or select an Is Primary mapping for the shop.</source>
+          <target>Stilltu Payment Terms Mapping fyrir greiðsluskilmála reikningsins eða veldu Is Primary vörpun fyrir verslunina.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Stilltu Payment Terms Mapping fyrir greiðsluskilmála reikningsins eða veldu Is Primary vörpun fyrir verslunina.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Invoice Sync Impl ori - Method ExecuteBifrostTask - NamedType TermsNextLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 981974958 - Method 3571782927 - NamedType 4000803212" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Posted sales invoice %1 was not found.</source>
+          <target>Bókaður sölureikningur %1 fannst ekki.</target>
+          <note from="Developer" annotates="general" priority="2">%1 = invoice number||is-IS=Bókaður sölureikningur %1 fannst ekki.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Invoice Sync Impl ori - Method ExecuteBifrostTask - NamedType InvoiceMissingErr</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 981974958 - Method 3571782927 - NamedType 2083586704" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Check invoiceNos in Posted Sales Invoices (table 112).</source>
+          <target>Athugaðu invoiceNos í bókuðum sölureikningum (tafla 112).</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Athugaðu invoiceNos í bókuðum sölureikningum (tafla 112).</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Invoice Sync Impl ori - Method ExecuteBifrostTask - NamedType InvoiceNextLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 981974958 - Method 1590956071 - NamedType 751038299" size-unit="char" translate="yes" xml:space="preserve">
+          <source>The Shopify connector did not create an order. Check Shopify logs before retrying; negative order IDs are not reset.</source>
+          <target>Shopify tengillinn stofnaði ekki pöntun. Athugaðu Shopify annála áður en reynt er aftur; neikvæð pöntunarauðkenni eru ekki endurstillt.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Shopify tengillinn stofnaði ekki pöntun. Athugaðu Shopify annála áður en reynt er aftur; neikvæð pöntunarauðkenni eru ekki endurstillt.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Invoice Sync Impl ori - Method ExportInvoice - NamedType FailedLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 981974958 - Method 1590956071 - NamedType 40381059" size-unit="char" translate="yes" xml:space="preserve">
+          <source>The Shopify connector marked this invoice as not exportable. Check Shopify Skipped Records for the reason.</source>
+          <target>Shopify tengillinn merkti þennan reikning sem óhæfan til útflutnings. Athugaðu Shopify Skipped Records til að sjá ástæðuna.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Shopify tengillinn merkti þennan reikning sem óhæfan til útflutnings. Athugaðu Shopify Skipped Records til að sjá ástæðuna.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Invoice Sync Impl ori - Method ExportInvoice - NamedType NotExportableLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 981974958 - Method 4077369804 - NamedType 2442600875" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Exports selected posted sales invoices as real completed, fulfilled Shopify orders.</source>
+          <target>Flytur valda bókaða sölureikninga út sem raunverulegar, afgreiddar Shopify pantanir.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Flytur valda bókaða sölureikninga út sem raunverulegar, afgreiddar Shopify pantanir.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Invoice Sync Impl ori - Method GetDescription - NamedType ValueLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 981974958 - Method 1027590672 - NamedType 1290244428" size-unit="char" translate="yes" xml:space="preserve">
+          <source>shopify invoice sync, export posted sales invoices, fulfilled orders</source>
+          <target>shopify reikningasamstilling, flytja út bókaða sölureikninga, afgreiddar pantanir</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=shopify reikningasamstilling, flytja út bókaða sölureikninga, afgreiddar pantanir</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Invoice Sync Impl ori - Method GetKeywords - NamedType KeywordsLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 981974958 - Method 79446908 - NamedType 2442600875" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Use to export 1 to 100 posted sales invoices to Shopify. Already exported invoices are skipped.</source>
+          <target>Notað til að flytja 1 til 100 bókaða sölureikninga út til Shopify. Reikningum sem þegar hafa verið fluttir út er sleppt.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Notað til að flytja 1 til 100 bókaða sölureikninga út til Shopify. Reikningum sem þegar hafa verið fluttir út er sleppt.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Invoice Sync Impl ori - Method GetSelectionDescription - NamedType ValueLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 981974958 - Method 3740370180 - NamedType 3177803720" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Parameter "%1" has an invalid format or count.</source>
+          <target>Færibreytan "%1" er á ógildu sniði eða með rangan fjölda.</target>
+          <note from="Developer" annotates="general" priority="2">%1 = parameter name||is-IS=Færibreytan "%1" er á ógildu sniði eða með rangan fjölda.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Invoice Sync Impl ori - Method InvalidRequest - NamedType InvalidErr</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 981974958 - Method 3740370180 - NamedType 2029447175" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Send shopCode as a code of at most 20 characters, invoiceNos as 1 to 100 distinct invoice numbers of at most 20 characters, and expectedCount as their exact integer count.</source>
+          <target>Sendu shopCode sem kóða með að hámarki 20 stöfum, invoiceNos sem 1 til 100 ólík reikningsnúmer með að hámarki 20 stöfum og expectedCount sem nákvæman heiltölufjölda þeirra.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Sendu shopCode sem kóða með að hámarki 20 stöfum, invoiceNos sem 1 til 100 ólík reikningsnúmer með að hámarki 20 stöfum og expectedCount sem nákvæman heiltölufjölda þeirra.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Invoice Sync Impl ori - Method InvalidRequest - NamedType NextLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 981974958 - Method 2407443326 - NamedType 1830439019" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Parameter "%1" is required.</source>
+          <target>Færibreytan "%1" er nauðsynleg.</target>
+          <note from="Developer" annotates="general" priority="2">%1 = parameter name||is-IS=Færibreytan "%1" er nauðsynleg.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Invoice Sync Impl ori - Method RequireKey - NamedType MissingErr</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 981974958 - Method 2407443326 - NamedType 2029447175" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Send data.%1 with the required value.</source>
+          <target>Sendu data.%1 með nauðsynlegu gildi.</target>
+          <note from="Developer" annotates="general" priority="2">%1 = parameter name||is-IS=Sendu data.%1 með nauðsynlegu gildi.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Invoice Sync Impl ori - Method RequireKey - NamedType NextLbl</note>
+        </trans-unit>
         <trans-unit id="Codeunit 4087984018 - Method 3571782927 - NamedType 64258721" size-unit="char" translate="yes" xml:space="preserve">
           <source>You do not have the permissions to create sales documents from Shopify orders.</source>
           <target>Þú hefur ekki heimildir til að búa til sölugögn úr Shopify pöntunum.</target>

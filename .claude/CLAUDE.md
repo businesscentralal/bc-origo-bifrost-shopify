@@ -55,6 +55,13 @@ Tests: 97400-97599
 
 Integration note for PR #43: the temporary import app IDs 73732030/73732031 in commit 79654f2 are reconciled to 73731960/73731961, following the published #54 mapping (70013400+n → 73731950+n). Import test codeunits remain 97472/97473 from that branch update; the 97400–97599 test range is unchanged.
 
+| Codeunit | 73731955 | Invoice Sync Impl ori |
+| Codeunit | 73731956 | Invoice Sync Run ori |
+| EnumExtension | 73731955 | Invoice Sync MsgType ori (value 73731956: Shopify.Invoice.Sync) |
+| Test Codeunit | 97503 | Shopify Issue 31 Tests ori |
+| Codeunit | 97504 | Shpfy Invoice Stub ori |
+| Test Codeunit | 97505 | Shpfy Invoice MCP ori |
+
 ## Microsoft source
 Wrapped Microsoft app: Shopify Connector (`ec255f57-31d0-4ca2-b751-f2fa7c745abb`, minimum 28.0.0.0). Source: https://github.com/microsoft/BCApps/tree/main/src/Apps/W1/Shopify
 Read it there before designing message types.

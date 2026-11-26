@@ -1,5 +1,9 @@
 # Changelog
 
+## [Unreleased]
+
+- Add Shopify.Invoice.Sync to export selected posted invoices through connector report 30119 with batch preflight, per-invoice outcomes and mock-only tests. New objects: codeunits 73731955/73731956, enum extension 73731955/value 73731956; test codeunits 97503/97505 and stand-in 97504.
+
 ## [28.0.0.0] - Unreleased
 
 - Prepared the first AppSource release with all nine Shopify operations, raised the Foundation minimum to 28.0.15.807 (release 28.0.15); context-sensitive help retains the Shopify app page URL because the app has no pages of its own (#62). No new objects. The release date is set when the release is approved.
