@@ -8,6 +8,8 @@ permissionset 73731952 "SHOPIFY Full ori"
     IncludedPermissionSets = "SHOPIFY Read ori";
     Permissions = codeunit "Catalog SyncPrices Impl ori" = X,
                   codeunit "Catalog SyncPrices Run ori" = X,
+                  codeunit "Catalog Sync Impl ori" = X,
+                  codeunit "Catalog Sync Run ori" = X,
                   table "Order Paid Marker ori" = X,
                   tabledata "Order Paid Marker ori" = RIM,
                   codeunit "Order MarkPaid Impl ori" = X,

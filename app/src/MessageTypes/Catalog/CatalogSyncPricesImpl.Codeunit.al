@@ -4,7 +4,7 @@ using Microsoft.Integration.Shopify;
 using Origo.Bifrost;
 
 /// <summary>Validates and sends catalog prices through the Microsoft Shopify Connector report.</summary>
-codeunit 73732080 "Catalog SyncPrices Impl ori" implements "Msg Interface ori", "Msg Discovery ori", "Msg Contract ori"
+codeunit 73732082 "Catalog SyncPrices Impl ori" implements "Msg Interface ori", "Msg Discovery ori", "Msg Contract ori"
 {
     Access = Internal;
 

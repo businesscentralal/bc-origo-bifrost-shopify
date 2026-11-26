@@ -3,7 +3,7 @@ namespace Origo.Bifrost.Shopify;
 using Microsoft.Integration.Shopify;
 
 /// <summary>Runs report 30116 with validated, locale-independent filters and a mock connector seam.</summary>
-codeunit 73732081 "Catalog SyncPrices Run ori"
+codeunit 73732083 "Catalog SyncPrices Run ori"
 {
     Access = Internal;
 

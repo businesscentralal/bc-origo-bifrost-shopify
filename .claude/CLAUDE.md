@@ -77,8 +77,8 @@ Integration note for PR #43: the temporary import app IDs 73732030/73732031 in c
 
 | Type | ID | Object |
 | --- | --- | --- |
-| Codeunit / EnumExtension / Enum value | 73732080 | Catalog SyncPrices Impl ori / Catalog SyncPrices MsgType ori / Shopify.Catalog.SyncPrices |
-| Codeunit | 73732081 | Catalog SyncPrices Run ori |
+| Codeunit / EnumExtension / Enum value | 73732082 | Catalog SyncPrices Impl ori / Catalog SyncPrices MsgType ori / Shopify.Catalog.SyncPrices |
+| Codeunit | 73732083 | Catalog SyncPrices Run ori |
 | Test Codeunit | 97520 | Shopify Issue 22 Tests ori |
 | Codeunit | 97521 | Shpfy Catalog Prices Stub ori |
 | Test Codeunit | 97522 | Shpfy Catalog MCP Fixture ori |
@@ -88,6 +88,17 @@ Checked main and open PRs #67–#69 before allocation. Connector report 30116 us
 ShopifyCatalogType as an ordinal, and Company SystemId for its company filter. The message accepts Shopify company Id
 and resolves it within the selected shop. Table 30159 is internal: RecordRef reads its documented field IDs to count new
 log rows for the selected catalog RecordIds; no internal connector procedures are called.
+
+## Catalog sync and other merged objects
+
+| Type | ID | Object |
+| --- | --- | --- |
+| Codeunit | 73732080 | Catalog Sync Impl ori |
+| Codeunit | 73732081 | Catalog Sync Run ori |
+| EnumExtension | 73732080 | Catalog Sync MsgType ori (Shopify.Catalog.Sync) |
+| Test Codeunit | 97533 | Shpfy Catalog Sync Test ori |
+| Codeunit | 97534 | Shpfy Catalog Sync Stub ori |
+| Test Codeunit | 97535 | Shpfy Catalog Fixture ori |
 | Codeunit | 73732044 | Company Sync Impl ori |
 | Codeunit | 73732045 | Company Sync Run ori |
 | EnumExtension | 73732044 | Company Sync MsgType ori (value Shopify.Company.Sync) |

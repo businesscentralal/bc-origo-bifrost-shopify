@@ -17,6 +17,16 @@ Bifröst message types, so an agent can operate it end to end. It is built on th
 
 `Shopify.Catalog.SyncPrices` sends changed BC prices for catalogs with Sync Prices enabled. It accepts optional catalog, type and Shopify company filters and reports considered catalogs and new skip-log rows. This type requires Shopify Connector 29 or later. Runtime help provides the full request and response contract.
 
+## Shopify.Catalog.Sync
+
+`Shopify.Catalog.Sync` imports company and market catalogs for one enabled shop (`shopCode`).
+It returns `status`, `shopCode`, `catalogsBefore` and `catalogsAfter`. Run `Shopify.Company.Sync`
+first to include company catalogs; market catalogs are imported without companies. Repeated calls
+update existing rows. Catalogs absent from Shopify remain locally, and market relations are rebuilt
+for returned market catalogs. The operation writes only to Business Central and requires
+`SHOPIFY Full ori` plus Microsoft Shopify permissions. A failed run rolls back its local changes.
+Use `Help.Implementation.Get` for the full contract, refusals and examples.
+
 ## Shopify.Payment.SyncDisputes
 
 `Shopify.Payment.SyncDisputes` imports new disputes and refreshes open disputes for one enabled shop:
