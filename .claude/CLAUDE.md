@@ -88,6 +88,13 @@ Checked main and open PRs #67–#69 before allocation. Connector report 30116 us
 ShopifyCatalogType as an ordinal, and Company SystemId for its company filter. The message accepts Shopify company Id
 and resolves it within the selected shop. Table 30159 is internal: RecordRef reads its documented field IDs to count new
 log rows for the selected catalog RecordIds; no internal connector procedures are called.
+| Codeunit | 73732044 | Company Sync Impl ori |
+| Codeunit | 73732045 | Company Sync Run ori |
+| EnumExtension | 73732044 | Company Sync MsgType ori (value Shopify.Company.Sync) |
+| Test Codeunit | 97513 | Shopify Company Sync Tests ori |
+| Codeunit | 97514 | Shopify Company Stub ori (manual mock) |
+| Codeunit | 97515 | Shopify Company MCP Stub ori (fixture-only mock) |
+| Test Codeunit | 97516 | Shopify Company Fixture ori |
 | Codeunit | 73732140 | Customer Add Impl ori |
 | Codeunit | 73732141 | Customer Add Run ori |
 | EnumExtension | 73732140 | Customer Add MsgType ori (value Shopify.Customer.Add) |
@@ -107,8 +114,8 @@ app's module id, its display name and its setup page id (`0` while the app has n
 `app/src/Common/SubRegistration.Codeunit.al` in Bifrost Subscription Billing.
 
 ## Target BC Version
-28.0 minimum (application 28.0.0.0, platform 28.0.0.0, runtime 17.0).
-Deploy and test through the bc28-kappi MCP server; leave its container version unchanged.
+29.0 minimum (application 29.0.0.0, platform 29.0.0.0, runtime 18.0), per Gunnar 26.11.2026.
+Deploy and test on the worker's assigned BC 29 tenant.
 
 ## Source Control
 Platform: GitHub
@@ -118,7 +125,7 @@ Default branch: main
 
 ## Dependencies
 - Bifrost Foundation (`7505e808-6e52-4b96-a328-82573391297a`, 28.0.15.807, current Foundation release 28.0.15)
-- Shopify Connector (Microsoft, 28.0.0.0; application floor 28.0.0.0)
+- Shopify Connector (Microsoft, 29.0.0.0; application floor 29.0.0.0)
 
 ## Naming Rules
 - Every object carries the `ori` suffix (AppSource mandatory affix), max 30 characters.
