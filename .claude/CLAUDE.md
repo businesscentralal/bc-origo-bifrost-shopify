@@ -58,9 +58,22 @@ Tests: 97400-97599
 | Test Codeunit | 97453 | Shpfy Cust Fail Step ori |
 | Test Codeunit | 97470 | Shopify Order Create Tests ori |
 | Test Codeunit | 97471 | Shopify Order MCP Fixture ori |
+| Codeunit | 73732100 | Product SyncImages Impl ori |
+| EnumExtension | 73732100 | Product SyncImages MsgType ori (value Shopify.Product.SyncImages) |
+| Codeunit | 73732101 | Product SyncImages Run ori |
+| Test Codeunit | 97540 | Shpfy Prod SyncImg Test ori |
+| Test Codeunit | 97541 | Shpfy SyncImg Stub ori |
+| Test Codeunit | 97542 | Shpfy SyncImg MCP ori |
 
 Integration note for PR #43: the temporary import app IDs 73732030/73732031 in commit 79654f2 are reconciled to 73731960/73731961, following the published #54 mapping (70013400+n → 73731950+n). Import test codeunits remain 97472/97473 from that branch update; the 97400–97599 test range is unchanged.
 
+| Codeunit | 73732140 | Customer Add Impl ori |
+| Codeunit | 73732141 | Customer Add Run ori |
+| EnumExtension | 73732140 | Customer Add MsgType ori (value Shopify.Customer.Add) |
+| Test Codeunit | 97590 | Shopify Customer Add Tests ori |
+| Codeunit | 97591 | Shopify Customer Add Stub ori (manual mock) |
+| Codeunit | 97592 | Shopify CustAdd MCP Stub ori (fixture-only mock) |
+| Test Codeunit | 97593 | Shopify CustAdd Fixture ori |
 Issue #26 objects: enum extension/value and implementation 73732090 `Order MarkPaid MsgType ori` / `Order MarkPaid Impl ori`; runner 73732091 `Order MarkPaid Run ori`; table 73732090 `Order Paid Marker ori`. Tests: 97530 `Shpfy MarkPaid Tests ori`, subscriber 97531 `Shpfy MarkPaid Stub ori`, MCP fixture 97532 `Shpfy MarkPaid Fixture ori`. Open PRs #67–#69 were checked before allocation.
 
 ## Microsoft source
