@@ -15,6 +15,12 @@ Tests: 97400-97599
 
 | Type | ID | Object |
 | --- | --- | --- |
+| Codeunit | 73732046 | Payment Disputes Impl ori |
+| Codeunit | 73732047 | Payment Disputes Run ori |
+| EnumExtension | 73732046 | Payment Disputes MsgType ori (Shopify.Payment.SyncDisputes) |
+| Test Codeunit | 97517 | Shopify Disputes Tests ori |
+| Codeunit | 97518 | Shopify Disputes Stub ori |
+| Test Codeunit | 97519 | Shopify Disputes Fixture ori |
 | Codeunit | 73731950 | Shopify Registration ori |
 | EnumExtension | 73732060 | Metafield Sync MsgType ori (value Shopify.Metafield.Sync) |
 | Codeunit | 73732060 | Metafield Sync Impl ori |
@@ -58,6 +64,12 @@ Tests: 97400-97599
 | Test Codeunit | 97453 | Shpfy Cust Fail Step ori |
 | Test Codeunit | 97470 | Shopify Order Create Tests ori |
 | Test Codeunit | 97471 | Shopify Order MCP Fixture ori |
+| Codeunit | 73732100 | Product SyncImages Impl ori |
+| EnumExtension | 73732100 | Product SyncImages MsgType ori (value Shopify.Product.SyncImages) |
+| Codeunit | 73732101 | Product SyncImages Run ori |
+| Test Codeunit | 97540 | Shpfy Prod SyncImg Test ori |
+| Test Codeunit | 97541 | Shpfy SyncImg Stub ori |
+| Test Codeunit | 97542 | Shpfy SyncImg MCP ori |
 
 Integration note for PR #43: the temporary import app IDs 73732030/73732031 in commit 79654f2 are reconciled to 73731960/73731961, following the published #54 mapping (70013400+n → 73731950+n). Import test codeunits remain 97472/97473 from that branch update; the 97400–97599 test range is unchanged.
 
@@ -67,6 +79,13 @@ Integration note for PR #43: the temporary import app IDs 73732030/73732031 in c
 | Test Codeunit | 97507 | Shopify Issue 31 Tests ori |
 | Codeunit | 97508 | Shpfy Invoice Stub ori |
 | Test Codeunit | 97509 | Shpfy Invoice MCP ori |
+| Codeunit | 73732140 | Customer Add Impl ori |
+| Codeunit | 73732141 | Customer Add Run ori |
+| EnumExtension | 73732140 | Customer Add MsgType ori (value Shopify.Customer.Add) |
+| Test Codeunit | 97590 | Shopify Customer Add Tests ori |
+| Codeunit | 97591 | Shopify Customer Add Stub ori (manual mock) |
+| Codeunit | 97592 | Shopify CustAdd MCP Stub ori (fixture-only mock) |
+| Test Codeunit | 97593 | Shopify CustAdd Fixture ori |
 
 ## Microsoft source
 Wrapped Microsoft app: Shopify Connector (`ec255f57-31d0-4ca2-b751-f2fa7c745abb`, minimum 28.0.0.0). Source: https://github.com/microsoft/BCApps/tree/main/src/Apps/W1/Shopify
