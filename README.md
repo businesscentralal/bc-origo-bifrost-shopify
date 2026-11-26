@@ -23,6 +23,14 @@ Runs Microsoft Get Locations (codeunit 30198) for one enabled shop. Inserts and 
 
 The response contains `status`, `shopCode`, `locationsBefore`, `locationsAfter`, `netChange`, `inserted` and `removed`. Counts compare local location IDs for the selected shop; one insertion plus one removal gives `netChange: 0`, `inserted: 1`, `removed: 1`. Repeating a call without Shopify changes is idempotent. Connector failure returns `BusinessCentralError` and rolls back local changes; completed Shopify callback updates cannot be rolled back. Requires `SHOPIFY Full ori` and Microsoft Shopify Connector permissions. Runtime help provides Overview, Notes and Examples.
 
+`Shopify.Catalog.Sync` imports company and market catalogs for one enabled shop (`shopCode`).
+It returns `status`, `shopCode`, `catalogsBefore` and `catalogsAfter`. Run `Shopify.Company.Sync`
+first to include company catalogs; market catalogs are imported without companies. Repeated calls
+update existing rows. Catalogs absent from Shopify remain locally, and market relations are rebuilt
+for returned market catalogs. The operation writes only to Business Central and requires
+`SHOPIFY Full ori` plus Microsoft Shopify permissions. A failed run rolls back its local changes.
+Use `Help.Implementation.Get` for the full contract, refusals and examples.
+
 ## Shopify.Payment.SyncDisputes
 
 `Shopify.Payment.SyncDisputes` imports new disputes and refreshes open disputes for one enabled shop:

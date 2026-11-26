@@ -2715,6 +2715,72 @@
           <note from="Developer" annotates="general" priority="2">is-IS=Pöntunin eða verslunin breyttist. Uppfærðu pöntunina áður en þú reynir aftur.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit Order MarkPaid Run ori - Method RunConnector - NamedType ChangedErr</note>
         </trans-unit>
+        <trans-unit id="Codeunit 170057252 - Method 4077369804 - NamedType 3569966352" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Imports company catalogs and market catalogs from one Shopify shop into Business Central.</source>
+          <target>Flytur fyrirtækjavörulista og markaðsvörulista úr einni Shopify verslun inn í Business Central.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Flytur fyrirtækjavörulista og markaðsvörulista úr einni Shopify verslun inn í Business Central.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Catalog Sync Impl ori - Method GetDescription - NamedType DescriptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 170057252 - Method 1027590672 - NamedType 1290244428" size-unit="char" translate="yes" xml:space="preserve">
+          <source>shopify catalogs, import catalogs, company catalogs, market catalogs, sync catalogs</source>
+          <target>shopify vörulistar, flytja inn vörulista, fyrirtækjavörulistar, markaðsvörulistar, samstilla vörulista</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=shopify vörulistar, flytja inn vörulista, fyrirtækjavörulistar, markaðsvörulistar, samstilla vörulista</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Catalog Sync Impl ori - Method GetKeywords - NamedType KeywordsLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 170057252 - Method 79446908 - NamedType 895773054" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Use to import catalogs and refresh market relations for one enabled shop. Run Shopify.Company.Sync first for company catalogs. Does not synchronize prices or create catalogs in Shopify.</source>
+          <target>Notað til að flytja inn vörulista og endurnýja markaðstengsl fyrir eina virka verslun. Keyrðu Shopify.Company.Sync fyrst fyrir fyrirtækjavörulista. Samstillir ekki verð eða stofnar vörulista í Shopify.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Notað til að flytja inn vörulista og endurnýja markaðstengsl fyrir eina virka verslun. Keyrðu Shopify.Company.Sync fyrst fyrir fyrirtækjavörulista. Samstillir ekki verð eða stofnar vörulista í Shopify.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Catalog Sync Impl ori - Method GetSelectionDescription - NamedType SelectionLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 170057252 - Method 2962684526 - NamedType 1128910002" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Parameter shopCode is required.</source>
+          <target>Færibreytan shopCode er nauðsynleg.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Færibreytan shopCode er nauðsynleg.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Catalog Sync Impl ori - Method Refuse - NamedType MissingLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 170057252 - Method 2962684526 - NamedType 1066607173" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Parameter %1 is unknown or has an invalid format. Send only shopCode as a nonempty string of at most 20 characters.</source>
+          <target>Færibreytan %1 er óþekkt eða á ógildu sniði. Sendu aðeins shopCode sem texta sem er ekki tómur og er að hámarki 20 stafir.</target>
+          <note from="Developer" annotates="general" priority="2">%1 = parameter||is-IS=Færibreytan %1 er óþekkt eða á ógildu sniði. Sendu aðeins shopCode sem texta sem er ekki tómur og er að hámarki 20 stafir.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Catalog Sync Impl ori - Method Refuse - NamedType InvalidLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 170057252 - Method 2962684526 - NamedType 704880291" size-unit="char" translate="yes" xml:space="preserve">
+          <source>The Shopify shop was not found.</source>
+          <target>Shopify verslunin fannst ekki.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Shopify verslunin fannst ekki.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Catalog Sync Impl ori - Method Refuse - NamedType NotFoundLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 170057252 - Method 2962684526 - NamedType 880711966" size-unit="char" translate="yes" xml:space="preserve">
+          <source>The Shopify shop is not enabled.</source>
+          <target>Shopify verslunin er ekki virk.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Shopify verslunin er ekki virk.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Catalog Sync Impl ori - Method Refuse - NamedType DisabledLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 170057252 - Method 2962684526 - NamedType 286034047" size-unit="char" translate="yes" xml:space="preserve">
+          <source>You do not have permission to import Shopify catalogs.</source>
+          <target>Þú hefur ekki heimild til að flytja inn Shopify vörulista.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Þú hefur ekki heimild til að flytja inn Shopify vörulista.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Catalog Sync Impl ori - Method Refuse - NamedType DeniedLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 170057252 - Method 2962684526 - NamedType 751038299" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Catalog import failed. Local writes from this run were rolled back. %1</source>
+          <target>Innflutningur vörulista mistókst. Staðbundnar breytingar úr þessari keyrslu voru afturkallaðar. %1</target>
+          <note from="Developer" annotates="general" priority="2">%1 = connector text||is-IS=Innflutningur vörulista mistókst. Staðbundnar breytingar úr þessari keyrslu voru afturkallaðar. %1</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Catalog Sync Impl ori - Method Refuse - NamedType FailedLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 170057252 - Method 2962684526 - NamedType 4120398360" size-unit="char" translate="yes" xml:space="preserve">
+          <source>an enabled Shopify shop and permission to import catalogs</source>
+          <target>virk Shopify verslun og heimild til að flytja inn vörulista</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=virk Shopify verslun og heimild til að flytja inn vörulista</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Catalog Sync Impl ori - Method Refuse - NamedType ExpectedLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 170057252 - Method 2962684526 - NamedType 2029447175" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Correct the request or the reported cause. Enable the shop and ask an administrator for SHOPIFY Full ori and Microsoft Shopify write permissions, then retry.</source>
+          <target>Leiðréttu beiðnina eða tilgreinda orsök. Virkjaðu verslunina og biddu kerfisstjóra um SHOPIFY Full ori og Microsoft Shopify skrifheimildir og reyndu aftur.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Leiðréttu beiðnina eða tilgreinda orsök. Virkjaðu verslunina og biddu kerfisstjóra um SHOPIFY Full ori og Microsoft Shopify skrifheimildir og reyndu aftur.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Catalog Sync Impl ori - Method Refuse - NamedType NextLbl</note>
+        </trans-unit>
       </group>
     </body>
   </file>
