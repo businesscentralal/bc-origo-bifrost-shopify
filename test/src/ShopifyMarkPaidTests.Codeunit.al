@@ -263,17 +263,12 @@ codeunit 97530 "Shpfy MarkPaid Tests ori"
         Response: JsonObject;
         English: Text;
         Icelandic: Text;
-        PreviousLanguage: Integer;
     begin
         Fixture.A1SeedFixture();
-        PreviousLanguage := GlobalLanguage();
-        GlobalLanguage(1033);
-        Response := Execute('{"orderId":975300001,"expectedCount":0}');
+        Response := ExecuteInLanguage('{"orderId":975300001,"expectedCount":0}', 1033);
         English := ReadText(Response, 'error');
-        GlobalLanguage(1039);
-        Response := Execute('{"orderId":975300001,"expectedCount":0}');
+        Response := ExecuteInLanguage('{"orderId":975300001,"expectedCount":0}', 1039);
         Icelandic := ReadText(Response, 'error');
-        GlobalLanguage(PreviousLanguage);
         Assert.AreNotEqual('', English, 'English refusal text.');
         Assert.AreNotEqual('', Icelandic, 'Icelandic refusal text.');
         Assert.AreNotEqual(English, Icelandic, 'Translated refusal.');
@@ -315,7 +310,12 @@ codeunit 97530 "Shpfy MarkPaid Tests ori"
         Assert.IsTrue(PaidMarker.IsEmpty(), 'No successful write recorded.');
     end;
 
-    local procedure Execute(RequestText: Text) Response: JsonObject
+    local procedure Execute(RequestText: Text): JsonObject
+    begin
+        exit(ExecuteInLanguage(RequestText, 1033));
+    end;
+
+    local procedure ExecuteInLanguage(RequestText: Text; LanguageId: Integer) Response: JsonObject
     var
         Dispatcher: Codeunit "Dispatcher ori";
         RequestContent: BigText;
@@ -323,9 +323,12 @@ codeunit 97530 "Shpfy MarkPaid Tests ori"
         ContentType: Text[100];
         MessageVersion: Enum "Message Version ori";
         ResponseText: Text;
+        EmptyTaskId: Guid;
+        MessageId: Guid;
+        ResponseTime: Duration;
     begin
         RequestContent.AddText(RequestText);
-        Dispatcher.Execute("Message Type ori"::"Shopify.Order.MarkAsPaid", MessageVersion, '', '', 'application/json', RequestContent, ResponseContent, ContentType);
+        Dispatcher.EnqueueAndProcess("Message Type ori"::"Shopify.Order.MarkAsPaid", MessageVersion, '', '', 'application/json', RequestContent, EmptyTaskId, LanguageId, MessageId, ResponseContent, ContentType, ResponseTime);
         ResponseContent.GetSubText(ResponseText, 1);
         Response.ReadFrom(ResponseText);
     end;
