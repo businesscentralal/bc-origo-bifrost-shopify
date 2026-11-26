@@ -93,6 +93,18 @@
           <note from="Developer" annotates="general" priority="2">is-IS=Virkjaðu verslunina á Shopify verslunarspjaldinu.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit Customer Add Impl ori - Method ExecuteBifrostTask - NamedType EnableNextLbl</note>
         </trans-unit>
+        <trans-unit id="Codeunit 478318347 - Method 3571782927 - NamedType 22335745" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Shopify shop %1 has no valid shop ID.</source>
+          <target>Shopify verslun %1 hefur ekki gilt verslunarauðkenni.</target>
+          <note from="Developer" annotates="general" priority="2">%1 = shop||is-IS=Shopify verslun %1 hefur ekki gilt verslunarauðkenni.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Customer Add Impl ori - Method ExecuteBifrostTask - NamedType ShopIdentityErr</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 478318347 - Method 3571782927 - NamedType 2658724230" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Complete the Shopify connection setup for this shop, then try again.</source>
+          <target>Ljúktu við uppsetningu Shopify tengingarinnar fyrir þessa verslun og reyndu síðan aftur.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Ljúktu við uppsetningu Shopify tengingarinnar fyrir þessa verslun og reyndu síðan aftur.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Customer Add Impl ori - Method ExecuteBifrostTask - NamedType SetupNextLbl</note>
+        </trans-unit>
         <trans-unit id="Codeunit 478318347 - Method 3571782927 - NamedType 1377788994" size-unit="char" translate="yes" xml:space="preserve">
           <source>expectedCount must equal the number of customerNos (%1).</source>
           <target>expectedCount verður að vera jafnt fjölda customerNos (%1).</target>

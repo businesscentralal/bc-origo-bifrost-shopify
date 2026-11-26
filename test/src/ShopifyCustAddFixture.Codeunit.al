@@ -20,15 +20,22 @@ codeunit 97593 "Shopify CustAdd Fixture ori"
         Index: Integer;
         Codes: List of [Code[20]];
         ShopCode: Code[20];
+        ShopId: Integer;
     begin
         RemoveAll();
         Codes.Add('XMCA17');
         Codes.Add('XMCA17FAIL');
         Codes.Add('XMCA17DIS');
+        Codes.Add('XMCA17NOID');
+        ShopId := 975930;
         foreach ShopCode in Codes do begin
+            ShopId += 1;
             Shop.Init();
             Shop.Code := ShopCode;
             Shop.Insert();
+            Shop."Shop Id" := ShopId;
+            if ShopCode = 'XMCA17NOID' then
+                Shop."Shop Id" := 0;
             Shop.Enabled := ShopCode <> 'XMCA17DIS';
             Shop."Logging Mode" := Shop."Logging Mode"::Disabled;
             Shop.Modify();
@@ -86,7 +93,7 @@ codeunit 97593 "Shopify CustAdd Fixture ori"
                 Skipped.DeleteAll();
             until Customer.Next() = 0;
         Customer.DeleteAll();
-        Shop.SetFilter(Code, 'XMCA17|XMCA17FAIL|XMCA17DIS|XCA17|XCA17OTHER');
+        Shop.SetFilter(Code, 'XMCA17|XMCA17FAIL|XMCA17DIS|XMCA17NOID|XCA17|XCA17OTHER');
         Shop.DeleteAll();
         Commit();
     end;

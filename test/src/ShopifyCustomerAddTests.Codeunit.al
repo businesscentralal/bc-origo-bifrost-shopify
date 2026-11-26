@@ -142,6 +142,7 @@ codeunit 97590 "Shopify Customer Add Tests ori"
         Initialize();
         Shop.Init();
         Shop.Code := 'XCA17OTHER';
+        Shop."Shop Id" := 975902;
         Shop.Insert();
         Customer.Get('XCA17-1');
         Link.Init();
@@ -461,6 +462,21 @@ codeunit 97590 "Shopify Customer Add Tests ori"
         Cleanup();
     end;
 
+    /// <summary>An uninitialized shop identity cannot match another shop's unassigned customer links.</summary>
+    [Test]
+    procedure Scenario_AC03_UninitializedShop()
+    var
+        Shop: Record "Shpfy Shop";
+    begin
+        Initialize();
+        Shop.Get('XCA17');
+        Shop."Shop Id" := 0;
+        Shop.Modify();
+        Commit();
+        AssertRefused(ValidRequest(), 'PreconditionFailed');
+        Cleanup();
+    end;
+
     local procedure Initialize()
     var
         Shop: Record "Shpfy Shop";
@@ -469,6 +485,7 @@ codeunit 97590 "Shopify Customer Add Tests ori"
         Fixture.A1SeedFixture();
         Shop.Init();
         Shop.Code := 'XCA17';
+        Shop."Shop Id" := 975901;
         Shop.Insert();
         Shop.Enabled := true;
         Shop."Logging Mode" := Shop."Logging Mode"::Disabled;

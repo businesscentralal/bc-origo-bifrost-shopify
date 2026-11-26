@@ -13,7 +13,7 @@ codeunit 97592 "Shopify CustAdd MCP Stub ori"
         Customer: Record Customer;
         Stub: Codeunit "Shopify Customer Add Stub ori";
     begin
-        if not (Shop.Code in ['XMCA17', 'XMCA17FAIL']) then
+        if not (Shop.Code in ['XMCA17', 'XMCA17FAIL', 'XMCA17DIS', 'XMCA17NOID']) then
             exit;
         Customer.SetView(CustomerView);
         if not Customer.FindFirst() then

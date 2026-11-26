@@ -80,7 +80,7 @@ codeunit 73732140 "Customer Add Impl ori" implements "Msg Interface ori", "Msg D
     var
         ContractMgt: Codeunit "Msg Contract Mgt ori";
     begin
-        Parameters.Add(ContractMgt.Parameter('shopCode', 'string', true, 'The code of an enabled Shopify shop (at most 20 characters).'));
+        Parameters.Add(ContractMgt.Parameter('shopCode', 'string', true, 'The code of an enabled, configured Shopify shop with a positive Shop Id (at most 20 characters).'));
         Parameters.Add(ContractMgt.Parameter('customerNos', 'array', true, '1 to 100 distinct Business Central customer numbers, each a nonblank string of at most 20 characters.'));
         Parameters.Add(ContractMgt.Parameter('expectedCount', 'integer', true, 'Must equal the customerNos array length; confirms the write selection.'));
         exit(true);
@@ -116,7 +116,7 @@ codeunit 73732140 "Customer Add Impl ori" implements "Msg Interface ori", "Msg D
         Errors.Add(ContractMgt.ErrorEntry("Bifrost Error Code ori"::MissingParameter, 'A required parameter is missing.', 'Nothing was changed.', 'Send shopCode, customerNos and expectedCount.'));
         Errors.Add(ContractMgt.ErrorEntry("Bifrost Error Code ori"::InvalidParameterFormat, 'A parameter has an invalid format.', 'Nothing was changed.', 'Use a shop code, 1 to 100 distinct customer numbers and an integer expectedCount matching the array length.'));
         Errors.Add(ContractMgt.ErrorEntry("Bifrost Error Code ori"::RecordNotFound, 'Shop or customer not found.', 'Nothing was changed.', 'Read tables 30102 and 18 with Data.Records.Get.'));
-        Errors.Add(ContractMgt.ErrorEntry("Bifrost Error Code ori"::PreconditionFailed, 'Shop is disabled or expectedCount does not match.', 'Nothing was changed.', 'Enable the shop and confirm the complete selection count.'));
+        Errors.Add(ContractMgt.ErrorEntry("Bifrost Error Code ori"::PreconditionFailed, 'Shop is disabled, has no valid shop identity, or expectedCount does not match.', 'Nothing was changed.', 'Complete the shop connection setup, enable the shop and confirm the complete selection count.'));
         Errors.Add(ContractMgt.ErrorEntry("Bifrost Error Code ori"::PermissionDenied, 'Permission refused.', 'Nothing was changed.', 'Ask an administrator for SHOPIFY Full ori and Microsoft Shopify customer permissions.'));
         Errors.Add(ContractMgt.ErrorEntry("Bifrost Error Code ori"::UnknownParameter, 'Unknown parameter.', 'Foundation refuses undeclared keys before execution.', 'Send only the declared parameters.'));
         exit(true);
@@ -129,7 +129,7 @@ codeunit 73732140 "Customer Add Impl ori" implements "Msg Interface ori", "Msg D
     var
         Preconditions: JsonArray;
     begin
-        Preconditions.Add('Enabled shop, existing selected customers, expectedCount matching 1 to 100 distinct customer numbers, and SHOPIFY Full ori plus Microsoft Shopify permissions.');
+        Preconditions.Add('Enabled shop with a positive Shop Id, existing selected customers, expectedCount matching 1 to 100 distinct customer numbers, and SHOPIFY Full ori plus Microsoft Shopify permissions.');
         Effect.Add('effect', 'write');
         Effect.Add('description', 'Creates customers in Shopify and local links through report 30112. Each customer has a separate local rollback boundary; earlier successful customers remain. Remote Shopify writes cannot be rolled back.');
         Effect.Add('idempotent', true);
@@ -192,7 +192,7 @@ codeunit 73732140 "Customer Add Impl ori" implements "Msg Interface ori", "Msg D
     /// <returns>True; the chapter was supplied.</returns>
     procedure GetNotes(var Notes: Text): Boolean
     begin
-        Notes := 'Effect: write in Shopify and Business Central customer links (table 30105). All inputs and all customer numbers are checked before the first write. Existing links in the selected shop are reported as alreadyLinked without running the connector; another shop does not count. Duplicates after Business Central code normalization are refused. Each new customer runs in a separate transaction with explicit connector commits ignored. A connector error or missing link rolls back local writes for that customer and returns failed with the connector error or a fresh Shopify Skipped Record reason. If logging is disabled or the connector exposes no reason, the result tells you to review logging and skipped records. The other customers continue. Repeating a completed call creates no second customer for existing links. Completed remote Shopify writes cannot be undone by local rollback; after a connection failure check Shopify before retrying. No page is opened. Permissions: SHOPIFY Full ori plus Microsoft Shopify customer permissions.';
+        Notes := 'Effect: write in Shopify and Business Central customer links (table 30105). A positive Shop Id is required so customer links belong to a configured shop; an uninitialized identity (0) is refused before writes. All inputs and all customer numbers are checked before the first write. Existing links in the selected shop are reported as alreadyLinked without running the connector; another shop does not count. Duplicates after Business Central code normalization are refused. Each new customer runs in a separate transaction with explicit connector commits ignored. A connector error or missing link rolls back local writes for that customer and returns failed with the connector error or a fresh Shopify Skipped Record reason. If logging is disabled or the connector exposes no reason, the result tells you to review logging and skipped records. The other customers continue. Repeating a completed call creates no second customer for existing links. Completed remote Shopify writes cannot be undone by local rollback; after a connection failure check Shopify before retrying. No page is opened. Permissions: SHOPIFY Full ori plus Microsoft Shopify customer permissions.';
         exit(true);
     end;
 
@@ -235,6 +235,8 @@ codeunit 73732140 "Customer Add Impl ori" implements "Msg Interface ori", "Msg D
         FindNextLbl: Label 'Read tables 30102 and 18 with Data.Records.Get to find the shop and customers.', Comment = 'is-IS=Lestu töflur 30102 og 18 með Data.Records.Get til að finna verslun og viðskiptamenn.';
         DisabledErr: Label 'Shopify shop %1 is not enabled.', Comment = '%1 = shop||is-IS=Shopify verslun %1 er ekki virk.';
         EnableNextLbl: Label 'Enable the shop on the Shopify Shop Card.', Comment = 'is-IS=Virkjaðu verslunina á Shopify verslunarspjaldinu.';
+        ShopIdentityErr: Label 'Shopify shop %1 has no valid shop ID.', Comment = '%1 = shop||is-IS=Shopify verslun %1 hefur ekki gilt verslunarauðkenni.';
+        SetupNextLbl: Label 'Complete the Shopify connection setup for this shop, then try again.', Comment = 'is-IS=Ljúktu við uppsetningu Shopify tengingarinnar fyrir þessa verslun og reyndu síðan aftur.';
         CountErr: Label 'expectedCount must equal the number of customerNos (%1).', Comment = '%1 = array count||is-IS=expectedCount verður að vera jafnt fjölda customerNos (%1).';
     begin
         Argument.AssertVersion1();
@@ -279,6 +281,10 @@ codeunit 73732140 "Customer Add Impl ori" implements "Msg Interface ori", "Msg D
         end;
         if not Shop.Enabled then begin
             Argument.RespondWithError("Bifrost Error Code ori"::PreconditionFailed, StrSubstNo(DisabledErr, Shop.Code), 'shopCode', Shop.Code, '', EnableNextLbl);
+            exit;
+        end;
+        if Shop."Shop Id" <= 0 then begin
+            Argument.RespondWithError("Bifrost Error Code ori"::PreconditionFailed, StrSubstNo(ShopIdentityErr, Shop.Code), 'shopCode', Shop.Code, '', SetupNextLbl);
             exit;
         end;
         Customer.SetLoadFields("No.", SystemId);
