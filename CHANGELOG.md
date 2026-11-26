@@ -1,15 +1,12 @@
 # Changelog
 
-## Unreleased
-
-- #28: Add `Shopify.Order.ForceSync` to re-import one existing order with `expectedCount = 1`, refuse the two connector paths that can write to Shopify, and roll back local changes including explicit connector commits and failed-run Shopify logs. New codeunits 73731951/73731952, enum extension/value 73731951, test codeunits 97524/97525/97526.
-
-
 ## [28.0.0.0] - Unreleased
 
 ### Added
+- #28: Add `Shopify.Order.ForceSync` to re-import one existing order with `expectedCount = 1`, refuse the two connector paths that can write to Shopify, and roll back local changes including explicit connector commits and failed-run Shopify logs. New codeunits 73731951/73731952, enum extension/value 73731951, test codeunits 97524/97525/97526.
+- `Shopify.Customer.Add`: create and link 1–100 selected BC customers through connector report 30112, with expected-count confirmation, existing-link handling and isolated per-customer failures. English help and Icelandic translations included. Objects: enumextension/value and implementation 73732140, runner 73732141; tests/stand-ins/fixture 97590–97593.
 - `Shopify.Metafield.Sync` (#35): loads definitions or sends changed values for one product, variant, customer or company using public connector codeunit 30418. Full permission only; validates shop, owner and expected local row count. Adds enum extension/value and implementation 73732060, runner 73732061, and mock tests/fixtures 97510–97512. Local counts do not imply sent counts; legacy types and empty values follow connector filtering.
-
+- Added `Shopify.Payment.SyncDisputes` (#33): imports new disputes and refreshes open disputes for one enabled shop, returns shop-scoped before/after counts, and rolls back failed imports including explicit connector commits. Unchanged counts can also mean the shop has no Shopify Payments account. New enum/value and implementation 73732046, runner 73732047, tests 97517, mock 97518 and MCP fixture 97519.
 
 - Prepared the first AppSource release with all nine Shopify operations, raised the Foundation minimum to 28.0.15.807 (release 28.0.15); context-sensitive help retains the Shopify app page URL because the app has no pages of its own (#62). No new objects. The release date is set when the release is approved.
 
@@ -34,4 +31,5 @@
 - Added message type `Shopify.Order.CreateSalesDocument` (enum value 73732020, codeunit 73732020): creates the sales order or invoice of an imported Shopify order by running Shopify's report Shpfy Create Sales Orders (30103) for that one order; granted through `SHOPIFY Full ori` (#24). Tests in codeunits 97470 and 97471.
 - Added message type `Shopify.Product.Sync` (enum value 73732010, codeunit 73732010): runs the connector's own product sync for one shop (report Shpfy Sync Products, not the price-only mode) to import products from Shopify and export changed items as the shop is set up; granted through `SHOPIFY Full ori` (#6). Tests in codeunit 97460.
 - Added message type `Shopify.Product.AddItems` (enum value 73732040, codeunits 73732040/73732041): adds a selection of Business Central items (`itemNos`, 1 to 100) to one enabled Shopify shop as products by running the connector report Shpfy Add Item to Shopify (30106), the code behind the action Add Items on Shopify Products, with Sync Images and Sync Inventory off; per item the response says Added, AlreadyInShop or NotAdded (skipped by the connector); granted through `SHOPIFY Full ori` (#7). Tests in codeunit 97490 (stand-in 97491 for the live Shopify API, MCP fixture 97492).
+- Added message type `Shopify.Product.SyncImages` (enum value 73732100, codeunits 73732100/73732101): imports Shopify product images or exports item pictures for one enabled shop by running the connector report Shpfy Sync Images (30107); the direction follows the shop setting Sync Item Images (`syncDirection` ToShopify or FromShopify), an optional `productIdFilter` limits the products, and a shop with Sync Item Images Disabled is refused with `PreconditionFailed`. Test codeunits 97540-97542 (#12).
 - Added message type `Shopify.Inventory.Sync` (enum value 73732030, codeunits 73732030/73732031): sends the stock levels per location of one enabled shop to Shopify by running the connector report Shpfy Sync Stock to Shopify (30102); options `skipImport` and `variantIdFilter`; granted through `SHOPIFY Full ori` (#14). Tests in codeunit 97480.
