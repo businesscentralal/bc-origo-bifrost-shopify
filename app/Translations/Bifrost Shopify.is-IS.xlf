@@ -507,6 +507,84 @@
           <note from="Developer" annotates="general" priority="2">is-IS=Notað til að senda birgðastöðu vara sem þegar eru tengdar Shopify vörum í eina virka verslun. Býr ekki til vörur og sendir ekki verð; notaðu Shopify.Product.Sync og Shopify.Product.SyncPrices fyrir það.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit Inventory Sync Impl ori - Method GetSelectionDescription - NamedType SelectionLbl</note>
         </trans-unit>
+        <trans-unit id="Codeunit 2633163800 - NamedType 1377788994" size-unit="char" translate="yes" xml:space="preserve">
+          <source>expectedCount does not match the owner's local metafield row count.</source>
+          <target>expectedCount samsvarar ekki fjölda staðbundinna viðbótarreita eigandans.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=expectedCount samsvarar ekki fjölda staðbundinna viðbótarreita eigandans.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Metafield Sync Impl ori - NamedType CountErr</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 2633163800 - NamedType 3791449231" size-unit="char" translate="yes" xml:space="preserve">
+          <source>The Shopify shop is disabled.</source>
+          <target>Shopify verslunin er óvirk.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Shopify verslunin er óvirk.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Metafield Sync Impl ori - NamedType DisabledErr</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 2633163800 - NamedType 4120398360" size-unit="char" translate="yes" xml:space="preserve">
+          <source>An enabled shop, an existing owner, documented parameter types and SHOPIFY Full ori permission.</source>
+          <target>Virk verslun, fyrirliggjandi eigandi, skráðar gerðir færibreyta og heimildin SHOPIFY Full ori.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Virk verslun, fyrirliggjandi eigandi, skráðar gerðir færibreyta og heimildin SHOPIFY Full ori.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Metafield Sync Impl ori - NamedType ExpectedLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 2633163800 - NamedType 3177803720" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Parameter "%1" has an invalid value or JSON type.</source>
+          <target>Færibreytan "%1" hefur ógilt gildi eða JSON gerð.</target>
+          <note from="Developer" annotates="general" priority="2">%1 = parameter name||is-IS=Færibreytan "%1" hefur ógilt gildi eða JSON gerð.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Metafield Sync Impl ori - NamedType InvalidErr</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 2633163800 - NamedType 1830439019" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Parameter "%1" is required.</source>
+          <target>Færibreytan "%1" er nauðsynleg.</target>
+          <note from="Developer" annotates="general" priority="2">%1 = parameter name||is-IS=Færibreytan "%1" er nauðsynleg.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Metafield Sync Impl ori - NamedType MissingErr</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 2633163800 - NamedType 2029447175" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Check the parameter and connector error, read the shop and owner with Data.Records.Get, and ask an administrator for SHOPIFY Full ori if needed.</source>
+          <target>Athugaðu færibreytuna og villu tengilsins, lestu verslun og eiganda með Data.Records.Get og biddu kerfisstjóra um SHOPIFY Full ori ef þörf krefur.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Athugaðu færibreytuna og villu tengilsins, lestu verslun og eiganda með Data.Records.Get og biddu kerfisstjóra um SHOPIFY Full ori ef þörf krefur.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Metafield Sync Impl ori - NamedType NextLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 2633163800 - NamedType 2997008092" size-unit="char" translate="yes" xml:space="preserve">
+          <source>The Shopify owner was not found in this shop.</source>
+          <target>Shopify eigandinn fannst ekki í þessari verslun.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Shopify eigandinn fannst ekki í þessari verslun.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Metafield Sync Impl ori - NamedType OwnerMissingErr</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 2633163800 - NamedType 315309378" size-unit="char" translate="yes" xml:space="preserve">
+          <source>You do not have permission to synchronize Shopify metafields.</source>
+          <target>Þú hefur ekki heimild til að samstilla viðbótarreiti Shopify.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Þú hefur ekki heimild til að samstilla viðbótarreiti Shopify.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Metafield Sync Impl ori - NamedType PermissionErr</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 2633163800 - NamedType 2922492279" size-unit="char" translate="yes" xml:space="preserve">
+          <source>The Shopify shop was not found.</source>
+          <target>Shopify verslunin fannst ekki.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Shopify verslunin fannst ekki.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Metafield Sync Impl ori - NamedType ShopMissingErr</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 2633163800 - NamedType 1668614503" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Parameter "%1" is not supported.</source>
+          <target>Færibreytan "%1" er ekki studd.</target>
+          <note from="Developer" annotates="general" priority="2">%1 = parameter name||is-IS=Færibreytan "%1" er ekki studd.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Metafield Sync Impl ori - NamedType UnknownErr</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 2633163800 - Method 4077369804 - NamedType 3569966352" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Loads metafield definitions from Shopify or sends one owner's changed metafield values to Shopify.</source>
+          <target>Sækir skilgreiningar viðbótarreita úr Shopify eða sendir breytt gildi viðbótarreita eins eiganda til Shopify.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Sækir skilgreiningar viðbótarreita úr Shopify eða sendir breytt gildi viðbótarreita eins eiganda til Shopify.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Metafield Sync Impl ori - Method GetDescription - NamedType DescriptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 2633163800 - Method 1027590672 - NamedType 1290244428" size-unit="char" translate="yes" xml:space="preserve">
+          <source>shopify metafields, load metafield definitions, send metafield values, sync custom fields</source>
+          <target>shopify viðbótarreitir, sækja skilgreiningar viðbótarreita, senda gildi viðbótarreita, samstilla sérreiti</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=shopify viðbótarreitir, sækja skilgreiningar viðbótarreita, senda gildi viðbótarreita, samstilla sérreiti</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Metafield Sync Impl ori - Method GetKeywords - NamedType KeywordsLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 2633163800 - Method 79446908 - NamedType 895773054" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Use for one product, variant, customer or company. GetDefinitions writes definitions in BC; SendValues writes changed values in Shopify. Edit values separately with Data.Records.Set.</source>
+          <target>Notað fyrir eina vöru, afbrigði, viðskiptavin eða fyrirtæki. GetDefinitions skráir skilgreiningar í BC; SendValues skráir breytt gildi í Shopify. Breyttu gildum sérstaklega með Data.Records.Set.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Notað fyrir eina vöru, afbrigði, viðskiptavin eða fyrirtæki. GetDefinitions skráir skilgreiningar í BC; SendValues skráir breytt gildi í Shopify. Breyttu gildum sérstaklega með Data.Records.Set.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Metafield Sync Impl ori - Method GetSelectionDescription - NamedType SelectionLbl</note>
+        </trans-unit>
         <trans-unit id="Codeunit 4087984018 - Method 3571782927 - NamedType 64258721" size-unit="char" translate="yes" xml:space="preserve">
           <source>You do not have the permissions to create sales documents from Shopify orders.</source>
           <target>Þú hefur ekki heimildir til að búa til sölugögn úr Shopify pöntunum.</target>

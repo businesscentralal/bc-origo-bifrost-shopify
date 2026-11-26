@@ -10,6 +10,8 @@ permissionset 73731952 "SHOPIFY Full ori"
                   tabledata "Order Paid Marker ori" = RIM,
                   codeunit "Order MarkPaid Impl ori" = X,
                   codeunit "Order MarkPaid Run ori" = X,
+                  codeunit "Metafield Sync Impl ori" = X,
+                  codeunit "Metafield Sync Run ori" = X,
                   codeunit "Product SyncPrices Impl ori" = X,
                   codeunit "Customer Sync Impl ori" = X,
                   codeunit "Customer Sync Run ori" = X,

@@ -4,6 +4,8 @@
 
 ### Added
 - `Shopify.Order.MarkAsPaid` (#26): confirmed, hard-to-undo Shopify payment write through public `Shpfy Orders.MarkAsPaid`; refuses repeats without refreshing the imported order. Enum/value and implementation 73732090; runner 73732091; success-marker table 73732090. Dispatcher tests 97530, mock subscriber 97531 and MCP fixture 97532. Explicit connector commits are ignored inside the rollback runner; a false result rolls back local writes.
+- `Shopify.Metafield.Sync` (#35): loads definitions or sends changed values for one product, variant, customer or company using public connector codeunit 30418. Full permission only; validates shop, owner and expected local row count. Adds enum extension/value and implementation 73732060, runner 73732061, and mock tests/fixtures 97510–97512. Local counts do not imply sent counts; legacy types and empty values follow connector filtering.
+
 
 - Prepared the first AppSource release with all nine Shopify operations, raised the Foundation minimum to 28.0.15.807 (release 28.0.15); context-sensitive help retains the Shopify app page URL because the app has no pages of its own (#62). No new objects. The release date is set when the release is approved.
 
