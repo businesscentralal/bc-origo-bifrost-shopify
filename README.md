@@ -13,6 +13,14 @@ Bifröst message types, so an agent can operate it end to end. It is built on th
 
 **Status:** Shopify Connector operations are registered as Bifröst message types. See the in-app message contracts for supported requests, permissions and effects. `Shopify.Transaction.SuggestPayments` writes cash receipt journal lines through the connector without posting; its runtime help explains eligibility, confirmation count and repeat-call behavior.
 
+`Shopify.Catalog.Sync` imports company and market catalogs for one enabled shop (`shopCode`).
+It returns `status`, `shopCode`, `catalogsBefore` and `catalogsAfter`. Run `Shopify.Company.Sync`
+first to include company catalogs; market catalogs are imported without companies. Repeated calls
+update existing rows. Catalogs absent from Shopify remain locally, and market relations are rebuilt
+for returned market catalogs. The operation writes only to Business Central and requires
+`SHOPIFY Full ori` plus Microsoft Shopify permissions. A failed run rolls back its local changes.
+Use `Help.Implementation.Get` for the full contract, refusals and examples.
+
 ## Shopify.Payment.SyncDisputes
 
 `Shopify.Payment.SyncDisputes` imports new disputes and refreshes open disputes for one enabled shop:
