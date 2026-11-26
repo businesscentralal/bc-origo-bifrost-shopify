@@ -33,6 +33,162 @@
           <note from="Developer" annotates="general" priority="2">is-IS=Keyrslukenni</note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Customer Sync Marker ori - Field Run Id - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Codeunit 856310240 - Method 3571782927 - NamedType 315309378" size-unit="char" translate="yes" xml:space="preserve">
+          <source>You do not have permission to synchronize Shopify companies.</source>
+          <target>Þú hefur ekki heimild til að samstilla Shopify fyrirtæki.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Þú hefur ekki heimild til að samstilla Shopify fyrirtæki.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Company Sync Impl ori - Method ExecuteBifrostTask - NamedType PermissionErr</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 856310240 - Method 3571782927 - NamedType 3932376842" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Ask an administrator for SHOPIFY Full ori and Microsoft Shopify and customer write permissions.</source>
+          <target>Biddu kerfisstjóra um SHOPIFY Full ori og Shopify og viðskiptamannaheimildir Microsoft til skrifa.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Biddu kerfisstjóra um SHOPIFY Full ori og Shopify og viðskiptamannaheimildir Microsoft til skrifa.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Company Sync Impl ori - Method ExecuteBifrostTask - NamedType PermissionNextLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 856310240 - Method 3571782927 - NamedType 1830439019" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Parameter "shopCode" is required.</source>
+          <target>Færibreytan "shopCode" er nauðsynleg.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Færibreytan "shopCode" er nauðsynleg.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Company Sync Impl ori - Method ExecuteBifrostTask - NamedType MissingErr</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 856310240 - Method 3571782927 - NamedType 3177803720" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Parameter "shopCode" must be a non-empty JSON string of at most 20 characters.</source>
+          <target>Færibreytan "shopCode" verður að vera JSON texti sem er ekki tómur, að hámarki 20 stafir.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Færibreytan "shopCode" verður að vera JSON texti sem er ekki tómur, að hámarki 20 stafir.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Company Sync Impl ori - Method ExecuteBifrostTask - NamedType InvalidErr</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 856310240 - Method 3571782927 - NamedType 1808689917" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Send data.shopCode with the code of an enabled Shopify shop.</source>
+          <target>Sendu data.shopCode með kóða virkrar Shopify verslunar.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Sendu data.shopCode með kóða virkrar Shopify verslunar.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Company Sync Impl ori - Method ExecuteBifrostTask - NamedType InputNextLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 856310240 - Method 3571782927 - NamedType 3351274" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Shopify shop %1 was not found.</source>
+          <target>Shopify verslun %1 fannst ekki.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Shopify verslun %1 fannst ekki.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Company Sync Impl ori - Method ExecuteBifrostTask - NamedType NotFoundErr</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 856310240 - Method 3571782927 - NamedType 4035518044" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Read table 30102 with Data.Records.Get to find the shop code.</source>
+          <target>Lestu töflu 30102 með Data.Records.Get til að finna verslunarkóðann.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Lestu töflu 30102 með Data.Records.Get til að finna verslunarkóðann.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Company Sync Impl ori - Method ExecuteBifrostTask - NamedType FindNextLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 856310240 - Method 3571782927 - NamedType 3791449231" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Shop %1 is not enabled.</source>
+          <target>Verslun %1 er ekki virk.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Verslun %1 er ekki virk.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Company Sync Impl ori - Method ExecuteBifrostTask - NamedType DisabledErr</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 856310240 - Method 3571782927 - NamedType 3272774952" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Enable the shop on the Shopify Shop Card.</source>
+          <target>Virkjaðu verslunina á Shopify Shop Card.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Virkjaðu verslunina á Shopify Shop Card.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Company Sync Impl ori - Method ExecuteBifrostTask - NamedType EnableNextLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 856310240 - Method 3571782927 - NamedType 1614553106" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Cannot synchronize companies for shop %1. %2</source>
+          <target>Ekki er hægt að samstilla fyrirtæki fyrir verslun %1. %2</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Ekki er hægt að samstilla fyrirtæki fyrir verslun %1. %2</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Company Sync Impl ori - Method ExecuteBifrostTask - NamedType ConnectorErr</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 856310240 - Method 3571782927 - NamedType 2325023071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Fix the connector error and retry; completed Shopify requests cannot be rolled back.</source>
+          <target>Lagaðu villu tengilsins og reyndu aftur; ekki er hægt að afturkalla loknar Shopify beiðnir.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Lagaðu villu tengilsins og reyndu aftur; ekki er hægt að afturkalla loknar Shopify beiðnir.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Company Sync Impl ori - Method ExecuteBifrostTask - NamedType RetryNextLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 856310240 - Method 4077369804 - NamedType 918378481" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Imports and updates Shopify companies and their Business Central customer links for one shop, as the shop is set up.</source>
+          <target>Flytur inn og uppfærir Shopify fyrirtæki og tengingar þeirra við viðskiptamenn í Business Central fyrir eina verslun samkvæmt uppsetningu hennar.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Flytur inn og uppfærir Shopify fyrirtæki og tengingar þeirra við viðskiptamenn í Business Central fyrir eina verslun samkvæmt uppsetningu hennar.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Company Sync Impl ori - Method GetDescription - NamedType TextLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 856310240 - Method 1158096087 - NamedType 3941846598" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Company synchronization was refused; the response code and text identify the cause.</source>
+          <target>Samstillingu fyrirtækja var hafnað; svarskóði og texti tilgreina orsökina.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Samstillingu fyrirtækja var hafnað; svarskóði og texti tilgreina orsökina.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Company Sync Impl ori - Method GetErrors - NamedType ErrorLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 856310240 - Method 1158096087 - NamedType 1000175713" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Validation makes no changes. A connector failure rolls back local writes; completed Shopify requests cannot be undone.</source>
+          <target>Staðfesting breytir engu. Villa í tengli afturkallar staðbundnar breytingar; ekki er hægt að afturkalla loknar Shopify beiðnir.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Staðfesting breytir engu. Villa í tengli afturkallar staðbundnar breytingar; ekki er hægt að afturkalla loknar Shopify beiðnir.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Company Sync Impl ori - Method GetErrors - NamedType NothingLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 856310240 - Method 1158096087 - NamedType 2029447175" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Correct the named parameter, shop setup or permission, then retry.</source>
+          <target>Leiðréttu nefnda færibreytu, uppsetningu verslunar eða heimild og reyndu aftur.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Leiðréttu nefnda færibreytu, uppsetningu verslunar eða heimild og reyndu aftur.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Company Sync Impl ori - Method GetErrors - NamedType NextLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 856310240 - Method 1027590672 - NamedType 918378481" size-unit="char" translate="yes" xml:space="preserve">
+          <source>shopify company sync, import shopify companies, update shopify companies, synchronize b2b companies, company customer links</source>
+          <target>shopify samstilling fyrirtækja, flytja inn shopify fyrirtæki, uppfæra shopify fyrirtæki, samstilla b2b fyrirtæki, fyrirtæki tengingar viðskiptamanna</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=shopify samstilling fyrirtækja, flytja inn shopify fyrirtæki, uppfæra shopify fyrirtæki, samstilla b2b fyrirtæki, fyrirtæki tengingar viðskiptamanna</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Company Sync Impl ori - Method GetKeywords - NamedType TextLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 856310240 - Method 3615801952 - NamedType 3770051306" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Code of an enabled Shopify shop, at most 20 characters. Company settings determine import and export.</source>
+          <target>Kóði virkrar Shopify verslunar, að hámarki 20 stafir. Fyrirtækjastillingar ráða inn- og útflutningi.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Kóði virkrar Shopify verslunar, að hámarki 20 stafir. Fyrirtækjastillingar ráða inn- og útflutningi.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Company Sync Impl ori - Method GetParameters - NamedType ShopLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 856310240 - Method 1033708611 - NamedType 1313893332" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Read shops in table 30102 and synchronized companies in table 30150.</source>
+          <target>Lestu verslanir í töflu 30102 og samstillt fyrirtæki í töflu 30150.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Lestu verslanir í töflu 30102 og samstillt fyrirtæki í töflu 30150.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Company Sync Impl ori - Method GetRelated - NamedType ReadLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 856310240 - Method 4268477247 - NamedType 3193096050" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Success only when the connector returns without an error.</source>
+          <target>Success aðeins þegar tengillinn lýkur án villu.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Success aðeins þegar tengillinn lýkur án villu.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Company Sync Impl ori - Method GetResponse - NamedType StatusLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 856310240 - Method 4268477247 - NamedType 3770051306" size-unit="char" translate="yes" xml:space="preserve">
+          <source>The synchronized shop.</source>
+          <target>Samstillta verslunin.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Samstillta verslunin.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Company Sync Impl ori - Method GetResponse - NamedType ShopLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 856310240 - Method 4268477247 - NamedType 143641881" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Applied Company Import From Shopify setting: None, AllCompanies or WithOrderImport.</source>
+          <target>Stillingin Company Import From Shopify sem var notuð: None, AllCompanies eða WithOrderImport.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Stillingin Company Import From Shopify sem var notuð: None, AllCompanies eða WithOrderImport.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Company Sync Impl ori - Method GetResponse - NamedType ImportLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 856310240 - Method 4268477247 - NamedType 2697219170" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Applied Can Update Shopify Companies setting.</source>
+          <target>Stillingin Can Update Shopify Companies sem var notuð.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Stillingin Can Update Shopify Companies sem var notuð.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Company Sync Impl ori - Method GetResponse - NamedType ExportLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 856310240 - Method 4268477247 - NamedType 2812012117" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Company rows for this shop before the run.</source>
+          <target>Fyrirtækjafærslur þessarar verslunar fyrir keyrslu.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Fyrirtækjafærslur þessarar verslunar fyrir keyrslu.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Company Sync Impl ori - Method GetResponse - NamedType BeforeLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 856310240 - Method 4268477247 - NamedType 875675674" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Company rows for this shop after the run; not a count of remote writes.</source>
+          <target>Fyrirtækjafærslur þessarar verslunar eftir keyrslu; ekki fjöldi fjarskrifta.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Fyrirtækjafærslur þessarar verslunar eftir keyrslu; ekki fjöldi fjarskrifta.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Company Sync Impl ori - Method GetResponse - NamedType AfterLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 856310240 - Method 79446908 - NamedType 918378481" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Use to synchronize companies for one Shopify shop. Use Shopify.Customer.Sync for individual customers; this type follows company mapping and import/export settings.</source>
+          <target>Notað til að samstilla fyrirtæki fyrir eina Shopify verslun. Notaðu Shopify.Customer.Sync fyrir einstaka viðskiptamenn; þessi tegund fylgir vörpun fyrirtækja og inn- og útflutningsstillingum.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Notað til að samstilla fyrirtæki fyrir eina Shopify verslun. Notaðu Shopify.Customer.Sync fyrir einstaka viðskiptamenn; þessi tegund fylgir vörpun fyrirtækja og inn- og útflutningsstillingum.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Company Sync Impl ori - Method GetSelectionDescription - NamedType TextLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 856310240 - Method 3897248833 - NamedType 3770051306" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Enabled Shopify shop (table 30102).</source>
+          <target>Virk Shopify verslun (tafla 30102).</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Virk Shopify verslun (tafla 30102).</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Company Sync Impl ori - Method GetTarget - NamedType ShopLbl</note>
+        </trans-unit>
         <trans-unit id="Codeunit 478318347 - Method 3571782927 - NamedType 1830439019" size-unit="char" translate="yes" xml:space="preserve">
           <source>Parameter "%1" is required.</source>
           <target>Færibreytan "%1" er nauðsynleg.</target>
@@ -2324,6 +2480,12 @@
           <target>Notað fyrir innflutta Shopify endurgreiðslu þar sem verslun er stillt á Auto Create Credit Memo og enginn kreditreikningur er til. Flytur ekki inn endurgreiðslur frá Shopify og bókar ekki kreditreikninginn.</target>
           <note from="Developer" annotates="general" priority="2">is-IS=Notað fyrir innflutta Shopify endurgreiðslu þar sem verslun er stillt á Auto Create Credit Memo og enginn kreditreikningur er til. Flytur ekki inn endurgreiðslur frá Shopify og bókar ekki kreditreikninginn.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit Refund CrMemo Impl ori - Method GetSelectionDescription - NamedType SelectionLbl</note>
+        </trans-unit>
+        <trans-unit id="EnumExtension 1037726508 - EnumValue 3327462878 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Enum 1896130297">
+          <source>Shopify.Company.Sync</source>
+          <target>Shopify.Company.Sync</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Shopify.Company.Sync</note>
+          <note from="Xliff Generator" annotates="general" priority="3">EnumExtension Company Sync MsgType ori - EnumValue Shopify.Company.Sync - Property Caption</note>
         </trans-unit>
         <trans-unit id="EnumExtension 1037726508 - EnumValue 482897410 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Enum 1896130297">
           <source>Sync Shopify payment disputes</source>
