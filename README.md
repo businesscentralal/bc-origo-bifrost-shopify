@@ -89,3 +89,5 @@ site repository and is published at <https://docs.bifrost.origo.is>.
 | `test/` | Test app (`Bifrost Shopify - Tests`) |
 | `tools/` | Pipeline guard scripts |
 | `.AL-Go/`, `.github/`, `.alpaca/` | AL-Go for GitHub / COSMO Alpaca pipeline configuration |
+
+`Shopify.Company.Sync` synchronizes one shop’s B2B companies and BC customer links according to its company settings. Call with `{"shopCode":"WEBSHOP"}`; the response echoes import/export settings and local company counts. Full permission is required. The runtime contract supplies Overview, Notes and Examples.
