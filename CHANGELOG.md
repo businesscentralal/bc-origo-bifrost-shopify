@@ -2,6 +2,8 @@
 
 ## [28.0.0.0] - Unreleased
 
+- Added `Shopify.Product.AddItemsAsVariants` (#10), enum/implementation 73732050 and runner 73732051. Validates product, shop, all 1–100 items and `expectedCount` before writes; runs report 30117 once per item, stops on refusal and reports earlier successful additions. Duplicate mappings are refused. Granted through `SHOPIFY Full ori`; bilingual refusal text and mock-only dispatcher tests 97500, stand-in 97501 and MCP fixture 97502.
+
 - Prepared the first AppSource release with all nine Shopify operations, raised the Foundation minimum to 28.0.15.807 (release 28.0.15); context-sensitive help retains the Shopify app page URL because the app has no pages of its own (#62). No new objects. The release date is set when the release is approved.
 
 - `Shopify.Order.CreateSalesDocument` (enum value 73732020, codeunit 73732020) refuses with `PreconditionFailed` before any change when the order's shop has Return and Refund Process = Auto Create Credit Memo, and the success response adds `documentStatus` (Open, Released, Pending Approval, Pending Prepayment), the same name in every language. Existing request and response fields are unchanged (#59). Tests in codeunit 97470. No new objects.

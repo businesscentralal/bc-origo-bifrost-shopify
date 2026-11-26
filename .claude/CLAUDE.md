@@ -16,6 +16,12 @@ Tests: 97400-97599
 | Type | ID | Object |
 | --- | --- | --- |
 | Codeunit | 73731950 | Shopify Registration ori |
+| EnumExtension | 73732050 | Product AddVariants Msg ori (value Shopify.Product.AddItemsAsVariants) |
+| Codeunit | 73732050 | Product AddVariants Impl ori |
+| Codeunit | 73732051 | Product AddVariants Run ori |
+| Test Codeunit | 97500 | Shopify Issue 10 Tests ori |
+| Codeunit | 97501 | Shpfy AddVariants Stub ori |
+| Test Codeunit | 97502 | Shpfy AddVariants MCP ori |
 | PermissionSet | 73731950 | SHOPIFY Base ori |
 | PermissionSet | 73731951 | SHOPIFY Read ori |
 | PermissionSet | 73731952 | SHOPIFY Full ori |
