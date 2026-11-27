@@ -4,7 +4,10 @@
 
 ### Added
 
+- Add Shopify.Invoice.Sync to export selected posted invoices through connector report 30119 with batch preflight, per-invoice outcomes and mock-only tests. New objects: codeunits 73731955/73731956, enum extension 73731955/value 73731956; test codeunits 97507/97509 and stand-in 97508.
+
 - `Shopify.Location.Sync` (#15): reconciles Shopify locations through Get Locations, preserving retained mappings and deleting stale locations with their mappings (Gunnar’s approved exception). Returns before/after, net, inserted and removed counts; isolates local connector failures. Objects: implementation and enum/value 73732120, runner 73732121, mock Dispatcher tests/stand-in/fixture 97570–97572.
+- #28: Add `Shopify.Order.ForceSync` to re-import one existing order with `expectedCount = 1`, refuse the two connector paths that can write to Shopify, and roll back local changes including explicit connector commits and failed-run Shopify logs. New codeunits 73731951/73731952, enum extension/value 73731951, test codeunits 97524/97525/97526.
 
 ### Changed
 
@@ -14,7 +17,6 @@
 
 ### Added
 - Added `Shopify.Product.AddItemsAsVariants` (#10), enum/implementation 73732050 and runner 73732051. Validates product, shop, all 1–100 items and `expectedCount` before writes; runs report 30117 once per item, stops on refusal and reports earlier successful additions. Duplicate mappings are refused. Granted through `SHOPIFY Full ori`; bilingual refusal text and mock-only dispatcher tests 97500, stand-in 97501 and MCP fixture 97502.
-- Add Shopify.Invoice.Sync to export selected posted invoices through connector report 30119 with batch preflight, per-invoice outcomes and mock-only tests. New objects: codeunits 73731955/73731956, enum extension 73731955/value 73731956; test codeunits 97507/97509 and stand-in 97508.
 
 - Added `Shopify.Catalog.Sync` to import company and market catalogs for one enabled shop through report 30115, with typed refusals and rollback on failure. Company catalogs require imported companies; market catalogs work without them. Catalogs absent from Shopify remain locally. Objects: enum/implementation 73732080, runner 73732081; mock-only tests 97533–97535 (#21; reassigned to avoid the merged MarkAsPaid test IDs).
 - Added message type `Shopify.Payment.Sync` (enum value 73732110, codeunits 73732110/73732111): imports Shopify Payments payouts and payment transactions for one enabled shop by running report Shpfy Sync Payments (30105); granted through `SHOPIFY Full ori` (#32). A connector failure rolls back payout, payment transaction and Shopify log rows from that run, including commits the connector made between its steps. Unchanged counts can also mean the shop has no Shopify Payments account. Tests in codeunits 97550–97552.
