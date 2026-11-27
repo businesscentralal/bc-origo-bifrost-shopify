@@ -2799,6 +2799,126 @@
           <note from="Developer" annotates="general" priority="2">is-IS=Bifröst Shopify lestur</note>
           <note from="Xliff Generator" annotates="general" priority="3">PermissionSet SHOPIFY Read ori - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Codeunit 343806596 - NamedType 141296985" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Archive Processed Orders can close this linked order in Shopify.</source>
+          <target state="translated">Archive Processed Orders getur lokað þessari tengdu pöntun í Shopify.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Archive Processed Orders getur lokað þessari tengdu pöntun í Shopify.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Order ForceSync Impl ori - NamedType ArchiveErr</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 343806596 - NamedType 3843393041" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Review Archive Processed Orders on the Shopify Shop Card before re-importing a linked order.</source>
+          <target state="translated">Farðu yfir Archive Processed Orders á Shopify Shop Card áður en tengd pöntun er flutt inn aftur.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Farðu yfir Archive Processed Orders á Shopify Shop Card áður en tengd pöntun er flutt inn aftur.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Order ForceSync Impl ori - NamedType ArchiveNextLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 343806596 - NamedType 2286161434" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Correct the connector error and retry. Local changes and Shopify log entries from this failed run were rolled back.</source>
+          <target state="translated">Lagaðu villu tengilsins og reyndu aftur. Staðbundnar breytingar og Shopify annálsfærslur úr þessari misheppnuðu keyrslu voru afturkallaðar.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Lagaðu villu tengilsins og reyndu aftur. Staðbundnar breytingar og Shopify annálsfærslur úr þessari misheppnuðu keyrslu voru afturkallaðar.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Order ForceSync Impl ori - NamedType ConnectorNextLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 343806596 - NamedType 1377788994" size-unit="char" translate="yes" xml:space="preserve">
+          <source>expectedCount must be 1 to confirm overwriting this order.</source>
+          <target state="translated">expectedCount verður að vera 1 til að staðfesta yfirskrift þessarar pöntunar.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=expectedCount verður að vera 1 til að staðfesta yfirskrift þessarar pöntunar.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Order ForceSync Impl ori - NamedType CountErr</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 343806596 - NamedType 3791449231" size-unit="char" translate="yes" xml:space="preserve">
+          <source>The Shopify shop is disabled.</source>
+          <target state="translated">Shopify verslunin er óvirk.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Shopify verslunin er óvirk.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Order ForceSync Impl ori - NamedType DisabledErr</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 343806596 - NamedType 4120398360" size-unit="char" translate="yes" xml:space="preserve">
+          <source>An existing order, an enabled shop that cannot send these Shopify writes, expectedCount = 1 and write permission.</source>
+          <target state="translated">Fyrirliggjandi pöntun, virk verslun sem getur ekki sent þessar Shopify breytingar, expectedCount = 1 og skrifheimild.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Fyrirliggjandi pöntun, virk verslun sem getur ekki sent þessar Shopify breytingar, expectedCount = 1 og skrifheimild.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Order ForceSync Impl ori - NamedType ExpectedLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 343806596 - NamedType 859091212" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Import the order with Shopify.Order.Import first.</source>
+          <target state="translated">Flyttu pöntunina fyrst inn með Shopify.Order.Import.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Flyttu pöntunina fyrst inn með Shopify.Order.Import.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Order ForceSync Impl ori - NamedType ImportNextLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 343806596 - NamedType 1808689917" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Send the existing orderId and expectedCount = 1 to confirm overwriting local data.</source>
+          <target state="translated">Sendu fyrirliggjandi orderId og expectedCount = 1 til að staðfesta yfirskrift staðbundinna gagna.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Sendu fyrirliggjandi orderId og expectedCount = 1 til að staðfesta yfirskrift staðbundinna gagna.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Order ForceSync Impl ori - NamedType InputNextLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 343806596 - NamedType 3177803720" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Use JSON integers, with an orderId greater than zero.</source>
+          <target state="translated">Notaðu JSON heiltölur og orderId stærra en núll.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Notaðu JSON heiltölur og orderId stærra en núll.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Order ForceSync Impl ori - NamedType InvalidErr</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 343806596 - NamedType 1830439019" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Parameter "%1" is required.</source>
+          <target state="translated">Færibreytan "%1" er nauðsynleg.</target>
+          <note from="Developer" annotates="general" priority="2">%1 = parameter name||is-IS=Færibreytan "%1" er nauðsynleg.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Order ForceSync Impl ori - NamedType MissingErr</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 343806596 - NamedType 1108143201" size-unit="char" translate="yes" xml:space="preserve">
+          <source>The Shopify order does not exist locally.</source>
+          <target state="translated">Shopify pöntunin er ekki til staðbundið.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Shopify pöntunin er ekki til staðbundið.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Order ForceSync Impl ori - NamedType OrderMissingErr</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 343806596 - NamedType 315309378" size-unit="char" translate="yes" xml:space="preserve">
+          <source>You do not have permission to re-import Shopify orders.</source>
+          <target state="translated">Þú hefur ekki heimild til að flytja Shopify pantanir inn aftur.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Þú hefur ekki heimild til að flytja Shopify pantanir inn aftur.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Order ForceSync Impl ori - NamedType PermissionErr</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 343806596 - NamedType 3932376842" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Ask an administrator for SHOPIFY Full ori and Microsoft Shopify permissions.</source>
+          <target state="translated">Biddu kerfisstjóra um SHOPIFY Full ori og Microsoft Shopify heimildir.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Biddu kerfisstjóra um SHOPIFY Full ori og Microsoft Shopify heimildir.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Order ForceSync Impl ori - NamedType PermissionNextLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 343806596 - NamedType 703425172" size-unit="char" translate="yes" xml:space="preserve">
+          <source>This shop can register a fulfillment service in Shopify during the import.</source>
+          <target state="translated">Þessi verslun getur skráð afhendingarþjónustu í Shopify við innflutning.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Þessi verslun getur skráð afhendingarþjónustu í Shopify við innflutning.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Order ForceSync Impl ori - NamedType ServiceErr</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 343806596 - NamedType 3476108124" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Review Allow Outgoing Requests and Fulfillment Service Activated on the Shopify Shop Card.</source>
+          <target state="translated">Farðu yfir Allow Outgoing Requests og Fulfillment Service Activated á Shopify Shop Card.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Farðu yfir Allow Outgoing Requests og Fulfillment Service Activated á Shopify Shop Card.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Order ForceSync Impl ori - NamedType ServiceNextLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 343806596 - NamedType 2922492279" size-unit="char" translate="yes" xml:space="preserve">
+          <source>The Shopify shop was not found.</source>
+          <target state="translated">Shopify verslunin fannst ekki.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Shopify verslunin fannst ekki.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Order ForceSync Impl ori - NamedType ShopMissingErr</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 343806596 - NamedType 245955643" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Verify and enable the shop on the Shopify Shop Card.</source>
+          <target state="translated">Athugaðu og virkjaðu verslunina á Shopify Shop Card.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Athugaðu og virkjaðu verslunina á Shopify Shop Card.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Order ForceSync Impl ori - NamedType ShopNextLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 343806596 - Method 4077369804 - NamedType 3569966352" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Re-imports one Shopify order and overwrites its local header, lines and related data.</source>
+          <target state="translated">Flytur eina Shopify pöntun inn aftur og yfirskrifar staðbundinn haus, línur og tengd gögn.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Flytur eina Shopify pöntun inn aftur og yfirskrifar staðbundinn haus, línur og tengd gögn.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Order ForceSync Impl ori - Method GetDescription - NamedType DescriptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 343806596 - Method 1027590672 - NamedType 1290244428" size-unit="char" translate="yes" xml:space="preserve">
+          <source>shopify order, force sync, re-import order, overwrite local order, refresh order</source>
+          <target state="translated">shopify pöntun, þvinga samstillingu, endurinnflytja pöntun, yfirskrifa staðbundna pöntun, endurnýja pöntun</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=shopify pöntun, þvinga samstillingu, endurinnflytja pöntun, yfirskrifa staðbundna pöntun, endurnýja pöntun</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Order ForceSync Impl ori - Method GetKeywords - NamedType KeywordsLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 343806596 - Method 79446908 - NamedType 895773054" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Use for an existing local order with expectedCount = 1. Reads Shopify, overwrites local order data, and does not re-run mapping or change BC sales documents.</source>
+          <target state="translated">Notað fyrir fyrirliggjandi staðbundna pöntun með expectedCount = 1. Les Shopify, yfirskrifar staðbundin pöntunargögn og endurkeyrir ekki vörpun eða breytir BC söluskjölum.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Notað fyrir fyrirliggjandi staðbundna pöntun með expectedCount = 1. Les Shopify, yfirskrifar staðbundin pöntunargögn og endurkeyrir ekki vörpun eða breytir BC söluskjölum.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Order ForceSync Impl ori - Method GetSelectionDescription - NamedType SelectionLbl</note>
+        </trans-unit>
         <trans-unit id="Table 3405159736 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Shopify paid order request</source>
           <target>Beiðni um greidda Shopify pöntun</target>

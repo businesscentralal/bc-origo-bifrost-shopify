@@ -5,6 +5,7 @@
 ### Added
 
 - `Shopify.Location.Sync` (#15): reconciles Shopify locations through Get Locations, preserving retained mappings and deleting stale locations with their mappings (Gunnar’s approved exception). Returns before/after, net, inserted and removed counts; isolates local connector failures. Objects: implementation and enum/value 73732120, runner 73732121, mock Dispatcher tests/stand-in/fixture 97570–97572.
+- #28: Add `Shopify.Order.ForceSync` to re-import one existing order with `expectedCount = 1`, refuse the two connector paths that can write to Shopify, and roll back local changes including explicit connector commits and failed-run Shopify logs. New codeunits 73731951/73731952, enum extension/value 73731951, test codeunits 97524/97525/97526.
 
 ### Changed
 
