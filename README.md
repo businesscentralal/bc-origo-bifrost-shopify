@@ -68,6 +68,14 @@ The shop must be enabled and the owner must belong to that shop. Callers need `S
 
 The public `Shpfy Metafields` API (30418) is wrapped by implementation/enum value 73732060 and runner 73732061. Mock dispatcher tests 97510, stand-in 97511 and fixture 97512 cover both directions, all owners, refusals and rollback. Unknown keys are rejected by Foundation as `UnknownParameter` before dispatch. Runtime help contains the full English Overview, Notes, Examples and error contract; captions and refusals support English and Icelandic.
 
+## Shopify.Payment.Sync
+
+```json
+{"type":"Shopify.Payment.Sync","data":{"shopCode":"WEBSHOP"}}
+```
+
+Imports Shopify Payments payouts and payment transactions for one enabled shop through report Shpfy Sync Payments (30105). The response is `status`, `shopCode`, `payoutsBefore`, `payoutsAfter`, `paymentTransactionsBefore` and `paymentTransactionsAfter`. Repeated calls are idempotent. Unchanged counts can also mean the shop has no Shopify Payments account. Nothing is sent to Shopify and no ledger entry is posted. A connector failure returns `BusinessCentralError` with the connector text, and payout, payment transaction and Shopify log rows from that run are rolled back, including commits the connector made between its steps. Callers need `SHOPIFY Full ori`.
+
 ## Object ranges
 
 | Object | Range |
