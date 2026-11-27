@@ -2763,6 +2763,126 @@
           <note from="Developer" annotates="general" priority="2">is-IS=Bifröst Shopify lestur</note>
           <note from="Xliff Generator" annotates="general" priority="3">PermissionSet SHOPIFY Read ori - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Codeunit 992846474 - Method 3571782927 - NamedType 64258721" size-unit="char" translate="yes" xml:space="preserve">
+          <source>You do not have permission to import Shopify locations.</source>
+          <target>Þú hefur ekki heimild til að flytja inn Shopify staðsetningar.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Þú hefur ekki heimild til að flytja inn Shopify staðsetningar.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Location Sync Impl ori - Method ExecuteBifrostTask - NamedType NoPermissionErr</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 992846474 - Method 3571782927 - NamedType 1780497417" size-unit="char" translate="yes" xml:space="preserve">
+          <source>SHOPIFY Full ori and Shopify Connector permissions</source>
+          <target>SHOPIFY Full ori og heimildir Shopify Connector</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=SHOPIFY Full ori og heimildir Shopify Connector</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Location Sync Impl ori - Method ExecuteBifrostTask - NamedType PermissionExpectedLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 992846474 - Method 3571782927 - NamedType 3674803952" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Ask an administrator to assign the required permissions.</source>
+          <target>Biddu kerfisstjóra um að úthluta nauðsynlegum heimildum.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Biddu kerfisstjóra um að úthluta nauðsynlegum heimildum.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Location Sync Impl ori - Method ExecuteBifrostTask - NamedType AskAdminLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 992846474 - Method 3571782927 - NamedType 1830439019" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Parameter "shopCode" is required.</source>
+          <target>Færibreytan "shopCode" er nauðsynleg.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Færibreytan "shopCode" er nauðsynleg.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Location Sync Impl ori - Method ExecuteBifrostTask - NamedType MissingErr</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 992846474 - Method 3571782927 - NamedType 3129818787" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Send data.shopCode with the code of a Shopify shop.</source>
+          <target>Sendu data.shopCode með kóða Shopify verslunar.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Sendu data.shopCode með kóða Shopify verslunar.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Location Sync Impl ori - Method ExecuteBifrostTask - NamedType MissingNextLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 992846474 - Method 3571782927 - NamedType 1879669363" size-unit="char" translate="yes" xml:space="preserve">
+          <source>text of 1 to 20 characters</source>
+          <target>texti með 1 til 20 stöfum</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=texti með 1 til 20 stöfum</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Location Sync Impl ori - Method ExecuteBifrostTask - NamedType TextExpectedLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 992846474 - Method 3571782927 - NamedType 3177803720" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Parameter "shopCode" must be text of 1 to 20 characters.</source>
+          <target>Færibreytan "shopCode" verður að vera texti með 1 til 20 stöfum.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Færibreytan "shopCode" verður að vera texti með 1 til 20 stöfum.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Location Sync Impl ori - Method ExecuteBifrostTask - NamedType InvalidErr</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 992846474 - Method 3571782927 - NamedType 780995952" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Send a nonblank shop code as text.</source>
+          <target>Sendu verslunarkóða sem texta og hafðu hann ekki auðan.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Sendu verslunarkóða sem texta og hafðu hann ekki auðan.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Location Sync Impl ori - Method ExecuteBifrostTask - NamedType InvalidNextLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 992846474 - Method 3571782927 - NamedType 3351274" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Shopify shop %1 was not found.</source>
+          <target>Shopify verslun %1 fannst ekki.</target>
+          <note from="Developer" annotates="general" priority="2">%1 = shop code||is-IS=Shopify verslun %1 fannst ekki.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Location Sync Impl ori - Method ExecuteBifrostTask - NamedType NotFoundErr</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 992846474 - Method 3571782927 - NamedType 1856496999" size-unit="char" translate="yes" xml:space="preserve">
+          <source>an existing Shopify shop</source>
+          <target>Shopify verslun sem er til</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Shopify verslun sem er til</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Location Sync Impl ori - Method ExecuteBifrostTask - NamedType ExistingShopLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 992846474 - Method 3571782927 - NamedType 1787450605" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Read table 30102 with Data.Records.Get to find the shop code.</source>
+          <target>Lestu töflu 30102 með Data.Records.Get til að finna verslunarkóðann.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Lestu töflu 30102 með Data.Records.Get til að finna verslunarkóðann.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Location Sync Impl ori - Method ExecuteBifrostTask - NamedType FindShopLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 992846474 - Method 3571782927 - NamedType 2715195543" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Shopify shop %1 is not enabled.</source>
+          <target>Shopify verslun %1 er ekki virk.</target>
+          <note from="Developer" annotates="general" priority="2">%1 = shop code||is-IS=Shopify verslun %1 er ekki virk.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Location Sync Impl ori - Method ExecuteBifrostTask - NamedType NotEnabledErr</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 992846474 - Method 3571782927 - NamedType 2430023549" size-unit="char" translate="yes" xml:space="preserve">
+          <source>an enabled Shopify shop</source>
+          <target>virk Shopify verslun</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=virk Shopify verslun</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Location Sync Impl ori - Method ExecuteBifrostTask - NamedType EnabledShopLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 992846474 - Method 3571782927 - NamedType 4027318585" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Enable the shop on its Shopify Shop Card.</source>
+          <target>Virkjaðu verslunina á Shopify verslunarspjaldinu.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Virkjaðu verslunina á Shopify verslunarspjaldinu.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Location Sync Impl ori - Method ExecuteBifrostTask - NamedType EnableShopLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 992846474 - Method 3571782927 - NamedType 1603624325" size-unit="char" translate="yes" xml:space="preserve">
+          <source>The connector refused the location import: %1</source>
+          <target>Tengillinn hafnaði innflutningi staðsetninga: %1</target>
+          <note from="Developer" annotates="general" priority="2">%1 = connector error||is-IS=Tengillinn hafnaði innflutningi staðsetninga: %1</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Location Sync Impl ori - Method ExecuteBifrostTask - NamedType RefusedErr</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 992846474 - Method 3571782927 - NamedType 1649445486" size-unit="char" translate="yes" xml:space="preserve">
+          <source>a completed location import</source>
+          <target>lokinn innflutningur staðsetninga</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=lokinn innflutningur staðsetninga</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Location Sync Impl ori - Method ExecuteBifrostTask - NamedType SyncedExpectedLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 992846474 - Method 3571782927 - NamedType 2319534536" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Correct the reported cause and retry.</source>
+          <target>Leiðréttu tilgreinda orsök og reyndu aftur.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Leiðréttu tilgreinda orsök og reyndu aftur.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Location Sync Impl ori - Method ExecuteBifrostTask - NamedType FixCauseLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 992846474 - Method 4077369804 - NamedType 3569966352" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Imports Shopify locations and removes stale locations and their BC location mappings.</source>
+          <target>Flytur inn Shopify staðsetningar og fjarlægir úreltar staðsetningar og vörpun þeirra í BC.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Flytur inn Shopify staðsetningar og fjarlægir úreltar staðsetningar og vörpun þeirra í BC.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Location Sync Impl ori - Method GetDescription - NamedType DescriptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 992846474 - Method 1027590672 - NamedType 1290244428" size-unit="char" translate="yes" xml:space="preserve">
+          <source>shopify locations, import locations, location mappings, get locations</source>
+          <target>shopify staðsetningar, flytja inn staðsetningar, vörpun staðsetninga, sækja staðsetningar</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=shopify staðsetningar, flytja inn staðsetningar, vörpun staðsetninga, sækja staðsetningar</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Location Sync Impl ori - Method GetKeywords - NamedType KeywordsLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 992846474 - Method 79446908 - NamedType 895773054" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Use to get locations for one enabled Shopify shop. Removes stale locations and their BC mappings; may update the fulfillment service callback URL in Shopify.</source>
+          <target>Notað til að sækja staðsetningar fyrir eina virka Shopify verslun. Fjarlægir úreltar staðsetningar og BC vörpun þeirra; getur uppfært endurkallsslóð afgreiðsluþjónustu í Shopify.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Notað til að sækja staðsetningar fyrir eina virka Shopify verslun. Fjarlægir úreltar staðsetningar og BC vörpun þeirra; getur uppfært endurkallsslóð afgreiðsluþjónustu í Shopify.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Location Sync Impl ori - Method GetSelectionDescription - NamedType SelectionLbl</note>
+        </trans-unit>
       </group>
     </body>
   </file>
