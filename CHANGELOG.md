@@ -2,6 +2,10 @@
 
 ## [29.0.0.0] - Unreleased
 
+### Added
+
+- `Shopify.Location.Sync` (#15): reconciles Shopify locations through Get Locations, preserving retained mappings and deleting stale locations with their mappings (Gunnar’s approved exception). Returns before/after, net, inserted and removed counts; isolates local connector failures. Objects: implementation and enum/value 73732120, runner 73732121, mock Dispatcher tests/stand-in/fixture 97570–97572.
+
 ### Changed
 
 - Raised the floor to Business Central 29.0: version, application and platform 29.0.0.0, runtime 18.0, Shopify Connector 29.0.0.0, and the CI artifacts on 29.0 (main and floor projects; Test Current on 29.1). Gunnar 26.11.2026.
