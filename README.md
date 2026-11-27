@@ -13,6 +13,16 @@ Bifröst message types, so an agent can operate it end to end. It is built on th
 
 **Status:** Shopify Connector operations are registered as Bifröst message types. See the in-app message contracts for supported requests, permissions and effects.
 
+## Shopify.Location.Sync
+
+```json
+{"type":"Shopify.Location.Sync","data":{"shopCode":"WEBSHOP"}}
+```
+
+Runs Microsoft Get Locations (codeunit 30198) for one enabled shop. Inserts and updates Shopify locations, removes stale locations **and their BC location mappings**, and may update the fulfillment service callback URL in Shopify. Mapping fields on retained locations are preserved. Mapping locations separately remains a `Data.Records.Set` operation.
+
+The response contains `status`, `shopCode`, `locationsBefore`, `locationsAfter`, `netChange`, `inserted` and `removed`. Counts compare local location IDs for the selected shop; one insertion plus one removal gives `netChange: 0`, `inserted: 1`, `removed: 1`. Repeating a call without Shopify changes is idempotent. Connector failure returns `BusinessCentralError` and rolls back local changes; completed Shopify callback updates cannot be rolled back. Requires `SHOPIFY Full ori` and Microsoft Shopify Connector permissions. Runtime help provides Overview, Notes and Examples.
+
 `Shopify.Catalog.Sync` imports company and market catalogs for one enabled shop (`shopCode`).
 It returns `status`, `shopCode`, `catalogsBefore` and `catalogsAfter`. Run `Shopify.Company.Sync`
 first to include company catalogs; market catalogs are imported without companies. Repeated calls
