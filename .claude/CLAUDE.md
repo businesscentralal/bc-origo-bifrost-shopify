@@ -28,12 +28,24 @@ Tests: 97400-97599
 | Codeunit | 97518 | Shopify Disputes Stub ori |
 | Test Codeunit | 97519 | Shopify Disputes Fixture ori |
 | Codeunit | 73731950 | Shopify Registration ori |
+| EnumExtension | 73732050 | Product AddVariants Msg ori (value Shopify.Product.AddItemsAsVariants) |
+| Codeunit | 73732050 | Product AddVariants Impl ori |
+| Codeunit | 73732051 | Product AddVariants Run ori |
+| Test Codeunit | 97500 | Shopify Issue 10 Tests ori |
+| Codeunit | 97501 | Shpfy AddVariants Stub ori |
+| Test Codeunit | 97502 | Shpfy AddVariants MCP ori |
 | EnumExtension | 73732060 | Metafield Sync MsgType ori (value Shopify.Metafield.Sync) |
 | Codeunit | 73732060 | Metafield Sync Impl ori |
 | Codeunit | 73732061 | Metafield Sync Run ori |
 | Test Codeunit | 97510 | Shopify Issue 35 Tests ori |
 | Codeunit | 97511 | Shpfy Metafield Stub ori |
 | Test Codeunit | 97512 | Shpfy Metafield MCP ori |
+| Codeunit | 73732110 | Payment Sync Impl ori |
+| Codeunit | 73732111 | Payment Sync Run ori |
+| EnumExtension | 73732110 | Payment Sync MsgType ori (value Shopify.Payment.Sync) |
+| Test Codeunit | 97550 | Shpfy Pay Sync Test ori |
+| Codeunit | 97551 | Shpfy Pay Sync Stub ori |
+| Test Codeunit | 97552 | Shpfy Pay Sync MCP ori |
 | PermissionSet | 73731950 | SHOPIFY Base ori |
 | PermissionSet | 73731951 | SHOPIFY Read ori |
 | PermissionSet | 73731952 | SHOPIFY Full ori |
@@ -120,6 +132,11 @@ log rows for the selected catalog RecordIds; no internal connector procedures ar
 | Codeunit | 97592 | Shopify CustAdd MCP Stub ori (fixture-only mock) |
 | Test Codeunit | 97593 | Shopify CustAdd Fixture ori |
 Issue #26 objects: enum extension/value and implementation 73732090 `Order MarkPaid MsgType ori` / `Order MarkPaid Impl ori`; runner 73732091 `Order MarkPaid Run ori`; table 73732090 `Order Paid Marker ori`. Tests: 97530 `Shpfy MarkPaid Tests ori`, subscriber 97531 `Shpfy MarkPaid Stub ori`, MCP fixture 97532 `Shpfy MarkPaid Fixture ori`. Open PRs #67–#69 were checked before allocation.
+
+Issue #28 (checked against open PRs on 26 November 2026):
+- Codeunit 73731951 `Order ForceSync Impl ori`; codeunit 73731952 `Order ForceSync Run ori`.
+- Enum extension/value 73731951 `Order ForceSync MsgType ori` / `Shopify.Order.ForceSync`.
+- Test codeunits 97524 `Shopify ForceSync Tests ori`, 97525 `Shopify ForceSync Stub ori`, 97526 `Shopify ForceSync Fixture ori`.
 
 ## Microsoft source
 Wrapped Microsoft app: Shopify Connector (`ec255f57-31d0-4ca2-b751-f2fa7c745abb`, minimum 28.0.0.0). Source: https://github.com/microsoft/BCApps/tree/main/src/Apps/W1/Shopify
