@@ -82,6 +82,12 @@ Tests: 97400-97599
 | Test Codeunit | 97453 | Shpfy Cust Fail Step ori |
 | Test Codeunit | 97470 | Shopify Order Create Tests ori |
 | Test Codeunit | 97471 | Shopify Order MCP Fixture ori |
+| EnumExtension | 73732070 | Company Add MsgType ori (value Shopify.Company.Add) |
+| Codeunit | 73732070 | Company Add Impl ori |
+| Codeunit | 73732071 | Company Add Run ori |
+| Test Codeunit | 97527 | Shpfy Company Add Test ori |
+| Codeunit | 97528 | Shpfy Company Add Stub ori |
+| Test Codeunit | 97529 | Shpfy Company Add MCP ori |
 | Codeunit | 73732100 | Product SyncImages Impl ori |
 | EnumExtension | 73732100 | Product SyncImages MsgType ori (value Shopify.Product.SyncImages) |
 | Codeunit | 73732101 | Product SyncImages Run ori |
@@ -96,6 +102,7 @@ Tests: 97400-97599
 | Codeunit | 97504 | Shopify Cancel Stub ori (manual mock) |
 | Codeunit | 97505 | Shopify Cancel MCP Stub ori (fixture-only mock) |
 | Test Codeunit | 97506 | Shopify Cancel Fixture ori |
+New issue #34 objects (test IDs checked against main and all 14 other open PR heads on 26.11.2026): enum extension/value and implementation 73732063 `Suggest Payments MsgType ori` / `Suggest Payments Impl ori`; runner 73732064 `Suggest Payments Run ori`; manual journal-navigation subscriber 73732062 `Suggest Payments UI Guard ori`; tests 97560 `Shpfy Suggest Tests ori`, mock subscriber 97561 `Shpfy Suggest Stub ori`, MCP fixture 97562 `Shpfy Suggest Fixture ori`. App IDs moved during the main merge to avoid Metafield Sync; test IDs moved to 97560–97562 after review to avoid open PRs #75 and #79.
 
 Integration note for PR #43: the temporary import app IDs 73732030/73732031 in commit 79654f2 are reconciled to 73731960/73731961, following the published #54 mapping (70013400+n → 73731950+n). Import test codeunits remain 97472/97473 from that branch update; the 97400–97599 test range is unchanged.
 
