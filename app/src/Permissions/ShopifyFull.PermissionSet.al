@@ -8,6 +8,8 @@ permissionset 73731952 "SHOPIFY Full ori"
     IncludedPermissionSets = "SHOPIFY Read ori";
     Permissions = codeunit "Order Cancel Impl ori" = X,
                   codeunit "Order Cancel Run ori" = X,
+                  codeunit "Invoice Sync Impl ori" = X,
+                  codeunit "Invoice Sync Run ori" = X,
                   codeunit "Order ForceSync Impl ori" = X,
                   codeunit "Order ForceSync Run ori" = X,
                   codeunit "Location Sync Impl ori" = X,

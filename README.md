@@ -85,6 +85,19 @@ Imports Shopify Payments payouts and payment transactions for one enabled shop t
 
 ---
 
+## Export posted invoices to Shopify
+
+```json
+{"type":"Shopify.Invoice.Sync","data":{"shopCode":"WEBSHOP","invoiceNos":["INV-1001"],"expectedCount":1}}
+```
+
+Creates real completed, fulfilled Shopify orders through connector report 30119. Enable the shop and
+Posted Invoice Sync, configure Payment Terms Mapping, and grant SHOPIFY Full ori plus the Microsoft
+Shopify and posted invoice permissions. The entire selection is checked before export begins.
+Inspect each result: exported, skipped, failed or notExportable. Repeated calls skip positive order IDs;
+negative IDs are reported without reset or retry. External Shopify orders cannot be undone by a BC rollback.
+The discovery help includes Overview, Notes and Examples.
+
 ## Documentation
 
 All public documentation lives in the [businesscentralal/bifrost](https://github.com/businesscentralal/bifrost)
