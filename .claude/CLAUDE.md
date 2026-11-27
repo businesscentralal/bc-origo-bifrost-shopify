@@ -28,12 +28,24 @@ Tests: 97400-97599
 | Codeunit | 97518 | Shopify Disputes Stub ori |
 | Test Codeunit | 97519 | Shopify Disputes Fixture ori |
 | Codeunit | 73731950 | Shopify Registration ori |
+| EnumExtension | 73732050 | Product AddVariants Msg ori (value Shopify.Product.AddItemsAsVariants) |
+| Codeunit | 73732050 | Product AddVariants Impl ori |
+| Codeunit | 73732051 | Product AddVariants Run ori |
+| Test Codeunit | 97500 | Shopify Issue 10 Tests ori |
+| Codeunit | 97501 | Shpfy AddVariants Stub ori |
+| Test Codeunit | 97502 | Shpfy AddVariants MCP ori |
 | EnumExtension | 73732060 | Metafield Sync MsgType ori (value Shopify.Metafield.Sync) |
 | Codeunit | 73732060 | Metafield Sync Impl ori |
 | Codeunit | 73732061 | Metafield Sync Run ori |
 | Test Codeunit | 97510 | Shopify Issue 35 Tests ori |
 | Codeunit | 97511 | Shpfy Metafield Stub ori |
 | Test Codeunit | 97512 | Shpfy Metafield MCP ori |
+| Codeunit | 73732110 | Payment Sync Impl ori |
+| Codeunit | 73732111 | Payment Sync Run ori |
+| EnumExtension | 73732110 | Payment Sync MsgType ori (value Shopify.Payment.Sync) |
+| Test Codeunit | 97550 | Shpfy Pay Sync Test ori |
+| Codeunit | 97551 | Shpfy Pay Sync Stub ori |
+| Test Codeunit | 97552 | Shpfy Pay Sync MCP ori |
 | PermissionSet | 73731950 | SHOPIFY Base ori |
 | PermissionSet | 73731951 | SHOPIFY Read ori |
 | PermissionSet | 73731952 | SHOPIFY Full ori |
