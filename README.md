@@ -11,7 +11,7 @@ Bifröst message types, so an agent can operate it end to end. It is built on th
 
 **Microsoft source:** <https://github.com/microsoft/BCApps/tree/main/src/Apps/W1/Shopify>
 
-**Status:** Shopify Connector operations are registered as Bifröst message types. See the in-app message contracts for supported requests, permissions and effects.
+**Status:** Shopify Connector operations are registered as Bifröst message types. See the in-app message contracts for supported requests, permissions and effects. `Shopify.Transaction.SuggestPayments` writes cash receipt journal lines through the connector without posting; its runtime help explains eligibility, confirmation count and repeat-call behavior.
 
 ## Shopify.Location.Sync
 
