@@ -82,6 +82,12 @@ Tests: 97400-97599
 | Test Codeunit | 97453 | Shpfy Cust Fail Step ori |
 | Test Codeunit | 97470 | Shopify Order Create Tests ori |
 | Test Codeunit | 97471 | Shopify Order MCP Fixture ori |
+| EnumExtension | 73732070 | Company Add MsgType ori (value Shopify.Company.Add) |
+| Codeunit | 73732070 | Company Add Impl ori |
+| Codeunit | 73732071 | Company Add Run ori |
+| Test Codeunit | 97527 | Shpfy Company Add Test ori |
+| Codeunit | 97528 | Shpfy Company Add Stub ori |
+| Test Codeunit | 97529 | Shpfy Company Add MCP ori |
 | Codeunit | 73732100 | Product SyncImages Impl ori |
 | EnumExtension | 73732100 | Product SyncImages MsgType ori (value Shopify.Product.SyncImages) |
 | Codeunit | 73732101 | Product SyncImages Run ori |
