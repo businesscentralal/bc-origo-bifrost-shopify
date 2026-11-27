@@ -95,6 +95,8 @@ Tests: 97400-97599
 | Test Codeunit | 97541 | Shpfy SyncImg Stub ori |
 | Test Codeunit | 97542 | Shpfy SyncImg MCP ori |
 
+New issue #34 objects (test IDs checked against main and all 14 other open PR heads on 26.11.2026): enum extension/value and implementation 73732063 `Suggest Payments MsgType ori` / `Suggest Payments Impl ori`; runner 73732064 `Suggest Payments Run ori`; manual journal-navigation subscriber 73732062 `Suggest Payments UI Guard ori`; tests 97560 `Shpfy Suggest Tests ori`, mock subscriber 97561 `Shpfy Suggest Stub ori`, MCP fixture 97562 `Shpfy Suggest Fixture ori`. App IDs moved during the main merge to avoid Metafield Sync; test IDs moved to 97560–97562 after review to avoid open PRs #75 and #79.
+
 Integration note for PR #43: the temporary import app IDs 73732030/73732031 in commit 79654f2 are reconciled to 73731960/73731961, following the published #54 mapping (70013400+n → 73731950+n). Import test codeunits remain 97472/97473 from that branch update; the 97400–97599 test range is unchanged.
 
 ## Issue 22 objects
@@ -117,6 +119,12 @@ log rows for the selected catalog RecordIds; no internal connector procedures ar
 
 | Type | ID | Object |
 | --- | --- | --- |
+| Codeunit | 73731955 | Invoice Sync Impl ori |
+| Codeunit | 73731956 | Invoice Sync Run ori |
+| EnumExtension | 73731955 | Invoice Sync MsgType ori (value 73731956: Shopify.Invoice.Sync) |
+| Test Codeunit | 97507 | Shopify Issue 31 Tests ori |
+| Codeunit | 97508 | Shpfy Invoice Stub ori |
+| Test Codeunit | 97509 | Shpfy Invoice MCP ori |
 | Codeunit | 73732080 | Catalog Sync Impl ori |
 | Codeunit | 73732081 | Catalog Sync Run ori |
 | EnumExtension | 73732080 | Catalog Sync MsgType ori (Shopify.Catalog.Sync) |

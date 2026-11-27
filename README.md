@@ -11,7 +11,7 @@ Bifröst message types, so an agent can operate it end to end. It is built on th
 
 **Microsoft source:** <https://github.com/microsoft/BCApps/tree/main/src/Apps/W1/Shopify>
 
-**Status:** Shopify Connector operations are registered as Bifröst message types. See the in-app message contracts for supported requests, permissions and effects.
+**Status:** Shopify Connector operations are registered as Bifröst message types. See the in-app message contracts for supported requests, permissions and effects. `Shopify.Transaction.SuggestPayments` writes cash receipt journal lines through the connector without posting; its runtime help explains eligibility, confirmation count and repeat-call behavior.
 
 ## Shopify.Catalog.SyncPrices
 
@@ -90,6 +90,19 @@ Imports Shopify Payments payouts and payment transactions for one enabled shop t
 | Test app (`test/`) | 97400-97599 |
 
 ---
+
+## Export posted invoices to Shopify
+
+```json
+{"type":"Shopify.Invoice.Sync","data":{"shopCode":"WEBSHOP","invoiceNos":["INV-1001"],"expectedCount":1}}
+```
+
+Creates real completed, fulfilled Shopify orders through connector report 30119. Enable the shop and
+Posted Invoice Sync, configure Payment Terms Mapping, and grant SHOPIFY Full ori plus the Microsoft
+Shopify and posted invoice permissions. The entire selection is checked before export begins.
+Inspect each result: exported, skipped, failed or notExportable. Repeated calls skip positive order IDs;
+negative IDs are reported without reset or retry. External Shopify orders cannot be undone by a BC rollback.
+The discovery help includes Overview, Notes and Examples.
 
 ## Documentation
 
