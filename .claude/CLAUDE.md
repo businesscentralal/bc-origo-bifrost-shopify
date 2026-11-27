@@ -15,6 +15,12 @@ Tests: 97400-97599
 
 | Type | ID | Object |
 | --- | --- | --- |
+| Codeunit | 73732120 | Location Sync Impl ori |
+| Codeunit | 73732121 | Location Sync Run ori |
+| EnumExtension | 73732120 | Location Sync MsgType ori (Shopify.Location.Sync) |
+| Test Codeunit | 97570 | Shopify Location Tests ori |
+| Codeunit | 97571 | Shopify Location Stub ori |
+| Test Codeunit | 97572 | Shopify Location Fixture ori |
 | Codeunit | 73732046 | Payment Disputes Impl ori |
 | Codeunit | 73732047 | Payment Disputes Run ori |
 | EnumExtension | 73732046 | Payment Disputes MsgType ori (Shopify.Payment.SyncDisputes) |
