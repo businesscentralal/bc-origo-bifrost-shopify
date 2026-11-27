@@ -2,6 +2,11 @@
 
 ## [29.0.0.0] - Unreleased
 
+### Added
+
+- `Shopify.Location.Sync` (#15): reconciles Shopify locations through Get Locations, preserving retained mappings and deleting stale locations with their mappings (Gunnar’s approved exception). Returns before/after, net, inserted and removed counts; isolates local connector failures. Objects: implementation and enum/value 73732120, runner 73732121, mock Dispatcher tests/stand-in/fixture 97570–97572.
+- #28: Add `Shopify.Order.ForceSync` to re-import one existing order with `expectedCount = 1`, refuse the two connector paths that can write to Shopify, and roll back local changes including explicit connector commits and failed-run Shopify logs. New codeunits 73731951/73731952, enum extension/value 73731951, test codeunits 97524/97525/97526.
+
 ### Changed
 
 - Raised the floor to Business Central 29.0: version, application and platform 29.0.0.0, runtime 18.0, Shopify Connector 29.0.0.0, and the CI artifacts on 29.0 (main and floor projects; Test Current on 29.1). Gunnar 26.11.2026.
@@ -9,7 +14,6 @@
 ## [28.0.0.0] - Unreleased
 
 ### Added
-- #28: Add `Shopify.Order.ForceSync` to re-import one existing order with `expectedCount = 1`, refuse the two connector paths that can write to Shopify, and roll back local changes including explicit connector commits and failed-run Shopify logs. New codeunits 73731951/73731952, enum extension/value 73731951, test codeunits 97524/97525/97526.
 - Added `Shopify.Catalog.Sync` to import company and market catalogs for one enabled shop through report 30115, with typed refusals and rollback on failure. Company catalogs require imported companies; market catalogs work without them. Catalogs absent from Shopify remain locally. Objects: enum/implementation 73732080, runner 73732081; mock-only tests 97533–97535 (#21; reassigned to avoid the merged MarkAsPaid test IDs).
 - Added `Shopify.Company.Sync` (#18), enum/value and implementation 73732044, rollback runner 73732045: synchronizes companies through connector codeunit 30285, echoes the shop settings and local before/after counts. Only `SHOPIFY Full ori` grants execution. Explicit connector commits stay inside the rollback boundary. Mock dispatcher tests 97513, manual stub 97514, fixture-only MCP stub 97515 and seed/cleanup fixture 97516.
 - `Shopify.Customer.Add`: create and link 1–100 selected BC customers through connector report 30112, with expected-count confirmation, existing-link handling and isolated per-customer failures. English help and Icelandic translations included. Objects: enumextension/value and implementation 73732140, runner 73732141; tests/stand-ins/fixture 97590–97593.
