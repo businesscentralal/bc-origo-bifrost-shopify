@@ -1803,6 +1803,162 @@
           <note from="Developer" annotates="general" priority="2">is-IS=Númer varanna í Business Central (tafla 27) sem á að bæta við.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit Product AddItems Impl ori - Method GetTarget - NamedType ItemTargetLbl</note>
         </trans-unit>
+        <trans-unit id="Codeunit 2620620638 - NamedType 67423035" size-unit="char" translate="yes" xml:space="preserve">
+          <source>an item the connector can add as a variant</source>
+          <target>vara sem tengillinn getur bætt við sem afbrigði</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=vara sem tengillinn getur bætt við sem afbrigði</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Product AddVariants Impl ori - NamedType CanAddExpectedLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 2620620638 - NamedType 1377788994" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Provide 1 to 100 item numbers and an expectedCount equal to their count.</source>
+          <target>Sendu 1 til 100 vörunúmer og expectedCount sem er jafn fjölda þeirra.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Sendu 1 til 100 vörunúmer og expectedCount sem er jafn fjölda þeirra.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Product AddVariants Impl ori - NamedType CountErr</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 2620620638 - NamedType 4027318585" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Enable the shop on the Shopify Shop Card.</source>
+          <target>Virkjaðu verslunina á Shopify Shop Card.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Virkjaðu verslunina á Shopify Shop Card.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Product AddVariants Impl ori - NamedType EnableShopLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 2620620638 - NamedType 2352824467" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Read the product, shop and items with Data.Records.Get and correct the request.</source>
+          <target>Lestu vöruna, verslunina og vörurnar með Data.Records.Get og leiðréttu beiðnina.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Lestu vöruna, verslunina og vörurnar með Data.Records.Get og leiðréttu beiðnina.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Product AddVariants Impl ori - NamedType FindRecordsLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 2620620638 - NamedType 2319534536" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Correct the connector refusal and retry only the remaining items; earlier successful items remain added.</source>
+          <target>Leiðréttu höfnun tengilsins og reyndu aðeins vörurnar sem eftir eru; fyrri viðbætur haldast.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Leiðréttu höfnun tengilsins og reyndu aðeins vörurnar sem eftir eru; fyrri viðbætur haldast.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Product AddVariants Impl ori - NamedType FixCauseLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 2620620638 - NamedType 3892011389" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Parameter "%1" must be a positive whole number.</source>
+          <target>Færibreytan "%1" verður að vera jákvæð heiltala.</target>
+          <note from="Developer" annotates="general" priority="2">%1 = parameter||is-IS=Færibreytan "%1" verður að vera jákvæð heiltala.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Product AddVariants Impl ori - NamedType IntegerErr</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 2620620638 - NamedType 3958836406" size-unit="char" translate="yes" xml:space="preserve">
+          <source>a positive whole number</source>
+          <target>jákvæð heiltala</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=jákvæð heiltala</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Product AddVariants Impl ori - NamedType IntegerExpectedLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 2620620638 - NamedType 108396880" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Item %1 was not found.</source>
+          <target>Vara %1 fannst ekki.</target>
+          <note from="Developer" annotates="general" priority="2">%1 = item number||is-IS=Vara %1 fannst ekki.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Product AddVariants Impl ori - NamedType ItemMissingErr</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 2620620638 - NamedType 1100299861" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Parameter "itemNos" must contain item numbers of 1 to 20 characters.</source>
+          <target>Færibreytan "itemNos" verður að innihalda vörunúmer með 1 til 20 stöfum.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Færibreytan "itemNos" verður að innihalda vörunúmer með 1 til 20 stöfum.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Product AddVariants Impl ori - NamedType ItemsErr</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 2620620638 - NamedType 3781846526" size-unit="char" translate="yes" xml:space="preserve">
+          <source>1 to 100 existing item numbers and their exact count</source>
+          <target>1 til 100 fyrirliggjandi vörunúmer og réttur fjöldi þeirra</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=1 til 100 fyrirliggjandi vörunúmer og réttur fjöldi þeirra</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Product AddVariants Impl ori - NamedType ItemsExpectedLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 2620620638 - NamedType 1830439019" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Parameter "%1" is required.</source>
+          <target>Færibreytan "%1" er nauðsynleg.</target>
+          <note from="Developer" annotates="general" priority="2">%1 = parameter||is-IS=Færibreytan "%1" er nauðsynleg.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Product AddVariants Impl ori - NamedType MissingErr</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 2620620638 - NamedType 315309378" size-unit="char" translate="yes" xml:space="preserve">
+          <source>You do not have permission to add Shopify variants.</source>
+          <target>Þú hefur ekki heimild til að bæta við Shopify afbrigðum.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Þú hefur ekki heimild til að bæta við Shopify afbrigðum.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Product AddVariants Impl ori - NamedType PermissionErr</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 2620620638 - NamedType 1780497417" size-unit="char" translate="yes" xml:space="preserve">
+          <source>SHOPIFY Full ori and Microsoft Shopify write permissions</source>
+          <target>SHOPIFY Full ori og skrifheimildir Microsoft Shopify</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=SHOPIFY Full ori og skrifheimildir Microsoft Shopify</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Product AddVariants Impl ori - NamedType PermissionExpectedLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 2620620638 - NamedType 3932376842" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Ask an administrator to grant SHOPIFY Full ori and Shopify write permissions.</source>
+          <target>Biddu kerfisstjóra um að veita SHOPIFY Full ori og skrifheimildir Shopify.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Biddu kerfisstjóra um að veita SHOPIFY Full ori og skrifheimildir Shopify.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Product AddVariants Impl ori - NamedType PermissionNextLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 2620620638 - NamedType 3252484993" size-unit="char" translate="yes" xml:space="preserve">
+          <source>an imported Shopify product</source>
+          <target>innflutt Shopify vara</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=innflutt Shopify vara</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Product AddVariants Impl ori - NamedType ProductExpectedLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 2620620638 - NamedType 3005416542" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Shopify product %1 was not found.</source>
+          <target>Shopify vara %1 fannst ekki.</target>
+          <note from="Developer" annotates="general" priority="2">%1 = product ID||is-IS=Shopify vara %1 fannst ekki.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Product AddVariants Impl ori - NamedType ProductMissingErr</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 2620620638 - NamedType 1587331208" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Send productId, an array of 1 to 100 item numbers, and their exact expectedCount.</source>
+          <target>Sendu productId, fylki með 1 til 100 vörunúmerum og réttan fjölda í expectedCount.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Sendu productId, fylki með 1 til 100 vörunúmerum og réttan fjölda í expectedCount.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Product AddVariants Impl ori - NamedType RequiredNextLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 2620620638 - NamedType 3917760611" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Shop %1 is not enabled.</source>
+          <target>Verslun %1 er ekki virk.</target>
+          <note from="Developer" annotates="general" priority="2">%1 = shop code||is-IS=Verslun %1 er ekki virk.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Product AddVariants Impl ori - NamedType ShopDisabledErr</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 2620620638 - NamedType 2675069036" size-unit="char" translate="yes" xml:space="preserve">
+          <source>an existing enabled shop</source>
+          <target>fyrirliggjandi virk verslun</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=fyrirliggjandi virk verslun</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Product AddVariants Impl ori - NamedType ShopExpectedLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 2620620638 - NamedType 2922492279" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Shop %1 was not found.</source>
+          <target>Verslun %1 fannst ekki.</target>
+          <note from="Developer" annotates="general" priority="2">%1 = shop code||is-IS=Verslun %1 fannst ekki.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Product AddVariants Impl ori - NamedType ShopMissingErr</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 2620620638 - NamedType 2912406318" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Parameter "%1" is not supported.</source>
+          <target>Færibreytan "%1" er ekki studd.</target>
+          <note from="Developer" annotates="general" priority="2">%1 = parameter||is-IS=Færibreytan "%1" er ekki studd.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Product AddVariants Impl ori - NamedType UnknownKeyErr</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 2620620638 - Method 4077369804 - NamedType 3569966352" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Adds Business Central items as variants of an existing Shopify product.</source>
+          <target>Bætir Business Central vörum við sem afbrigðum af fyrirliggjandi Shopify vöru.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Bætir Business Central vörum við sem afbrigðum af fyrirliggjandi Shopify vöru.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Product AddVariants Impl ori - Method GetDescription - NamedType DescriptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 2620620638 - Method 1027590672 - NamedType 1290244428" size-unit="char" translate="yes" xml:space="preserve">
+          <source>shopify add variants, add items as variants, existing shopify product variants, webshop variants, add product variant</source>
+          <target>shopify bæta við afbrigðum, bæta vörum við sem afbrigðum, afbrigði fyrirliggjandi shopify vöru, vefverslunarafbrigði, bæta við vöruafbrigði</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=shopify bæta við afbrigðum, bæta vörum við sem afbrigðum, afbrigði fyrirliggjandi shopify vöru, vefverslunarafbrigði, bæta við vöruafbrigði</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Product AddVariants Impl ori - Method GetKeywords - NamedType KeywordsLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 2620620638 - Method 79446908 - NamedType 895773054" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Use to add items to an existing Shopify product as variants. Use Shopify.Product.AddItems to create new products.</source>
+          <target>Notað til að bæta vörum við fyrirliggjandi Shopify vöru sem afbrigðum. Notaðu Shopify.Product.AddItems til að stofna nýjar vörur.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Notað til að bæta vörum við fyrirliggjandi Shopify vöru sem afbrigðum. Notaðu Shopify.Product.AddItems til að stofna nýjar vörur.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Product AddVariants Impl ori - Method GetSelectionDescription - NamedType SelectionLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 149772733 - NamedType 3725373802" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Item %1 is already a variant of product %2.</source>
+          <target>Vara %1 er þegar afbrigði af vöru %2.</target>
+          <note from="Developer" annotates="general" priority="2">%1 = item number, %2 = product ID||is-IS=Vara %1 er þegar afbrigði af vöru %2.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Product AddVariants Run ori - NamedType AlreadyMappedErr</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 149772733 - NamedType 3766904469" size-unit="char" translate="yes" xml:space="preserve">
+          <source>The connector did not add a variant for item %1 to product %2.</source>
+          <target>Tengillinn bætti ekki afbrigði fyrir vöru %1 við vöru %2.</target>
+          <note from="Developer" annotates="general" priority="2">%1 = item number, %2 = product ID||is-IS=Tengillinn bætti ekki afbrigði fyrir vöru %1 við vöru %2.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Product AddVariants Run ori - NamedType NoVariantErr</note>
+        </trans-unit>
         <trans-unit id="Codeunit 1270057874 - Method 3571782927 - NamedType 64258721" size-unit="char" translate="yes" xml:space="preserve">
           <source>You do not have the permissions to create items from Shopify products.</source>
           <target>Þú hefur ekki heimildir til að búa til vörur úr Shopify vörum.</target>

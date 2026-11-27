@@ -16,6 +16,8 @@ permissionset 73731952 "SHOPIFY Full ori"
                   codeunit "Order MarkPaid Run ori" = X,
                   codeunit "Company Sync Impl ori" = X,
                   codeunit "Company Sync Run ori" = X,
+                  codeunit "Product AddVariants Impl ori" = X,
+                  codeunit "Product AddVariants Run ori" = X,
                   codeunit "Payment Disputes Impl ori" = X,
                   codeunit "Payment Disputes Run ori" = X,
                   codeunit "Payment Sync Impl ori" = X,

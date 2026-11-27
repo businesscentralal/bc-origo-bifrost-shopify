@@ -28,6 +28,12 @@ Tests: 97400-97599
 | Codeunit | 97518 | Shopify Disputes Stub ori |
 | Test Codeunit | 97519 | Shopify Disputes Fixture ori |
 | Codeunit | 73731950 | Shopify Registration ori |
+| EnumExtension | 73732050 | Product AddVariants Msg ori (value Shopify.Product.AddItemsAsVariants) |
+| Codeunit | 73732050 | Product AddVariants Impl ori |
+| Codeunit | 73732051 | Product AddVariants Run ori |
+| Test Codeunit | 97500 | Shopify Issue 10 Tests ori |
+| Codeunit | 97501 | Shpfy AddVariants Stub ori |
+| Test Codeunit | 97502 | Shpfy AddVariants MCP ori |
 | EnumExtension | 73732060 | Metafield Sync MsgType ori (value Shopify.Metafield.Sync) |
 | Codeunit | 73732060 | Metafield Sync Impl ori |
 | Codeunit | 73732061 | Metafield Sync Run ori |
