@@ -20,6 +20,7 @@
 ## [28.0.0.0] - Unreleased
 
 ### Added
+- Added `Shopify.Order.Cancel` (#27): explicit reason, notification, refund, restock and expectedCount = 1 cancel one imported order irreversibly through public `Shpfy Orders.CancelOrder`. Linked BC sales documents and imported order rows remain unchanged. Full-role execution only; mock-only dispatcher tests. New enum extension/value and implementation 73732042, connector runner 73732043; test/mock/fixture codeunits 97503–97506.
 - Added `Shopify.Product.AddItemsAsVariants` (#10), enum/implementation 73732050 and runner 73732051. Validates product, shop, all 1–100 items and `expectedCount` before writes; runs report 30117 once per item, stops on refusal and reports earlier successful additions. Duplicate mappings are refused. Granted through `SHOPIFY Full ori`; bilingual refusal text and mock-only dispatcher tests 97500, stand-in 97501 and MCP fixture 97502.
 
 - Added `Shopify.Catalog.Sync` to import company and market catalogs for one enabled shop through report 30115, with typed refusals and rollback on failure. Company catalogs require imported companies; market catalogs work without them. Catalogs absent from Shopify remain locally. Objects: enum/implementation 73732080, runner 73732081; mock-only tests 97533–97535 (#21; reassigned to avoid the merged MarkAsPaid test IDs).
