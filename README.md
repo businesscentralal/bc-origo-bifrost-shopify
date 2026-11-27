@@ -13,6 +13,10 @@ Bifröst message types, so an agent can operate it end to end. It is built on th
 
 **Status:** Shopify Connector operations are registered as Bifröst message types. See the in-app message contracts for supported requests, permissions and effects. `Shopify.Transaction.SuggestPayments` writes cash receipt journal lines through the connector without posting; its runtime help explains eligibility, confirmation count and repeat-call behavior.
 
+## Shopify.Catalog.SyncPrices
+
+`Shopify.Catalog.SyncPrices` sends changed BC prices for catalogs with Sync Prices enabled. It accepts optional catalog, type and Shopify company filters and reports considered catalogs and new skip-log rows. This type requires Shopify Connector 29 or later. Runtime help provides the full request and response contract.
+
 ## Shopify.Location.Sync
 
 ```json
@@ -22,6 +26,8 @@ Bifröst message types, so an agent can operate it end to end. It is built on th
 Runs Microsoft Get Locations (codeunit 30198) for one enabled shop. Inserts and updates Shopify locations, removes stale locations **and their BC location mappings**, and may update the fulfillment service callback URL in Shopify. Mapping fields on retained locations are preserved. Mapping locations separately remains a `Data.Records.Set` operation.
 
 The response contains `status`, `shopCode`, `locationsBefore`, `locationsAfter`, `netChange`, `inserted` and `removed`. Counts compare local location IDs for the selected shop; one insertion plus one removal gives `netChange: 0`, `inserted: 1`, `removed: 1`. Repeating a call without Shopify changes is idempotent. Connector failure returns `BusinessCentralError` and rolls back local changes; completed Shopify callback updates cannot be rolled back. Requires `SHOPIFY Full ori` and Microsoft Shopify Connector permissions. Runtime help provides Overview, Notes and Examples.
+
+## Shopify.Catalog.Sync
 
 `Shopify.Catalog.Sync` imports company and market catalogs for one enabled shop (`shopCode`).
 It returns `status`, `shopCode`, `catalogsBefore` and `catalogsAfter`. Run `Shopify.Company.Sync`
