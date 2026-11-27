@@ -359,6 +359,7 @@ codeunit 97520 "Shopify Issue 22 Tests ori"
     [Test]
     procedure Scenario_AC02_XmlEscaping()
     var
+        Shop: Record "Shpfy Shop";
         Stub: Codeunit "Shpfy Catalog Prices Stub ori";
         Response: JsonObject;
     begin
@@ -369,6 +370,7 @@ codeunit 97520 "Shopify Issue 22 Tests ori"
         Assert.IsTrue(Stub.GetParameters().Contains('XSC22&amp;TEST'), 'XML escaped.');
         UnbindSubscription(Stub);
         Stub.Cleanup();
+        Assert.IsFalse(Shop.Get('XSC22&TEST'), 'Cleanup removes the literal shop code, including the ampersand.');
     end;
 
     /// <summary>AC03: scalar JSON values cannot masquerade as a text shop code.</summary>

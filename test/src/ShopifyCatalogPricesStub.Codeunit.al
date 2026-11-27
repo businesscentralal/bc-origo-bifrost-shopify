@@ -120,7 +120,7 @@ codeunit 97521 "Shpfy Catalog Prices Stub ori"
         Catalog.DeleteAll();
         CompanyRecord.SetRange(Id, 97520001);
         CompanyRecord.DeleteAll();
-        Shop.SetFilter(Code, 'XSC22-TEST|XSC22-MCP|XSC22-OTHER|XSC22&TEST');
+        Shop.SetFilter(Code, '%1|%2|%3|%4', 'XSC22-TEST', 'XSC22-MCP', 'XSC22-OTHER', 'XSC22&TEST');
         Shop.DeleteAll();
         Commit();
     end;
