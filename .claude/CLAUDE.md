@@ -99,14 +99,32 @@ New issue #34 objects (test IDs checked against main and all 14 other open PR he
 
 Integration note for PR #43: the temporary import app IDs 73732030/73732031 in commit 79654f2 are reconciled to 73731960/73731961, following the published #54 mapping (70013400+n → 73731950+n). Import test codeunits remain 97472/97473 from that branch update; the 97400–97599 test range is unchanged.
 
+## Issue 22 objects
+
+| Type | ID | Object |
+| --- | --- | --- |
+| Codeunit / EnumExtension / Enum value | 73732082 | Catalog SyncPrices Impl ori / Catalog SyncPrices MsgType ori / Shopify.Catalog.SyncPrices |
+| Codeunit | 73732083 | Catalog SyncPrices Run ori |
+| Test Codeunit | 97520 | Shopify Issue 22 Tests ori |
+| Codeunit | 97521 | Shpfy Catalog Prices Stub ori |
+| Test Codeunit | 97522 | Shpfy Catalog MCP Fixture ori |
+| Codeunit | 97523 | Shpfy Catalog MCP Stub ori |
+
+Checked main and open PRs #67–#69 before allocation. Connector report 30116 uses Shop and Catalog data items,
+ShopifyCatalogType as an ordinal, and Company SystemId for its company filter. The message accepts Shopify company Id
+and resolves it within the selected shop. Table 30159 is internal: RecordRef reads its documented field IDs to count new
+log rows for the selected catalog RecordIds; no internal connector procedures are called.
+
+## Catalog sync and other merged objects
+
+| Type | ID | Object |
+| --- | --- | --- |
 | Codeunit | 73731955 | Invoice Sync Impl ori |
 | Codeunit | 73731956 | Invoice Sync Run ori |
 | EnumExtension | 73731955 | Invoice Sync MsgType ori (value 73731956: Shopify.Invoice.Sync) |
 | Test Codeunit | 97507 | Shopify Issue 31 Tests ori |
 | Codeunit | 97508 | Shpfy Invoice Stub ori |
 | Test Codeunit | 97509 | Shpfy Invoice MCP ori |
-| Type | ID | Object |
-| --- | --- | --- |
 | Codeunit | 73732080 | Catalog Sync Impl ori |
 | Codeunit | 73732081 | Catalog Sync Run ori |
 | EnumExtension | 73732080 | Catalog Sync MsgType ori (Shopify.Catalog.Sync) |
@@ -145,8 +163,8 @@ app's module id, its display name and its setup page id (`0` while the app has n
 `app/src/Common/SubRegistration.Codeunit.al` in Bifrost Subscription Billing.
 
 ## Target BC Version
-28.0 minimum (application 28.0.0.0, platform 28.0.0.0, runtime 17.0).
-Deploy and test through the bc28-kappi MCP server; leave its container version unchanged.
+29.0 minimum (application 29.0.0.0, platform 29.0.0.0, runtime 18.0), per Gunnar 26.11.2026.
+Deploy and test on the worker's assigned BC 29 tenant.
 
 ## Source Control
 Platform: GitHub
@@ -156,7 +174,7 @@ Default branch: main
 
 ## Dependencies
 - Bifrost Foundation (`7505e808-6e52-4b96-a328-82573391297a`, 28.0.15.807, current Foundation release 28.0.15)
-- Shopify Connector (Microsoft, 28.0.0.0; application floor 28.0.0.0)
+- Shopify Connector (Microsoft, 29.0.0.0; application floor 29.0.0.0)
 
 ## Naming Rules
 - Every object carries the `ori` suffix (AppSource mandatory affix), max 30 characters.

@@ -117,6 +117,108 @@
           <note from="Developer" annotates="general" priority="2">is-IS=Leiðréttu beiðnina eða tilgreinda orsök. Virkjaðu verslunina og biddu kerfisstjóra um SHOPIFY Full ori og Microsoft Shopify skrifheimildir og reyndu aftur.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit Catalog Sync Impl ori - Method Refuse - NamedType NextLbl</note>
         </trans-unit>
+        <trans-unit id="Codeunit 4167137178 - Method 3571782927 - NamedType 921212076" size-unit="char" translate="yes" xml:space="preserve">
+          <source>You do not have permission to send catalog prices to Shopify.</source>
+          <target>Þú hefur ekki heimild til að senda verð vöruskráa til Shopify.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Þú hefur ekki heimild til að senda verð vöruskráa til Shopify.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Catalog SyncPrices Impl ori - Method ExecuteBifrostTask - NamedType NoPermissionLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 4167137178 - Method 3571782927 - NamedType 3932376842" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Ask an administrator for SHOPIFY Full ori and Microsoft Shopify permissions.</source>
+          <target>Biddu kerfisstjóra um SHOPIFY Full ori og Microsoft Shopify heimildir.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Biddu kerfisstjóra um SHOPIFY Full ori og Microsoft Shopify heimildir.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Catalog SyncPrices Impl ori - Method ExecuteBifrostTask - NamedType PermissionNextLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 4167137178 - Method 3571782927 - NamedType 1128910002" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Parameter "shopCode" is required.</source>
+          <target>Færibreytan "shopCode" er nauðsynleg.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Færibreytan "shopCode" er nauðsynleg.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Catalog SyncPrices Impl ori - Method ExecuteBifrostTask - NamedType MissingLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 4167137178 - Method 3571782927 - NamedType 245955643" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Send data.shopCode with an existing Shopify shop code.</source>
+          <target>Sendu data.shopCode með kóða Shopify verslunar sem er til.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Sendu data.shopCode með kóða Shopify verslunar sem er til.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Catalog SyncPrices Impl ori - Method ExecuteBifrostTask - NamedType ShopNextLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 4167137178 - Method 3571782927 - NamedType 704880291" size-unit="char" translate="yes" xml:space="preserve">
+          <source>The requested %1 was not found in this shop.</source>
+          <target>Umbeðið %1 fannst ekki í þessari verslun.</target>
+          <note from="Developer" annotates="general" priority="2">%1 = parameter name||is-IS=Umbeðið %1 fannst ekki í þessari verslun.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Catalog SyncPrices Impl ori - Method ExecuteBifrostTask - NamedType NotFoundLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 4167137178 - Method 3571782927 - NamedType 4035518044" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Read Shopify shops (30102), catalogs (30152) or companies (30150) with Data.Records.Get and correct the filter.</source>
+          <target>Lestu Shopify verslanir (30102), vöruskrár (30152) eða fyrirtæki (30150) með Data.Records.Get og leiðréttu síuna.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Lestu Shopify verslanir (30102), vöruskrár (30152) eða fyrirtæki (30150) með Data.Records.Get og leiðréttu síuna.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Catalog SyncPrices Impl ori - Method ExecuteBifrostTask - NamedType FindNextLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 4167137178 - Method 3571782927 - NamedType 880711966" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Shopify shop %1 is not enabled.</source>
+          <target>Shopify verslun %1 er ekki virk.</target>
+          <note from="Developer" annotates="general" priority="2">%1 = shop code||is-IS=Shopify verslun %1 er ekki virk.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Catalog SyncPrices Impl ori - Method ExecuteBifrostTask - NamedType DisabledLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 4167137178 - Method 3571782927 - NamedType 3272774952" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Enable the shop on the Shopify Shop Card.</source>
+          <target>Virkjaðu verslunina á Shopify verslunarspjaldinu.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Virkjaðu verslunina á Shopify verslunarspjaldinu.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Catalog SyncPrices Impl ori - Method ExecuteBifrostTask - NamedType EnableNextLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 4167137178 - Method 3571782927 - NamedType 436939961" size-unit="char" translate="yes" xml:space="preserve">
+          <source>No catalog with Sync Prices enabled matches the filters.</source>
+          <target>Engin vöruskrá með verðsamstillingu virka passar við síurnar.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Engin vöruskrá með verðsamstillingu virka passar við síurnar.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Catalog SyncPrices Impl ori - Method ExecuteBifrostTask - NamedType EmptyLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 4167137178 - Method 3571782927 - NamedType 3130753388" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Enable Sync Prices on a catalog in this shop or adjust the catalog filters.</source>
+          <target>Virkjaðu verðsamstillingu á vöruskrá í þessari verslun eða breyttu vöruskrársíunum.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Virkjaðu verðsamstillingu á vöruskrá í þessari verslun eða breyttu vöruskrársíunum.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Catalog SyncPrices Impl ori - Method ExecuteBifrostTask - NamedType EmptyNextLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 4167137178 - Method 3571782927 - NamedType 751038299" size-unit="char" translate="yes" xml:space="preserve">
+          <source>The catalog price sync failed. %1</source>
+          <target>Verðsamstilling vöruskráa mistókst. %1</target>
+          <note from="Developer" annotates="general" priority="2">%1 = connector error text||is-IS=Verðsamstilling vöruskráa mistókst. %1</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Catalog SyncPrices Impl ori - Method ExecuteBifrostTask - NamedType FailedLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 4167137178 - Method 3571782927 - NamedType 2144921590" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Fix the cause reported by the connector, then retry.</source>
+          <target>Lagaðu orsökina sem tengillinn tilgreinir og reyndu aftur.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Lagaðu orsökina sem tengillinn tilgreinir og reyndu aftur.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Catalog SyncPrices Impl ori - Method ExecuteBifrostTask - NamedType RetryLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 4167137178 - Method 4077369804 - NamedType 3569966352" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Sends Business Central prices to the price lists of a Shopify shop's catalogs.</source>
+          <target>Sendir verð Business Central í verðlista vöruskráa Shopify verslunar.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Sendir verð Business Central í verðlista vöruskráa Shopify verslunar.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Catalog SyncPrices Impl ori - Method GetDescription - NamedType DescriptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 4167137178 - Method 1027590672 - NamedType 1290244428" size-unit="char" translate="yes" xml:space="preserve">
+          <source>shopify catalogs, catalog prices, sync catalog prices</source>
+          <target>shopify vöruskrár, verð vöruskráa, samstilla verð vöruskráa</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=shopify vöruskrár, verð vöruskráa, samstilla verð vöruskráa</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Catalog SyncPrices Impl ori - Method GetKeywords - NamedType KeywordsLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 4167137178 - Method 79446908 - NamedType 895773054" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Use to send prices for catalogs with Sync Prices enabled. Optionally select one catalog, a catalog type or a Shopify company.</source>
+          <target>Notað til að senda verð fyrir vöruskrár með verðsamstillingu virka. Hægt er að velja eina vöruskrá, tegund vöruskrár eða Shopify fyrirtæki.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Notað til að senda verð fyrir vöruskrár með verðsamstillingu virka. Hægt er að velja eina vöruskrá, tegund vöruskrár eða Shopify fyrirtæki.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Catalog SyncPrices Impl ori - Method GetSelectionDescription - NamedType SelectionLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 4167137178 - Method 462451796 - NamedType 1066607173" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Parameter "%1" has an invalid value.</source>
+          <target>Færibreytan "%1" hefur ógilt gildi.</target>
+          <note from="Developer" annotates="general" priority="2">%1 = parameter name||is-IS=Færibreytan "%1" hefur ógilt gildi.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Catalog SyncPrices Impl ori - Method InvalidParameter - NamedType InvalidLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 4167137178 - Method 462451796 - NamedType 2029447175" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Send shopCode as non-empty text up to 20 characters, IDs as positive integers and catalogType as Company or Market; omit unused filters.</source>
+          <target>Sendu shopCode sem texta með 1 til 20 stöfum, auðkenni sem jákvæðar heiltölur og catalogType sem Company eða Market; slepptu síum sem eru ekki notaðar.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Sendu shopCode sem texta með 1 til 20 stöfum, auðkenni sem jákvæðar heiltölur og catalogType sem Company eða Market; slepptu síum sem eru ekki notaðar.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Catalog SyncPrices Impl ori - Method InvalidParameter - NamedType NextLbl</note>
+        </trans-unit>
         <trans-unit id="Codeunit 559219118 - Method 3571782927 - NamedType 64258721" size-unit="char" translate="yes" xml:space="preserve">
           <source>You do not have the permissions to add companies to Shopify.</source>
           <target>Þú hefur ekki heimildir til að bæta fyrirtækjum við Shopify.</target>
